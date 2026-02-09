@@ -3,16 +3,18 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, Phone, ChevronDown, ArrowRight } from 'lucide-react';
+import { Menu, Phone, ChevronDown, ArrowRight, Search } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { MAIN_NAV, COMPANY_INFO } from '@/lib/constants/navigation';
 import { cn } from '@/lib/utils';
+import SearchDialog from './SearchDialog';
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -103,6 +105,15 @@ export default function Header() {
 
           {/* Right Section */}
           <div className="flex items-center gap-4">
+            {/* Search */}
+            <button
+              onClick={() => setIsSearchOpen(true)}
+              className="flex items-center justify-center w-9 h-9 rounded-xl text-[#4A4A4A] hover:text-[#2AC1BC] hover:bg-[#E8F8F7] transition-colors"
+              aria-label="검색"
+            >
+              <Search className="w-5 h-5" />
+            </button>
+
             {/* Phone */}
             <a
               href={`tel:${COMPANY_INFO.phone}`}
@@ -141,6 +152,20 @@ export default function Header() {
                         창호의<span className="text-[#2AC1BC]">민족</span>
                       </span>
                     </Link>
+                  </div>
+
+                  {/* Mobile Search */}
+                  <div className="px-4 py-3 border-b-2 border-[#EEEEEE]">
+                    <button
+                      onClick={() => {
+                        setIsMobileMenuOpen(false);
+                        setTimeout(() => setIsSearchOpen(true), 300);
+                      }}
+                      className="w-full flex items-center gap-3 p-3 bg-[#F5F5F5] rounded-xl text-[#767676] hover:bg-[#E8F8F7] hover:text-[#2AC1BC] transition-colors"
+                    >
+                      <Search className="w-4 h-4" />
+                      <span className="text-sm font-medium">검색</span>
+                    </button>
                   </div>
 
                   <nav className="flex-1 overflow-y-auto py-4 px-4">
@@ -206,6 +231,9 @@ export default function Header() {
           </div>
         </div>
       </div>
+
+      {/* Search Dialog */}
+      <SearchDialog open={isSearchOpen} onOpenChange={setIsSearchOpen} />
     </header>
   );
 }
