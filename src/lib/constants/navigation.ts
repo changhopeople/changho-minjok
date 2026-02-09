@@ -42,6 +42,7 @@ export const MAIN_NAV: NavItem[] = [
       { title: '공장 견학 예약', href: '/support/tour' },
       { title: 'FAQ', href: '/support/faq' },
       { title: '공지사항', href: '/support/notice' },
+      { title: '전문 어드바이저 조회', href: '/support/verify' },
     ],
   },
 ];

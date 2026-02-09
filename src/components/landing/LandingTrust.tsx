@@ -2,7 +2,8 @@
 
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { Shield, Award, FileCheck, Building2 } from 'lucide-react';
+import { Shield, Award, FileCheck, Building2, ShieldCheck, ArrowRight } from 'lucide-react';
+import Link from 'next/link';
 import AnimatedSection from '@/components/shared/AnimatedSection';
 
 const partners = [
@@ -136,6 +137,32 @@ export default function LandingTrust() {
             </div>
           </AnimatedSection>
         </div>
+
+        {/* Staff Verify Banner */}
+        <AnimatedSection delay={0.4} className="mt-10 sm:mt-16">
+          <Link
+            href="/support/verify"
+            className="block bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-8 border-2 border-[#2AC1BC]/20 hover:border-[#2AC1BC]/50 transition-colors group"
+          >
+            <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
+              <div className="w-14 h-14 sm:w-16 sm:h-16 bg-[#E8F8F7] rounded-2xl flex items-center justify-center flex-shrink-0">
+                <ShieldCheck className="w-7 h-7 sm:w-8 sm:h-8 text-[#2AC1BC]" />
+              </div>
+              <div className="flex-1 text-center sm:text-left">
+                <h3 className="text-base sm:text-lg font-extrabold text-[#1E1E1E] mb-1">
+                  담당 어드바이저가 진짜 본사 소속인지 확인하세요
+                </h3>
+                <p className="text-xs sm:text-sm text-[#767676]">
+                  이름 또는 전화번호만 입력하면 본사 정식 소속 여부를 바로 조회할 수 있습니다.
+                </p>
+              </div>
+              <div className="flex items-center gap-2 px-5 py-2.5 bg-[#2AC1BC] rounded-xl text-white font-bold text-sm group-hover:bg-[#24ADA8] transition-colors flex-shrink-0">
+                조회하기
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </div>
+            </div>
+          </Link>
+        </AnimatedSection>
       </div>
     </section>
   );
