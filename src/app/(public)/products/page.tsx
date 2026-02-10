@@ -6,7 +6,7 @@ import AnimatedSection from '@/components/shared/AnimatedSection';
 
 export const metadata: Metadata = {
   title: '제품소개',
-  description: 'PVC창호, 하이샤시, 시스템창호 등 다양한 창호 제품을 소개합니다. 고객의 니즈에 맞는 최적의 창호 솔루션을 제공합니다.',
+  description: 'PVC창호, 알루미늄 창호, 시스템창호 등 다양한 창호 제품을 소개합니다. 고객의 니즈에 맞는 최적의 창호 솔루션을 제공합니다.',
 };
 
 const productCategories = [
@@ -19,11 +19,11 @@ const productCategories = [
     color: 'from-blue-500 to-blue-600',
   },
   {
-    slug: 'hisash',
-    name: '하이샤시',
-    description: '알루미늄의 강도와 PVC의 단열성을 결합한 복합 창호입니다. 내구성과 단열성 모두를 원하는 고객에게 추천합니다.',
-    features: ['AL+PVC 복합 구조', '뛰어난 내구성', '향상된 단열성능', '세련된 디자인'],
-    image: '/images/products/hisash-window.png',
+    slug: 'aluminum',
+    name: '알루미늄 창호',
+    description: '가볍고 강한 알루미늄 프레임으로 내구성이 뛰어나고 슬림한 디자인이 특징입니다. 넓은 채광과 모던한 외관을 원하는 고객에게 추천합니다.',
+    features: ['뛰어난 내구성', '슬림 프레임 디자인', '넓은 채광면', '다양한 컬러'],
+    image: '/images/products/aluminum-window.png',
     color: 'from-emerald-500 to-emerald-600',
   },
   {

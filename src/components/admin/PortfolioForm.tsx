@@ -124,7 +124,7 @@ export default function PortfolioForm({ portfolio, action, submitLabel }: Portfo
               className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none"
             >
               <option value="시스템창호">시스템창호</option>
-              <option value="하이샤시">하이샤시</option>
+              <option value="알루미늄 창호">알루미늄 창호</option>
               <option value="PVC창호">PVC창호</option>
             </select>
           </div>

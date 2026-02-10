@@ -310,7 +310,7 @@ export const useEstimateStore = create<EstimateStore>()(
             frame: {
               pvc_standard: 85000,
               pvc_premium: 120000,
-              hisash: 180000,
+              aluminum: 180000,
               system: 250000,
             },
             glass: {
@@ -522,7 +522,7 @@ function getFrameName(type: FrameType): string {
   const names: Record<FrameType, string> = {
     pvc_standard: 'PVC 일반',
     pvc_premium: 'PVC 프리미엄',
-    hisash: '하이샤시',
+    aluminum: '알루미늄 창호',
     system: '시스템창호',
   };
   return names[type];

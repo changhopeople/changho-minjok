@@ -20,7 +20,7 @@ export const MAIN_NAV: NavItem[] = [
     href: '/products',
     children: [
       { title: 'PVC 창호', href: '/products/pvc' },
-      { title: '하이샤시', href: '/products/hisash' },
+      { title: '알루미늄 창호', href: '/products/aluminum' },
       { title: '시스템창호', href: '/products/system' },
       { title: '유리 종류', href: '/products/glass' },
       { title: 'TPS 단열간봉', href: '/products/tps' },
@@ -55,7 +55,7 @@ export const FOOTER_LINKS = {
   ],
   products: [
     { title: 'PVC 창호', href: '/products/pvc' },
-    { title: '하이샤시', href: '/products/hisash' },
+    { title: '알루미늄 창호', href: '/products/aluminum' },
     { title: '시스템창호', href: '/products/system' },
   ],
   support: [

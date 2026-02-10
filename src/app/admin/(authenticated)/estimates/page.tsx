@@ -24,7 +24,7 @@ const buildingTypeLabels: Record<string, string> = {
 
 const frameTypeLabels: Record<string, string> = {
   system: '시스템창호',
-  haisashi: '하이샤시',
+  aluminum: '알루미늄 창호',
   pvc: 'PVC창호',
 };
 

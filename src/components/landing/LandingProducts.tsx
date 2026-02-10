@@ -56,7 +56,7 @@ const recommendations = [
   {
     id: 5,
     name: '프리미엄 올인원',
-    subtitle: '하이샤시 + 로이이중유리',
+    subtitle: '알루미늄 창호 + 로이이중유리',
     description: '최고급 사양으로 확실하게 바꾸고 싶은 분',
     icon: Crown,
     features: ['넓은 채광', '최상급 단열', '프리미엄 마감'],

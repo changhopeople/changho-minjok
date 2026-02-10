@@ -5,7 +5,7 @@ export type BuildingType = 'apartment' | 'villa' | 'house' | 'commercial' | 'fac
 export type ScopeType = 'full' | 'partial';
 
 // 프레임 종류
-export type FrameType = 'pvc_standard' | 'pvc_premium' | 'hisash' | 'system';
+export type FrameType = 'pvc_standard' | 'pvc_premium' | 'aluminum' | 'system';
 
 // 유리 종류
 export type GlassType = 'double_22' | 'double_24' | 'lowe_24' | 'triple_39';

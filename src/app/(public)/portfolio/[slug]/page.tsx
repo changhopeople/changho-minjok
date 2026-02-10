@@ -144,7 +144,7 @@ export default async function PortfolioDetailPage({ params }: PageProps) {
 
   const productColors: Record<string, { bg: string; text: string }> = {
     '시스템창호': { bg: 'bg-amber-100', text: 'text-amber-700' },
-    '하이샤시': { bg: 'bg-emerald-100', text: 'text-emerald-700' },
+    '알루미늄 창호': { bg: 'bg-emerald-100', text: 'text-emerald-700' },
     'PVC창호': { bg: 'bg-sky-100', text: 'text-sky-700' },
     '이중창': { bg: 'bg-violet-100', text: 'text-violet-700' },
   };

@@ -51,7 +51,7 @@ const portfolios = [
 
 const productColors: Record<string, string> = {
   '시스템창호': 'bg-amber-500',
-  '하이샤시': 'bg-emerald-500',
+  '알루미늄 창호': 'bg-emerald-500',
   'PVC창호': 'bg-sky-500',
   '이중창': 'bg-violet-500',
 };

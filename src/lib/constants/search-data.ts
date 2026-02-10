@@ -67,11 +67,11 @@ export const SEARCH_DATA: SearchItem[] = [
     keywords: ['PVC', '피브이씨', '창호', '창문', '단열', '경제적'],
   },
   {
-    title: '하이샤시',
-    description: '프리미엄 하이샤시 제품',
-    href: '/products/hisash',
+    title: '알루미늄 창호',
+    description: '내구성과 슬림 디자인의 알루미늄 창호',
+    href: '/products/aluminum',
     category: '제품',
-    keywords: ['하이샤시', '샤시', '새시', '프리미엄'],
+    keywords: ['알루미늄', '알루미늄창호', '샤시', '새시', '내구성'],
   },
   {
     title: '시스템창호',

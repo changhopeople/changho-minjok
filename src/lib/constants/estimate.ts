@@ -22,7 +22,7 @@ export const FLOOR_SIZES = [
 export const FRAME_TYPES: { value: FrameType; label: string; description: string; priceLevel: number }[] = [
   { value: 'pvc_standard', label: 'PVC 일반', description: '가성비 기본 사양', priceLevel: 1 },
   { value: 'pvc_premium', label: 'PVC 고급', description: '단열 성능 강화', priceLevel: 2 },
-  { value: 'hisash', label: '하이샤시', description: 'AL+PVC 복합, 내구성+단열', priceLevel: 3 },
+  { value: 'aluminum', label: '알루미늄 창호', description: '내구성+슬림 디자인', priceLevel: 3 },
   { value: 'system', label: '시스템창호', description: '최고급 기밀·단열', priceLevel: 4 },
 ];
 
@@ -68,7 +68,7 @@ export const PRICE_TABLE = {
   frame: {
     pvc_standard: 85000,
     pvc_premium: 120000,
-    hisash: 180000,
+    aluminum: 180000,
     system: 250000,
   },
   glass: {

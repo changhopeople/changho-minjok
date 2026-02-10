@@ -16,12 +16,12 @@ const products = [
     image: '/images/products/pvc-window.png',
   },
   {
-    slug: 'hisash',
-    name: '하이샤시',
-    description: '알루미늄과 PVC의 장점을 결합한 복합 창호',
-    features: ['내구성 강화', '단열+강도', '고급 디자인'],
+    slug: 'aluminum',
+    name: '알루미늄 창호',
+    description: '내구성과 슬림 디자인이 뛰어난 알루미늄 창호',
+    features: ['뛰어난 내구성', '슬림 디자인', '넓은 채광'],
     color: 'bg-[#FF6F0F]',
-    image: '/images/products/hisash-window.png',
+    image: '/images/products/aluminum-window.png',
   },
   {
     slug: 'system',

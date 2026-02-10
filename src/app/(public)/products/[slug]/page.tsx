@@ -35,24 +35,24 @@ const products: Record<string, {
     color: 'sky',
     image: '/images/products/pvc-window.png',
   },
-  hisash: {
-    name: '하이샤시',
-    subtitle: '알루미늄과 PVC의 완벽한 조화',
-    description: '하이샤시는 외부는 알루미늄, 내부는 PVC로 구성된 복합 창호입니다. 알루미늄의 내구성과 PVC의 단열성을 동시에 갖추어, 오래 사용해도 변형 없이 뛰어난 성능을 유지합니다.',
-    features: ['AL+PVC 복합 구조', '뛰어난 내구성', '향상된 단열성능', '세련된 디자인', '다양한 개폐 방식', '긴 수명'],
+  aluminum: {
+    name: '알루미늄 창호',
+    subtitle: '뛰어난 내구성과 세련된 디자인',
+    description: '알루미늄 창호는 가볍고 강한 알루미늄 프레임을 사용하여 내구성이 뛰어나고 변형이 거의 없습니다. 슬림한 프레임 디자인으로 넓은 유리면을 확보해 개방감이 우수하며, 다양한 컬러와 마감으로 모던한 인테리어에 잘 어울립니다.',
+    features: ['뛰어난 내구성', '슬림 프레임 디자인', '넓은 채광면', '다양한 컬러', '다양한 개폐 방식', '긴 수명'],
     specs: [
-      { label: '프레임 구조', value: 'AL + PVC 복합' },
+      { label: '프레임 소재', value: '알루미늄' },
       { label: '유리', value: '복층/삼중 유리' },
       { label: '열관류율', value: '0.9 ~ 1.2 W/m²K' },
       { label: '기밀성', value: '1등급' },
     ],
     advantages: [
-      { title: '복합 소재', description: '알루미늄의 강도와 PVC의 단열성을 모두 갖췄습니다.' },
+      { title: '뛰어난 내구성', description: '알루미늄의 높은 강도로 오래 사용해도 변형이 없습니다.' },
       { title: '슬림 프레임', description: '더 넓은 유리면으로 개방감을 극대화합니다.' },
       { title: '고급 외관', description: '세련된 디자인으로 건물의 가치를 높입니다.' },
     ],
     color: 'emerald',
-    image: '/images/products/hisash-window.png',
+    image: '/images/products/aluminum-window.png',
   },
   system: {
     name: '시스템창호',
@@ -71,7 +71,7 @@ const products: Record<string, {
       { title: '프리미엄 품질', description: '유럽 인증을 받은 최고급 자재만 사용합니다.' },
     ],
     color: 'amber',
-    image: '/images/products/system-window.png',
+    image: '/images/products/hisash-window.png',
   },
   glass: {
     name: '유리 종류',
