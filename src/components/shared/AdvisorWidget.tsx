@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ShieldCheck, ShieldX, Search, X } from 'lucide-react';
 import { searchStaff, StaffMember } from '@/lib/constants/staff';
@@ -10,10 +11,14 @@ type SearchResult =
   | { status: 'found'; member: StaffMember }
   | { status: 'not_found' };
 
-export default function AdvisorWidget() {
+export default function AdvisorWidget({ embedded = false }: { embedded?: boolean }) {
   const [isOpen, setIsOpen] = useState(false);
   const [query, setQuery] = useState('');
   const [result, setResult] = useState<SearchResult>({ status: 'idle' });
+  const pathname = usePathname();
+
+  // 랜딩 페이지에서는 FloatingCTA에 embedded로 포함되므로 standalone 숨김
+  if (!embedded && pathname === '/landing') return null;
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
@@ -33,8 +38,8 @@ export default function AdvisorWidget() {
     setResult({ status: 'idle' });
   };
 
-  return (
-    <div className="fixed bottom-20 right-4 md:bottom-28 md:right-8 z-50">
+  const widgetContent = (
+    <>
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -42,7 +47,7 @@ export default function AdvisorWidget() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 10, scale: 0.95 }}
             transition={{ duration: 0.2 }}
-            className="absolute bottom-16 right-0 w-[calc(100vw-2rem)] sm:w-80 bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden"
+            className="absolute bottom-14 right-0 w-[calc(100vw-2rem)] sm:w-80 bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden"
           >
             {/* Header */}
             <div className="flex items-center justify-between px-5 py-3.5 bg-[#2AC1BC] border-b border-[#24ADA8]">
@@ -154,6 +159,18 @@ export default function AdvisorWidget() {
         <ShieldCheck className="w-5 h-5" />
         어드바이저 조회
       </motion.button>
+    </>
+  );
+
+  // embedded 모드: FloatingCTA 스택 안에서 relative로 렌더링
+  if (embedded) {
+    return <div className="relative">{widgetContent}</div>;
+  }
+
+  // standalone 모드: 다른 페이지에서 고정 위치로 렌더링
+  return (
+    <div className="fixed bottom-20 right-4 md:bottom-28 md:right-8 z-50">
+      {widgetContent}
     </div>
   );
 }

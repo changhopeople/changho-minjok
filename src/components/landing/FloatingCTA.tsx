@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Phone, MessageCircle, X, ArrowUp } from 'lucide-react';
 import { COMPANY_INFO } from '@/lib/constants/navigation';
+import AdvisorWidget from '@/components/shared/AdvisorWidget';
 
 export default function FloatingCTA() {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -43,15 +44,16 @@ export default function FloatingCTA() {
         </div>
       </div>
 
-      {/* Desktop Floating Buttons */}
-      <div className="hidden md:block fixed bottom-8 right-8 z-50">
+      {/* Desktop Floating Buttons - flex column 스택으로 겹침 방지 */}
+      <div className="hidden md:flex fixed bottom-8 right-8 z-50 flex-col items-end gap-3">
+        {/* Expanded: Phone + KakaoTalk */}
         <AnimatePresence>
           {isExpanded && (
             <motion.div
               initial={{ opacity: 0, y: 20, scale: 0.9 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 20, scale: 0.9 }}
-              className="absolute bottom-20 right-0 flex flex-col gap-3 mb-3"
+              className="flex flex-col gap-3"
             >
               {/* Phone Button */}
               <a
@@ -75,6 +77,9 @@ export default function FloatingCTA() {
             </motion.div>
           )}
         </AnimatePresence>
+
+        {/* Advisor Widget - 항상 표시, 스택 내 자동 배치 */}
+        <AdvisorWidget embedded />
 
         {/* Main Toggle Button */}
         <motion.button
