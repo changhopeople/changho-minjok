@@ -129,25 +129,28 @@ export default function SupportPage() {
               <p className="text-sm sm:text-base text-gray-600">{COMPANY_INFO.address}</p>
             </div>
 
-            {/* Naver Map Embed */}
-            <a
-              href="https://map.naver.com/p/entry/place/36921531?lng=128.7771773&lat=35.5693645&placePath=/home"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block aspect-video rounded-xl sm:rounded-2xl overflow-hidden relative group"
-            >
+            {/* Map */}
+            <div className="aspect-video rounded-xl sm:rounded-2xl overflow-hidden shadow-lg">
               <iframe
-                src="https://map.naver.com/p/entry/place/36921531?lng=128.7771773&lat=35.5693645&placePath=/home"
-                className="w-full h-full border-0 pointer-events-none"
+                src="https://maps.google.com/maps?q=35.5693645,128.7771773&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                className="w-full h-full border-0"
                 loading="lazy"
-                title="창호의 민족 위치 - 네이버 지도"
+                allowFullScreen
+                referrerPolicy="no-referrer-when-downgrade"
+                title="창호의 민족 위치"
               />
-              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center">
-                <span className="opacity-0 group-hover:opacity-100 transition-opacity bg-white/90 text-gray-900 px-4 py-2 rounded-lg text-sm font-medium shadow-lg">
-                  네이버 지도에서 보기
-                </span>
-              </div>
-            </a>
+            </div>
+            <div className="text-center mt-4">
+              <a
+                href="https://map.naver.com/p/entry/place/36921531?lng=128.7771773&lat=35.5693645&placePath=/home"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-[#2AC1BC] transition-colors"
+              >
+                <span className="font-bold text-green-500">N</span>
+                네이버 지도에서 보기 →
+              </a>
+            </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mt-6 sm:mt-8">
               <div className="text-center">
