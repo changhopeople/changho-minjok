@@ -18,9 +18,8 @@ const brands = [
     name: '창호의민족',
     color: '#2AC1BC',
     before: [
-      { src: '/images/landing/cases/changho/before/1.jpg', alt: '창호의민족 시공 전 1' },
-      { src: '/images/landing/cases/changho/before/2.jpg', alt: '창호의민족 시공 전 2' },
-      { src: '/images/landing/cases/changho/before/3.jpg', alt: '창호의민족 시공 전 3' },
+      { src: '/images/landing/cases/changho/before/2.jpg', alt: '창호의민족 시공 전 1' },
+      { src: '/images/landing/cases/changho/before/3.jpg', alt: '창호의민족 시공 전 2' },
     ],
     after: [
       { src: '/images/landing/cases/changho/after/1.jpg', alt: '창호의민족 시공 후 1' },
@@ -141,7 +140,7 @@ export default function LandingCases() {
                         시공 전
                       </span>
                     </div>
-                    <div className="grid grid-cols-3 gap-2 sm:gap-4">
+                    <div className={`grid gap-2 sm:gap-4 ${brand.before.length === 3 ? 'grid-cols-3' : 'grid-cols-2'}`}>
                       {brand.before.map((img, idx) => (
                         <button
                           key={img.src}

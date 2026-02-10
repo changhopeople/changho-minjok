@@ -101,7 +101,11 @@ export default function LandingPromo() {
               <div className="flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-white/20 rounded-full backdrop-blur-sm">
                 <Clock className="w-4 h-4 text-white" />
                 <span className="text-white text-sm sm:text-base font-bold">
-                  마감까지 <span className="text-yellow-300">{daysLeft}일</span> 남음
+                  {daysLeft > 0 ? (
+                    <>마감까지 <span className="text-yellow-300">{daysLeft}일</span> 남음</>
+                  ) : (
+                    <span className="text-yellow-300">마감 임박!</span>
+                  )}
                 </span>
               </div>
             </div>

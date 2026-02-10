@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { CheckCircle, ArrowRight, Eye, EyeOff, ZoomIn, ChevronLeft, ChevronRight, X } from 'lucide-react';
+import { CheckCircle, ArrowRight, Eye, EyeOff, ZoomIn, ChevronLeft, ChevronRight, X, Play } from 'lucide-react';
 import AnimatedSection from '@/components/shared/AnimatedSection';
 import {
   Dialog,
@@ -21,12 +21,29 @@ const features = [
   'Human Error 제로',
 ];
 
+const FACTORY_VIDEO_ID = 'Wie9aS4jxdQ';
+
 const factoryImages = [
   {
-    label: '공장 내부',
-    thumbnail: '/images/factory/interior-wide.jpg',
+    label: '공장 전경',
+    thumbnail: '/images/factory/new-6.jpg',
     images: [
+      { src: '/images/factory/new-6.jpg', alt: '3,500평 스마트 팩토리 전경' },
+      { src: '/images/factory/new-8.jpg', alt: '공장 내부 생산 라인 전경' },
       { src: '/images/factory/interior-wide.jpg', alt: '공장 내부 전경' },
+    ],
+  },
+  {
+    label: '생산 현장',
+    thumbnail: '/images/factory/new-1.jpg',
+    images: [
+      { src: '/images/factory/new-1.jpg', alt: '프로파일 자동 압출 라인' },
+      { src: '/images/factory/new-9.jpg', alt: '프레임 조립 프레스' },
+      { src: '/images/factory/new-5.jpg', alt: '창호 프레임 조립' },
+      { src: '/images/factory/new-2.jpg', alt: '프로파일 용접 작업' },
+      { src: '/images/factory/new-3.jpg', alt: '프로파일 가공 작업' },
+      { src: '/images/factory/new-4.jpg', alt: '프로파일 절단 작업' },
+      { src: '/images/factory/new-7.jpg', alt: 'PVC 프로파일 적재' },
       { src: '/images/factory/production-floor.jpg', alt: '생산 라인' },
       { src: '/images/factory/automation-line.jpg', alt: '자동화 설비' },
     ],
@@ -46,6 +63,7 @@ export default function LandingFactory() {
   const [modalOpen, setModalOpen] = useState(false);
   const [currentGroup, setCurrentGroup] = useState(0);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [showVideo, setShowVideo] = useState(false);
 
   const openModal = (groupIdx: number) => {
     setCurrentGroup(groupIdx);
@@ -141,16 +159,56 @@ export default function LandingFactory() {
               </AnimatedSection>
             </div>
 
-            {/* Factory Images - 2 Cards */}
+            {/* Factory Media */}
             <AnimatedSection direction="right">
-              <div className="relative mt-6 lg:mt-0 space-y-4">
+              <div className="relative mt-6 lg:mt-0 space-y-3 sm:space-y-4">
+                {/* YouTube Video Card */}
+                <div className="relative aspect-[16/9] rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl">
+                  {showVideo ? (
+                    <iframe
+                      src={`https://www.youtube.com/embed/${FACTORY_VIDEO_ID}?autoplay=1`}
+                      title="창호의 민족 공장 내부 영상"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="absolute inset-0 w-full h-full"
+                    />
+                  ) : (
+                    <button
+                      onClick={() => setShowVideo(true)}
+                      className="block w-full h-full group text-left"
+                    >
+                      <Image
+                        src={`https://img.youtube.com/vi/${FACTORY_VIDEO_ID}/maxresdefault.jpg`}
+                        alt="공장 내부 영상 썸네일"
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-colors flex items-center justify-center">
+                        <motion.div
+                          whileHover={{ scale: 1.1 }}
+                          className="w-14 h-14 sm:w-20 sm:h-20 rounded-full bg-white/90 flex items-center justify-center"
+                        >
+                          <Play className="w-7 h-7 sm:w-10 sm:h-10 text-[#2AC1BC] ml-1" />
+                        </motion.div>
+                      </div>
+                      <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-5 bg-gradient-to-t from-black/80 to-transparent">
+                        <p className="text-white font-bold text-sm sm:text-base">공장 내부 영상</p>
+                        <p className="text-white/70 text-xs sm:text-sm">
+                          클릭하여 영상 재생
+                        </p>
+                      </div>
+                    </button>
+                  )}
+                </div>
+
+                {/* Image Group Cards */}
                 {factoryImages.map((group, groupIdx) => (
                   <button
                     key={group.label}
                     onClick={() => openModal(groupIdx)}
                     className="block w-full group text-left"
                   >
-                    <div className="relative aspect-[16/9] rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl">
+                    <div className="relative aspect-[16/7] rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl">
                       <Image
                         src={group.thumbnail}
                         alt={`창호의 민족 ${group.label}`}
@@ -160,15 +218,15 @@ export default function LandingFactory() {
                       <div className="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-colors flex items-center justify-center">
                         <motion.div
                           whileHover={{ scale: 1.1 }}
-                          className="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-white/90 flex items-center justify-center"
+                          className="w-10 h-10 sm:w-14 sm:h-14 rounded-full bg-white/90 flex items-center justify-center"
                         >
-                          <ZoomIn className="w-6 h-6 sm:w-8 sm:h-8 text-[#2AC1BC]" />
+                          <ZoomIn className="w-5 h-5 sm:w-7 sm:h-7 text-[#2AC1BC]" />
                         </motion.div>
                       </div>
-                      <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-5 bg-gradient-to-t from-black/80 to-transparent">
+                      <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-4 bg-gradient-to-t from-black/80 to-transparent">
                         <p className="text-white font-bold text-sm sm:text-base">{group.label}</p>
                         <p className="text-white/70 text-xs sm:text-sm">
-                          클릭하여 사진 {group.images.length}장 보기
+                          사진 {group.images.length}장 보기
                         </p>
                       </div>
                     </div>
