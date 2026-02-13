@@ -22,39 +22,15 @@ function getCurrentMonth() {
 const promoItems = [
   {
     icon: Sparkles,
-    title: '로이유리 무료 적용',
-    description: '단열 성능 30% UP',
-    value: '20만원 상당',
+    title: '발코니창호 로이유리',
+    description: '단열 성능 UP',
+    value: '무상적용',
   },
   {
     icon: Gift,
-    title: '빨래건조대',
-    description: '천장형 설치',
-    value: '무료',
-  },
-  {
-    icon: Gift,
-    title: '탄성코트',
-    description: '베란다 마감',
-    value: '무료',
-  },
-  {
-    icon: Gift,
-    title: '베란다장',
-    description: '수납장 설치',
-    value: '무료',
-  },
-  {
-    icon: Gift,
-    title: '단열작업',
-    description: '베란다 단열',
-    value: '무료',
-  },
-  {
-    icon: Gift,
-    title: '베란다 하부 타일',
-    description: '바닥 마감',
-    value: '무료',
+    title: '발코니창호 아르곤 가스',
+    description: '단열 가스 충전',
+    value: '무상적용',
   },
 ];
 
