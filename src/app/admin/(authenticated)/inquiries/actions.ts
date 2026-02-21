@@ -10,6 +10,7 @@ import {
   resumeFunnel,
   stopFunnel,
   getStepsByTemplateId,
+  updateCustomerFunnel,
 } from '@/lib/funnel-db';
 import { initializeFunnel } from '@/lib/funnel-processor';
 
@@ -84,7 +85,14 @@ export async function resumeFunnelAction(formData: FormData) {
 
   if (!funnelId) return;
 
-  await resumeFunnel(funnelId);
+  const resumed = await resumeFunnel(funnelId);
+
+  // next_send_at이 null이면 Cron이 잡을 수 없으므로 즉시 발송되도록 설정
+  if (resumed && !resumed.next_send_at) {
+    await updateCustomerFunnel(funnelId, {
+      next_send_at: new Date().toISOString(),
+    });
+  }
 
   revalidatePath('/admin/inquiries');
   if (inquiryId) revalidatePath(`/admin/inquiries/${inquiryId}`);

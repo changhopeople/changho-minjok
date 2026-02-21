@@ -45,6 +45,18 @@ export async function processPendingFunnels(): Promise<ProcessResult> {
 
   for (const funnel of pendingFunnels) {
     try {
+      // 이중 처리 방지: next_send_at을 null로 설정하여 다른 Cron 실행에서 잡히지 않도록 함
+      const { error: claimError } = await supabase
+        .from('customer_funnels')
+        .update({ next_send_at: null })
+        .eq('id', funnel.id)
+        .eq('next_send_at', funnel.next_send_at); // 낙관적 잠금: 원래 값이 같을 때만 업데이트
+
+      if (claimError) {
+        console.warn(`[funnel-processor] 퍼널 ${funnel.id} 클레임 실패 (이미 다른 프로세스가 처리 중)`);
+        continue;
+      }
+
       result.processed++;
 
       // 2. 해당 퍼널의 스텝 목록 조회

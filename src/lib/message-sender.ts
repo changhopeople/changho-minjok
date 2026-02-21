@@ -33,6 +33,9 @@ export async function sendMessage(
 
 /**
  * 카카오 알림톡 발송
+ * - templateCode: 카카오에 사전 등록된 템플릿 코드
+ * - message: 실제 메시지 본문 (템플릿과 일치해야 함)
+ * - title: 강조 제목
  */
 async function sendViaKakao(
   phone: string,
@@ -40,16 +43,11 @@ async function sendViaKakao(
   message: string,
   linkUrl?: string
 ): Promise<SendResult> {
-  // 알림톡은 사전 등록된 템플릿 코드가 필요함
-  // 여기서는 범용 알림 템플릿을 사용 (비즈메시지에서 사전 등록 필요)
   const result = await sendAlimtalk({
     phone,
-    templateCode: 'changho_funnel_msg',
-    variables: {
-      title,
-      message,
-      ...(linkUrl && { link: linkUrl }),
-    },
+    templateCode: process.env.KAKAO_BIZM_TEMPLATE_CODE || 'changho_funnel_msg',
+    message,
+    title,
     linkUrl,
   });
 

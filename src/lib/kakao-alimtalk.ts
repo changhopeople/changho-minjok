@@ -5,7 +5,8 @@ const BIZM_API_URL = 'https://alimtalk-api.bizmsg.kr';
 interface SendAlimtalkParams {
   phone: string;
   templateCode: string;
-  variables: Record<string, string>;
+  message: string;
+  title?: string;
   linkUrl?: string;
 }
 
@@ -35,11 +36,18 @@ function getConfig() {
 
 /**
  * 카카오 알림톡 발송
+ *
+ * bizmsg API 스펙:
+ * - templateCode: 카카오에 사전 등록된 템플릿 코드
+ * - message: 실제 발송될 메시지 본문 (템플릿과 일치해야 함)
+ * - title: 메시지 강조 제목 (선택)
+ * - button: 버튼 목록 (선택)
  */
 export async function sendAlimtalk({
   phone,
   templateCode,
-  variables,
+  message,
+  title,
   linkUrl,
 }: SendAlimtalkParams): Promise<AlimtalkResponse> {
   const config = getConfig();
@@ -55,25 +63,27 @@ export async function sendAlimtalk({
   // 전화번호 정규화 (하이픈 제거, 국가코드 추가)
   const normalizedPhone = phone.replace(/-/g, '').replace(/^0/, '82');
 
-  const body = {
+  const body: Record<string, unknown> = {
     senderKey: config.senderKey,
     templateCode,
     receiver: normalizedPhone,
-    message: Object.entries(variables).reduce(
-      (msg, [key, value]) => msg.replace(`#{${key}}`, value),
-      templateCode
-    ),
-    ...(linkUrl && {
-      button: [
-        {
-          name: '자세히 보기',
-          type: 'WL',
-          url_mobile: linkUrl,
-          url_pc: linkUrl,
-        },
-      ],
-    }),
+    message,
   };
+
+  if (title) {
+    body.title = title;
+  }
+
+  if (linkUrl) {
+    body.button = [
+      {
+        name: '자세히 보기',
+        type: 'WL',
+        url_mobile: linkUrl,
+        url_pc: linkUrl,
+      },
+    ];
+  }
 
   try {
     const response = await fetch(`${BIZM_API_URL}/v2/sender/send`, {
