@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useEffect, useState } from 'react';
+import { useRef, useEffect, useState, useCallback } from 'react';
 import { useInView, motion } from 'framer-motion';
 import { Play, ArrowRight, CheckCircle } from 'lucide-react';
 import AnimatedSection from '@/components/shared/AnimatedSection';
@@ -56,6 +56,8 @@ function CountUp({ end, suffix }: { end: number; suffix: string }) {
 }
 
 export default function SmartFactorySection() {
+  const [showVideo, setShowVideo] = useState(false);
+
   return (
     <section className="relative py-16 md:py-24 lg:py-32 bg-[#1E1E1E] overflow-hidden">
       {/* Background Pattern */}
@@ -132,21 +134,41 @@ export default function SmartFactorySection() {
 
           {/* Factory Images & Stats */}
           <div>
-            {/* Factory Aerial Image */}
+            {/* Factory YouTube Video */}
             <AnimatedSection direction="right">
-              <Link href="/about/factory" className="block relative aspect-[16/10] rounded-xl md:rounded-2xl overflow-hidden mb-4 md:mb-6 shadow-2xl group">
-                <Image
-                  src="/images/trust/factory-aerial.jpg"
-                  alt="창호의 민족 공장 항공 전경"
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6">
-                  <p className="text-white font-bold text-base md:text-lg">3,500평 규모 스마트 팩토리</p>
-                  <p className="text-white/80 text-xs md:text-sm">경상북도 청도군 소재</p>
-                </div>
-              </Link>
+              <div className="relative aspect-[16/10] rounded-xl md:rounded-2xl overflow-hidden mb-4 md:mb-6 shadow-2xl">
+                {showVideo ? (
+                  <iframe
+                    src="https://www.youtube.com/embed/Wie9aS4jxdQ?autoplay=1&rel=0"
+                    title="창호의민족 스마트 팩토리 소개"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="absolute inset-0 w-full h-full"
+                  />
+                ) : (
+                  <button
+                    onClick={() => setShowVideo(true)}
+                    className="block w-full h-full relative group cursor-pointer"
+                  >
+                    <Image
+                      src="https://img.youtube.com/vi/Wie9aS4jxdQ/maxresdefault.jpg"
+                      alt="창호의 민족 공장 영상 썸네일"
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-white/90 flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
+                        <Play className="w-8 h-8 md:w-10 md:h-10 text-[#2AC1BC] ml-1" />
+                      </div>
+                    </div>
+                    <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6">
+                      <p className="text-white font-bold text-base md:text-lg">3,500평 규모 스마트 팩토리</p>
+                      <p className="text-white/80 text-xs md:text-sm">영상으로 공장 둘러보기</p>
+                    </div>
+                  </button>
+                )}
+              </div>
             </AnimatedSection>
 
             {/* Stats Grid */}

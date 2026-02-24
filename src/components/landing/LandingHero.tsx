@@ -8,7 +8,7 @@ import { COMPANY_INFO } from '@/lib/constants/navigation';
 
 const stats = [
   { number: '200', unit: '만원+', label: '평균 절약 금액' },
-  { number: '5,000', unit: '+', label: '세대 시공 완료' },
+  { number: '15,000', unit: '+', label: '세대 시공 완료' },
   { number: '10', unit: '년', label: '무상 A/S 보증' },
 ];
 
@@ -75,7 +75,7 @@ export default function LandingHero() {
             <span className="text-white/70 text-sm sm:text-base md:text-lg">
               중간 유통상 빼고, 3,500평 공장에서 바로 고객님 집으로.
               <br className="hidden sm:block" />
-              <span className="text-white font-semibold">5,000가구+</span>가 평균 <span className="text-[#FF6F0F] font-bold">203만원</span> 절약했습니다.
+              <span className="text-white font-semibold">15,000가구+</span>가 평균 <span className="text-[#FF6F0F] font-bold">203만원</span> 절약했습니다.
             </span>
           </motion.p>
 
@@ -116,7 +116,7 @@ export default function LandingHero() {
               className="h-14 sm:h-16 px-6 sm:px-10 bg-[#FF6F0F] hover:bg-[#E5630D] text-white rounded-2xl font-bold text-base sm:text-xl shadow-lg shadow-[#FF6F0F]/30 group relative overflow-hidden"
             >
               <a href="#contact-form" className="flex items-center justify-center gap-2 sm:gap-3">
-                <span className="relative z-10">30초 만에 내 집 견적 확인</span>
+                <span className="relative z-10">내 집 견적 확인하기</span>
                 <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6 group-hover:translate-x-1 transition-transform relative z-10" />
               </a>
             </Button>

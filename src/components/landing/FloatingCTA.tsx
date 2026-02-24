@@ -39,7 +39,7 @@ export default function FloatingCTA() {
             href="#contact-form"
             className="flex-1 flex items-center justify-center gap-1.5 sm:gap-2 h-12 sm:h-14 bg-[#FF6F0F] text-white rounded-lg sm:rounded-xl font-bold text-sm sm:text-base shadow-lg shadow-[#FF6F0F]/30"
           >
-            30초 견적 받기
+            무료 견적 받기
           </a>
         </div>
       </div>

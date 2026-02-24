@@ -41,7 +41,7 @@ export default function CoreValuesSection() {
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#1E1E1E] mb-6 tracking-tight">
             제조-영업-시공
             <br />
-            <span className="text-[#2AC1BC]">원스톱 서비스</span>
+            <span className="text-[#FF6F0F]">원스톱 서비스</span>
           </h2>
           <p className="text-lg text-[#767676] leading-relaxed">
             창호의 민족은 제조부터 시공까지 모든 과정을 직접 책임집니다.
@@ -55,15 +55,15 @@ export default function CoreValuesSection() {
           {values.map((value, index) => (
             <AnimatedSection key={value.title} delay={index * 0.1}>
               <Link href={value.href} className="group block h-full">
-                <div className="relative h-full bg-white rounded-3xl p-6 md:p-8 lg:p-10 border-2 border-[#EEEEEE] hover:border-[#2AC1BC] transition-all duration-300 hover:-translate-y-2">
+                <div className="relative h-full bg-white rounded-3xl p-6 md:p-8 lg:p-10 border-2 border-[#EEEEEE] hover:border-[#FF6F0F] transition-all duration-300 hover:-translate-y-2">
                   {/* Number */}
-                  <span className="absolute top-4 right-4 md:top-6 md:right-6 text-5xl md:text-7xl font-extrabold text-[#F5F5F5] group-hover:text-[#E8F8F7] transition-colors select-none">
+                  <span className="absolute top-4 right-4 md:top-6 md:right-6 text-5xl md:text-7xl font-extrabold text-[#F5F5F5] group-hover:text-[#FFF3EB] transition-colors select-none">
                     {value.number}
                   </span>
 
                   {/* Icon */}
-                  <div className="relative w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-[#E8F8F7] flex items-center justify-center mb-5 md:mb-6 group-hover:bg-[#2AC1BC] transition-colors">
-                    <value.icon className="h-7 w-7 md:h-8 md:w-8 text-[#2AC1BC] group-hover:text-white transition-colors" />
+                  <div className="relative w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-[#FFF3EB] flex items-center justify-center mb-5 md:mb-6 group-hover:bg-[#FF6F0F] transition-colors">
+                    <value.icon className="h-7 w-7 md:h-8 md:w-8 text-[#FF6F0F] group-hover:text-white transition-colors" />
                   </div>
 
                   {/* Content */}
@@ -79,14 +79,14 @@ export default function CoreValuesSection() {
                     </p>
 
                     {/* Arrow Link */}
-                    <div className="flex items-center gap-2 text-[#2AC1BC] font-bold">
+                    <div className="flex items-center gap-2 text-[#FF6F0F] font-bold">
                       <span className="text-sm">자세히 보기</span>
                       <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </div>
                   </div>
 
                   {/* Bottom Line */}
-                  <div className="absolute bottom-0 left-6 right-6 md:left-8 md:right-8 h-1 rounded-full bg-[#2AC1BC] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+                  <div className="absolute bottom-0 left-6 right-6 md:left-8 md:right-8 h-1 rounded-full bg-[#FF6F0F] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
                 </div>
               </Link>
             </AnimatedSection>

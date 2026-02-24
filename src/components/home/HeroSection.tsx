@@ -3,9 +3,8 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { ArrowRight, Phone, Factory, Award, Users, Play } from 'lucide-react';
+import { ArrowRight, Factory, Award, Users, Play } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { COMPANY_INFO } from '@/lib/constants/navigation';
 
 const stats = [
   { icon: Factory, number: '3,500', unit: '평', label: '스마트 팩토리' },
@@ -19,16 +18,16 @@ export default function HeroSection() {
       {/* Full-screen Background Image */}
       <div className="absolute inset-0">
         <Image
-          src="/images/trust/factory-aerial.jpg"
-          alt="창호의 민족 스마트 팩토리 전경"
+          src="/images/hero-logo-bg.png"
+          alt="창호의민족 브랜드 로고"
           fill
           className="object-cover"
           priority
         />
         {/* Dark Overlay with Gradient */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40" />
-        {/* Accent Color Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#2AC1BC]/20 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30" />
+        {/* Subtle vignette */}
+        <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-transparent" />
       </div>
 
       {/* Content */}
@@ -100,10 +99,10 @@ export default function HeroSection() {
               <Button
                 asChild
                 size="lg"
-                className="h-14 md:h-16 px-8 md:px-10 bg-[#2AC1BC] hover:bg-[#1FA9A5] text-white rounded-2xl font-bold text-lg md:text-xl shadow-lg shadow-[#2AC1BC]/30"
+                className="h-14 md:h-16 px-8 md:px-10 bg-[#FF6F0F] hover:bg-[#E5630D] text-white rounded-2xl font-bold text-lg md:text-xl shadow-lg shadow-[#FF6F0F]/30"
               >
                 <Link href="/estimate" className="flex items-center gap-3">
-                  30초 무료 견적
+                  온라인 견적 받기
                   <ArrowRight className="w-5 h-5 md:w-6 md:h-6" />
                 </Link>
               </Button>
@@ -112,10 +111,10 @@ export default function HeroSection() {
                 size="lg"
                 className="h-14 md:h-16 px-8 md:px-10 bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white hover:bg-white hover:text-[#1E1E1E] rounded-2xl font-bold text-lg md:text-xl"
               >
-                <a href={`tel:${COMPANY_INFO.phone}`} className="flex items-center gap-3">
-                  <Phone className="w-5 h-5 md:w-6 md:h-6" />
-                  전화 상담
-                </a>
+                <Link href="/about/factory" className="flex items-center gap-3">
+                  <Play className="w-5 h-5 md:w-6 md:h-6" />
+                  공장 둘러보기
+                </Link>
               </Button>
             </motion.div>
           </motion.div>

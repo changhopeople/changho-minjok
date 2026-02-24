@@ -33,7 +33,7 @@ export default function StickyHeader() {
           <div className="container mx-auto px-4 lg:px-8">
             <div className="flex items-center justify-between h-16 md:h-20">
               {/* Logo */}
-              <Link href="/landing" className="flex items-center gap-2">
+              <Link href="/" className="flex items-center gap-2">
                 <div className="w-8 h-8 md:w-10 md:h-10 rounded-xl bg-[#2AC1BC] flex items-center justify-center text-white font-extrabold text-lg md:text-xl">
                   창
                 </div>
@@ -73,7 +73,7 @@ export default function StickyHeader() {
                   className="h-11 px-5 md:px-6 bg-[#FF6F0F] hover:bg-[#E5630D] text-white rounded-xl font-bold shadow-lg shadow-[#FF6F0F]/20"
                 >
                   <a href="#contact-form" className="flex items-center gap-2">
-                    30초 견적 받기
+                    무료 견적 받기
                     <ArrowRight className="w-4 h-4 hidden md:block" />
                   </a>
                 </Button>

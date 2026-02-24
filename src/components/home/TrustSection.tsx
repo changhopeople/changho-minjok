@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { Shield, Award, Building2, FileCheck } from 'lucide-react';
+import { Shield, Award, Building2, FileCheck, Rocket } from 'lucide-react';
 import AnimatedSection from '@/components/shared/AnimatedSection';
 
 const certifications = [
@@ -29,6 +29,18 @@ const certifications = [
     description: '하자 발생 시 무상 A/S',
     detail: '제조사 직접 책임',
   },
+  {
+    icon: Rocket,
+    title: '벤처기업 인증',
+    description: '기술 혁신형 벤처기업',
+    detail: '중소벤처기업부 인증',
+  },
+  {
+    icon: Award,
+    title: '현경시스템 Star Plus',
+    description: '현경시스템 공식 인증',
+    detail: '품질 우수 업체',
+  },
 ];
 
 export default function TrustSection() {
@@ -36,11 +48,11 @@ export default function TrustSection() {
     <section className="py-20 md:py-28 bg-gradient-to-b from-gray-50 to-white">
       <div className="container mx-auto px-4 lg:px-8">
         <AnimatedSection className="text-center mb-16">
-          <span className="inline-block px-4 py-2 bg-[#2AC1BC]/10 text-[#2AC1BC] rounded-full text-sm font-bold mb-6">
+          <span className="inline-block px-4 py-2 bg-blue-50 text-blue-600 rounded-full text-sm font-bold mb-6">
             Trust & Certification
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#1E1E1E] mb-4">
-            믿을 수 있는 <span className="text-[#2AC1BC]">공인된 업체</span>
+            믿을 수 있는 <span className="text-blue-600">공인된 업체</span>
           </h2>
           <p className="text-[#767676] text-lg max-w-2xl mx-auto">
             (주)현경시스템은 정식 건설업 등록 업체이며,
@@ -78,6 +90,32 @@ export default function TrustSection() {
                   <p className="text-white/80 text-[10px] md:text-xs">e-MAX Club 회원사</p>
                 </div>
               </div>
+              <div className="relative aspect-[3/4] rounded-xl md:rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                <Image
+                  src="/images/trust/ks-certificate.jpg"
+                  alt="KS 인증서"
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-3 md:p-4">
+                  <p className="text-white font-bold text-xs md:text-sm">KS 인증서</p>
+                  <p className="text-white/80 text-[10px] md:text-xs">한국산업표준 인증</p>
+                </div>
+              </div>
+              <div className="relative aspect-[3/4] rounded-xl md:rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                <Image
+                  src="/images/trust/hyunkyung-certificate.jpg"
+                  alt="현경시스템 인증서"
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-3 md:p-4">
+                  <p className="text-white font-bold text-xs md:text-sm">현경시스템 인증서</p>
+                  <p className="text-white/80 text-[10px] md:text-xs">Star Plus 인증</p>
+                </div>
+              </div>
             </div>
           </AnimatedSection>
 
@@ -87,15 +125,15 @@ export default function TrustSection() {
               {certifications.map((cert, index) => (
                 <div
                   key={cert.title}
-                  className="flex items-start gap-3 md:gap-4 p-4 md:p-5 bg-white rounded-xl md:rounded-2xl border-2 border-gray-100 hover:border-[#2AC1BC]/30 hover:shadow-lg transition-all"
+                  className="flex items-start gap-3 md:gap-4 p-4 md:p-5 bg-white rounded-xl md:rounded-2xl border-2 border-gray-100 hover:border-blue-300 hover:shadow-lg transition-all"
                 >
-                  <div className="w-12 h-12 md:w-14 md:h-14 rounded-xl bg-[#2AC1BC]/10 flex items-center justify-center flex-shrink-0">
-                    <cert.icon className="w-6 h-6 md:w-7 md:h-7 text-[#2AC1BC]" />
+                  <div className="w-12 h-12 md:w-14 md:h-14 rounded-xl bg-blue-50 flex items-center justify-center flex-shrink-0">
+                    <cert.icon className="w-6 h-6 md:w-7 md:h-7 text-blue-600" />
                   </div>
                   <div className="min-w-0">
                     <h3 className="font-bold text-[#1E1E1E] text-base md:text-lg mb-0.5 md:mb-1">{cert.title}</h3>
                     <p className="text-[#767676] text-sm md:text-base">{cert.description}</p>
-                    <p className="text-xs md:text-sm text-[#2AC1BC] font-medium mt-1">{cert.detail}</p>
+                    <p className="text-xs md:text-sm text-blue-600 font-medium mt-1">{cert.detail}</p>
                   </div>
                 </div>
               ))}

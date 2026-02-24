@@ -9,7 +9,7 @@ import AnimatedSection from '@/components/shared/AnimatedSection';
 const partners = [
   { name: 'KCC', logo: '/images/partners/kcc-window.png' },
   { name: 'KCC글라스', logo: '/images/partners/kcc-glass.png' },
-  { name: 'LX하우시스', logo: '/images/partners/lx-hausys.jpg' },
+  { name: '휴그린', logo: '/images/partners/hugreen.jpg' },
 ];
 
 const certifications = [
@@ -26,7 +26,7 @@ const certifications = [
   {
     icon: Award,
     title: '공식 파트너',
-    description: 'KCC·KCC글라스·LX하우시스 인증',
+    description: 'KCC·KCC글라스·휴그린 인증',
   },
   {
     icon: Building2,
@@ -36,11 +36,15 @@ const certifications = [
 ];
 
 const timeline = [
-  { year: '2026', event: '창호의민족 자체 브랜드 생산 (OEM/특허권 보유)' },
-  { year: '2024', event: '3,500평 스마트 팩토리 구축 (창호 설비 및 유리라인 자동화 TPS설비보유)' },
-  { year: '2020', event: 'KCC·발코니창호·하나로샷시 대리점 계약' },
-  { year: '2017', event: '복층유리 제작 부문 별도 설립' },
-  { year: '2015', event: '현경시스템 설립 및 창호 제조 사업 개시' },
+  { year: '2026', event: '벤처기업인증' },
+  { year: '2025', event: '프리미엄 브랜드 \'창호의민족\' 출시' },
+  { year: '2024', event: '3500평 스마트 팩토리 구축' },
+  { year: '2023', event: '㈜금호석유화학 휴그린 대리점 체결' },
+  { year: '2021', event: 'KCC글라스 (Homecc) 가공완성창 공식 협력업체 체결' },
+  { year: '2020', event: '법인 전환 ㈜현경시스템 출범' },
+  { year: '2019', event: '㈜KCC 대리점 협약 체결' },
+  { year: '2017', event: '창호&유리 통합형 복층유리 생산 시스템 구축' },
+  { year: '2015', event: '현경창호 설립 PNS 대리점 시작' },
 ];
 
 export default function LandingTrust() {
@@ -109,7 +113,7 @@ export default function LandingTrust() {
           <AnimatedSection direction="right" delay={0.3}>
             <div className="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-8 border-2 border-gray-100 h-full">
               <h3 className="text-lg sm:text-xl font-bold text-[#1E1E1E] mb-5 sm:mb-8">걸어온 길</h3>
-              <div className="space-y-5 sm:space-y-8">
+              <div className="space-y-3 sm:space-y-4">
                 {timeline.map((item, index) => (
                   <motion.div
                     key={item.year}
@@ -125,7 +129,7 @@ export default function LandingTrust() {
                         <div className="w-0.5 h-full bg-gray-200 mt-1.5 sm:mt-2" />
                       )}
                     </div>
-                    <div className="pb-4 sm:pb-8">
+                    <div className="pb-2 sm:pb-3">
                       <span className="inline-block px-2 sm:px-3 py-0.5 sm:py-1 bg-[#E8F8F7] text-[#2AC1BC] text-xs sm:text-sm font-bold rounded-full mb-1.5 sm:mb-2">
                         {item.year}
                       </span>

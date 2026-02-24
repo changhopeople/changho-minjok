@@ -20,11 +20,11 @@ const gasketTypes = [
     highlight: true,
   },
   {
-    title: '대기업 브랜드 (발코니창호)',
+    title: '대기업 브랜드 (KCC·휴그린)',
     subtitle: '창짝 내부 노턴 테이프 + 외부 가스켓',
     badge: '표준 사양',
     badgeColor: 'bg-[#767676]',
-    description: '대기업 브랜드의 표준 사양을 준수하면서도, 시공 효율성과 안정적인 품질을 동시에 확보합니다.',
+    description: '대기업 브랜드 제품은 각 브랜드의 표준 사양을 준수하며, 노턴테이프와 가스켓을 조합한 공법으로 시공합니다.',
     features: [
       { icon: Thermometer, text: '우수한 단열 성능' },
       { icon: Shield, text: '검증된 기밀성' },
@@ -44,12 +44,12 @@ export default function LandingGasketTech() {
             기술 차별화
           </span>
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-3 sm:mb-4 tracking-tight leading-tight">
-            <span className="text-[#2AC1BC]">가스켓 타입</span> 공법의 비밀
+            모든 제품에 <span className="text-[#2AC1BC]">최적의 공법</span>을
           </h2>
           <p className="text-sm sm:text-base md:text-lg text-[#767676] max-w-2xl mx-auto px-2">
-            같은 창호도 마감 공법에 따라 성능이 달라집니다.
+            자체 브랜드부터 대기업 브랜드까지, 모든 제품을 취급합니다.
             <br />
-            <span className="text-white font-semibold">창호의민족은 최상급 마감을 기본으로 합니다.</span>
+            <span className="text-white font-semibold">제품 특성에 맞는 최적의 마감 공법을 적용합니다.</span>
           </p>
         </AnimatedSection>
 
@@ -143,7 +143,7 @@ export default function LandingGasketTech() {
           <div className="inline-flex items-center gap-2 px-4 sm:px-6 py-3 bg-[#2AC1BC]/10 rounded-full">
             <Shield className="w-4 h-4 sm:w-5 sm:h-5 text-[#2AC1BC]" />
             <span className="text-sm sm:text-base text-[#2AC1BC] font-semibold">
-              창호의민족은 제품 특성에 맞는 최적의 공법을 적용합니다
+              자체 브랜드 + 대기업 브랜드, 모든 제품을 한 곳에서 최적의 공법으로
             </span>
           </div>
         </AnimatedSection>

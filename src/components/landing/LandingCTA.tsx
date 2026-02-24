@@ -53,7 +53,7 @@ export default function LandingCTA() {
             지금 상담 가능 · 무료 방문견적
           </span>
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-4 sm:mb-6 tracking-tight leading-tight">
-            30초면 끝,
+            간편하게,
             <br />
             <span className="text-[#2AC1BC]">무료 방문견적 신청</span>
           </h2>
@@ -174,7 +174,7 @@ export default function LandingCTA() {
                     <Phone className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
                   </div>
                   <div>
-                    <p className="text-white/80 text-xs sm:text-sm mb-0.5 sm:mb-1">전화 상담</p>
+                    <p className="text-white/80 text-xs sm:text-sm mb-0.5 sm:mb-1">바로 연결</p>
                     <p className="text-white text-xl sm:text-2xl md:text-3xl font-extrabold">
                       {COMPANY_INFO.phone}
                     </p>

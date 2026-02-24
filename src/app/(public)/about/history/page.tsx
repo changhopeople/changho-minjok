@@ -26,7 +26,7 @@ const history = [
   {
     year: '2023',
     events: [
-      { month: '12월', title: '연간 시공 5,000세대 달성' },
+      { month: '12월', title: '연간 시공 15,000세대 달성' },
       { month: '08월', title: 'KCC글라스 공식 파트너십 체결' },
       { month: '02월', title: '품질경영시스템 ISO 9001 인증' },
     ],

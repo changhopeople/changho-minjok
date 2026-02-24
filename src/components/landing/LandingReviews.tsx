@@ -61,7 +61,7 @@ const reviews = [
 const stats = [
   { number: '4.9', label: '평균 만족도', suffix: '/5.0' },
   { number: '98', label: '재구매 의향', suffix: '%' },
-  { number: '5,000', label: '시공 완료', suffix: '+' },
+  { number: '15,000', label: '시공 완료', suffix: '+' },
 ];
 
 export default function LandingReviews() {
@@ -86,7 +86,7 @@ export default function LandingReviews() {
             Real Reviews
           </span>
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-4 sm:mb-6 tracking-tight leading-tight">
-            <span className="text-[#2AC1BC]">5,000세대</span>가
+            <span className="text-[#2AC1BC]">15,000세대</span>가
             <br className="sm:hidden" />
             선택한 이유
           </h2>
@@ -227,7 +227,7 @@ export default function LandingReviews() {
             href="#contact-form"
             className="inline-flex items-center justify-center gap-2 sm:gap-3 px-5 sm:px-8 py-3 sm:py-4 bg-[#2AC1BC] text-white rounded-xl font-bold text-sm sm:text-lg hover:bg-[#25b0ab] transition-colors w-full sm:w-auto max-w-md mx-auto"
           >
-            5,000번째 만족 고객 되기
+            15,000번째 만족 고객 되기
             <span className="text-white/80">→</span>
           </a>
           <p className="text-xs sm:text-sm text-gray-500 mt-3">

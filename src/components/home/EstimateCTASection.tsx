@@ -7,13 +7,13 @@ import AnimatedSection from '@/components/shared/AnimatedSection';
 
 const features = [
   { icon: Calculator, text: '실시간 견적 계산', description: 'AI 기반 정확한 계산' },
-  { icon: Clock, text: '30초 만에 완료', description: '간편한 6단계' },
+  { icon: Clock, text: '간편한 6단계', description: '누구나 쉽게' },
   { icon: CheckCircle, text: '무료 견적', description: '부담 없이 확인' },
 ];
 
 export default function EstimateCTASection() {
   return (
-    <section className="relative py-16 md:py-24 lg:py-32 bg-[#2AC1BC] overflow-hidden">
+    <section className="relative py-16 md:py-24 lg:py-32 bg-[#FF6F0F] overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0" style={{
@@ -46,7 +46,7 @@ export default function EstimateCTASection() {
 
             <AnimatedSection delay={0.1}>
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 tracking-tight">
-                30초 만에
+                간편하게
                 <br />
                 예상 견적 확인
               </h2>
@@ -74,8 +74,8 @@ export default function EstimateCTASection() {
                   className="group p-6 bg-white/10 backdrop-blur-sm border-2 border-white/20 rounded-2xl hover:bg-white/20 transition-all duration-300"
                 >
                   <div className="flex items-center gap-4">
-                    <div className="w-14 h-14 rounded-xl bg-white/20 flex items-center justify-center group-hover:bg-white group-hover:text-[#2AC1BC] transition-colors">
-                      <feature.icon className="w-7 h-7 text-white group-hover:text-[#2AC1BC]" />
+                    <div className="w-14 h-14 rounded-xl bg-white/20 flex items-center justify-center group-hover:bg-white group-hover:text-[#FF6F0F] transition-colors">
+                      <feature.icon className="w-7 h-7 text-white group-hover:text-[#FF6F0F]" />
                     </div>
                     <div>
                       <h3 className="text-white font-bold text-lg mb-0.5">{feature.text}</h3>
@@ -94,7 +94,7 @@ export default function EstimateCTASection() {
               className="group inline-flex items-center gap-3 md:gap-4 px-6 md:px-10 py-4 md:py-5 bg-[#1E1E1E] text-white rounded-xl md:rounded-2xl font-bold text-base md:text-lg hover:bg-[#292929] transition-all duration-300"
             >
               지금 바로 견적 받기
-              <div className="w-10 h-10 md:w-12 md:h-12 rounded-lg md:rounded-xl bg-[#2AC1BC] flex items-center justify-center group-hover:scale-110 transition-transform">
+              <div className="w-10 h-10 md:w-12 md:h-12 rounded-lg md:rounded-xl bg-[#FF6F0F] flex items-center justify-center group-hover:scale-110 transition-transform">
                 <ArrowRight className="w-5 h-5 md:w-6 md:h-6" />
               </div>
             </Link>
