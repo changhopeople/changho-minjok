@@ -137,14 +137,19 @@ export default function HeroSection() {
                   </div>
                 </div>
 
-                {/* Brand Logo Image */}
+                {/* Factory Preview Image */}
                 <div className="relative aspect-[16/10] rounded-xl overflow-hidden mb-5">
                   <Image
-                    src="/images/hero-logo-bg.png"
-                    alt="창호의민족 브랜드 로고"
+                    src="/images/factory/automation-line.jpg"
+                    alt="창호 생산 라인"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
+                  <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
+                    <div className="w-14 h-14 rounded-full bg-white/90 flex items-center justify-center group-hover:scale-110 transition-transform">
+                      <Play className="w-7 h-7 text-[#2AC1BC] ml-0.5" />
+                    </div>
+                  </div>
                 </div>
 
                 {/* Trust Points */}
