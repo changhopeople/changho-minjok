@@ -36,15 +36,15 @@ export default function Header() {
       )}
     >
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="flex items-center justify-between h-16 lg:h-20">
+        <div className="flex items-center justify-between h-20 lg:h-24">
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <Image
               src="/images/logo-character.png"
               alt="창호의민족"
-              width={240}
-              height={160}
-              className="h-14 lg:h-16 w-auto object-contain"
+              width={300}
+              height={200}
+              className="h-[72px] lg:h-[88px] w-auto object-contain"
               priority
             />
           </Link>
@@ -151,9 +151,9 @@ export default function Header() {
                       <Image
                         src="/images/logo-character.png"
                         alt="창호의민족"
-                        width={210}
-                        height={140}
-                        className="h-14 w-auto object-contain"
+                        width={270}
+                        height={180}
+                        className="h-[72px] w-auto object-contain"
                       />
                     </Link>
                   </div>
