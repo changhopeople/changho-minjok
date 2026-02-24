@@ -98,8 +98,8 @@ export default function LandingTrust() {
                     viewport={{ once: true }}
                     className="bg-white rounded-xl sm:rounded-2xl p-3 sm:p-5 border-2 border-gray-100"
                   >
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-[#E8F8F7] flex items-center justify-center mb-2 sm:mb-4">
-                      <cert.icon className="w-5 h-5 sm:w-6 sm:h-6 text-[#2AC1BC]" />
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-[#FEF2F2] flex items-center justify-center mb-2 sm:mb-4">
+                      <cert.icon className="w-5 h-5 sm:w-6 sm:h-6 text-[#EF4444]" />
                     </div>
                     <h4 className="font-bold text-[#1E1E1E] text-sm sm:text-base mb-0.5 sm:mb-1">{cert.title}</h4>
                     <p className="text-xs sm:text-sm text-[#767676]">{cert.description}</p>
@@ -124,7 +124,7 @@ export default function LandingTrust() {
                     className="flex gap-4 sm:gap-6"
                   >
                     <div className="flex flex-col items-center">
-                      <div className="w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-[#2AC1BC]" />
+                      <div className="w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-[#EF4444]" />
                       {index < timeline.length - 1 && (
                         <div className="w-0.5 h-full bg-gray-200 mt-1.5 sm:mt-2" />
                       )}
@@ -146,11 +146,11 @@ export default function LandingTrust() {
         <AnimatedSection delay={0.4} className="mt-10 sm:mt-16">
           <Link
             href="/support/verify"
-            className="block bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-8 border-2 border-[#2AC1BC]/20 hover:border-[#2AC1BC]/50 transition-colors group"
+            className="block bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-8 border-2 border-[#EF4444]/20 hover:border-[#EF4444]/50 transition-colors group"
           >
             <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
-              <div className="w-14 h-14 sm:w-16 sm:h-16 bg-[#E8F8F7] rounded-2xl flex items-center justify-center flex-shrink-0">
-                <ShieldCheck className="w-7 h-7 sm:w-8 sm:h-8 text-[#2AC1BC]" />
+              <div className="w-14 h-14 sm:w-16 sm:h-16 bg-[#FEF2F2] rounded-2xl flex items-center justify-center flex-shrink-0">
+                <ShieldCheck className="w-7 h-7 sm:w-8 sm:h-8 text-[#EF4444]" />
               </div>
               <div className="flex-1 text-center sm:text-left">
                 <h3 className="text-base sm:text-lg font-extrabold text-[#1E1E1E] mb-1">
@@ -160,7 +160,7 @@ export default function LandingTrust() {
                   이름 또는 전화번호만 입력하면 본사 정식 소속 여부를 바로 조회할 수 있습니다.
                 </p>
               </div>
-              <div className="flex items-center gap-2 px-5 py-2.5 bg-[#2AC1BC] rounded-xl text-white font-bold text-sm group-hover:bg-[#24ADA8] transition-colors flex-shrink-0">
+              <div className="flex items-center gap-2 px-5 py-2.5 bg-[#EF4444] rounded-xl text-white font-bold text-sm group-hover:bg-[#DC2626] transition-colors flex-shrink-0">
                 조회하기
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </div>

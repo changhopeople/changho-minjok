@@ -42,7 +42,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="inline-flex items-center gap-2 px-4 py-2 bg-[#2AC1BC] rounded-full text-white text-sm font-bold mb-8"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-[#EF4444] rounded-full text-white text-sm font-bold mb-8"
             >
               <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
               3,500평 스마트 팩토리 직영
@@ -52,7 +52,7 @@ export default function HeroSection() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-white leading-[1.1] mb-6 tracking-tight">
               창호 교체,
               <br />
-              <span className="text-[#2AC1BC]">공장에서 직접</span>
+              <span className="text-[#EF4444]">공장에서 직접</span>
               <br />
               만들어 드립니다
             </h1>
@@ -61,7 +61,7 @@ export default function HeroSection() {
             <p className="text-lg md:text-xl text-white/80 mb-10 max-w-lg leading-relaxed">
               중간 유통 없이 공장에서 고객님께 바로.
               <br />
-              <span className="text-[#2AC1BC] font-semibold">품질은 높이고, 가격은 낮추고.</span>
+              <span className="text-[#EF4444] font-semibold">품질은 높이고, 가격은 낮추고.</span>
             </p>
 
             {/* Stats Row */}
@@ -80,7 +80,7 @@ export default function HeroSection() {
                   className="text-center"
                 >
                   <div className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
-                    {stat.number}<span className="text-xl md:text-2xl text-[#2AC1BC]">{stat.unit}</span>
+                    {stat.number}<span className="text-xl md:text-2xl text-[#EF4444]">{stat.unit}</span>
                   </div>
                   <div className="text-sm text-white/60 font-medium mt-1">{stat.label}</div>
                 </motion.div>
@@ -128,7 +128,7 @@ export default function HeroSection() {
               {/* Main Card */}
               <Link href="/about/factory" className="block bg-white/10 backdrop-blur-md rounded-3xl border border-white/20 p-6 lg:p-8 hover:bg-white/15 transition-colors group">
                 <div className="flex items-center gap-4 mb-5">
-                  <div className="w-12 h-12 rounded-xl bg-[#2AC1BC] flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <div className="w-12 h-12 rounded-xl bg-[#EF4444] flex items-center justify-center group-hover:scale-110 transition-transform">
                     <Play className="w-6 h-6 text-white ml-0.5" />
                   </div>
                   <div>
@@ -147,7 +147,7 @@ export default function HeroSection() {
                   />
                   <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
                     <div className="w-14 h-14 rounded-full bg-white/90 flex items-center justify-center group-hover:scale-110 transition-transform">
-                      <Play className="w-7 h-7 text-[#2AC1BC] ml-0.5" />
+                      <Play className="w-7 h-7 text-[#EF4444] ml-0.5" />
                     </div>
                   </div>
                 </div>
@@ -155,15 +155,15 @@ export default function HeroSection() {
                 {/* Trust Points */}
                 <div className="space-y-2 mb-5">
                   <div className="flex items-center gap-3 text-white/80 text-sm">
-                    <div className="w-1.5 h-1.5 rounded-full bg-[#2AC1BC]" />
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#EF4444]" />
                     <span>전 공정 자동화 시스템</span>
                   </div>
                   <div className="flex items-center gap-3 text-white/80 text-sm">
-                    <div className="w-1.5 h-1.5 rounded-full bg-[#2AC1BC]" />
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#EF4444]" />
                     <span>TPS 단열 간봉 자체 생산</span>
                   </div>
                   <div className="flex items-center gap-3 text-white/80 text-sm">
-                    <div className="w-1.5 h-1.5 rounded-full bg-[#2AC1BC]" />
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#EF4444]" />
                     <span>실시간 품질 모니터링</span>
                   </div>
                 </div>
@@ -206,14 +206,14 @@ export default function HeroSection() {
         >
           <Link href="/about/factory" className="block bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 p-4 active:bg-white/20">
             <div className="flex items-center gap-4">
-              <div className="w-12 h-12 rounded-xl bg-[#2AC1BC] flex items-center justify-center flex-shrink-0">
+              <div className="w-12 h-12 rounded-xl bg-[#EF4444] flex items-center justify-center flex-shrink-0">
                 <Play className="w-6 h-6 text-white ml-0.5" />
               </div>
               <div className="flex-1 min-w-0">
                 <p className="text-white font-bold">공장 둘러보기</p>
                 <p className="text-white/60 text-sm">15,000+ 고객이 선택한 스마트 팩토리</p>
               </div>
-              <ArrowRight className="w-5 h-5 text-[#2AC1BC] flex-shrink-0" />
+              <ArrowRight className="w-5 h-5 text-[#EF4444] flex-shrink-0" />
             </div>
           </Link>
         </motion.div>

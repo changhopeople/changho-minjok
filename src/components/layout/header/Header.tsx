@@ -64,8 +64,8 @@ export default function Header() {
                     'flex items-center gap-1 px-4 py-2 text-[15px] font-bold transition-colors rounded-xl',
                     item.highlight
                       ? 'bg-[#FF6F0F] text-white hover:bg-[#E5630D] shadow-md shadow-[#FF6F0F]/20'
-                      : 'text-[#4A4A4A] hover:text-[#2AC1BC] hover:bg-[#E8F8F7]',
-                    !item.highlight && activeMenu === item.href && 'text-[#2AC1BC] bg-[#E8F8F7]'
+                      : 'text-[#4A4A4A] hover:text-[#EF4444] hover:bg-[#FEF2F2]',
+                    !item.highlight && activeMenu === item.href && 'text-[#EF4444] bg-[#FEF2F2]'
                   )}
                 >
                   {item.title}
@@ -92,7 +92,7 @@ export default function Header() {
                           <Link
                             key={child.href}
                             href={child.href}
-                            className="flex items-center gap-3 px-4 py-3 text-[#4A4A4A] hover:text-[#2AC1BC] hover:bg-[#E8F8F7] transition-colors font-medium"
+                            className="flex items-center gap-3 px-4 py-3 text-[#4A4A4A] hover:text-[#EF4444] hover:bg-[#FEF2F2] transition-colors font-medium"
                           >
                             <span className="w-1.5 h-1.5 rounded-full bg-[#C4C4C4]" />
                             {child.title}
@@ -111,7 +111,7 @@ export default function Header() {
             {/* Search */}
             <button
               onClick={() => setIsSearchOpen(true)}
-              className="flex items-center justify-center w-9 h-9 rounded-xl text-[#4A4A4A] hover:text-[#2AC1BC] hover:bg-[#E8F8F7] transition-colors"
+              className="flex items-center justify-center w-9 h-9 rounded-xl text-[#4A4A4A] hover:text-[#EF4444] hover:bg-[#FEF2F2] transition-colors"
               aria-label="검색"
             >
               <Search className="w-5 h-5" />
@@ -120,7 +120,7 @@ export default function Header() {
             {/* Phone */}
             <a
               href={`tel:${COMPANY_INFO.phone}`}
-              className="hidden md:flex items-center gap-2 text-[#4A4A4A] hover:text-[#2AC1BC] transition-colors"
+              className="hidden md:flex items-center gap-2 text-[#4A4A4A] hover:text-[#EF4444] transition-colors"
             >
               <Phone className="w-4 h-4" />
               <span className="font-bold">{COMPANY_INFO.phone}</span>
@@ -129,7 +129,7 @@ export default function Header() {
             {/* CTA Button - 배민 스타일 */}
             <Button
               asChild
-              className="hidden lg:flex bg-[#2AC1BC] hover:bg-[#1FA9A5] text-white font-bold rounded-xl px-5"
+              className="hidden lg:flex bg-[#EF4444] hover:bg-[#DC2626] text-white font-bold rounded-xl px-5"
             >
               <Link href="/estimate" className="flex items-center gap-2">
                 무료 견적
@@ -140,7 +140,7 @@ export default function Header() {
             {/* Mobile Menu */}
             <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
               <SheetTrigger asChild className="lg:hidden">
-                <Button variant="ghost" size="icon" className="hover:bg-[#E8F8F7]">
+                <Button variant="ghost" size="icon" className="hover:bg-[#FEF2F2]">
                   <Menu className="h-5 w-5 text-[#1E1E1E]" />
                 </Button>
               </SheetTrigger>
@@ -165,7 +165,7 @@ export default function Header() {
                         setIsMobileMenuOpen(false);
                         setTimeout(() => setIsSearchOpen(true), 300);
                       }}
-                      className="w-full flex items-center gap-3 p-3 bg-[#F5F5F5] rounded-xl text-[#767676] hover:bg-[#E8F8F7] hover:text-[#2AC1BC] transition-colors"
+                      className="w-full flex items-center gap-3 p-3 bg-[#F5F5F5] rounded-xl text-[#767676] hover:bg-[#FEF2F2] hover:text-[#EF4444] transition-colors"
                     >
                       <Search className="w-4 h-4" />
                       <span className="text-sm font-medium">검색</span>
@@ -181,7 +181,7 @@ export default function Header() {
                             'flex items-center justify-between p-3 rounded-xl font-bold transition-colors',
                             item.highlight
                               ? 'bg-[#FF6F0F] text-white hover:bg-[#E5630D]'
-                              : 'text-[#1E1E1E] hover:bg-[#E8F8F7] hover:text-[#2AC1BC]'
+                              : 'text-[#1E1E1E] hover:bg-[#FEF2F2] hover:text-[#EF4444]'
                           )}
                           onClick={() => setIsMobileMenuOpen(false)}
                         >
@@ -194,7 +194,7 @@ export default function Header() {
                               <Link
                                 key={child.href}
                                 href={child.href}
-                                className="flex items-center gap-2 p-2 text-[#767676] hover:text-[#2AC1BC] transition-colors font-medium"
+                                className="flex items-center gap-2 p-2 text-[#767676] hover:text-[#EF4444] transition-colors font-medium"
                                 onClick={() => setIsMobileMenuOpen(false)}
                               >
                                 <span className="w-1.5 h-1.5 rounded-full bg-[#C4C4C4]" />
@@ -212,8 +212,8 @@ export default function Header() {
                       href={`tel:${COMPANY_INFO.phone}`}
                       className="flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-[#EEEEEE]"
                     >
-                      <div className="w-12 h-12 rounded-xl bg-[#E8F8F7] flex items-center justify-center">
-                        <Phone className="w-5 h-5 text-[#2AC1BC]" />
+                      <div className="w-12 h-12 rounded-xl bg-[#FEF2F2] flex items-center justify-center">
+                        <Phone className="w-5 h-5 text-[#EF4444]" />
                       </div>
                       <div>
                         <p className="text-xs text-[#767676] font-medium">전화 상담</p>
@@ -222,7 +222,7 @@ export default function Header() {
                     </a>
                     <Button
                       asChild
-                      className="w-full h-14 bg-[#2AC1BC] hover:bg-[#1FA9A5] text-white font-bold rounded-xl text-lg"
+                      className="w-full h-14 bg-[#EF4444] hover:bg-[#DC2626] text-white font-bold rounded-xl text-lg"
                     >
                       <Link href="/estimate" onClick={() => setIsMobileMenuOpen(false)}>
                         무료 견적받기

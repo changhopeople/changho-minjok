@@ -15,7 +15,7 @@ const brands = [
   {
     id: 'changho',
     name: '창호의민족',
-    color: '#2AC1BC',
+    color: '#EF4444',
     before: [
       { src: '/images/landing/cases/changho/before/1.jpg', alt: '창호의민족 시공 전 1' },
       { src: '/images/landing/cases/changho/before/2.jpg', alt: '창호의민족 시공 전 2' },

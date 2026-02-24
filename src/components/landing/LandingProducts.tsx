@@ -96,7 +96,7 @@ export default function LandingProducts() {
                 whileHover={{ y: -8 }}
                 className={`relative bg-white rounded-2xl border-2 ${
                   item.popular ? 'border-[#FF6F0F] shadow-lg shadow-[#FF6F0F]/20' : 'border-gray-100'
-                } hover:border-[#2AC1BC] transition-all overflow-hidden h-full flex flex-col`}
+                } hover:border-[#EF4444] transition-all overflow-hidden h-full flex flex-col`}
               >
                 {/* Popular Badge */}
                 {item.popular && (
@@ -129,7 +129,7 @@ export default function LandingProducts() {
                   <div className="space-y-2 mb-4 flex-1">
                     {item.features.map((feature) => (
                       <div key={feature} className="flex items-center gap-2">
-                        <Check className="w-4 h-4 text-[#2AC1BC] flex-shrink-0" />
+                        <Check className="w-4 h-4 text-[#EF4444] flex-shrink-0" />
                         <span className="text-xs sm:text-sm text-[#1E1E1E]">{feature}</span>
                       </div>
                     ))}

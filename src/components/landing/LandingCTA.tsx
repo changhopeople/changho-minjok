@@ -55,7 +55,7 @@ export default function LandingCTA() {
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-4 sm:mb-6 tracking-tight leading-tight">
             간편하게,
             <br />
-            <span className="text-[#2AC1BC]">무료 방문견적 신청</span>
+            <span className="text-[#EF4444]">무료 방문견적 신청</span>
           </h2>
           <p className="text-sm sm:text-base md:text-lg text-gray-300 max-w-2xl mx-auto px-2">
             전문가가 직접 방문해서 정확한 견적을 알려드립니다
@@ -79,8 +79,8 @@ export default function LandingCTA() {
                   animate={{ opacity: 1, scale: 1 }}
                   className="text-center py-8 sm:py-12"
                 >
-                  <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#E8F8F7] flex items-center justify-center mx-auto mb-4 sm:mb-6">
-                    <Send className="w-8 h-8 sm:w-10 sm:h-10 text-[#2AC1BC]" />
+                  <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#FEF2F2] flex items-center justify-center mx-auto mb-4 sm:mb-6">
+                    <Send className="w-8 h-8 sm:w-10 sm:h-10 text-[#EF4444]" />
                   </div>
                   <h3 className="text-xl sm:text-2xl font-bold text-[#1E1E1E] mb-2 sm:mb-3">
                     상담 신청이 완료되었습니다!
@@ -101,7 +101,7 @@ export default function LandingCTA() {
                       placeholder="홍길동"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="h-12 sm:h-14 rounded-lg sm:rounded-xl border-2 border-gray-200 focus:border-[#2AC1BC] text-base"
+                      className="h-12 sm:h-14 rounded-lg sm:rounded-xl border-2 border-gray-200 focus:border-[#EF4444] text-base"
                     />
                   </div>
                   <div>
@@ -114,7 +114,7 @@ export default function LandingCTA() {
                       placeholder="010-1234-5678"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className="h-12 sm:h-14 rounded-lg sm:rounded-xl border-2 border-gray-200 focus:border-[#2AC1BC] text-base"
+                      className="h-12 sm:h-14 rounded-lg sm:rounded-xl border-2 border-gray-200 focus:border-[#EF4444] text-base"
                     />
                   </div>
                   <div>
@@ -126,7 +126,7 @@ export default function LandingCTA() {
                       placeholder="부산시 해운대구..."
                       value={formData.address}
                       onChange={(e) => setFormData({ ...formData, address: e.target.value })}
-                      className="h-12 sm:h-14 rounded-lg sm:rounded-xl border-2 border-gray-200 focus:border-[#2AC1BC] text-base"
+                      className="h-12 sm:h-14 rounded-lg sm:rounded-xl border-2 border-gray-200 focus:border-[#EF4444] text-base"
                     />
                   </div>
                   <div>
@@ -137,7 +137,7 @@ export default function LandingCTA() {
                       placeholder="궁금하신 내용을 자유롭게 적어주세요"
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      className="min-h-[100px] sm:min-h-[120px] rounded-lg sm:rounded-xl border-2 border-gray-200 focus:border-[#2AC1BC] resize-none text-base"
+                      className="min-h-[100px] sm:min-h-[120px] rounded-lg sm:rounded-xl border-2 border-gray-200 focus:border-[#EF4444] resize-none text-base"
                     />
                   </div>
                   {error && (
@@ -167,7 +167,7 @@ export default function LandingCTA() {
               {/* Phone */}
               <a
                 href={`tel:${COMPANY_INFO.phone}`}
-                className="block bg-[#2AC1BC] rounded-2xl sm:rounded-3xl p-5 sm:p-8 hover:bg-[#25b0ab] transition-colors group"
+                className="block bg-[#EF4444] rounded-2xl sm:rounded-3xl p-5 sm:p-8 hover:bg-[#DC2626] transition-colors group"
               >
                 <div className="flex items-center gap-4 sm:gap-6">
                   <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl bg-white/20 flex items-center justify-center flex-shrink-0">
@@ -205,12 +205,12 @@ export default function LandingCTA() {
               {/* Info Cards */}
               <div className="grid grid-cols-2 gap-3 sm:gap-4">
                 <div className="bg-[#292929] rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-[#3A3A3A]">
-                  <Clock className="w-6 h-6 sm:w-8 sm:h-8 text-[#2AC1BC] mb-2 sm:mb-4" />
+                  <Clock className="w-6 h-6 sm:w-8 sm:h-8 text-[#EF4444] mb-2 sm:mb-4" />
                   <p className="text-white font-bold text-sm sm:text-base mb-0.5 sm:mb-1">상담 시간</p>
                   <p className="text-gray-400 text-xs sm:text-sm">평일 09:00 - 18:00</p>
                 </div>
                 <div className="bg-[#292929] rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-[#3A3A3A]">
-                  <MapPin className="w-6 h-6 sm:w-8 sm:h-8 text-[#2AC1BC] mb-2 sm:mb-4" />
+                  <MapPin className="w-6 h-6 sm:w-8 sm:h-8 text-[#EF4444] mb-2 sm:mb-4" />
                   <p className="text-white font-bold text-sm sm:text-base mb-0.5 sm:mb-1">공장 위치</p>
                   <p className="text-gray-400 text-xs sm:text-sm">경북 청도군</p>
                 </div>

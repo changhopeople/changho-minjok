@@ -46,15 +46,15 @@ export default function StickyHeader() {
 
               {/* Trust Points (Desktop) */}
               <div className="hidden lg:flex items-center gap-4 text-sm">
-                <span className="flex items-center gap-1.5 px-3 py-1 bg-[#E8F8F7] rounded-full">
-                  <span className="text-[#2AC1BC] font-bold">✓</span>
+                <span className="flex items-center gap-1.5 px-3 py-1 bg-[#FEF2F2] rounded-full">
+                  <span className="text-[#EF4444] font-bold">✓</span>
                   <span className="text-[#1E1E1E] font-semibold">평균 200만원 절약</span>
                 </span>
                 <span className="flex items-center gap-1.5 text-[#767676]">
-                  <span className="text-[#2AC1BC]">✓</span> 10년 이상 무상 A/S
+                  <span className="text-[#EF4444]">✓</span> 10년 이상 무상 A/S
                 </span>
                 <span className="flex items-center gap-1.5 text-[#767676]">
-                  <span className="text-[#2AC1BC]">✓</span> 전문건설업 면허
+                  <span className="text-[#EF4444]">✓</span> 전문건설업 면허
                 </span>
               </div>
 

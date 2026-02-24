@@ -21,7 +21,7 @@ const solutions = [
     subtitle: '신축 리모델링 아파트 다수 경험 및 대기업 경력 보유',
     description: '발코니창호 브랜드 현장에서 10년↑ 검증받은 기술진. 고난도 현장도 완벽하게 마감합니다.',
     highlight: '10년↑ 베테랑',
-    color: 'bg-[#2AC1BC]',
+    color: 'bg-[#EF4444]',
   },
   {
     icon: ShieldCheck,
@@ -68,16 +68,16 @@ export default function LandingSolution() {
             <AnimatedSection key={solution.title} delay={index * 0.1}>
               <motion.div
                 whileHover={{ y: -8 }}
-                className="relative bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-6 md:p-8 border-2 border-gray-100 hover:border-[#2AC1BC] transition-all h-full group"
+                className="relative bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-6 md:p-8 border-2 border-gray-100 hover:border-[#EF4444] transition-all h-full group"
               >
                 {/* Number Badge */}
-                <span className="absolute top-4 sm:top-6 right-4 sm:right-6 text-4xl sm:text-5xl md:text-6xl font-extrabold text-gray-100 group-hover:text-[#E8F8F7] transition-colors">
+                <span className="absolute top-4 sm:top-6 right-4 sm:right-6 text-4xl sm:text-5xl md:text-6xl font-extrabold text-gray-100 group-hover:text-[#FEF2F2] transition-colors">
                   {solution.number}
                 </span>
 
                 {/* Icon */}
-                <div className="relative w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-xl sm:rounded-2xl bg-[#E8F8F7] flex items-center justify-center mb-4 sm:mb-5 group-hover:bg-[#2AC1BC] transition-colors">
-                  <solution.icon className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-[#2AC1BC] group-hover:text-white transition-colors" />
+                <div className="relative w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-xl sm:rounded-2xl bg-[#FEF2F2] flex items-center justify-center mb-4 sm:mb-5 group-hover:bg-[#EF4444] transition-colors">
+                  <solution.icon className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-[#EF4444] group-hover:text-white transition-colors" />
                 </div>
 
                 {/* Highlight Badge */}
@@ -111,7 +111,7 @@ export default function LandingSolution() {
               <div className="grid grid-cols-3 bg-[#1E1E1E] text-white min-w-[320px]">
                 <div className="p-3 sm:p-4 md:p-6 font-bold text-[11px] sm:text-sm md:text-base">비교 항목</div>
                 <div className="p-3 sm:p-4 md:p-6 font-bold text-center text-[11px] sm:text-sm md:text-base border-l border-white/20">일반 업체</div>
-                <div className="p-3 sm:p-4 md:p-6 font-bold text-center text-[11px] sm:text-sm md:text-base border-l border-white/20 bg-[#2AC1BC]">창호의 민족</div>
+                <div className="p-3 sm:p-4 md:p-6 font-bold text-center text-[11px] sm:text-sm md:text-base border-l border-white/20 bg-[#EF4444]">창호의 민족</div>
               </div>
 
               {/* Table Rows */}
@@ -137,7 +137,7 @@ export default function LandingSolution() {
                   <div className="p-3 sm:p-4 md:p-5 text-center font-semibold text-[#FF6F0F] text-[11px] sm:text-sm md:text-base border-l border-gray-100 bg-[#FFF3EB]/30">
                     {typeof row.ours === 'boolean' ? (
                       row.ours ? (
-                        <Check className="w-4 h-4 sm:w-5 sm:h-5 text-[#2AC1BC] mx-auto" />
+                        <Check className="w-4 h-4 sm:w-5 sm:h-5 text-[#EF4444] mx-auto" />
                       ) : (
                         <X className="w-4 h-4 sm:w-5 sm:h-5 text-red-400 mx-auto" />
                       )

@@ -69,14 +69,14 @@ export default function SmartFactorySection() {
       </div>
 
       {/* Gradient Accent */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#2AC1BC] rounded-full blur-[200px] opacity-10" />
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#EF4444] rounded-full blur-[200px] opacity-10" />
 
       <div className="relative container mx-auto px-4 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
           {/* Content */}
           <div>
             <AnimatedSection>
-              <span className="inline-block px-4 py-2 bg-[#2AC1BC] rounded-full text-white text-sm font-bold mb-8">
+              <span className="inline-block px-4 py-2 bg-[#EF4444] rounded-full text-white text-sm font-bold mb-8">
                 Smart Factory
               </span>
 
@@ -84,7 +84,7 @@ export default function SmartFactorySection() {
                 스마트 팩토리로
                 <br />
                 완성한{' '}
-                <span className="text-[#2AC1BC]">제조의 혁신</span>
+                <span className="text-[#EF4444]">제조의 혁신</span>
               </h2>
             </AnimatedSection>
 
@@ -103,7 +103,7 @@ export default function SmartFactorySection() {
                     key={idx}
                     className="flex items-center gap-3 p-3 md:p-4 bg-[#292929] rounded-xl border-2 border-[#3A3A3A]"
                   >
-                    <CheckCircle className="w-5 h-5 text-[#2AC1BC] flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-[#EF4444] flex-shrink-0" />
                     <span className="text-white text-sm font-medium">{item}</span>
                   </div>
                 ))}
@@ -114,16 +114,16 @@ export default function SmartFactorySection() {
               <div className="flex flex-col sm:flex-row gap-3 md:gap-4">
                 <Link
                   href="/support/tour"
-                  className="group inline-flex items-center justify-center gap-2 md:gap-3 px-5 md:px-6 py-3 md:py-4 bg-[#2AC1BC] rounded-xl text-white font-bold hover:bg-[#1FA9A5] transition-colors text-sm md:text-base"
+                  className="group inline-flex items-center justify-center gap-2 md:gap-3 px-5 md:px-6 py-3 md:py-4 bg-[#EF4444] rounded-xl text-white font-bold hover:bg-[#DC2626] transition-colors text-sm md:text-base"
                 >
                   공장 견학 예약
                   <ArrowRight className="w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
                 <Link
                   href="/about/factory"
-                  className="group inline-flex items-center justify-center gap-2 md:gap-3 px-5 md:px-6 py-3 md:py-4 bg-[#292929] border-2 border-[#3A3A3A] rounded-xl text-white font-bold hover:border-[#2AC1BC] transition-colors text-sm md:text-base"
+                  className="group inline-flex items-center justify-center gap-2 md:gap-3 px-5 md:px-6 py-3 md:py-4 bg-[#292929] border-2 border-[#3A3A3A] rounded-xl text-white font-bold hover:border-[#EF4444] transition-colors text-sm md:text-base"
                 >
-                  <div className="w-8 h-8 md:w-10 md:h-10 rounded-lg bg-[#3A3A3A] flex items-center justify-center group-hover:bg-[#2AC1BC] transition-colors">
+                  <div className="w-8 h-8 md:w-10 md:h-10 rounded-lg bg-[#3A3A3A] flex items-center justify-center group-hover:bg-[#EF4444] transition-colors">
                     <Play className="w-4 h-4 md:w-5 md:h-5 ml-0.5" />
                   </div>
                   공장 둘러보기
@@ -159,7 +159,7 @@ export default function SmartFactorySection() {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                     <div className="absolute inset-0 flex items-center justify-center">
                       <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-white/90 flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
-                        <Play className="w-8 h-8 md:w-10 md:h-10 text-[#2AC1BC] ml-1" />
+                        <Play className="w-8 h-8 md:w-10 md:h-10 text-[#EF4444] ml-1" />
                       </div>
                     </div>
                     <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6">
@@ -183,7 +183,7 @@ export default function SmartFactorySection() {
                     viewport={{ once: true }}
                     className="bg-[#292929] border border-[#3A3A3A] rounded-xl p-3 md:p-4 text-center"
                   >
-                    <div className="text-xl md:text-2xl lg:text-3xl font-extrabold text-[#2AC1BC] mb-1 tracking-tight">
+                    <div className="text-xl md:text-2xl lg:text-3xl font-extrabold text-[#EF4444] mb-1 tracking-tight">
                       <CountUp end={stat.value} suffix={stat.suffix} />
                     </div>
                     <div className="text-white text-xs md:text-sm font-bold">{stat.label}</div>
@@ -194,7 +194,7 @@ export default function SmartFactorySection() {
 
             {/* Quote Card */}
             <AnimatedSection delay={0.4} direction="right">
-              <Link href="/support/tour" className="block p-4 md:p-6 rounded-xl md:rounded-2xl bg-[#2AC1BC] hover:bg-[#25b0ab] transition-colors group">
+              <Link href="/support/tour" className="block p-4 md:p-6 rounded-xl md:rounded-2xl bg-[#EF4444] hover:bg-[#DC2626] transition-colors group">
                 <p className="text-base md:text-xl text-white font-bold mb-1 md:mb-2">
                   &quot;견적만 비교하지 마시고, 공장을 방문해 주십시오&quot;
                 </p>

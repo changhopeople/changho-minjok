@@ -48,11 +48,11 @@ export default function TrustSection() {
     <section className="py-20 md:py-28 bg-gradient-to-b from-gray-50 to-white">
       <div className="container mx-auto px-4 lg:px-8">
         <AnimatedSection className="text-center mb-16">
-          <span className="inline-block px-4 py-2 bg-blue-50 text-blue-600 rounded-full text-sm font-bold mb-6">
+          <span className="inline-block px-4 py-2 bg-red-50 text-red-600 rounded-full text-sm font-bold mb-6">
             Trust & Certification
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#1E1E1E] mb-4">
-            믿을 수 있는 <span className="text-blue-600">공인된 업체</span>
+            믿을 수 있는 <span className="text-red-600">공인된 업체</span>
           </h2>
           <p className="text-[#767676] text-lg max-w-2xl mx-auto">
             (주)현경시스템은 정식 건설업 등록 업체이며,
@@ -125,15 +125,15 @@ export default function TrustSection() {
               {certifications.map((cert, index) => (
                 <div
                   key={cert.title}
-                  className="flex items-start gap-3 md:gap-4 p-4 md:p-5 bg-white rounded-xl md:rounded-2xl border-2 border-gray-100 hover:border-blue-300 hover:shadow-lg transition-all"
+                  className="flex items-start gap-3 md:gap-4 p-4 md:p-5 bg-white rounded-xl md:rounded-2xl border-2 border-gray-100 hover:border-red-300 hover:shadow-lg transition-all"
                 >
-                  <div className="w-12 h-12 md:w-14 md:h-14 rounded-xl bg-blue-50 flex items-center justify-center flex-shrink-0">
-                    <cert.icon className="w-6 h-6 md:w-7 md:h-7 text-blue-600" />
+                  <div className="w-12 h-12 md:w-14 md:h-14 rounded-xl bg-red-50 flex items-center justify-center flex-shrink-0">
+                    <cert.icon className="w-6 h-6 md:w-7 md:h-7 text-red-600" />
                   </div>
                   <div className="min-w-0">
                     <h3 className="font-bold text-[#1E1E1E] text-base md:text-lg mb-0.5 md:mb-1">{cert.title}</h3>
                     <p className="text-[#767676] text-sm md:text-base">{cert.description}</p>
-                    <p className="text-xs md:text-sm text-blue-600 font-medium mt-1">{cert.detail}</p>
+                    <p className="text-xs md:text-sm text-red-600 font-medium mt-1">{cert.detail}</p>
                   </div>
                 </div>
               ))}

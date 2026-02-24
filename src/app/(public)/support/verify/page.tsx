@@ -34,11 +34,11 @@ export default function VerifyPage() {
       <section className="py-12 sm:py-16 md:py-20">
         <div className="container mx-auto px-4">
           <AnimatedSection className="text-center mb-8 sm:mb-12">
-            <div className="w-16 h-16 bg-[#E8F8F7] rounded-full flex items-center justify-center mx-auto mb-6">
-              <ShieldCheck className="w-8 h-8 text-[#2AC1BC]" />
+            <div className="w-16 h-16 bg-[#FEF2F2] rounded-full flex items-center justify-center mx-auto mb-6">
+              <ShieldCheck className="w-8 h-8 text-[#EF4444]" />
             </div>
             <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900 mb-4">
-              전문 <span className="text-[#2AC1BC]">어드바이저</span> 조회
+              전문 <span className="text-[#EF4444]">어드바이저</span> 조회
             </h1>
             <p className="text-gray-600 text-sm sm:text-base max-w-md mx-auto">
               상담 중인 담당자가 <strong>창호의 민족 본사 정식 소속</strong>인지
@@ -56,11 +56,11 @@ export default function VerifyPage() {
                   placeholder="이름 또는 전화번호 (뒷 4자리 가능)"
                   value={query}
                   onChange={(e) => setQuery(e.target.value)}
-                  className="flex-1 h-12 sm:h-14 text-sm sm:text-base bg-white border-2 border-gray-200 focus:border-[#2AC1BC] rounded-xl px-4"
+                  className="flex-1 h-12 sm:h-14 text-sm sm:text-base bg-white border-2 border-gray-200 focus:border-[#EF4444] rounded-xl px-4"
                 />
                 <Button
                   type="submit"
-                  className="h-12 sm:h-14 px-5 sm:px-8 bg-[#2AC1BC] hover:bg-[#24ADA8] rounded-xl text-white font-bold text-sm sm:text-base"
+                  className="h-12 sm:h-14 px-5 sm:px-8 bg-[#EF4444] hover:bg-[#DC2626] rounded-xl text-white font-bold text-sm sm:text-base"
                 >
                   <Search className="w-4 h-4 sm:w-5 sm:h-5 mr-1.5" />
                   조회
@@ -76,12 +76,12 @@ export default function VerifyPage() {
           <AnimatedSection delay={0.2}>
             <div className="max-w-lg mx-auto mt-8">
               {result.status === 'found' && (
-                <div className="bg-white rounded-2xl border-2 border-[#2AC1BC] p-6 sm:p-8">
+                <div className="bg-white rounded-2xl border-2 border-[#EF4444] p-6 sm:p-8">
                   <div className="text-center mb-6">
-                    <div className="w-14 h-14 bg-[#E8F8F7] rounded-full flex items-center justify-center mx-auto mb-4">
-                      <ShieldCheck className="w-7 h-7 text-[#2AC1BC]" />
+                    <div className="w-14 h-14 bg-[#FEF2F2] rounded-full flex items-center justify-center mx-auto mb-4">
+                      <ShieldCheck className="w-7 h-7 text-[#EF4444]" />
                     </div>
-                    <div className="inline-block px-3 py-1 bg-[#E8F8F7] text-[#2AC1BC] rounded-full text-xs font-bold mb-3">
+                    <div className="inline-block px-3 py-1 bg-[#FEF2F2] text-[#EF4444] rounded-full text-xs font-bold mb-3">
                       본사 정식 소속 확인됨
                     </div>
                     <h3 className="text-xl sm:text-2xl font-extrabold text-gray-900">
@@ -104,7 +104,7 @@ export default function VerifyPage() {
                       </span>
                       <a
                         href={`tel:${result.member.displayPhone}`}
-                        className="text-sm sm:text-base font-bold text-[#2AC1BC]"
+                        className="text-sm sm:text-base font-bold text-[#EF4444]"
                       >
                         {result.member.displayPhone}
                       </a>
@@ -117,16 +117,16 @@ export default function VerifyPage() {
                       </span>
                       <a
                         href={`mailto:${result.member.email}`}
-                        className="text-sm sm:text-base font-bold text-[#2AC1BC]"
+                        className="text-sm sm:text-base font-bold text-[#EF4444]"
                       >
                         {result.member.email}
                       </a>
                     </div>
                   </div>
 
-                  <div className="mt-5 p-4 bg-[#E8F8F7] rounded-xl text-center">
+                  <div className="mt-5 p-4 bg-[#FEF2F2] rounded-xl text-center">
                     <p className="text-xs sm:text-sm text-gray-700">
-                      <span className="font-bold text-[#2AC1BC]">창호의 민족</span> 본사 소속
+                      <span className="font-bold text-[#EF4444]">창호의 민족</span> 본사 소속
                       전문 어드바이저로 확인되었습니다.
                       <br />
                       안심하고 상담을 진행하세요.
@@ -172,23 +172,23 @@ export default function VerifyPage() {
                 </h4>
                 <ul className="space-y-2 text-xs sm:text-sm text-gray-600">
                   <li className="flex items-start gap-2">
-                    <span className="text-[#2AC1BC] font-bold mt-0.5">01</span>
+                    <span className="text-[#EF4444] font-bold mt-0.5">01</span>
                     <span>
                       최근 타 업체 직원이 &quot;창호의 민족&quot; 소속을 사칭하는 사례가 보고되고
                       있습니다.
                     </span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-[#2AC1BC] font-bold mt-0.5">02</span>
+                    <span className="text-[#EF4444] font-bold mt-0.5">02</span>
                     <span>
                       본사 정식 소속 어드바이저만이 정품 자재와 공식 보증을 제공할 수 있습니다.
                     </span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-[#2AC1BC] font-bold mt-0.5">03</span>
+                    <span className="text-[#EF4444] font-bold mt-0.5">03</span>
                     <span>
                       확인이 되지 않는 경우, 대표번호{' '}
-                      <a href={`tel:${COMPANY_INFO.phone}`} className="text-[#2AC1BC] font-bold">
+                      <a href={`tel:${COMPANY_INFO.phone}`} className="text-[#EF4444] font-bold">
                         {COMPANY_INFO.phone}
                       </a>
                       으로 문의해주세요.

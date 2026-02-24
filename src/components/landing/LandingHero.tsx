@@ -58,7 +58,7 @@ export default function LandingHero() {
           >
             창호 견적 받고
             <br />
-            <span className="text-[#2AC1BC]">심장 떨어지셨죠?</span>
+            <span className="text-[#EF4444]">심장 떨어지셨죠?</span>
             <br />
             <span className="text-[#FF6F0F]">200만원 돌려드립니다</span>
           </motion.h1>
@@ -70,7 +70,7 @@ export default function LandingHero() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-sm sm:text-base md:text-lg lg:text-xl text-white/90 mb-6 md:mb-10 max-w-2xl leading-relaxed text-center lg:text-left px-2 sm:px-0"
           >
-            <span className="text-[#2AC1BC] font-semibold">발코니창호 정품</span>을 공장에서 직접 받으세요.
+            <span className="text-[#EF4444] font-semibold">발코니창호 정품</span>을 공장에서 직접 받으세요.
             <br />
             <span className="text-white/70 text-sm sm:text-base md:text-lg">
               중간 유통상 빼고, 3,500평 공장에서 바로 고객님 집으로.
@@ -96,7 +96,7 @@ export default function LandingHero() {
               >
                 <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-extrabold text-white tracking-tight">
                   {stat.number}
-                  <span className="text-sm sm:text-lg md:text-xl text-[#2AC1BC]">{stat.unit}</span>
+                  <span className="text-sm sm:text-lg md:text-xl text-[#EF4444]">{stat.unit}</span>
                 </div>
                 <div className="text-xs md:text-sm text-white/60 font-medium mt-1">{stat.label}</div>
               </motion.div>
@@ -144,7 +144,7 @@ export default function LandingHero() {
                 key={index}
                 className="flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full"
               >
-                <badge.icon className="w-4 h-4 text-[#2AC1BC]" />
+                <badge.icon className="w-4 h-4 text-[#EF4444]" />
                 <span className="text-white/80 text-sm font-medium">{badge.text}</span>
               </div>
             ))}

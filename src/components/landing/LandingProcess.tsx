@@ -93,9 +93,9 @@ export default function LandingProcess() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="flex items-center gap-2 px-4 sm:px-5 py-2 sm:py-3 bg-[#E8F8F7] rounded-full"
+                className="flex items-center gap-2 px-4 sm:px-5 py-2 sm:py-3 bg-[#FEF2F2] rounded-full"
               >
-                <benefit.icon className="w-4 h-4 sm:w-5 sm:h-5 text-[#2AC1BC]" />
+                <benefit.icon className="w-4 h-4 sm:w-5 sm:h-5 text-[#EF4444]" />
                 <span className="text-xs sm:text-sm font-semibold text-[#1E1E1E]">{benefit.text}</span>
               </motion.div>
             ))}
@@ -118,7 +118,7 @@ export default function LandingProcess() {
                   whileInView={{ width: '100%' }}
                   viewport={{ once: true }}
                   transition={{ duration: 1.5, ease: 'easeInOut' }}
-                  className="h-full bg-[#2AC1BC]"
+                  className="h-full bg-[#EF4444]"
                 />
               </div>
 
@@ -137,7 +137,7 @@ export default function LandingProcess() {
                       className={`relative z-10 w-14 h-14 lg:w-16 lg:h-16 rounded-2xl flex items-center justify-center mb-4 shadow-lg ${
                         step.highlight
                           ? 'bg-[#FF6F0F] shadow-[#FF6F0F]/30'
-                          : 'bg-[#2AC1BC] shadow-[#2AC1BC]/30'
+                          : 'bg-[#EF4444] shadow-[#EF4444]/30'
                       }`}
                     >
                       <step.icon className="w-7 h-7 lg:w-8 lg:h-8 text-white" />
@@ -183,7 +183,7 @@ export default function LandingProcess() {
                 >
                   <div
                     className={`w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 ${
-                      step.highlight ? 'bg-[#FF6F0F]' : 'bg-[#2AC1BC]'
+                      step.highlight ? 'bg-[#FF6F0F]' : 'bg-[#EF4444]'
                     }`}
                   >
                     <step.icon className="w-6 h-6 text-white" />

@@ -50,9 +50,9 @@
   --foreground: #1E1E1E;
 
   /* 배민 시그니처 색상 */
-  --baemin-mint: #2AC1BC;
-  --baemin-mint-dark: #1FA9A5;
-  --baemin-mint-light: #E8F8F7;
+  --baemin-red: #EF4444;
+  --baemin-red-dark: #DC2626;
+  --baemin-red-light: #FEF2F2;
   --baemin-black: #1E1E1E;
   --baemin-gray-900: #292929;
   --baemin-gray-700: #4A4A4A;
@@ -66,31 +66,31 @@
   --card-foreground: #1E1E1E;
   --popover: #FFFFFF;
   --popover-foreground: #1E1E1E;
-  --primary: #2AC1BC;
+  --primary: #EF4444;
   --primary-foreground: #FFFFFF;
   --secondary: #F5F5F5;
   --secondary-foreground: #1E1E1E;
   --muted: #F5F5F5;
   --muted-foreground: #767676;
-  --accent: #E8F8F7;
-  --accent-foreground: #1FA9A5;
+  --accent: #FEF2F2;
+  --accent-foreground: #DC2626;
   --destructive: #FF4D4D;
   --border: #EEEEEE;
   --input: #F5F5F5;
-  --ring: #2AC1BC;
-  --chart-1: #2AC1BC;
+  --ring: #EF4444;
+  --chart-1: #EF4444;
   --chart-2: #FF6F0F;
   --chart-3: #FFD43B;
   --chart-4: #845EF7;
   --chart-5: #F06595;
   --sidebar: #FFFFFF;
   --sidebar-foreground: #1E1E1E;
-  --sidebar-primary: #2AC1BC;
+  --sidebar-primary: #EF4444;
   --sidebar-primary-foreground: #FFFFFF;
-  --sidebar-accent: #E8F8F7;
-  --sidebar-accent-foreground: #1FA9A5;
+  --sidebar-accent: #FEF2F2;
+  --sidebar-accent-foreground: #DC2626;
   --sidebar-border: #EEEEEE;
-  --sidebar-ring: #2AC1BC;
+  --sidebar-ring: #EF4444;
 }
 
 @layer base {
@@ -130,7 +130,7 @@
   }
 
   .section-badge {
-    @apply inline-block px-4 py-2 bg-[#E8F8F7] text-[#2AC1BC] rounded-full text-sm font-bold tracking-tight;
+    @apply inline-block px-4 py-2 bg-[#FEF2F2] text-[#EF4444] rounded-full text-sm font-bold tracking-tight;
   }
 
   .section-title {
@@ -160,21 +160,21 @@
   }
 
   .card-baemin:hover {
-    @apply border-[#2AC1BC] shadow-lg;
+    @apply border-[#EF4444] shadow-lg;
   }
 
   .card-baemin-mint {
-    @apply bg-[#E8F8F7] rounded-2xl p-6 border-2 border-[#2AC1BC];
+    @apply bg-[#FEF2F2] rounded-2xl p-6 border-2 border-[#EF4444];
   }
 
   /* 배민 스타일 버튼 */
   .btn-baemin {
-    @apply bg-[#2AC1BC] hover:bg-[#1FA9A5] text-white font-bold px-6 py-3 rounded-xl transition-all duration-200;
+    @apply bg-[#EF4444] hover:bg-[#DC2626] text-white font-bold px-6 py-3 rounded-xl transition-all duration-200;
     @apply active:scale-[0.98];
   }
 
   .btn-baemin-outline {
-    @apply bg-white border-2 border-[#2AC1BC] text-[#2AC1BC] hover:bg-[#E8F8F7] font-bold px-6 py-3 rounded-xl transition-all duration-200;
+    @apply bg-white border-2 border-[#EF4444] text-[#EF4444] hover:bg-[#FEF2F2] font-bold px-6 py-3 rounded-xl transition-all duration-200;
     @apply active:scale-[0.98];
   }
 
@@ -194,7 +194,7 @@
   }
 
   .icon-box-mint {
-    @apply bg-[#E8F8F7] text-[#2AC1BC];
+    @apply bg-[#FEF2F2] text-[#EF4444];
   }
 
   .icon-box-black {
@@ -212,17 +212,17 @@
 
   .form-input {
     @apply w-full px-4 py-3 bg-[#F5F5F5] border-2 border-transparent rounded-xl text-[#1E1E1E] placeholder-[#C4C4C4];
-    @apply focus:border-[#2AC1BC] focus:bg-white focus:outline-none transition-all;
+    @apply focus:border-[#EF4444] focus:bg-white focus:outline-none transition-all;
   }
 
   .form-textarea {
     @apply w-full px-4 py-3 bg-[#F5F5F5] border-2 border-transparent rounded-xl text-[#1E1E1E] placeholder-[#C4C4C4] resize-none;
-    @apply focus:border-[#2AC1BC] focus:bg-white focus:outline-none transition-all;
+    @apply focus:border-[#EF4444] focus:bg-white focus:outline-none transition-all;
   }
 
   /* CTA 섹션 - 배민 민트 */
   .cta-section {
-    @apply py-10 sm:py-16 md:py-24 bg-[#2AC1BC] relative overflow-hidden;
+    @apply py-10 sm:py-16 md:py-24 bg-[#EF4444] relative overflow-hidden;
   }
 
   .cta-section::before {
@@ -233,7 +233,7 @@
 
   /* 배민 스타일 태그 */
   .tag-mint {
-    @apply inline-block px-3 py-1 bg-[#E8F8F7] text-[#2AC1BC] rounded-lg text-sm font-bold;
+    @apply inline-block px-3 py-1 bg-[#FEF2F2] text-[#EF4444] rounded-lg text-sm font-bold;
   }
 
   .tag-black {
@@ -246,7 +246,7 @@
 
   /* 통계 */
   .stat-number {
-    @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#2AC1BC] tracking-tight;
+    @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#EF4444] tracking-tight;
   }
 
   .stat-label {
@@ -259,11 +259,11 @@
   }
 
   .select-card:hover {
-    @apply border-[#2AC1BC];
+    @apply border-[#EF4444];
   }
 
   .select-card-active {
-    @apply bg-[#E8F8F7] rounded-2xl p-5 border-2 border-[#2AC1BC];
+    @apply bg-[#FEF2F2] rounded-2xl p-5 border-2 border-[#EF4444];
   }
 
   /* 구분선 */
@@ -278,7 +278,7 @@
 
   .accordion-trigger {
     @apply flex items-center justify-between w-full py-5 text-left font-bold text-[#1E1E1E];
-    @apply hover:text-[#2AC1BC] transition-colors;
+    @apply hover:text-[#EF4444] transition-colors;
   }
 }
 
@@ -318,13 +318,13 @@
 
 /* Selection */
 ::selection {
-  background: rgba(42, 193, 188, 0.2);
-  color: #1FA9A5;
+  background: rgba(239, 68, 68, 0.2);
+  color: #DC2626;
 }
 
 /* Focus */
 :focus-visible {
-  outline: 2px solid #2AC1BC;
+  outline: 2px solid #EF4444;
   outline-offset: 2px;
 }
 

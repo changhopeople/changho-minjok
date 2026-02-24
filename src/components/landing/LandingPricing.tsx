@@ -94,11 +94,11 @@ export default function LandingPricing() {
 
             {/* 창호의 민족 */}
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-[#2AC1BC]/10 via-[#2AC1BC]/20 to-[#2AC1BC]/10 rounded-2xl sm:rounded-3xl" />
+              <div className="absolute inset-0 bg-gradient-to-r from-[#EF4444]/10 via-[#EF4444]/20 to-[#EF4444]/10 rounded-2xl sm:rounded-3xl" />
               <div className="relative p-4 sm:p-6 md:p-8">
-                <p className="text-center text-[#2AC1BC] font-bold mb-3 sm:mb-4 text-sm sm:text-base">창호의 민족 유통 구조</p>
+                <p className="text-center text-[#EF4444] font-bold mb-3 sm:mb-4 text-sm sm:text-base">창호의 민족 유통 구조</p>
                 <div className="flex items-center justify-center gap-3 sm:gap-4 md:gap-8">
-                  <div className="px-3 sm:px-6 py-2 sm:py-4 bg-[#2AC1BC] rounded-lg sm:rounded-xl text-center">
+                  <div className="px-3 sm:px-6 py-2 sm:py-4 bg-[#EF4444] rounded-lg sm:rounded-xl text-center">
                     <p className="text-white font-bold text-sm sm:text-base">제조 공장</p>
                     <p className="text-white/80 text-[10px] sm:text-xs">창호의 민족</p>
                   </div>
@@ -106,14 +106,14 @@ export default function LandingPricing() {
                     initial={{ scaleX: 0 }}
                     whileInView={{ scaleX: 1 }}
                     viewport={{ once: true }}
-                    className="w-8 sm:w-16 md:w-32 h-1 bg-[#2AC1BC] rounded-full origin-left"
+                    className="w-8 sm:w-16 md:w-32 h-1 bg-[#EF4444] rounded-full origin-left"
                   />
-                  <div className="px-3 sm:px-6 py-2 sm:py-4 bg-[#2AC1BC] rounded-lg sm:rounded-xl text-center">
+                  <div className="px-3 sm:px-6 py-2 sm:py-4 bg-[#EF4444] rounded-lg sm:rounded-xl text-center">
                     <p className="text-white font-bold text-sm sm:text-base">고객님</p>
                     <p className="text-white/80 text-[10px] sm:text-xs">직거래</p>
                   </div>
                 </div>
-                <p className="text-center mt-3 sm:mt-4 text-[#2AC1BC] font-extrabold text-xl sm:text-2xl">
+                <p className="text-center mt-3 sm:mt-4 text-[#EF4444] font-extrabold text-xl sm:text-2xl">
                   = 500~700만원
                 </p>
               </div>
@@ -155,8 +155,8 @@ export default function LandingPricing() {
                   transition={{ delay: index * 0.1 }}
                   className="flex sm:flex-col items-center sm:items-center gap-4 sm:gap-0 p-4 sm:p-4 md:p-6 bg-white/5 rounded-xl sm:rounded-2xl border border-white/10"
                 >
-                  <div className="w-10 h-10 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-lg sm:rounded-xl bg-[#2AC1BC]/20 flex items-center justify-center flex-shrink-0 sm:mx-auto sm:mb-4">
-                    <item.icon className="w-5 h-5 sm:w-5 sm:h-5 md:w-6 md:h-6 text-[#2AC1BC]" />
+                  <div className="w-10 h-10 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-lg sm:rounded-xl bg-[#EF4444]/20 flex items-center justify-center flex-shrink-0 sm:mx-auto sm:mb-4">
+                    <item.icon className="w-5 h-5 sm:w-5 sm:h-5 md:w-6 md:h-6 text-[#EF4444]" />
                   </div>
                   <div className="flex-1 sm:text-center">
                     <p className="text-gray-400 text-xs sm:text-xs md:text-sm mb-0.5 sm:mb-2">{item.label}</p>
@@ -170,7 +170,7 @@ export default function LandingPricing() {
               <p className="text-gray-400 mb-3 sm:mb-4 text-xs sm:text-sm md:text-base px-2">
                 창호 교체 비용 200만원 + 3년간 난방비 절감 144만원
               </p>
-              <div className="inline-block px-4 sm:px-6 py-2 sm:py-3 bg-[#2AC1BC] rounded-lg sm:rounded-xl">
+              <div className="inline-block px-4 sm:px-6 py-2 sm:py-3 bg-[#EF4444] rounded-lg sm:rounded-xl">
                 <p className="text-white font-bold text-sm sm:text-base md:text-lg">
                   = 사실상 <span className="text-lg sm:text-xl md:text-2xl">무료</span>로 바꾸는 셈!
                 </p>

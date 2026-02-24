@@ -114,7 +114,7 @@ export default function SearchDialog({ open, onOpenChange }: SearchDialogProps) 
 
         {/* Search Input */}
         <div className="flex items-center gap-3 px-5 py-4 border-b-2 border-[#EEEEEE]">
-          <Search className="w-5 h-5 text-[#2AC1BC] flex-shrink-0" />
+          <Search className="w-5 h-5 text-[#EF4444] flex-shrink-0" />
           <input
             ref={inputRef}
             type="text"
@@ -147,8 +147,8 @@ export default function SearchDialog({ open, onOpenChange }: SearchDialogProps) 
         <div ref={listRef} className="max-h-[400px] overflow-y-auto">
           {query.trim() === '' ? (
             <div className="px-5 py-10 text-center">
-              <div className="w-12 h-12 rounded-2xl bg-[#E8F8F7] flex items-center justify-center mx-auto mb-3">
-                <Search className="w-6 h-6 text-[#2AC1BC]" />
+              <div className="w-12 h-12 rounded-2xl bg-[#FEF2F2] flex items-center justify-center mx-auto mb-3">
+                <Search className="w-6 h-6 text-[#EF4444]" />
               </div>
               <p className="text-[#767676] text-sm">
                 페이지, 제품, FAQ 등을 검색해보세요
@@ -190,7 +190,7 @@ export default function SearchDialog({ open, onOpenChange }: SearchDialogProps) 
                         className={cn(
                           'w-full flex items-center gap-3 px-5 py-3 text-left transition-colors',
                           isSelected
-                            ? 'bg-[#E8F8F7]'
+                            ? 'bg-[#FEF2F2]'
                             : 'hover:bg-[#F5F5F5]'
                         )}
                       >
@@ -198,7 +198,7 @@ export default function SearchDialog({ open, onOpenChange }: SearchDialogProps) 
                           <p
                             className={cn(
                               'text-sm font-medium truncate',
-                              isSelected ? 'text-[#2AC1BC]' : 'text-[#1E1E1E]'
+                              isSelected ? 'text-[#EF4444]' : 'text-[#1E1E1E]'
                             )}
                           >
                             {item.title}
@@ -210,7 +210,7 @@ export default function SearchDialog({ open, onOpenChange }: SearchDialogProps) 
                         <ArrowRight
                           className={cn(
                             'w-4 h-4 flex-shrink-0 transition-colors',
-                            isSelected ? 'text-[#2AC1BC]' : 'text-[#C4C4C4]'
+                            isSelected ? 'text-[#EF4444]' : 'text-[#C4C4C4]'
                           )}
                         />
                       </button>

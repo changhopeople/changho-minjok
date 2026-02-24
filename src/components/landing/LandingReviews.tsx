@@ -82,11 +82,11 @@ export default function LandingReviews() {
       <div className="container mx-auto px-4 lg:px-8">
         {/* Header */}
         <AnimatedSection className="text-center mb-10 sm:mb-16">
-          <span className="inline-block px-3 sm:px-4 py-2 bg-[#2AC1BC] text-white rounded-full text-xs sm:text-sm font-bold mb-4 sm:mb-6">
+          <span className="inline-block px-3 sm:px-4 py-2 bg-[#EF4444] text-white rounded-full text-xs sm:text-sm font-bold mb-4 sm:mb-6">
             Real Reviews
           </span>
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-4 sm:mb-6 tracking-tight leading-tight">
-            <span className="text-[#2AC1BC]">15,000세대</span>가
+            <span className="text-[#EF4444]">15,000세대</span>가
             <br className="sm:hidden" />
             선택한 이유
           </h2>
@@ -109,7 +109,7 @@ export default function LandingReviews() {
               >
                 <div className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white">
                   {stat.number}
-                  <span className="text-sm sm:text-lg md:text-xl text-[#2AC1BC]">{stat.suffix}</span>
+                  <span className="text-sm sm:text-lg md:text-xl text-[#EF4444]">{stat.suffix}</span>
                 </div>
                 <div className="text-xs sm:text-sm text-gray-500 mt-1">{stat.label}</div>
               </motion.div>
@@ -122,7 +122,7 @@ export default function LandingReviews() {
           <div className="max-w-3xl mx-auto">
             <div className="relative bg-[#292929] rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 border border-[#3A3A3A]">
               {/* Quote Icon */}
-              <Quote className="absolute top-4 sm:top-6 right-4 sm:right-6 w-8 h-8 sm:w-12 sm:h-12 text-[#2AC1BC]/20" />
+              <Quote className="absolute top-4 sm:top-6 right-4 sm:right-6 w-8 h-8 sm:w-12 sm:h-12 text-[#EF4444]/20" />
 
               <AnimatePresence mode="wait">
                 <motion.div
@@ -150,7 +150,7 @@ export default function LandingReviews() {
 
                     {/* Verified Badge */}
                     {currentReview.verified && (
-                      <span className="flex items-center gap-1 px-2 sm:px-3 py-1 bg-[#2AC1BC]/20 rounded-full text-[10px] sm:text-xs font-bold text-[#2AC1BC]">
+                      <span className="flex items-center gap-1 px-2 sm:px-3 py-1 bg-[#EF4444]/20 rounded-full text-[10px] sm:text-xs font-bold text-[#EF4444]">
                         <ThumbsUp className="w-3 h-3" />
                         실제 시공 고객
                       </span>
@@ -170,7 +170,7 @@ export default function LandingReviews() {
                   {/* Footer */}
                   <div className="flex flex-wrap items-center justify-between gap-4 pt-4 sm:pt-6 border-t border-[#3A3A3A]">
                     <div className="flex items-center gap-3 sm:gap-4">
-                      <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#2AC1BC] flex items-center justify-center text-white font-bold text-base sm:text-lg">
+                      <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#EF4444] flex items-center justify-center text-white font-bold text-base sm:text-lg">
                         {currentReview.name.charAt(0)}
                       </div>
                       <div>
@@ -205,7 +205,7 @@ export default function LandingReviews() {
                       key={index}
                       onClick={() => setCurrentIndex(index)}
                       className={`w-2 h-2 rounded-full transition-colors ${
-                        index === currentIndex ? 'bg-[#2AC1BC]' : 'bg-[#3A3A3A]'
+                        index === currentIndex ? 'bg-[#EF4444]' : 'bg-[#3A3A3A]'
                       }`}
                     />
                   ))}
@@ -225,7 +225,7 @@ export default function LandingReviews() {
         <AnimatedSection delay={0.3} className="text-center mt-8 sm:mt-12">
           <a
             href="#contact-form"
-            className="inline-flex items-center justify-center gap-2 sm:gap-3 px-5 sm:px-8 py-3 sm:py-4 bg-[#2AC1BC] text-white rounded-xl font-bold text-sm sm:text-lg hover:bg-[#25b0ab] transition-colors w-full sm:w-auto max-w-md mx-auto"
+            className="inline-flex items-center justify-center gap-2 sm:gap-3 px-5 sm:px-8 py-3 sm:py-4 bg-[#EF4444] text-white rounded-xl font-bold text-sm sm:text-lg hover:bg-[#DC2626] transition-colors w-full sm:w-auto max-w-md mx-auto"
           >
             15,000번째 만족 고객 되기
             <span className="text-white/80">→</span>

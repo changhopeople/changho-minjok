@@ -12,7 +12,7 @@ const products = [
     name: 'PVC 창호',
     description: '뛰어난 단열성과 가성비를 갖춘 기본 창호',
     features: ['단열성 우수', '다양한 컬러', '경제적'],
-    color: 'bg-[#2AC1BC]',
+    color: 'bg-[#EF4444]',
     image: '/images/products/pvc-window.png',
   },
   {

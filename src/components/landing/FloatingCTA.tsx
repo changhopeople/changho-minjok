@@ -87,7 +87,7 @@ export default function FloatingCTA() {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           className={`w-16 h-16 rounded-full flex items-center justify-center shadow-2xl transition-colors ${
-            isExpanded ? 'bg-[#1E1E1E]' : 'bg-[#2AC1BC]'
+            isExpanded ? 'bg-[#1E1E1E]' : 'bg-[#EF4444]'
           }`}
         >
           {isExpanded ? (
@@ -106,7 +106,7 @@ export default function FloatingCTA() {
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0 }}
             onClick={scrollToTop}
-            className="hidden md:flex fixed bottom-8 left-24 w-12 h-12 rounded-full bg-white border-2 border-gray-200 items-center justify-center shadow-lg hover:border-[#2AC1BC] transition-colors z-50"
+            className="hidden md:flex fixed bottom-8 left-24 w-12 h-12 rounded-full bg-white border-2 border-gray-200 items-center justify-center shadow-lg hover:border-[#EF4444] transition-colors z-50"
           >
             <ArrowUp className="w-5 h-5 text-[#1E1E1E]" />
           </motion.button>

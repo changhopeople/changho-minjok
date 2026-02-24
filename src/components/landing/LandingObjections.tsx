@@ -27,7 +27,7 @@ const objections = [
     answer: '3,500평 공장 직접 오셔서 보세요',
     detail: '경북 청도군에 위치한 스마트 팩토리. 매주 토요일 공장 투어 운영 중. 실제 생산 라인과 품질 검사 과정을 눈으로 확인하세요.',
     badge: '공장 투어',
-    color: 'bg-[#2AC1BC]',
+    color: 'bg-[#EF4444]',
   },
   {
     icon: Phone,
@@ -79,7 +79,7 @@ export default function LandingObjections() {
             <AnimatedSection key={obj.doubt} delay={index * 0.1}>
               <motion.div
                 whileHover={{ y: -4 }}
-                className="bg-[#292929] rounded-2xl sm:rounded-3xl p-5 sm:p-6 md:p-8 border border-[#3A3A3A] hover:border-[#2AC1BC] transition-all h-full"
+                className="bg-[#292929] rounded-2xl sm:rounded-3xl p-5 sm:p-6 md:p-8 border border-[#3A3A3A] hover:border-[#EF4444] transition-all h-full"
               >
                 {/* Badge */}
                 <span className={`inline-block px-2 sm:px-3 py-1 ${obj.color} text-white text-[10px] sm:text-xs font-bold rounded-full mb-3 sm:mb-4`}>
@@ -98,8 +98,8 @@ export default function LandingObjections() {
 
                 {/* Answer */}
                 <div className="flex items-start gap-3 mb-3 sm:mb-4">
-                  <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-[#2AC1BC]/20 flex items-center justify-center flex-shrink-0">
-                    <obj.icon className="w-4 h-4 sm:w-5 sm:h-5 text-[#2AC1BC]" />
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-[#EF4444]/20 flex items-center justify-center flex-shrink-0">
+                    <obj.icon className="w-4 h-4 sm:w-5 sm:h-5 text-[#EF4444]" />
                   </div>
                   <p className="text-base sm:text-lg md:text-xl font-bold text-white leading-tight">
                     {obj.answer}
@@ -117,9 +117,9 @@ export default function LandingObjections() {
 
         {/* Guarantee Badges */}
         <AnimatedSection delay={0.4}>
-          <div className="bg-gradient-to-r from-[#2AC1BC]/20 to-[#2AC1BC]/10 rounded-2xl sm:rounded-3xl p-5 sm:p-8 border border-[#2AC1BC]/30">
+          <div className="bg-gradient-to-r from-[#EF4444]/20 to-[#EF4444]/10 rounded-2xl sm:rounded-3xl p-5 sm:p-8 border border-[#EF4444]/30">
             <h3 className="text-center text-white font-bold text-base sm:text-lg md:text-xl mb-4 sm:mb-6">
-              창호의 민족 <span className="text-[#2AC1BC]">3대 보장</span>
+              창호의 민족 <span className="text-[#EF4444]">3대 보장</span>
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
               {guarantees.map((g, index) => (
@@ -131,7 +131,7 @@ export default function LandingObjections() {
                   transition={{ delay: index * 0.1 }}
                   className="flex items-center gap-3 bg-white/5 rounded-xl px-4 py-3"
                 >
-                  <div className="w-8 h-8 rounded-lg bg-[#2AC1BC] flex items-center justify-center flex-shrink-0">
+                  <div className="w-8 h-8 rounded-lg bg-[#EF4444] flex items-center justify-center flex-shrink-0">
                     <g.icon className="w-4 h-4 text-white" />
                   </div>
                   <p className="text-white text-sm sm:text-base font-medium">{g.text}</p>

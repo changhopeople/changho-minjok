@@ -10,7 +10,7 @@ const gasketTypes = [
     title: '창호의민족 자체 브랜드',
     subtitle: '창짝 내/외부 모두 가스켓 타입',
     badge: '프리미엄',
-    badgeColor: 'bg-[#2AC1BC]',
+    badgeColor: 'bg-[#EF4444]',
     description: '단열성 및 기밀성을 극대화하고, 실리콘 노후화로 인한 문제를 원천 차단합니다.',
     features: [
       { icon: Thermometer, text: '최상급 단열 성능' },
@@ -61,7 +61,7 @@ export default function LandingGasketTech() {
                 whileHover={{ y: -4 }}
                 className={`relative bg-[#292929] rounded-2xl sm:rounded-3xl p-5 sm:p-6 md:p-8 border-2 ${
                   type.highlight
-                    ? 'border-[#2AC1BC] shadow-lg shadow-[#2AC1BC]/20'
+                    ? 'border-[#EF4444] shadow-lg shadow-[#EF4444]/20'
                     : 'border-[#3A3A3A]'
                 } transition-all h-full`}
               >
@@ -76,7 +76,7 @@ export default function LandingGasketTech() {
                 <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-2">
                   {type.title}
                 </h3>
-                <p className="text-[#2AC1BC] font-semibold text-sm sm:text-base mb-4">
+                <p className="text-[#EF4444] font-semibold text-sm sm:text-base mb-4">
                   {type.subtitle}
                 </p>
 
@@ -94,12 +94,12 @@ export default function LandingGasketTech() {
                     >
                       <div
                         className={`w-8 h-8 rounded-lg ${
-                          type.highlight ? 'bg-[#2AC1BC]/20' : 'bg-[#3A3A3A]'
+                          type.highlight ? 'bg-[#EF4444]/20' : 'bg-[#3A3A3A]'
                         } flex items-center justify-center`}
                       >
                         <feature.icon
                           className={`w-4 h-4 ${
-                            type.highlight ? 'text-[#2AC1BC]' : 'text-[#767676]'
+                            type.highlight ? 'text-[#EF4444]' : 'text-[#767676]'
                           }`}
                         />
                       </div>
@@ -107,7 +107,7 @@ export default function LandingGasketTech() {
                         {feature.text}
                       </span>
                       {type.highlight && (
-                        <Check className="w-4 h-4 text-[#2AC1BC] ml-auto" />
+                        <Check className="w-4 h-4 text-[#EF4444] ml-auto" />
                       )}
                     </div>
                   ))}

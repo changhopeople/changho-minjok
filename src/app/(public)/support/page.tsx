@@ -145,7 +145,7 @@ export default function SupportPage() {
                 href="https://map.naver.com/p/entry/place/36921531?lng=128.7771773&lat=35.5693645&placePath=/home"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-[#2AC1BC] transition-colors"
+                className="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-[#EF4444] transition-colors"
               >
                 <span className="font-bold text-green-500">N</span>
                 네이버 지도에서 보기 →

@@ -88,15 +88,15 @@ export default function LandingProblem() {
 
         {/* Bottom CTA */}
         <AnimatedSection delay={0.5} className="text-center mt-8 sm:mt-12">
-          <div className="bg-gradient-to-r from-[#2AC1BC]/10 to-[#2AC1BC]/5 rounded-2xl sm:rounded-3xl p-5 sm:p-8 max-w-2xl mx-auto">
+          <div className="bg-gradient-to-r from-[#EF4444]/10 to-[#EF4444]/5 rounded-2xl sm:rounded-3xl p-5 sm:p-8 max-w-2xl mx-auto">
             <p className="text-base sm:text-xl font-bold text-[#1E1E1E] mb-3 sm:mb-4">
               더 이상 미루지 마세요.
               <br />
-              <span className="text-[#2AC1BC]">올겨울부터 난방비 30% 절감</span> 가능합니다.
+              <span className="text-[#EF4444]">올겨울부터 난방비 30% 절감</span> 가능합니다.
             </p>
             <a
               href="#contact-form"
-              className="inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 bg-[#2AC1BC] text-white rounded-lg sm:rounded-xl font-bold text-sm sm:text-base hover:bg-[#25b0ab] transition-colors"
+              className="inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 bg-[#EF4444] text-white rounded-lg sm:rounded-xl font-bold text-sm sm:text-base hover:bg-[#DC2626] transition-colors"
             >
               우리 집 진단받기
               <span className="text-white/80">→</span>
