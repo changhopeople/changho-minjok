@@ -1,11 +1,12 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef, useEffect, useCallback } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 import { CheckCircle, ArrowRight, Eye, EyeOff, ZoomIn, ChevronLeft, ChevronRight, X, Play } from 'lucide-react';
 import AnimatedSection from '@/components/shared/AnimatedSection';
+import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import {
   Dialog,
   DialogContent,
@@ -59,17 +60,136 @@ const factoryImages = [
   },
 ];
 
+const stats = [
+  { value: 3500, suffix: '평', label: '스마트 팩토리 규모' },
+  { value: 30, suffix: '세대/일', label: '일일 생산 능력' },
+  { value: 15000, suffix: '+', label: '누적 시공 세대' },
+  { value: 4.9, suffix: '/5.0', label: '고객 만족도', decimals: 1 },
+];
+
+/* ── CountUp Hook ── */
+function useCountUp(end: number, duration = 2000, decimals = 0, inView: boolean) {
+  const [current, setCurrent] = useState(0);
+  const hasAnimated = useRef(false);
+
+  useEffect(() => {
+    if (!inView || hasAnimated.current) return;
+    hasAnimated.current = true;
+
+    const startTime = performance.now();
+
+    function tick(now: number) {
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      // ease-out cubic
+      const eased = 1 - Math.pow(1 - progress, 3);
+      setCurrent(parseFloat((eased * end).toFixed(decimals)));
+      if (progress < 1) requestAnimationFrame(tick);
+    }
+
+    requestAnimationFrame(tick);
+  }, [inView, end, duration, decimals]);
+
+  return current;
+}
+
+/* ── StatCard ── */
+function StatCard({ stat }: { stat: typeof stats[number] }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useInView(ref, { once: true, margin: '-50px' });
+  const count = useCountUp(stat.value, 2000, stat.decimals ?? 0, inView);
+
+  return (
+    <div
+      ref={ref}
+      className="bg-white/5 border border-white/10 rounded-2xl p-5 sm:p-6 text-center backdrop-blur-sm"
+    >
+      <p className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white mb-1">
+        {stat.decimals ? count.toFixed(stat.decimals) : count.toLocaleString()}
+        <span className="text-[#EF4444] text-lg sm:text-xl md:text-2xl ml-0.5">{stat.suffix}</span>
+      </p>
+      <p className="text-gray-400 text-xs sm:text-sm">{stat.label}</p>
+    </div>
+  );
+}
+
+/* ── ImageTabContent ── */
+function ImageTabContent({
+  group,
+  groupIdx,
+  onOpenModal,
+}: {
+  group: typeof factoryImages[number];
+  groupIdx: number;
+  onOpenModal: (groupIdx: number, imgIdx: number) => void;
+}) {
+  const [heroIdx, setHeroIdx] = useState(0);
+  const heroImage = group.images[heroIdx];
+
+  return (
+    <div className="space-y-3">
+      {/* Hero image */}
+      <button
+        onClick={() => onOpenModal(groupIdx, heroIdx)}
+        className="relative w-full aspect-[16/9] rounded-xl sm:rounded-2xl overflow-hidden group block"
+      >
+        <Image
+          src={heroImage.src}
+          alt={heroImage.alt}
+          fill
+          className="object-cover group-hover:scale-105 transition-transform duration-500"
+          sizes="(max-width: 768px) 100vw, 900px"
+        />
+        <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors flex items-center justify-center">
+          <motion.div
+            whileHover={{ scale: 1.1 }}
+            className="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-white/90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+          >
+            <ZoomIn className="w-6 h-6 sm:w-8 sm:h-8 text-[#EF4444]" />
+          </motion.div>
+        </div>
+      </button>
+
+      {/* Thumbnail strip */}
+      {group.images.length > 1 && (
+        <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-hide">
+          {group.images.map((img, idx) => (
+            <button
+              key={idx}
+              onClick={() => setHeroIdx(idx)}
+              className={`relative flex-shrink-0 w-20 h-14 sm:w-28 sm:h-20 rounded-lg overflow-hidden border-2 transition-all ${
+                idx === heroIdx
+                  ? 'border-[#EF4444] ring-2 ring-[#EF4444]/30'
+                  : 'border-transparent opacity-60 hover:opacity-100'
+              }`}
+            >
+              <Image
+                src={img.src}
+                alt={img.alt}
+                fill
+                className="object-cover"
+                sizes="112px"
+              />
+            </button>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
+/* ── Main Component ── */
 export default function LandingFactory() {
   const [modalOpen, setModalOpen] = useState(false);
   const [currentGroup, setCurrentGroup] = useState(0);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [showVideo, setShowVideo] = useState(false);
 
-  const openModal = (groupIdx: number) => {
+  const openModal = useCallback((groupIdx: number, imgIdx = 0) => {
     setCurrentGroup(groupIdx);
-    setCurrentIndex(0);
+    setCurrentIndex(imgIdx);
     setModalOpen(true);
-  };
+  }, []);
 
   const allImages = factoryImages[currentGroup]?.images ?? [];
 
@@ -83,86 +203,82 @@ export default function LandingFactory() {
 
   return (
     <>
-      <section className="py-12 sm:py-16 md:py-28 bg-white overflow-hidden relative">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-5">
+      <section className="py-16 sm:py-20 md:py-28 bg-gray-900 overflow-hidden relative">
+        {/* ── Background: dot pattern ── */}
+        <div className="absolute inset-0 opacity-[0.07]">
           <div
             className="absolute inset-0"
             style={{
-              backgroundImage: 'radial-gradient(circle at 2px 2px, #d1d5db 1px, transparent 0)',
-              backgroundSize: '40px 40px',
+              backgroundImage: 'radial-gradient(circle at 1px 1px, #fff 1px, transparent 0)',
+              backgroundSize: '32px 32px',
             }}
           />
         </div>
 
+        {/* ── Background: red gradient blobs ── */}
+        <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-[#EF4444]/10 rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-[#EF4444]/5 rounded-full blur-[100px] pointer-events-none" />
+
         <div className="container mx-auto px-4 lg:px-8 relative">
-          <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-20 items-center">
-            {/* Content */}
-            <div>
-              <AnimatedSection>
-                {/* Comparison Badge */}
-                <div className="flex flex-wrap items-center gap-2 sm:gap-4 mb-5 sm:mb-8">
-                  <div className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-red-500/20 rounded-full">
-                    <EyeOff className="w-3 h-3 sm:w-4 sm:h-4 text-red-400" />
-                    <span className="text-red-400 text-xs sm:text-sm font-bold">숨기는 업체</span>
-                  </div>
-                  <span className="text-gray-400 text-sm">vs</span>
-                  <div className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-[#EF4444] rounded-full">
-                    <Eye className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
-                    <span className="text-white text-xs sm:text-sm font-bold">보여주는 업체</span>
-                  </div>
+          {/* ── Header ── */}
+          <AnimatedSection>
+            <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
+              {/* Comparison Badge */}
+              <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-4 mb-5 sm:mb-8">
+                <div className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-red-500/20 rounded-full">
+                  <EyeOff className="w-3 h-3 sm:w-4 sm:h-4 text-red-400" />
+                  <span className="text-red-400 text-xs sm:text-sm font-bold">숨기는 업체</span>
                 </div>
-
-                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-4 sm:mb-6 tracking-tight leading-tight">
-                  공장 공개하는 창호업체,
-                  <br />
-                  <span className="text-[#EF4444]">전국에 몇 개나 될까요?</span>
-                </h2>
-
-                <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed mb-3 sm:mb-4 max-w-xl">
-                  저희가 자신 있게 공장 문을 여는 이유?
-                  <br />
-                  <span className="text-gray-900 font-semibold">
-                    보시면 가격이 왜 이렇게 나오는지 이해되실 겁니다.
-                  </span>
-                </p>
-                <p className="text-sm sm:text-base text-[#EF4444] font-bold mb-6 sm:mb-10">
-                  숨길 게 없으니까 다 보여드립니다.
-                </p>
-              </AnimatedSection>
-
-              <AnimatedSection delay={0.2}>
-                <div className="grid grid-cols-2 gap-2 sm:gap-3 mb-6 sm:mb-10">
-                  {features.map((item, idx) => (
-                    <div
-                      key={idx}
-                      className="flex items-center gap-2 sm:gap-3 p-2.5 sm:p-4 bg-gray-50 rounded-lg sm:rounded-xl border border-gray-200"
-                    >
-                      <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-[#EF4444] flex-shrink-0" />
-                      <span className="text-gray-900 text-xs sm:text-sm font-medium">{item}</span>
-                    </div>
-                  ))}
+                <span className="text-gray-500 text-sm">vs</span>
+                <div className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-[#EF4444] rounded-full">
+                  <Eye className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
+                  <span className="text-white text-xs sm:text-sm font-bold">보여주는 업체</span>
                 </div>
-              </AnimatedSection>
+              </div>
 
-              <AnimatedSection delay={0.3}>
-                <Link
-                  href="/support/tour"
-                  className="inline-flex items-center justify-center gap-2 sm:gap-3 px-5 sm:px-8 py-3 sm:py-4 bg-[#FF6F0F] rounded-lg sm:rounded-xl text-white font-bold text-sm sm:text-base hover:bg-[#E5630D] transition-colors group shadow-lg shadow-[#FF6F0F]/30 w-full sm:w-auto"
-                >
-                  직접 눈으로 확인하러 가기
-                  <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
-                </Link>
-                <p className="text-gray-500 text-xs sm:text-sm mt-2 sm:mt-3 text-center sm:text-left">
-                  * 사전 예약 시 공장 견학 무료
-                </p>
-              </AnimatedSection>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-4 sm:mb-6 tracking-tight leading-tight">
+                공장 공개하는 창호업체,
+                <br />
+                <span className="text-[#EF4444]">전국에 몇 개나 될까요?</span>
+              </h2>
+
+              <p className="text-sm sm:text-base md:text-lg text-gray-400 leading-relaxed mb-2">
+                저희가 자신 있게 공장 문을 여는 이유?
+                <br />
+                <span className="text-white font-semibold">
+                  보시면 가격이 왜 이렇게 나오는지 이해되실 겁니다.
+                </span>
+              </p>
+              <p className="text-sm sm:text-base text-[#EF4444] font-bold">
+                숨길 게 없으니까 다 보여드립니다.
+              </p>
             </div>
+          </AnimatedSection>
 
-            {/* Factory Media */}
-            <AnimatedSection direction="right">
-              <div className="relative mt-6 lg:mt-0 space-y-3 sm:space-y-4">
-                {/* YouTube Video Card */}
+          {/* ── Tabs Gallery ── */}
+          <AnimatedSection delay={0.15}>
+            <Tabs defaultValue="video" className="max-w-4xl mx-auto mb-12 sm:mb-16">
+              <TabsList className="bg-white/5 border border-white/10 h-11 sm:h-12 w-full sm:w-auto mx-auto flex overflow-x-auto scrollbar-hide rounded-xl p-1 gap-1">
+                <TabsTrigger
+                  value="video"
+                  className="data-[state=active]:bg-[#EF4444] data-[state=active]:text-white text-gray-400 hover:text-white rounded-lg px-4 sm:px-6 text-sm font-semibold transition-all whitespace-nowrap flex-shrink-0"
+                >
+                  <Play className="w-3.5 h-3.5 mr-1.5" />
+                  영상
+                </TabsTrigger>
+                {factoryImages.map((group, idx) => (
+                  <TabsTrigger
+                    key={group.label}
+                    value={`gallery-${idx}`}
+                    className="data-[state=active]:bg-[#EF4444] data-[state=active]:text-white text-gray-400 hover:text-white rounded-lg px-4 sm:px-6 text-sm font-semibold transition-all whitespace-nowrap flex-shrink-0"
+                  >
+                    {group.label}
+                  </TabsTrigger>
+                ))}
+              </TabsList>
+
+              {/* Video Tab */}
+              <TabsContent value="video" className="mt-4 sm:mt-6">
                 <div className="relative aspect-[16/9] rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl">
                   {showVideo ? (
                     <iframe
@@ -200,55 +316,64 @@ export default function LandingFactory() {
                     </button>
                   )}
                 </div>
+              </TabsContent>
 
-                {/* Image Group Cards */}
-                {factoryImages.map((group, groupIdx) => (
-                  <button
-                    key={group.label}
-                    onClick={() => openModal(groupIdx)}
-                    className="block w-full group text-left"
-                  >
-                    <div className="relative aspect-[16/7] rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl">
-                      <Image
-                        src={group.thumbnail}
-                        alt={`창호의 민족 ${group.label}`}
-                        fill
-                        className="object-cover group-hover:scale-105 transition-transform duration-500"
-                      />
-                      <div className="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-colors flex items-center justify-center">
-                        <motion.div
-                          whileHover={{ scale: 1.1 }}
-                          className="w-10 h-10 sm:w-14 sm:h-14 rounded-full bg-white/90 flex items-center justify-center"
-                        >
-                          <ZoomIn className="w-5 h-5 sm:w-7 sm:h-7 text-[#EF4444]" />
-                        </motion.div>
-                      </div>
-                      <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-4 bg-gradient-to-t from-black/80 to-transparent">
-                        <p className="text-white font-bold text-sm sm:text-base">{group.label}</p>
-                        <p className="text-white/70 text-xs sm:text-sm">
-                          사진 {group.images.length}장 보기
-                        </p>
-                      </div>
-                    </div>
-                  </button>
-                ))}
+              {/* Image Gallery Tabs */}
+              {factoryImages.map((group, idx) => (
+                <TabsContent key={group.label} value={`gallery-${idx}`} className="mt-4 sm:mt-6">
+                  <ImageTabContent
+                    group={group}
+                    groupIdx={idx}
+                    onOpenModal={openModal}
+                  />
+                </TabsContent>
+              ))}
+            </Tabs>
+          </AnimatedSection>
 
-                {/* Floating Badge */}
-                <motion.div
-                  initial={{ opacity: 0, scale: 0, rotate: -12 }}
-                  whileInView={{ opacity: 1, scale: 1, rotate: -6 }}
-                  viewport={{ once: true }}
-                  className="absolute -right-2 sm:-right-4 -top-2 sm:-top-4 bg-[#FF6F0F] text-white px-3 sm:px-5 py-2 sm:py-3 rounded-lg sm:rounded-xl font-extrabold text-xs sm:text-base shadow-lg z-10"
+          {/* ── Stats Bar ── */}
+          <AnimatedSection delay={0.3}>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 max-w-4xl mx-auto mb-12 sm:mb-16">
+              {stats.map((stat) => (
+                <StatCard key={stat.label} stat={stat} />
+              ))}
+            </div>
+          </AnimatedSection>
+
+          {/* ── Feature Grid ── */}
+          <AnimatedSection delay={0.4}>
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-3 max-w-4xl mx-auto mb-10 sm:mb-14">
+              {features.map((item, idx) => (
+                <div
+                  key={idx}
+                  className="flex items-center gap-2 sm:gap-3 p-3 sm:p-4 bg-white/5 border border-white/10 rounded-xl backdrop-blur-sm"
                 >
-                  언제든 방문 OK
-                </motion.div>
-              </div>
-            </AnimatedSection>
-          </div>
+                  <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-[#EF4444] flex-shrink-0" />
+                  <span className="text-white text-xs sm:text-sm font-medium">{item}</span>
+                </div>
+              ))}
+            </div>
+          </AnimatedSection>
+
+          {/* ── CTA Button ── */}
+          <AnimatedSection delay={0.5}>
+            <div className="text-center">
+              <Link
+                href="/support/tour"
+                className="inline-flex items-center justify-center gap-2 sm:gap-3 px-8 sm:px-10 py-3.5 sm:py-4 bg-[#FF6F0F] rounded-xl text-white font-bold text-sm sm:text-base hover:bg-[#E5630D] transition-colors group shadow-lg shadow-[#FF6F0F]/30"
+              >
+                직접 눈으로 확인하러 가기
+                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
+              </Link>
+              <p className="text-gray-500 text-xs sm:text-sm mt-3">
+                * 사전 예약 시 공장 견학 무료
+              </p>
+            </div>
+          </AnimatedSection>
         </div>
       </section>
 
-      {/* Image Modal */}
+      {/* ── Image Modal (기존 유지) ── */}
       <Dialog open={modalOpen} onOpenChange={setModalOpen}>
         <DialogContent
           className="max-w-[calc(100%-2rem)] sm:max-w-4xl p-0 bg-black border-none rounded-2xl overflow-hidden"
