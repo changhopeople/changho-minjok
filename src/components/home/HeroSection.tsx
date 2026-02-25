@@ -140,8 +140,8 @@ export default function HeroSection() {
                 {/* Factory Preview Image */}
                 <div className="relative aspect-[16/10] rounded-xl overflow-hidden mb-5">
                   <Image
-                    src="/images/factory/automation-line.jpg"
-                    alt="창호 생산 라인"
+                    src="/images/factory/new-8.jpg"
+                    alt="3,500평 스마트 팩토리 생산 현장"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
