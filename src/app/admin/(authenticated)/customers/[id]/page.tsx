@@ -80,8 +80,8 @@ export default async function CustomerDetailPage({ params }: Props) {
             <h2 className="font-semibold text-gray-900 mb-4">기본 정보</h2>
             <div className="space-y-3">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-sky-100 rounded-full flex items-center justify-center">
-                  <span className="text-sky-600 font-semibold">
+                <div className="w-10 h-10 bg-[#FEF2F2] rounded-full flex items-center justify-center">
+                  <span className="text-[#EF4444] font-semibold">
                     {customer.name.charAt(0)}
                   </span>
                 </div>
@@ -96,7 +96,7 @@ export default async function CustomerDetailPage({ params }: Props) {
               <div className="pt-3 border-t space-y-2">
                 <a
                   href={`tel:${customer.phone}`}
-                  className="flex items-center gap-2 text-gray-700 hover:text-sky-600"
+                  className="flex items-center gap-2 text-gray-700 hover:text-[#EF4444]"
                 >
                   <Phone className="w-4 h-4" />
                   {customer.phone}
@@ -104,7 +104,7 @@ export default async function CustomerDetailPage({ params }: Props) {
                 {customer.email && (
                   <a
                     href={`mailto:${customer.email}`}
-                    className="flex items-center gap-2 text-gray-700 hover:text-sky-600"
+                    className="flex items-center gap-2 text-gray-700 hover:text-[#EF4444]"
                   >
                     <Mail className="w-4 h-4" />
                     {customer.email}
@@ -137,17 +137,17 @@ export default async function CustomerDetailPage({ params }: Props) {
               <span className="text-gray-500">상담 상태:</span>
               <span className={`px-2 py-0.5 rounded-full text-xs font-medium ${
                 customer.status === 'completed'
-                  ? 'bg-green-100 text-green-700'
+                  ? 'bg-[#E0F7F6] text-[#2AC1BC]'
                   : customer.status === 'in_progress'
-                  ? 'bg-blue-100 text-blue-700'
-                  : 'bg-yellow-100 text-yellow-700'
+                  ? 'bg-[#FEF2F2] text-[#EF4444]'
+                  : 'bg-[#FFF3E8] text-[#FF6F0F]'
               }`}>
                 {statusLabels[customer.status] || customer.status}
               </span>
             </div>
             {customer.admin_note && (
-              <div className="mt-3 p-3 bg-blue-50 rounded-lg">
-                <p className="text-sm text-blue-700">{customer.admin_note}</p>
+              <div className="mt-3 p-3 bg-[#FEF2F2] rounded-lg">
+                <p className="text-sm text-[#EF4444]">{customer.admin_note}</p>
               </div>
             )}
           </div>

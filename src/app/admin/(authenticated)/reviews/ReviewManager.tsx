@@ -102,7 +102,7 @@ export default function ReviewManager({ initialReviews }: ReviewManagerProps) {
     return Array.from({ length: 5 }).map((_, i) => (
       <Star
         key={i}
-        className={`w-4 h-4 ${i < rating ? 'text-amber-400 fill-amber-400' : 'text-gray-300'}`}
+        className={`w-4 h-4 ${i < rating ? 'text-[#FF6F0F] fill-[#FF6F0F]' : 'text-gray-300'}`}
       />
     ));
   };
@@ -112,7 +112,7 @@ export default function ReviewManager({ initialReviews }: ReviewManagerProps) {
       {/* Add Button */}
       <button
         onClick={() => setIsFormOpen(true)}
-        className="inline-flex items-center gap-2 bg-sky-500 text-white px-4 py-2.5 rounded-xl hover:bg-sky-600 transition-colors"
+        className="inline-flex items-center gap-2 bg-[#EF4444] text-white px-4 py-2.5 rounded-xl hover:bg-[#DC2626] transition-colors"
       >
         <Plus className="w-5 h-5" />
         새 후기
@@ -134,14 +134,14 @@ export default function ReviewManager({ initialReviews }: ReviewManagerProps) {
             <form onSubmit={handleSubmit} className="p-6 space-y-4">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  고객명 <span className="text-red-500">*</span>
+                  고객명 <span className="text-[#EF4444]">*</span>
                 </label>
                 <input
                   type="text"
                   name="customer_name"
                   defaultValue={editingReview?.customer_name || ''}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#EF4444] focus:border-[#EF4444] outline-none"
                   placeholder="고객명을 입력하세요"
                 />
               </div>
@@ -153,7 +153,7 @@ export default function ReviewManager({ initialReviews }: ReviewManagerProps) {
                 <select
                   name="rating"
                   defaultValue={editingReview?.rating || 5}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#EF4444] focus:border-[#EF4444] outline-none"
                 >
                   <option value={5}>5점</option>
                   <option value={4}>4점</option>
@@ -165,14 +165,14 @@ export default function ReviewManager({ initialReviews }: ReviewManagerProps) {
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  후기 내용 <span className="text-red-500">*</span>
+                  후기 내용 <span className="text-[#EF4444]">*</span>
                 </label>
                 <textarea
                   name="content"
                   defaultValue={editingReview?.content || ''}
                   required
                   rows={4}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none resize-none"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#EF4444] focus:border-[#EF4444] outline-none resize-none"
                   placeholder="후기 내용을 입력하세요"
                 />
               </div>
@@ -185,7 +185,7 @@ export default function ReviewManager({ initialReviews }: ReviewManagerProps) {
                   <select
                     name="is_approved"
                     defaultValue={editingReview?.is_approved ? 'true' : 'false'}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#EF4444] focus:border-[#EF4444] outline-none"
                   >
                     <option value="false">대기</option>
                     <option value="true">승인</option>
@@ -199,7 +199,7 @@ export default function ReviewManager({ initialReviews }: ReviewManagerProps) {
                   <select
                     name="is_best"
                     defaultValue={editingReview?.is_best ? 'true' : 'false'}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#EF4444] focus:border-[#EF4444] outline-none"
                   >
                     <option value="false">일반</option>
                     <option value="true">베스트</option>
@@ -218,7 +218,7 @@ export default function ReviewManager({ initialReviews }: ReviewManagerProps) {
                 <button
                   type="submit"
                   disabled={isLoading}
-                  className="inline-flex items-center gap-2 bg-sky-500 text-white px-4 py-2.5 rounded-xl hover:bg-sky-600 disabled:opacity-50 transition-colors"
+                  className="inline-flex items-center gap-2 bg-[#EF4444] text-white px-4 py-2.5 rounded-xl hover:bg-[#DC2626] disabled:opacity-50 transition-colors"
                 >
                   {isLoading ? (
                     <Loader2 className="w-5 h-5 animate-spin" />
@@ -245,7 +245,7 @@ export default function ReviewManager({ initialReviews }: ReviewManagerProps) {
             <div
               key={review.id}
               className={`bg-white rounded-2xl shadow-sm p-6 ${
-                review.is_best ? 'ring-2 ring-amber-400' : ''
+                review.is_best ? 'ring-2 ring-[#FF6F0F]' : ''
               }`}
             >
               <div className="flex items-start justify-between">
@@ -254,18 +254,18 @@ export default function ReviewManager({ initialReviews }: ReviewManagerProps) {
                     <span className="font-semibold text-gray-900">{review.customer_name}</span>
                     <div className="flex items-center">{renderStars(review.rating)}</div>
                     {review.is_best && (
-                      <span className="inline-flex items-center gap-1 px-2 py-0.5 text-xs font-medium bg-amber-100 text-amber-700 rounded-full">
+                      <span className="inline-flex items-center gap-1 px-2 py-0.5 text-xs font-medium bg-[#FFF3E8] text-[#FF6F0F] rounded-full">
                         <Award className="w-3 h-3" />
                         베스트
                       </span>
                     )}
                     {review.is_approved ? (
-                      <span className="inline-flex items-center gap-1 px-2 py-0.5 text-xs font-medium bg-green-100 text-green-700 rounded-full">
+                      <span className="inline-flex items-center gap-1 px-2 py-0.5 text-xs font-medium bg-[#E0F7F6] text-[#2AC1BC] rounded-full">
                         <CheckCircle className="w-3 h-3" />
                         승인됨
                       </span>
                     ) : (
-                      <span className="inline-flex items-center gap-1 px-2 py-0.5 text-xs font-medium bg-yellow-100 text-yellow-700 rounded-full">
+                      <span className="inline-flex items-center gap-1 px-2 py-0.5 text-xs font-medium bg-[#FFF3E8] text-[#FF6F0F] rounded-full">
                         <Clock className="w-3 h-3" />
                         대기중
                       </span>
@@ -284,7 +284,7 @@ export default function ReviewManager({ initialReviews }: ReviewManagerProps) {
                     onClick={() => handleToggleApproval(review.id, review.is_approved)}
                     className={`p-2 rounded-lg transition-colors ${
                       review.is_approved
-                        ? 'text-green-600 bg-green-50 hover:bg-green-100'
+                        ? 'text-[#2AC1BC] bg-[#E0F7F6] hover:bg-[#2AC1BC]/20'
                         : 'text-gray-400 hover:bg-gray-100'
                     }`}
                     title={review.is_approved ? '승인 취소' : '승인'}
@@ -295,7 +295,7 @@ export default function ReviewManager({ initialReviews }: ReviewManagerProps) {
                     onClick={() => handleToggleBest(review.id, review.is_best)}
                     className={`p-2 rounded-lg transition-colors ${
                       review.is_best
-                        ? 'text-amber-600 bg-amber-50 hover:bg-amber-100'
+                        ? 'text-[#FF6F0F] bg-[#FFF3E8] hover:bg-[#FF6F0F]/20'
                         : 'text-gray-400 hover:bg-gray-100'
                     }`}
                     title={review.is_best ? '베스트 해제' : '베스트 지정'}
@@ -304,14 +304,14 @@ export default function ReviewManager({ initialReviews }: ReviewManagerProps) {
                   </button>
                   <button
                     onClick={() => handleEdit(review)}
-                    className="p-2 text-gray-500 hover:text-sky-600 hover:bg-sky-50 rounded-lg transition-colors"
+                    className="p-2 text-gray-500 hover:text-[#EF4444] hover:bg-[#FEF2F2] rounded-lg transition-colors"
                     title="수정"
                   >
                     <Edit className="w-5 h-5" />
                   </button>
                   <button
                     onClick={() => handleDelete(review.id)}
-                    className="p-2 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors"
+                    className="p-2 text-gray-500 hover:text-[#EF4444] hover:bg-[#FEF2F2] rounded-lg transition-colors"
                     title="삭제"
                   >
                     <Trash2 className="w-5 h-5" />

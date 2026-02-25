@@ -92,7 +92,7 @@ export default function HistoryPage() {
               <AnimatedSection key={yearGroup.year} delay={groupIndex * 0.1}>
                 <div className="relative pl-6 sm:pl-8 pb-8 sm:pb-12 last:pb-0">
                   {/* Year Badge */}
-                  <div className="absolute left-0 top-0 -translate-x-1/2 w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-sky-500 text-white flex items-center justify-center font-bold text-sm sm:text-lg shadow-lg shadow-sky-500/25">
+                  <div className="absolute left-0 top-0 -translate-x-1/2 w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-[#EF4444] text-white flex items-center justify-center font-bold text-sm sm:text-lg shadow-lg shadow-[#EF4444]/25">
                     {yearGroup.year}
                   </div>
 
@@ -103,12 +103,12 @@ export default function HistoryPage() {
                         key={eventIndex}
                         className={`p-4 rounded-xl border transition-colors ${
                           event.highlight
-                            ? 'bg-sky-50 border-sky-200'
-                            : 'bg-white border-gray-100 hover:border-sky-100'
+                            ? 'bg-[#FEF2F2] border-[#EF4444]/20'
+                            : 'bg-white border-gray-100 hover:border-[#EF4444]/10'
                         }`}
                       >
-                        <span className="text-sm text-sky-600 font-medium">{event.month}</span>
-                        <h3 className={`font-semibold mt-1 ${event.highlight ? 'text-sky-700' : 'text-gray-900'}`}>
+                        <span className="text-sm text-[#EF4444] font-medium">{event.month}</span>
+                        <h3 className={`font-semibold mt-1 ${event.highlight ? 'text-[#EF4444]' : 'text-gray-900'}`}>
                           {event.title}
                         </h3>
                       </div>
@@ -117,7 +117,7 @@ export default function HistoryPage() {
 
                   {/* Connector Line */}
                   {groupIndex < history.length - 1 && (
-                    <div className="absolute left-0 top-16 bottom-0 w-0.5 bg-sky-200 -translate-x-1/2" />
+                    <div className="absolute left-0 top-16 bottom-0 w-0.5 bg-[#EF4444]/20 -translate-x-1/2" />
                   )}
                 </div>
               </AnimatedSection>

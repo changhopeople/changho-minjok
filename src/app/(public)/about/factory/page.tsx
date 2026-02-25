@@ -223,8 +223,8 @@ export default function FactoryPage() {
             <div className="grid md:grid-cols-2 gap-4">
               {facilities.map((facility, index) => (
                 <AnimatedSection key={facility} delay={index * 0.05}>
-                  <div className="flex items-center gap-3 p-4 bg-white rounded-xl border border-gray-100 hover:border-sky-200 transition-colors">
-                    <CheckCircle className="w-5 h-5 text-sky-500 flex-shrink-0" />
+                  <div className="flex items-center gap-3 p-4 bg-white rounded-xl border border-gray-100 hover:border-[#EF4444]/20 transition-colors">
+                    <CheckCircle className="w-5 h-5 text-[#EF4444] flex-shrink-0" />
                     <span className="text-gray-700 font-medium">{facility}</span>
                   </div>
                 </AnimatedSection>
@@ -241,19 +241,19 @@ export default function FactoryPage() {
             <h2 className="text-3xl font-bold text-white mb-4">
               직접 눈으로 확인하세요
             </h2>
-            <p className="text-sky-100 mb-8">
+            <p className="text-[#FEF2F2] mb-8">
               견적만 비교하지 마시고, 공장을 방문해 주십시오.
               <br />
               창호의 민족의 제조 역량을 직접 확인하실 수 있습니다.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" className="bg-white text-sky-600 hover:bg-sky-50 rounded-xl">
+              <Button asChild size="lg" className="bg-white text-[#EF4444] hover:bg-[#FEF2F2] rounded-xl">
                 <Link href="/support/tour">
                   공장 견학 예약
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </Link>
               </Button>
-              <Button asChild size="lg" className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-sky-600 rounded-xl">
+              <Button asChild size="lg" className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-[#EF4444] rounded-xl">
                 <Link href="/estimate">무료 견적받기</Link>
               </Button>
             </div>

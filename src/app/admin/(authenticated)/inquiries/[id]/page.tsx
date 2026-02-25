@@ -36,9 +36,9 @@ import DeleteButton from '@/components/admin/DeleteButton';
 export const dynamic = 'force-dynamic';
 
 const statusConfig = {
-  pending: { label: '대기중', color: 'bg-yellow-100 text-yellow-700 border-yellow-200' },
-  in_progress: { label: '처리중', color: 'bg-blue-100 text-blue-700 border-blue-200' },
-  completed: { label: '완료', color: 'bg-green-100 text-green-700 border-green-200' },
+  pending: { label: '대기중', color: 'bg-[#FFF3E8] text-[#FF6F0F] border-[#FF6F0F]/30' },
+  in_progress: { label: '처리중', color: 'bg-[#FEF2F2] text-[#EF4444] border-[#EF4444]/30' },
+  completed: { label: '완료', color: 'bg-[#E0F7F6] text-[#2AC1BC] border-[#2AC1BC]/30' },
   cancelled: { label: '취소', color: 'bg-gray-100 text-gray-500 border-gray-200' },
 };
 
@@ -51,9 +51,9 @@ const inquiryTypeLabels: Record<string, string> = {
 };
 
 const messageStatusConfig: Record<string, { label: string; color: string }> = {
-  pending: { label: '대기', color: 'bg-yellow-100 text-yellow-700' },
-  sent: { label: '발송 완료', color: 'bg-green-100 text-green-700' },
-  failed: { label: '실패', color: 'bg-red-100 text-red-700' },
+  pending: { label: '대기', color: 'bg-[#FFF3E8] text-[#FF6F0F]' },
+  sent: { label: '발송 완료', color: 'bg-[#E0F7F6] text-[#2AC1BC]' },
+  failed: { label: '실패', color: 'bg-[#FEF2F2] text-[#EF4444]' },
 };
 
 const channelLabels: Record<string, string> = {
@@ -115,7 +115,7 @@ export default async function InquiryDetailPage({
         <DeleteButton
           action={deleteInquiryAction}
           id={inquiry.id}
-          className="inline-flex items-center gap-2 text-red-500 hover:text-red-700 px-3 py-2"
+          className="inline-flex items-center gap-2 text-[#EF4444] hover:text-[#DC2626] px-3 py-2"
         >
           삭제
         </DeleteButton>
@@ -155,7 +155,7 @@ export default async function InquiryDetailPage({
                 <Phone className="w-4 h-4" />
                 연락처
               </label>
-              <a href={`tel:${inquiry.phone}`} className="text-lg font-semibold text-sky-600 hover:underline">
+              <a href={`tel:${inquiry.phone}`} className="text-lg font-semibold text-[#EF4444] hover:underline">
                 {inquiry.phone}
               </a>
             </div>
@@ -166,7 +166,7 @@ export default async function InquiryDetailPage({
                   <Mail className="w-4 h-4" />
                   이메일
                 </label>
-                <a href={`mailto:${inquiry.email}`} className="text-gray-900 hover:text-sky-600">
+                <a href={`mailto:${inquiry.email}`} className="text-gray-900 hover:text-[#EF4444]">
                   {inquiry.email}
                 </a>
               </div>
@@ -231,7 +231,7 @@ export default async function InquiryDetailPage({
               name="admin_note"
               rows={3}
               defaultValue={inquiry.admin_note || ''}
-              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none resize-none mb-2"
+              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#EF4444] focus:border-[#EF4444] outline-none resize-none mb-2"
               placeholder="관리자 메모를 입력하세요 (저장 시 상태변경 버튼을 누르세요)"
             />
             <button
@@ -253,7 +253,7 @@ export default async function InquiryDetailPage({
               name="status"
               value="pending"
               disabled={inquiry.status === 'pending'}
-              className="inline-flex items-center gap-1 px-4 py-2 bg-yellow-100 text-yellow-700 rounded-lg hover:bg-yellow-200 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              className="inline-flex items-center gap-1 px-4 py-2 bg-[#FFF3E8] text-[#FF6F0F] rounded-lg hover:bg-[#FF6F0F]/20 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
             >
               <Clock className="w-4 h-4" />
               대기중
@@ -263,7 +263,7 @@ export default async function InquiryDetailPage({
               name="status"
               value="in_progress"
               disabled={inquiry.status === 'in_progress'}
-              className="inline-flex items-center gap-1 px-4 py-2 bg-blue-100 text-blue-700 rounded-lg hover:bg-blue-200 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              className="inline-flex items-center gap-1 px-4 py-2 bg-[#FEF2F2] text-[#EF4444] rounded-lg hover:bg-[#EF4444]/20 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
             >
               <Eye className="w-4 h-4" />
               처리중
@@ -273,7 +273,7 @@ export default async function InquiryDetailPage({
               name="status"
               value="completed"
               disabled={inquiry.status === 'completed'}
-              className="inline-flex items-center gap-1 px-4 py-2 bg-green-100 text-green-700 rounded-lg hover:bg-green-200 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              className="inline-flex items-center gap-1 px-4 py-2 bg-[#E0F7F6] text-[#2AC1BC] rounded-lg hover:bg-[#2AC1BC]/20 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
             >
               <CheckCircle2 className="w-4 h-4" />
               완료
@@ -294,14 +294,14 @@ export default async function InquiryDetailPage({
 
       {/* 자동 퍼널 섹션 */}
       <div className="max-w-4xl mt-6 bg-white rounded-2xl shadow-sm overflow-hidden">
-        <div className="px-6 py-4 border-b bg-purple-50">
+        <div className="px-6 py-4 border-b bg-[#FEF2F2]">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <Zap className="w-5 h-5 text-purple-600" />
-              <h2 className="font-bold text-purple-900">자동 퍼널</h2>
+              <Zap className="w-5 h-5 text-[#EF4444]" />
+              <h2 className="font-bold text-[#EF4444]">자동 퍼널</h2>
             </div>
             {!customerFunnel && (
-              <span className="text-xs text-purple-500 bg-purple-100 px-2 py-1 rounded-full">
+              <span className="text-xs text-[#EF4444] bg-[#FEF2F2] px-2 py-1 rounded-full">
                 퍼널을 연결하면 자동으로 메시지가 발송돼요
               </span>
             )}
@@ -316,8 +316,8 @@ export default async function InquiryDetailPage({
                 <div className="flex items-center gap-3">
                   <span className={`inline-flex items-center gap-1.5 px-3 py-1 text-xs font-bold rounded-full ${
                     customerFunnel.status === 'active'
-                      ? 'bg-green-100 text-green-700'
-                      : 'bg-yellow-100 text-yellow-700'
+                      ? 'bg-[#E0F7F6] text-[#2AC1BC]'
+                      : 'bg-[#FFF3E8] text-[#FF6F0F]'
                   }`}>
                     {customerFunnel.status === 'active' ? '자동 발송 중' : '일시정지 됨'}
                   </span>
@@ -332,7 +332,7 @@ export default async function InquiryDetailPage({
 
               {/* 다음 발송 안내 */}
               {customerFunnel.next_send_at && customerFunnel.status === 'active' && (
-                <div className="flex items-center gap-2 text-sm text-purple-700 bg-purple-50 px-4 py-3 rounded-xl border border-purple-100">
+                <div className="flex items-center gap-2 text-sm text-[#EF4444] bg-[#FEF2F2] px-4 py-3 rounded-xl border border-[#EF4444]/20">
                   <Timer className="w-4 h-4 shrink-0" />
                   <span>
                     <strong>다음 메시지 발송 예정:</strong> {new Date(customerFunnel.next_send_at).toLocaleString('ko-KR', {
@@ -356,7 +356,7 @@ export default async function InquiryDetailPage({
                         {/* 타임라인 라인 */}
                         <div className="flex flex-col items-center">
                           <div className={`w-7 h-7 rounded-full flex items-center justify-center shrink-0 ${
-                            isDone ? 'bg-green-500' : isCurrent ? 'bg-purple-500' : 'bg-gray-200'
+                            isDone ? 'bg-[#2AC1BC]' : isCurrent ? 'bg-[#EF4444]' : 'bg-gray-200'
                           }`}>
                             {isDone ? (
                               <CheckCircle2 className="w-4 h-4 text-white" />
@@ -367,7 +367,7 @@ export default async function InquiryDetailPage({
                             )}
                           </div>
                           {i < funnelSteps.length - 1 && (
-                            <div className={`w-0.5 flex-1 min-h-[24px] ${isDone ? 'bg-green-300' : 'bg-gray-200'}`} />
+                            <div className={`w-0.5 flex-1 min-h-[24px] ${isDone ? 'bg-[#2AC1BC]/50' : 'bg-gray-200'}`} />
                           )}
                         </div>
 
@@ -379,13 +379,13 @@ export default async function InquiryDetailPage({
                             </span>
                             {isDone && log && (
                               <span className={`text-[10px] px-1.5 py-0.5 rounded-full font-medium ${
-                                log.status === 'sent' ? 'bg-green-100 text-green-600' : 'bg-red-100 text-red-600'
+                                log.status === 'sent' ? 'bg-[#E0F7F6] text-[#2AC1BC]' : 'bg-[#FEF2F2] text-[#EF4444]'
                               }`}>
                                 {log.status === 'sent' ? '발송완료' : '실패'}
                               </span>
                             )}
                             {isCurrent && (
-                              <span className="text-[10px] px-1.5 py-0.5 rounded-full font-medium bg-purple-100 text-purple-600">
+                              <span className="text-[10px] px-1.5 py-0.5 rounded-full font-medium bg-[#FEF2F2] text-[#EF4444]">
                                 다음 발송
                               </span>
                             )}
@@ -404,7 +404,7 @@ export default async function InquiryDetailPage({
               {/* Progress bar */}
               <div className="w-full bg-gray-100 rounded-full h-2">
                 <div
-                  className="bg-purple-600 h-2 rounded-full transition-all"
+                  className="bg-[#EF4444] h-2 rounded-full transition-all"
                   style={{ width: `${customerFunnel.total_steps > 0 ? (customerFunnel.current_step / customerFunnel.total_steps) * 100 : 0}%` }}
                 />
               </div>
@@ -417,7 +417,7 @@ export default async function InquiryDetailPage({
                     <input type="hidden" name="inquiry_id" value={inquiry.id} />
                     <button
                       type="submit"
-                      className="inline-flex items-center gap-1.5 px-4 py-2 bg-yellow-100 text-yellow-700 rounded-lg hover:bg-yellow-200 transition-colors text-sm font-medium"
+                      className="inline-flex items-center gap-1.5 px-4 py-2 bg-[#FFF3E8] text-[#FF6F0F] rounded-lg hover:bg-[#FF6F0F]/20 transition-colors text-sm font-medium"
                     >
                       <Pause className="w-4 h-4" />
                       일시정지
@@ -429,7 +429,7 @@ export default async function InquiryDetailPage({
                     <input type="hidden" name="inquiry_id" value={inquiry.id} />
                     <button
                       type="submit"
-                      className="inline-flex items-center gap-1.5 px-4 py-2 bg-green-100 text-green-700 rounded-lg hover:bg-green-200 transition-colors text-sm font-medium"
+                      className="inline-flex items-center gap-1.5 px-4 py-2 bg-[#E0F7F6] text-[#2AC1BC] rounded-lg hover:bg-[#2AC1BC]/20 transition-colors text-sm font-medium"
                     >
                       <Play className="w-4 h-4" />
                       재개하기
@@ -440,7 +440,7 @@ export default async function InquiryDetailPage({
                   action={stopFunnelAction}
                   id={customerFunnel.id}
                   confirmMessage="퍼널을 완전히 중지하시겠습니까? 남은 메시지는 발송되지 않습니다."
-                  className="inline-flex items-center gap-1.5 px-4 py-2 bg-red-50 text-red-600 rounded-lg hover:bg-red-100 transition-colors text-sm font-medium"
+                  className="inline-flex items-center gap-1.5 px-4 py-2 bg-[#FEF2F2] text-[#EF4444] rounded-lg hover:bg-[#EF4444]/20 transition-colors text-sm font-medium"
                 >
                   <Square className="w-4 h-4" />
                   중지
@@ -452,7 +452,7 @@ export default async function InquiryDetailPage({
               <div className="flex items-center gap-3">
                 <span className={`inline-flex items-center gap-1.5 px-3 py-1 text-xs font-bold rounded-full ${
                   customerFunnel.status === 'completed'
-                    ? 'bg-green-100 text-green-700'
+                    ? 'bg-[#E0F7F6] text-[#2AC1BC]'
                     : 'bg-gray-100 text-gray-500'
                 }`}>
                   {customerFunnel.status === 'completed' ? '모든 메시지 발송 완료!' : '중지됨'}
@@ -474,7 +474,7 @@ export default async function InquiryDetailPage({
                     <select
                       name="template_id"
                       required
-                      className="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 outline-none text-sm"
+                      className="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#EF4444] focus:border-[#EF4444] outline-none text-sm"
                     >
                       {funnelTemplates.map((t) => (
                         <option key={t.id} value={t.id}>{t.name}</option>
@@ -483,7 +483,7 @@ export default async function InquiryDetailPage({
                   </div>
                   <button
                     type="submit"
-                    className="inline-flex items-center gap-2 px-5 py-2.5 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors font-medium"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#EF4444] text-white rounded-lg hover:bg-[#DC2626] transition-colors font-medium"
                   >
                     <Zap className="w-4 h-4" />
                     자동관리 시작
@@ -494,7 +494,7 @@ export default async function InquiryDetailPage({
                   <p className="text-sm text-gray-400 mb-2">
                     활성화된 퍼널 템플릿이 없습니다.
                   </p>
-                  <Link href="/admin/funnels/new" className="text-sm text-purple-600 hover:underline font-medium">
+                  <Link href="/admin/funnels/new" className="text-sm text-[#EF4444] hover:underline font-medium">
                     퍼널을 먼저 생성해주세요 &rarr;
                   </Link>
                 </div>
@@ -503,11 +503,11 @@ export default async function InquiryDetailPage({
           ) : (
             // 퍼널 없음 - 가이드 포함
             <div className="space-y-4">
-              <div className="bg-purple-50 rounded-xl p-4 border border-purple-100">
-                <p className="text-sm text-purple-800 mb-1 font-medium">
+              <div className="bg-[#FEF2F2] rounded-xl p-4 border border-[#EF4444]/20">
+                <p className="text-sm text-[#EF4444] mb-1 font-medium">
                   아직 자동 퍼널이 연결되지 않았어요
                 </p>
-                <p className="text-xs text-purple-600">
+                <p className="text-xs text-[#EF4444]">
                   아래에서 퍼널을 선택하고 &quot;자동관리 시작&quot;을 누르면, 설정한 시간에 맞춰 이 고객에게 자동으로 메시지가 보내져요.
                 </p>
               </div>
@@ -520,7 +520,7 @@ export default async function InquiryDetailPage({
                     <select
                       name="template_id"
                       required
-                      className="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 outline-none text-sm"
+                      className="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#EF4444] focus:border-[#EF4444] outline-none text-sm"
                     >
                       {funnelTemplates.map((t) => (
                         <option key={t.id} value={t.id}>{t.name}</option>
@@ -529,7 +529,7 @@ export default async function InquiryDetailPage({
                   </div>
                   <button
                     type="submit"
-                    className="inline-flex items-center gap-2 px-5 py-2.5 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors font-medium shadow-sm"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#EF4444] text-white rounded-lg hover:bg-[#DC2626] transition-colors font-medium shadow-sm"
                   >
                     <Zap className="w-4 h-4" />
                     자동관리 시작
@@ -543,7 +543,7 @@ export default async function InquiryDetailPage({
                   </p>
                   <Link
                     href="/admin/funnels"
-                    className="inline-flex items-center gap-2 text-sm text-purple-600 hover:text-purple-800 font-medium"
+                    className="inline-flex items-center gap-2 text-sm text-[#EF4444] hover:text-[#DC2626] font-medium"
                   >
                     퍼널 만들러 가기 <ArrowRight className="w-4 h-4" />
                   </Link>
@@ -599,7 +599,7 @@ export default async function InquiryDetailPage({
                             {msgStatus.label}
                           </span>
                         </td>
-                        <td className="px-6 py-3 text-red-500 text-xs max-w-[200px] truncate">
+                        <td className="px-6 py-3 text-[#EF4444] text-xs max-w-[200px] truncate">
                           {log.error_message || '-'}
                         </td>
                       </tr>

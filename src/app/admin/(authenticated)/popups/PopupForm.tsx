@@ -56,7 +56,7 @@ export default function PopupForm({ popup }: PopupFormProps) {
               name="title"
               defaultValue={popup?.title || ''}
               required
-              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none"
+              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#EF4444] focus:border-[#EF4444] outline-none"
               placeholder="팝업 제목을 입력하세요"
             />
           </div>
@@ -70,7 +70,7 @@ export default function PopupForm({ popup }: PopupFormProps) {
               type="url"
               name="image_url"
               defaultValue={popup?.image_url || ''}
-              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none"
+              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#EF4444] focus:border-[#EF4444] outline-none"
               placeholder="이미지 URL을 입력하세요"
             />
           </div>
@@ -83,7 +83,7 @@ export default function PopupForm({ popup }: PopupFormProps) {
               type="url"
               name="link_url"
               defaultValue={popup?.link_url || ''}
-              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none"
+              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#EF4444] focus:border-[#EF4444] outline-none"
               placeholder="클릭 시 이동할 URL을 입력하세요"
             />
           </div>
@@ -102,7 +102,7 @@ export default function PopupForm({ popup }: PopupFormProps) {
               type="datetime-local"
               name="start_date"
               defaultValue={popup?.start_date?.slice(0, 16) || ''}
-              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none"
+              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#EF4444] focus:border-[#EF4444] outline-none"
             />
           </div>
 
@@ -114,7 +114,7 @@ export default function PopupForm({ popup }: PopupFormProps) {
               type="datetime-local"
               name="end_date"
               defaultValue={popup?.end_date?.slice(0, 16) || ''}
-              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none"
+              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#EF4444] focus:border-[#EF4444] outline-none"
             />
           </div>
         </div>
@@ -133,7 +133,7 @@ export default function PopupForm({ popup }: PopupFormProps) {
               name="display_order"
               defaultValue={popup?.display_order || 1}
               min={1}
-              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none"
+              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#EF4444] focus:border-[#EF4444] outline-none"
             />
           </div>
 
@@ -144,7 +144,7 @@ export default function PopupForm({ popup }: PopupFormProps) {
             <select
               name="is_active"
               defaultValue={popup?.is_active !== false ? 'true' : 'false'}
-              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none"
+              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#EF4444] focus:border-[#EF4444] outline-none"
             >
               <option value="true">활성</option>
               <option value="false">비활성</option>
@@ -165,7 +165,7 @@ export default function PopupForm({ popup }: PopupFormProps) {
         <button
           type="submit"
           disabled={isLoading}
-          className="inline-flex items-center gap-2 bg-sky-500 text-white font-semibold py-3 px-6 rounded-xl hover:bg-sky-600 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+          className="inline-flex items-center gap-2 bg-[#EF4444] text-white font-semibold py-3 px-6 rounded-xl hover:bg-[#DC2626] disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
         >
           {isLoading ? (
             <Loader2 className="w-5 h-5 animate-spin" />

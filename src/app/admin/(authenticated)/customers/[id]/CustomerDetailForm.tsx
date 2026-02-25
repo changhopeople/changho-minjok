@@ -58,8 +58,8 @@ export default function CustomerDetailForm({ customer }: CustomerDetailFormProps
         <div
           className={`p-4 rounded-xl ${
             message.type === 'success'
-              ? 'bg-green-50 text-green-700 border border-green-200'
-              : 'bg-red-50 text-red-700 border border-red-200'
+              ? 'bg-[#E0F7F6] text-[#2AC1BC] border border-[#2AC1BC]/30'
+              : 'bg-[#FEF2F2] text-[#EF4444] border border-[#EF4444]/30'
           }`}
         >
           {message.text}
@@ -80,7 +80,7 @@ export default function CustomerDetailForm({ customer }: CustomerDetailFormProps
             <select
               name="status"
               defaultValue={customer.status}
-              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none"
+              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#EF4444] focus:border-[#EF4444] outline-none"
             >
               <option value="pending">대기중</option>
               <option value="in_progress">처리중</option>
@@ -96,7 +96,7 @@ export default function CustomerDetailForm({ customer }: CustomerDetailFormProps
             <select
               name="contract_status"
               defaultValue={customer.contract_status || 'inquiry'}
-              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none"
+              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#EF4444] focus:border-[#EF4444] outline-none"
             >
               <option value="inquiry">상담중</option>
               <option value="quoted">견적제출</option>
@@ -114,7 +114,7 @@ export default function CustomerDetailForm({ customer }: CustomerDetailFormProps
               name="admin_note"
               defaultValue={customer.admin_note || ''}
               rows={3}
-              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none resize-none"
+              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#EF4444] focus:border-[#EF4444] outline-none resize-none"
               placeholder="상담 관련 메모를 입력하세요"
             />
           </div>
@@ -136,7 +136,7 @@ export default function CustomerDetailForm({ customer }: CustomerDetailFormProps
               type="date"
               name="contract_date"
               defaultValue={customer.contract_date || ''}
-              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none"
+              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#EF4444] focus:border-[#EF4444] outline-none"
             />
           </div>
 
@@ -148,7 +148,7 @@ export default function CustomerDetailForm({ customer }: CustomerDetailFormProps
               type="number"
               name="total_amount"
               defaultValue={customer.total_amount || ''}
-              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none"
+              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#EF4444] focus:border-[#EF4444] outline-none"
               placeholder="0"
             />
           </div>
@@ -170,7 +170,7 @@ export default function CustomerDetailForm({ customer }: CustomerDetailFormProps
               type="date"
               name="construction_date"
               defaultValue={customer.construction_date || ''}
-              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none"
+              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#EF4444] focus:border-[#EF4444] outline-none"
             />
           </div>
 
@@ -181,7 +181,7 @@ export default function CustomerDetailForm({ customer }: CustomerDetailFormProps
             <select
               name="construction_status"
               defaultValue={customer.construction_status || ''}
-              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none"
+              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#EF4444] focus:border-[#EF4444] outline-none"
             >
               <option value="">선택 안함</option>
               <option value="pending">대기</option>
@@ -199,7 +199,7 @@ export default function CustomerDetailForm({ customer }: CustomerDetailFormProps
               name="notes"
               defaultValue={customer.notes || ''}
               rows={3}
-              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none resize-none"
+              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#EF4444] focus:border-[#EF4444] outline-none resize-none"
               placeholder="계약/시공 관련 특이사항을 입력하세요"
             />
           </div>
@@ -210,7 +210,7 @@ export default function CustomerDetailForm({ customer }: CustomerDetailFormProps
       <button
         type="submit"
         disabled={isLoading}
-        className="w-full flex items-center justify-center gap-2 bg-sky-500 text-white font-semibold py-3 px-6 rounded-xl hover:bg-sky-600 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+        className="w-full flex items-center justify-center gap-2 bg-[#EF4444] text-white font-semibold py-3 px-6 rounded-xl hover:bg-[#DC2626] disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
       >
         {isLoading ? (
           <Loader2 className="w-5 h-5 animate-spin" />

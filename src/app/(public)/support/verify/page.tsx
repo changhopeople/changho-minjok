@@ -136,11 +136,11 @@ export default function VerifyPage() {
               )}
 
               {result.status === 'not_found' && (
-                <div className="bg-white rounded-2xl border-2 border-red-300 p-6 sm:p-8 text-center">
-                  <div className="w-14 h-14 bg-red-50 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <ShieldX className="w-7 h-7 text-red-500" />
+                <div className="bg-white rounded-2xl border-2 border-[#EF4444] p-6 sm:p-8 text-center">
+                  <div className="w-14 h-14 bg-[#FEF2F2] rounded-full flex items-center justify-center mx-auto mb-4">
+                    <ShieldX className="w-7 h-7 text-[#EF4444]" />
                   </div>
-                  <div className="inline-block px-3 py-1 bg-red-50 text-red-500 rounded-full text-xs font-bold mb-4">
+                  <div className="inline-block px-3 py-1 bg-[#FEF2F2] text-[#EF4444] rounded-full text-xs font-bold mb-4">
                     등록되지 않은 담당자
                   </div>
                   <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2">

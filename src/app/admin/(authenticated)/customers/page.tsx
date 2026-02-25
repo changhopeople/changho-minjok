@@ -14,17 +14,17 @@ export const dynamic = 'force-dynamic';
 
 const contractStatusConfig: Record<string, { label: string; color: string }> = {
   inquiry: { label: '상담중', color: 'bg-gray-100 text-gray-700' },
-  quoted: { label: '견적제출', color: 'bg-blue-100 text-blue-700' },
-  negotiating: { label: '협상중', color: 'bg-amber-100 text-amber-700' },
-  contracted: { label: '계약완료', color: 'bg-green-100 text-green-700' },
-  cancelled: { label: '취소', color: 'bg-red-100 text-red-700' },
+  quoted: { label: '견적제출', color: 'bg-[#FEF2F2] text-[#EF4444]' },
+  negotiating: { label: '협상중', color: 'bg-[#FFF3E8] text-[#FF6F0F]' },
+  contracted: { label: '계약완료', color: 'bg-[#E0F7F6] text-[#2AC1BC]' },
+  cancelled: { label: '취소', color: 'bg-[#FEF2F2] text-[#EF4444]' },
 };
 
 const constructionStatusConfig: Record<string, { label: string; color: string }> = {
   pending: { label: '대기', color: 'bg-gray-100 text-gray-700' },
-  scheduled: { label: '예정', color: 'bg-blue-100 text-blue-700' },
-  in_progress: { label: '진행중', color: 'bg-amber-100 text-amber-700' },
-  completed: { label: '완료', color: 'bg-green-100 text-green-700' },
+  scheduled: { label: '예정', color: 'bg-[#FEF2F2] text-[#EF4444]' },
+  in_progress: { label: '진행중', color: 'bg-[#FEF2F2] text-[#EF4444]' },
+  completed: { label: '완료', color: 'bg-[#E0F7F6] text-[#2AC1BC]' },
 };
 
 interface InquiryWithCRM {
@@ -70,13 +70,13 @@ export default async function AdminCustomersPage() {
           <p className="text-sm text-gray-600">상담중</p>
           <p className="text-2xl font-bold text-gray-700">{stats.inquiry}</p>
         </div>
-        <div className="bg-green-50 rounded-xl p-4 shadow-sm">
-          <p className="text-sm text-green-600">계약완료</p>
-          <p className="text-2xl font-bold text-green-700">{stats.contracted}</p>
+        <div className="bg-[#E0F7F6] rounded-xl p-4 shadow-sm">
+          <p className="text-sm text-[#2AC1BC]">계약완료</p>
+          <p className="text-2xl font-bold text-[#2AC1BC]">{stats.contracted}</p>
         </div>
-        <div className="bg-amber-50 rounded-xl p-4 shadow-sm">
-          <p className="text-sm text-amber-600">시공진행</p>
-          <p className="text-2xl font-bold text-amber-700">{stats.inProgress}</p>
+        <div className="bg-[#FFF3E8] rounded-xl p-4 shadow-sm">
+          <p className="text-sm text-[#FF6F0F]">시공진행</p>
+          <p className="text-2xl font-bold text-[#FF6F0F]">{stats.inProgress}</p>
         </div>
       </div>
 
@@ -128,7 +128,7 @@ export default async function AdminCustomersPage() {
                       <div className="flex flex-col gap-1">
                         <a
                           href={`tel:${customer.phone}`}
-                          className="flex items-center gap-1 text-sm text-gray-900 hover:text-sky-600"
+                          className="flex items-center gap-1 text-sm text-gray-900 hover:text-[#EF4444]"
                         >
                           <Phone className="w-3 h-3" />
                           {customer.phone}
@@ -136,7 +136,7 @@ export default async function AdminCustomersPage() {
                         {customer.email && (
                           <a
                             href={`mailto:${customer.email}`}
-                            className="flex items-center gap-1 text-xs text-gray-500 hover:text-sky-600"
+                            className="flex items-center gap-1 text-xs text-gray-500 hover:text-[#EF4444]"
                           >
                             <Mail className="w-3 h-3" />
                             {customer.email}
@@ -186,7 +186,7 @@ export default async function AdminCustomersPage() {
                     <td className="px-6 py-4">
                       <Link
                         href={`/admin/customers/${customer.id}`}
-                        className="inline-flex items-center gap-1 px-3 py-1.5 text-sm text-sky-600 hover:bg-sky-50 rounded-lg transition-colors"
+                        className="inline-flex items-center gap-1 px-3 py-1.5 text-sm text-[#EF4444] hover:bg-[#FEF2F2] rounded-lg transition-colors"
                       >
                         <FileText className="w-4 h-4" />
                         상세

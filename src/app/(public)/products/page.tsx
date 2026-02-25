@@ -16,7 +16,7 @@ const productCategories = [
     description: '뛰어난 단열성과 가성비를 갖춘 기본 창호입니다. 다양한 컬러와 디자인으로 어떤 인테리어에도 어울립니다.',
     features: ['우수한 단열성능', '다양한 컬러 선택', '경제적인 가격', '손쉬운 유지관리'],
     image: '/images/products/pvc-window.png',
-    color: 'from-blue-500 to-blue-600',
+    color: 'from-[#EF4444] to-[#DC2626]',
   },
   {
     slug: 'aluminum',
@@ -24,7 +24,7 @@ const productCategories = [
     description: '가볍고 강한 알루미늄 프레임으로 내구성이 뛰어나고 슬림한 디자인이 특징입니다. 넓은 채광과 모던한 외관을 원하는 고객에게 추천합니다.',
     features: ['뛰어난 내구성', '슬림 프레임 디자인', '넓은 채광면', '다양한 컬러'],
     image: '/images/products/aluminum-window.png',
-    color: 'from-emerald-500 to-emerald-600',
+    color: 'from-[#2AC1BC] to-[#2AC1BC]',
   },
   {
     slug: 'system',
@@ -32,7 +32,7 @@ const productCategories = [
     description: '최고급 기밀성과 단열성을 자랑하는 프리미엄 창호입니다. 에너지 효율을 극대화하여 냉난방비를 절감합니다.',
     features: ['최고급 기밀성', '탁월한 단열성능', '방음 효과', '에너지 절감'],
     image: '/images/products/system-window.jpg',
-    color: 'from-amber-500 to-amber-600',
+    color: 'from-[#FF6F0F] to-[#FF6F0F]',
   },
   {
     slug: 'glass',
@@ -40,7 +40,7 @@ const productCategories = [
     description: '복층유리, 로이유리, 삼중유리 등 다양한 유리 옵션을 제공합니다. 용도에 맞는 최적의 유리를 선택하세요.',
     features: ['복층/삼중 유리', '로이(Low-E) 코팅', '강화유리 옵션', '냉난방비 절감'],
     image: '/images/products/uv-protection.png',
-    color: 'from-cyan-500 to-cyan-600',
+    color: 'from-[#2AC1BC] to-[#2AC1BC]',
   },
   {
     slug: 'tps',
@@ -48,7 +48,7 @@ const productCategories = [
     description: '자체 스마트 팩토리에서 생산하는 TPS 단열간봉입니다. 알루미늄 간봉 대비 단열·결로 방지 성능이 탁월합니다.',
     features: ['자체 생산', '결로 방지', '향상된 단열', '장기 내구성'],
     image: '/images/products/tps-spacer.png',
-    color: 'from-purple-500 to-purple-600',
+    color: 'from-[#EF4444] to-[#DC2626]',
   },
 ];
 
@@ -59,7 +59,7 @@ export default function ProductsPage() {
       <section className="bg-gray-50 py-10 sm:py-12 md:py-16">
         <div className="container mx-auto px-4">
           <AnimatedSection className="max-w-3xl mx-auto text-center">
-            <span className="text-blue-600 font-medium text-xs sm:text-sm tracking-wider uppercase">
+            <span className="text-[#EF4444] font-medium text-xs sm:text-sm tracking-wider uppercase">
               Products
             </span>
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mt-2 sm:mt-3 mb-4 sm:mb-6">
@@ -114,7 +114,7 @@ export default function ProductsPage() {
                           key={feature}
                           className="flex items-center gap-2 text-xs sm:text-sm md:text-base text-gray-700"
                         >
-                          <div className="w-1.5 h-1.5 bg-blue-500 rounded-full flex-shrink-0" />
+                          <div className="w-1.5 h-1.5 bg-[#EF4444] rounded-full flex-shrink-0" />
                           {feature}
                         </li>
                       ))}
@@ -122,7 +122,7 @@ export default function ProductsPage() {
 
                     <Link
                       href={`/products/${category.slug}`}
-                      className="inline-flex items-center text-blue-600 font-medium hover:text-blue-700 transition-colors"
+                      className="inline-flex items-center text-[#EF4444] font-medium hover:text-[#DC2626] transition-colors"
                     >
                       자세히 보기
                       <ArrowRight className="ml-2 w-4 h-4" />
@@ -136,18 +136,18 @@ export default function ProductsPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-10 sm:py-12 md:py-16 bg-blue-600">
+      <section className="py-10 sm:py-12 md:py-16 bg-[#EF4444]">
         <div className="container mx-auto px-4">
           <AnimatedSection className="max-w-3xl mx-auto text-center text-white">
             <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4">
               어떤 제품이 적합한지 모르시겠나요?
             </h2>
-            <p className="text-sm sm:text-base text-blue-100 mb-6 sm:mb-8 px-2">
+            <p className="text-sm sm:text-base text-[#FEF2F2] mb-6 sm:mb-8 px-2">
               무료 상담을 통해 건물 유형에 맞는 최적의 제품을 추천받으세요.
             </p>
             <Link
               href="/estimate"
-              className="inline-flex items-center px-8 py-3 bg-white text-blue-600 font-medium rounded-lg hover:bg-blue-50 transition-colors"
+              className="inline-flex items-center px-8 py-3 bg-white text-[#EF4444] font-medium rounded-lg hover:bg-[#FEF2F2] transition-colors"
             >
               무료 상담 신청
               <ArrowRight className="ml-2 w-4 h-4" />

@@ -50,12 +50,12 @@ export default function LandingPricing() {
                   <div key={item.label} className="flex flex-col items-center">
                     <div className={`px-4 py-2 rounded-lg text-center w-28 ${
                       index === pricingFlow.length - 1
-                        ? 'bg-red-100 border-2 border-red-300'
+                        ? 'bg-[#FEF2F2] border-2 border-[#EF4444]'
                         : 'bg-gray-100'
                     }`}>
                       <p className="text-xs font-bold text-[#1E1E1E]">{item.label}</p>
                       {item.margin && (
-                        <p className="text-[10px] text-red-500 font-bold">{item.margin}</p>
+                        <p className="text-[10px] text-[#EF4444] font-bold">{item.margin}</p>
                       )}
                     </div>
                     {index < pricingFlow.length - 1 && (
@@ -72,12 +72,12 @@ export default function LandingPricing() {
                     <div className="relative">
                       <div className={`px-4 py-3 rounded-xl text-center ${
                         index === pricingFlow.length - 1
-                          ? 'bg-red-100 border-2 border-red-300'
+                          ? 'bg-[#FEF2F2] border-2 border-[#EF4444]'
                           : 'bg-gray-100'
                       }`}>
                         <p className="text-sm font-bold text-[#1E1E1E]">{item.label}</p>
                         {item.margin && (
-                          <p className="text-xs text-red-500 font-bold">{item.margin}</p>
+                          <p className="text-xs text-[#EF4444] font-bold">{item.margin}</p>
                         )}
                       </div>
                     </div>
@@ -87,7 +87,7 @@ export default function LandingPricing() {
                   </div>
                 ))}
               </div>
-              <p className="text-center mt-3 sm:mt-4 text-red-500 font-bold text-base sm:text-lg">
+              <p className="text-center mt-3 sm:mt-4 text-[#EF4444] font-bold text-base sm:text-lg">
                 = 700~900만원
               </p>
             </div>

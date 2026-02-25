@@ -49,8 +49,8 @@ export default function SettingsForm({ settings }: SettingsFormProps) {
         <div
           className={`p-4 rounded-xl ${
             message.type === 'success'
-              ? 'bg-green-50 text-green-700 border border-green-200'
-              : 'bg-red-50 text-red-700 border border-red-200'
+              ? 'bg-[#E0F7F6] text-[#2AC1BC] border border-[#2AC1BC]/30'
+              : 'bg-[#FEF2F2] text-[#EF4444] border border-[#EF4444]/30'
           }`}
         >
           {message.text}
@@ -70,7 +70,7 @@ export default function SettingsForm({ settings }: SettingsFormProps) {
               type="text"
               name="company_name"
               defaultValue={settings.company_name || ''}
-              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none"
+              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#EF4444] focus:border-[#EF4444] outline-none"
               placeholder="회사명을 입력하세요"
             />
           </div>
@@ -84,7 +84,7 @@ export default function SettingsForm({ settings }: SettingsFormProps) {
               type="text"
               name="address"
               defaultValue={settings.address || ''}
-              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none"
+              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#EF4444] focus:border-[#EF4444] outline-none"
               placeholder="회사 주소를 입력하세요"
             />
           </div>
@@ -98,7 +98,7 @@ export default function SettingsForm({ settings }: SettingsFormProps) {
               type="text"
               name="business_hours"
               defaultValue={settings.business_hours || ''}
-              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none"
+              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#EF4444] focus:border-[#EF4444] outline-none"
               placeholder="예: 평일 09:00 - 18:00"
             />
           </div>
@@ -118,7 +118,7 @@ export default function SettingsForm({ settings }: SettingsFormProps) {
               type="text"
               name="phone"
               defaultValue={settings.phone || ''}
-              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none"
+              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#EF4444] focus:border-[#EF4444] outline-none"
               placeholder="예: 1588-0000"
             />
           </div>
@@ -132,7 +132,7 @@ export default function SettingsForm({ settings }: SettingsFormProps) {
               type="email"
               name="email"
               defaultValue={settings.email || ''}
-              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none"
+              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#EF4444] focus:border-[#EF4444] outline-none"
               placeholder="예: info@example.com"
             />
           </div>
@@ -152,7 +152,7 @@ export default function SettingsForm({ settings }: SettingsFormProps) {
               type="text"
               name="kakao_channel"
               defaultValue={settings.kakao_channel || ''}
-              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none"
+              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#EF4444] focus:border-[#EF4444] outline-none"
               placeholder="카카오톡 채널 URL"
             />
           </div>
@@ -166,7 +166,7 @@ export default function SettingsForm({ settings }: SettingsFormProps) {
               type="text"
               name="instagram"
               defaultValue={settings.instagram || ''}
-              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none"
+              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#EF4444] focus:border-[#EF4444] outline-none"
               placeholder="인스타그램 URL"
             />
           </div>
@@ -180,7 +180,7 @@ export default function SettingsForm({ settings }: SettingsFormProps) {
               type="text"
               name="youtube"
               defaultValue={settings.youtube || ''}
-              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none"
+              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#EF4444] focus:border-[#EF4444] outline-none"
               placeholder="유튜브 채널 URL"
             />
           </div>
@@ -191,7 +191,7 @@ export default function SettingsForm({ settings }: SettingsFormProps) {
       <button
         type="submit"
         disabled={isLoading}
-        className="w-full flex items-center justify-center gap-2 bg-sky-500 text-white font-semibold py-3 px-6 rounded-xl hover:bg-sky-600 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+        className="w-full flex items-center justify-center gap-2 bg-[#EF4444] text-white font-semibold py-3 px-6 rounded-xl hover:bg-[#DC2626] disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
       >
         {isLoading ? (
           <Loader2 className="w-5 h-5 animate-spin" />

@@ -42,7 +42,7 @@ export default async function AdminFunnelsPage() {
         </div>
         <Link
           href="/admin/funnels/new"
-          className="inline-flex items-center gap-2 bg-sky-500 text-white px-4 py-2.5 rounded-xl hover:bg-sky-600 transition-colors"
+          className="inline-flex items-center gap-2 bg-[#EF4444] text-white px-4 py-2.5 rounded-xl hover:bg-[#DC2626] transition-colors"
         >
           <Plus className="w-5 h-5" />
           새 퍼널 만들기
@@ -50,45 +50,45 @@ export default async function AdminFunnelsPage() {
       </div>
 
       {/* 사용 가이드 */}
-      <div className="bg-gradient-to-r from-purple-50 to-sky-50 rounded-2xl p-6 mb-8 border border-purple-100">
-        <h2 className="text-lg font-bold text-purple-900 mb-2">자동 퍼널이란?</h2>
-        <p className="text-purple-700 mb-6 text-sm">
+      <div className="bg-gradient-to-r from-[#FEF2F2] to-[#FEF2F2] rounded-2xl p-6 mb-8 border border-[#EF4444]/30">
+        <h2 className="text-lg font-bold text-[#1E1E1E] mb-2">자동 퍼널이란?</h2>
+        <p className="text-[#EF4444] mb-6 text-sm">
           고객이 문의하면, 설정한 시간에 맞춰 자동으로 메시지가 전송됩니다. 한 번만 설정하면 끝!
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
           {/* Step 1 */}
-          <div className="bg-white rounded-xl p-4 border border-purple-100 relative">
+          <div className="bg-white rounded-xl p-4 border border-[#EF4444]/30 relative">
             <div className="flex items-center gap-3 mb-2">
-              <span className="inline-flex items-center justify-center w-8 h-8 bg-purple-600 text-white text-sm font-bold rounded-full">1</span>
+              <span className="inline-flex items-center justify-center w-8 h-8 bg-[#EF4444] text-white text-sm font-bold rounded-full">1</span>
               <span className="font-bold text-gray-900">퍼널 만들기</span>
             </div>
             <p className="text-sm text-gray-600 ml-11">
               보낼 메시지와 발송 시간을 설정해요
             </p>
             <div className="hidden md:block absolute right-[-18px] top-1/2 -translate-y-1/2 z-10">
-              <ArrowRight className="w-5 h-5 text-purple-400" />
+              <ArrowRight className="w-5 h-5 text-[#EF4444]" />
             </div>
           </div>
 
           {/* Step 2 */}
-          <div className="bg-white rounded-xl p-4 border border-purple-100 relative">
+          <div className="bg-white rounded-xl p-4 border border-[#EF4444]/30 relative">
             <div className="flex items-center gap-3 mb-2">
-              <span className="inline-flex items-center justify-center w-8 h-8 bg-purple-600 text-white text-sm font-bold rounded-full">2</span>
+              <span className="inline-flex items-center justify-center w-8 h-8 bg-[#EF4444] text-white text-sm font-bold rounded-full">2</span>
               <span className="font-bold text-gray-900">문의에 연결</span>
             </div>
             <p className="text-sm text-gray-600 ml-11">
               상담신청 상세에서 &quot;자동관리 시작&quot; 클릭
             </p>
             <div className="hidden md:block absolute right-[-18px] top-1/2 -translate-y-1/2 z-10">
-              <ArrowRight className="w-5 h-5 text-purple-400" />
+              <ArrowRight className="w-5 h-5 text-[#EF4444]" />
             </div>
           </div>
 
           {/* Step 3 */}
-          <div className="bg-white rounded-xl p-4 border border-purple-100">
+          <div className="bg-white rounded-xl p-4 border border-[#EF4444]/30">
             <div className="flex items-center gap-3 mb-2">
-              <span className="inline-flex items-center justify-center w-8 h-8 bg-green-600 text-white text-sm font-bold rounded-full">3</span>
+              <span className="inline-flex items-center justify-center w-8 h-8 bg-[#2AC1BC] text-white text-sm font-bold rounded-full">3</span>
               <span className="font-bold text-gray-900">자동 발송!</span>
             </div>
             <p className="text-sm text-gray-600 ml-11">
@@ -101,7 +101,7 @@ export default async function AdminFunnelsPage() {
           <form action={createSampleFunnelAction}>
             <button
               type="submit"
-              className="inline-flex items-center gap-2 bg-purple-600 text-white px-5 py-3 rounded-xl hover:bg-purple-700 transition-colors font-semibold shadow-sm"
+              className="inline-flex items-center gap-2 bg-[#EF4444] text-white px-5 py-3 rounded-xl hover:bg-[#DC2626] transition-colors font-semibold shadow-sm"
             >
               <Sparkles className="w-5 h-5" />
               샘플 퍼널 바로 만들기 (클릭 한 번으로 완성!)
@@ -121,7 +121,7 @@ export default async function AdminFunnelsPage() {
           </p>
           <Link
             href="/admin/funnels/new"
-            className="inline-flex items-center gap-2 bg-sky-500 text-white px-6 py-3 rounded-xl hover:bg-sky-600 transition-colors"
+            className="inline-flex items-center gap-2 bg-[#EF4444] text-white px-6 py-3 rounded-xl hover:bg-[#DC2626] transition-colors"
           >
             <Plus className="w-5 h-5" />
             직접 만들기
@@ -141,7 +141,7 @@ export default async function AdminFunnelsPage() {
                         <h3 className="font-bold text-gray-900 text-lg truncate">{template.name}</h3>
                         <span className={`inline-flex items-center gap-1 px-2 py-0.5 text-xs font-medium rounded-full shrink-0 ${
                           template.is_active
-                            ? 'bg-green-100 text-green-700'
+                            ? 'bg-[#E0F7F6] text-[#2AC1BC]'
                             : 'bg-gray-100 text-gray-500'
                         }`}>
                           {template.is_active ? '활성' : '비활성'}
@@ -154,14 +154,14 @@ export default async function AdminFunnelsPage() {
                       {/* 통계 뱃지 */}
                       <div className="flex items-center gap-4">
                         <div className="flex items-center gap-1.5 text-sm text-gray-600">
-                          <div className="p-1 bg-sky-50 rounded">
-                            <Layers className="w-3.5 h-3.5 text-sky-600" />
+                          <div className="p-1 bg-[#FEF2F2] rounded">
+                            <Layers className="w-3.5 h-3.5 text-[#EF4444]" />
                           </div>
                           <span>{stats.stepCount}단계 메시지</span>
                         </div>
                         <div className="flex items-center gap-1.5 text-sm text-gray-600">
-                          <div className="p-1 bg-purple-50 rounded">
-                            <Users className="w-3.5 h-3.5 text-purple-600" />
+                          <div className="p-1 bg-[#FEF2F2] rounded">
+                            <Users className="w-3.5 h-3.5 text-[#EF4444]" />
                           </div>
                           <span>진행중 {stats.customerCount}명</span>
                         </div>
@@ -181,7 +181,7 @@ export default async function AdminFunnelsPage() {
                         <input type="hidden" name="is_active" value={String(template.is_active)} />
                         <button
                           type="submit"
-                          className="p-2 text-gray-400 hover:text-sky-600 hover:bg-sky-50 rounded-lg transition-colors"
+                          className="p-2 text-gray-400 hover:text-[#EF4444] hover:bg-[#FEF2F2] rounded-lg transition-colors"
                           title={template.is_active ? '비활성화' : '활성화'}
                         >
                           {template.is_active ? <Eye className="w-4 h-4" /> : <EyeOff className="w-4 h-4" />}
@@ -189,7 +189,7 @@ export default async function AdminFunnelsPage() {
                       </form>
                       <Link
                         href={`/admin/funnels/${template.id}`}
-                        className="p-2 text-gray-400 hover:text-sky-600 hover:bg-sky-50 rounded-lg transition-colors"
+                        className="p-2 text-gray-400 hover:text-[#EF4444] hover:bg-[#FEF2F2] rounded-lg transition-colors"
                         title="수정"
                       >
                         <Edit className="w-4 h-4" />
@@ -198,7 +198,7 @@ export default async function AdminFunnelsPage() {
                         action={deleteFunnelAction}
                         id={template.id}
                         confirmMessage="정말 삭제하시겠습니까? 모든 단계와 진행 기록이 삭제됩니다."
-                        className="p-2 text-gray-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors"
+                        className="p-2 text-gray-400 hover:text-[#EF4444] hover:bg-[#FEF2F2] rounded-lg transition-colors"
                       />
                     </div>
                   </div>
@@ -212,7 +212,7 @@ export default async function AdminFunnelsPage() {
                     <div className="flex items-center gap-1">
                       {Array.from({ length: Math.min(stats.stepCount, 5) }).map((_, i) => (
                         <span key={i} className="flex items-center gap-1">
-                          <span className="inline-flex items-center justify-center w-5 h-5 bg-purple-100 text-purple-700 text-[10px] font-bold rounded-full">
+                          <span className="inline-flex items-center justify-center w-5 h-5 bg-[#FEF2F2] text-[#EF4444] text-[10px] font-bold rounded-full">
                             {i + 1}
                           </span>
                           {i < Math.min(stats.stepCount, 5) - 1 && (
@@ -236,7 +236,7 @@ export default async function AdminFunnelsPage() {
           <form action={createSampleFunnelAction}>
             <button
               type="submit"
-              className="w-full py-4 border-2 border-dashed border-purple-200 rounded-2xl text-purple-500 hover:border-purple-400 hover:text-purple-700 hover:bg-purple-50 transition-all flex items-center justify-center gap-2"
+              className="w-full py-4 border-2 border-dashed border-[#EF4444]/30 rounded-2xl text-[#EF4444] hover:border-[#EF4444] hover:text-[#EF4444] hover:bg-[#FEF2F2] transition-all flex items-center justify-center gap-2"
             >
               <Sparkles className="w-5 h-5" />
               샘플 퍼널 추가하기

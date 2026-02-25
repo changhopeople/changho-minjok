@@ -140,11 +140,11 @@ export default async function ProductDetailPage({ params }: PageProps) {
   }
 
   const colorClasses: Record<string, { bg: string; text: string; border: string }> = {
-    sky: { bg: 'bg-sky-100', text: 'text-sky-600', border: 'border-sky-200' },
-    emerald: { bg: 'bg-emerald-100', text: 'text-emerald-600', border: 'border-emerald-200' },
-    amber: { bg: 'bg-amber-100', text: 'text-amber-600', border: 'border-amber-200' },
-    cyan: { bg: 'bg-cyan-100', text: 'text-cyan-600', border: 'border-cyan-200' },
-    purple: { bg: 'bg-purple-100', text: 'text-purple-600', border: 'border-purple-200' },
+    sky: { bg: 'bg-[#FEF2F2]', text: 'text-[#EF4444]', border: 'border-[#EF4444]/20' },
+    emerald: { bg: 'bg-[#E0F7F6]', text: 'text-[#2AC1BC]', border: 'border-[#2AC1BC]/20' },
+    amber: { bg: 'bg-[#FFF3E8]', text: 'text-[#FF6F0F]', border: 'border-[#FF6F0F]/20' },
+    cyan: { bg: 'bg-[#E0F7F6]', text: 'text-[#2AC1BC]', border: 'border-[#2AC1BC]/20' },
+    purple: { bg: 'bg-[#FEF2F2]', text: 'text-[#EF4444]', border: 'border-[#EF4444]/20' },
   };
 
   const colors = colorClasses[product.color] || colorClasses.sky;
@@ -155,7 +155,7 @@ export default async function ProductDetailPage({ params }: PageProps) {
       <section className="page-hero">
         <div className="container mx-auto px-4">
           <AnimatedSection className="max-w-3xl mx-auto text-center">
-            <Link href="/products" className="inline-flex items-center gap-2 text-gray-500 hover:text-sky-600 mb-6 transition-colors">
+            <Link href="/products" className="inline-flex items-center gap-2 text-gray-500 hover:text-[#EF4444] mb-6 transition-colors">
               <ArrowLeft className="w-4 h-4" />
               제품 목록으로
             </Link>
@@ -261,17 +261,17 @@ export default async function ProductDetailPage({ params }: PageProps) {
             <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-4">
               {product.name}가 궁금하신가요?
             </h2>
-            <p className="text-sky-100 text-sm sm:text-base mb-6 sm:mb-8">
+            <p className="text-[#FEF2F2] text-sm sm:text-base mb-6 sm:mb-8">
               무료 견적을 통해 정확한 비용을 확인하세요.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" className="bg-white text-sky-600 hover:bg-sky-50 rounded-xl">
+              <Button asChild size="lg" className="bg-white text-[#EF4444] hover:bg-[#FEF2F2] rounded-xl">
                 <Link href="/estimate">
                   무료 견적받기
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </Link>
               </Button>
-              <Button asChild size="lg" className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-sky-600 rounded-xl">
+              <Button asChild size="lg" className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-[#EF4444] rounded-xl">
                 <Link href="/support/inquiry">상담 신청</Link>
               </Button>
             </div>

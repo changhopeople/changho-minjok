@@ -59,8 +59,8 @@ export default async function AdminAnalyticsPage() {
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
         <div className="bg-white rounded-xl p-4 shadow-sm">
           <div className="flex items-center gap-3 mb-2">
-            <div className="w-10 h-10 bg-sky-100 rounded-lg flex items-center justify-center">
-              <Calendar className="w-5 h-5 text-sky-600" />
+            <div className="w-10 h-10 bg-[#FEF2F2] rounded-lg flex items-center justify-center">
+              <Calendar className="w-5 h-5 text-[#EF4444]" />
             </div>
             <span className="text-sm text-gray-500">오늘 상담</span>
           </div>
@@ -69,8 +69,8 @@ export default async function AdminAnalyticsPage() {
 
         <div className="bg-white rounded-xl p-4 shadow-sm">
           <div className="flex items-center gap-3 mb-2">
-            <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center">
-              <TrendingUp className="w-5 h-5 text-emerald-600" />
+            <div className="w-10 h-10 bg-[#E0F7F6] rounded-lg flex items-center justify-center">
+              <TrendingUp className="w-5 h-5 text-[#2AC1BC]" />
             </div>
             <span className="text-sm text-gray-500">이번달 상담</span>
           </div>
@@ -79,8 +79,8 @@ export default async function AdminAnalyticsPage() {
 
         <div className="bg-white rounded-xl p-4 shadow-sm">
           <div className="flex items-center gap-3 mb-2">
-            <div className="w-10 h-10 bg-amber-100 rounded-lg flex items-center justify-center">
-              <Users className="w-5 h-5 text-amber-600" />
+            <div className="w-10 h-10 bg-[#FFF3E8] rounded-lg flex items-center justify-center">
+              <Users className="w-5 h-5 text-[#FF6F0F]" />
             </div>
             <span className="text-sm text-gray-500">전체 고객</span>
           </div>
@@ -89,8 +89,8 @@ export default async function AdminAnalyticsPage() {
 
         <div className="bg-white rounded-xl p-4 shadow-sm">
           <div className="flex items-center gap-3 mb-2">
-            <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center">
-              <Target className="w-5 h-5 text-purple-600" />
+            <div className="w-10 h-10 bg-[#FEF2F2] rounded-lg flex items-center justify-center">
+              <Target className="w-5 h-5 text-[#EF4444]" />
             </div>
             <span className="text-sm text-gray-500">계약 전환율</span>
           </div>
@@ -131,7 +131,7 @@ export default async function AdminAnalyticsPage() {
                     </div>
                     <div className="w-full bg-gray-100 rounded-full h-2">
                       <div
-                        className="bg-sky-500 h-2 rounded-full transition-all"
+                        className="bg-[#EF4444] h-2 rounded-full transition-all"
                         style={{ width: `${percentage}%` }}
                       />
                     </div>
@@ -156,9 +156,9 @@ export default async function AdminAnalyticsPage() {
                 const total = statusStats.reduce((sum, s) => sum + s.count, 0) || 1;
                 const percentage = Math.round((stat.count / total) * 100);
                 const colors: Record<string, string> = {
-                  pending: 'bg-yellow-500',
-                  in_progress: 'bg-blue-500',
-                  completed: 'bg-green-500',
+                  pending: 'bg-[#FF6F0F]',
+                  in_progress: 'bg-[#EF4444]',
+                  completed: 'bg-[#2AC1BC]',
                   cancelled: 'bg-gray-400',
                 };
                 return (
@@ -186,7 +186,7 @@ export default async function AdminAnalyticsPage() {
       </div>
 
       {/* Conversion Summary */}
-      <div className="mt-6 bg-gradient-to-r from-purple-500 to-sky-500 rounded-2xl p-6 text-white">
+      <div className="mt-6 bg-gradient-to-r from-[#EF4444] to-[#FF6F0F] rounded-2xl p-6 text-white">
         <h2 className="font-semibold text-lg mb-4">계약 전환 요약</h2>
         <div className="grid grid-cols-3 gap-4 text-center">
           <div>

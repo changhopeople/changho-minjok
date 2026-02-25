@@ -17,11 +17,11 @@ export const revalidate = 0;
 const filters = ['전체', '아파트', '빌라', '단독주택', '상가'];
 
 const productColors: Record<string, string> = {
-  '시스템창호': 'bg-amber-500',
-  '알루미늄 창호': 'bg-emerald-500',
-  'PVC창호': 'bg-sky-500',
-  '이중창': 'bg-violet-500',
-  '발코니 창호': 'bg-rose-500',
+  '시스템창호': 'bg-[#FF6F0F]',
+  '알루미늄 창호': 'bg-[#2AC1BC]',
+  'PVC창호': 'bg-[#EF4444]',
+  '이중창': 'bg-[#E5630D]',
+  '발코니 창호': 'bg-[#1FA9A5]',
 };
 
 export default async function PortfolioPage() {
@@ -54,8 +54,8 @@ export default async function PortfolioPage() {
                 key={filter}
                 className={`px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-colors ${
                   filter === '전체'
-                    ? 'bg-sky-500 text-white'
-                    : 'bg-gray-100 text-gray-600 hover:bg-sky-100 hover:text-sky-700'
+                    ? 'bg-[#EF4444] text-white'
+                    : 'bg-gray-100 text-gray-600 hover:bg-[#FEF2F2] hover:text-[#EF4444]'
                 }`}
               >
                 {filter}
@@ -98,12 +98,12 @@ export default async function PortfolioPage() {
                         <div className={`absolute top-3 right-3 px-2 py-1 ${productColors[item.product] || 'bg-gray-500'} text-white rounded-lg text-xs font-medium`}>
                           {item.product}
                         </div>
-                        <div className="absolute inset-0 bg-sky-500/0 group-hover:bg-sky-500/10 transition-colors" />
+                        <div className="absolute inset-0 bg-[#EF4444]/0 group-hover:bg-[#EF4444]/10 transition-colors" />
                       </div>
 
                       {/* Content */}
                       <div className="p-5">
-                        <h3 className="font-semibold text-gray-900 mb-2 line-clamp-1 group-hover:text-sky-600 transition-colors">
+                        <h3 className="font-semibold text-gray-900 mb-2 line-clamp-1 group-hover:text-[#EF4444] transition-colors">
                           {item.title}
                         </h3>
                         <div className="flex items-center justify-between text-sm text-gray-500">
@@ -115,7 +115,7 @@ export default async function PortfolioPage() {
                             {[...Array(item.rating)].map((_, i) => (
                               <Star
                                 key={i}
-                                className="w-4 h-4 fill-amber-400 text-amber-400"
+                                className="w-4 h-4 fill-[#FF6F0F] text-[#FF6F0F]"
                               />
                             ))}
                           </div>
@@ -138,19 +138,19 @@ export default async function PortfolioPage() {
             <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-3 sm:mb-4">
               우리 집도 이렇게 바꿀 수 있을까요?
             </h2>
-            <p className="text-sm sm:text-base text-sky-100 mb-6 sm:mb-8 px-2">
+            <p className="text-sm sm:text-base text-[#FEF2F2] mb-6 sm:mb-8 px-2">
               지금 바로 무료 견적을 받아보세요.
               <br />
               전문 상담원이 최적의 솔루션을 제안해드립니다.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" className="bg-white text-sky-600 hover:bg-sky-50 rounded-xl">
+              <Button asChild size="lg" className="bg-white text-[#EF4444] hover:bg-[#FEF2F2] rounded-xl">
                 <Link href="/estimate">
                   무료 상담 신청
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </Link>
               </Button>
-              <Button asChild size="lg" className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-sky-600 rounded-xl">
+              <Button asChild size="lg" className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-[#EF4444] rounded-xl">
                 <Link href="/support/inquiry">상담 신청</Link>
               </Button>
             </div>

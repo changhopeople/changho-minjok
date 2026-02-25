@@ -16,28 +16,28 @@ const supportLinks = [
     icon: MessageCircle,
     title: '상담 신청',
     description: '창호 교체에 대한 모든 궁금증을 해결해드립니다.',
-    color: 'bg-blue-100 text-blue-600',
+    color: 'bg-[#FEF2F2] text-[#EF4444]',
   },
   {
     href: '/support/tour',
     icon: Calendar,
     title: '공장 견학 예약',
     description: '3,500평 스마트 팩토리를 직접 방문해보세요.',
-    color: 'bg-emerald-100 text-emerald-600',
+    color: 'bg-[#E0F7F6] text-[#2AC1BC]',
   },
   {
     href: '/support/faq',
     icon: HelpCircle,
     title: 'FAQ',
     description: '자주 묻는 질문에 대한 답변을 확인하세요.',
-    color: 'bg-amber-100 text-amber-600',
+    color: 'bg-[#FFF3E8] text-[#FF6F0F]',
   },
   {
     href: '/support/notice',
     icon: Bell,
     title: '공지사항',
     description: '창호의 민족의 새로운 소식을 확인하세요.',
-    color: 'bg-purple-100 text-purple-600',
+    color: 'bg-[#FEF2F2] text-[#EF4444]',
   },
 ];
 
@@ -48,7 +48,7 @@ export default function SupportPage() {
       <section className="bg-gray-50 py-10 sm:py-12 md:py-16">
         <div className="container mx-auto px-4">
           <AnimatedSection className="max-w-3xl mx-auto text-center">
-            <span className="text-blue-600 font-medium text-xs sm:text-sm tracking-wider uppercase">
+            <span className="text-[#EF4444] font-medium text-xs sm:text-sm tracking-wider uppercase">
               Customer Support
             </span>
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mt-2 sm:mt-3 mb-4 sm:mb-6">
@@ -68,14 +68,14 @@ export default function SupportPage() {
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-center items-center gap-4 sm:gap-6 md:gap-8">
             <AnimatedSection className="flex items-center gap-3 sm:gap-4">
-              <div className="p-2 sm:p-3 bg-blue-100 rounded-full">
-                <Phone className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600" />
+              <div className="p-2 sm:p-3 bg-[#FEF2F2] rounded-full">
+                <Phone className="w-5 h-5 sm:w-6 sm:h-6 text-[#EF4444]" />
               </div>
               <div>
                 <p className="text-xs sm:text-sm text-gray-500">전화 상담</p>
                 <a
                   href={`tel:${COMPANY_INFO.phone}`}
-                  className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 hover:text-blue-600"
+                  className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 hover:text-[#EF4444]"
                 >
                   {COMPANY_INFO.phone}
                 </a>

@@ -33,7 +33,7 @@ export default async function AdminBannersPage() {
         </div>
         <Link
           href="/admin/banners/new"
-          className="inline-flex items-center gap-2 bg-sky-500 text-white px-4 py-2.5 rounded-xl hover:bg-sky-600 transition-colors"
+          className="inline-flex items-center gap-2 bg-[#EF4444] text-white px-4 py-2.5 rounded-xl hover:bg-[#DC2626] transition-colors"
         >
           <Plus className="w-5 h-5" />
           새 배너
@@ -47,7 +47,7 @@ export default async function AdminBannersPage() {
           <p className="text-gray-500 mb-4">등록된 배너가 없습니다.</p>
           <Link
             href="/admin/banners/new"
-            className="inline-flex items-center gap-2 bg-sky-500 text-white px-6 py-3 rounded-xl hover:bg-sky-600 transition-colors"
+            className="inline-flex items-center gap-2 bg-[#EF4444] text-white px-6 py-3 rounded-xl hover:bg-[#DC2626] transition-colors"
           >
             <Plus className="w-5 h-5" />
             첫 배너 등록하기
@@ -86,7 +86,7 @@ export default async function AdminBannersPage() {
                       href={banner.link_url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-xs text-sky-600 hover:underline mt-1 block"
+                      className="text-xs text-[#EF4444] hover:underline mt-1 block"
                     >
                       {banner.link_url}
                     </a>
@@ -102,7 +102,7 @@ export default async function AdminBannersPage() {
                       type="submit"
                       className={`inline-flex items-center gap-1 px-3 py-1.5 text-sm font-medium rounded-full transition-colors ${
                         banner.is_active
-                          ? 'bg-green-100 text-green-700 hover:bg-green-200'
+                          ? 'bg-[#E0F7F6] text-[#2AC1BC] hover:bg-[#2AC1BC]/20'
                           : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
                       }`}
                     >
@@ -123,7 +123,7 @@ export default async function AdminBannersPage() {
                   {/* Edit */}
                   <Link
                     href={`/admin/banners/${banner.id}`}
-                    className="p-2 text-gray-500 hover:text-sky-600 hover:bg-sky-50 rounded-lg transition-colors"
+                    className="p-2 text-gray-500 hover:text-[#EF4444] hover:bg-[#FEF2F2] rounded-lg transition-colors"
                     title="수정"
                   >
                     <Edit className="w-5 h-5" />

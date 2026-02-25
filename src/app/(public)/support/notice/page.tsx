@@ -61,9 +61,9 @@ const notices = [
 ];
 
 const categoryColors: Record<string, string> = {
-  '안내': 'bg-sky-100 text-sky-700',
-  '소식': 'bg-emerald-100 text-emerald-700',
-  '이벤트': 'bg-amber-100 text-amber-700',
+  '안내': 'bg-[#FEF2F2] text-[#EF4444]',
+  '소식': 'bg-[#E0F7F6] text-[#2AC1BC]',
+  '이벤트': 'bg-[#FFF3E8] text-[#FF6F0F]',
 };
 
 export default function NoticePage() {
@@ -97,11 +97,11 @@ export default function NoticePage() {
                     <Link
                       key={notice.id}
                       href={`/support/notice/${notice.id}`}
-                      className="block bg-sky-50 rounded-xl border border-sky-100 p-5 hover:border-sky-200 transition-colors"
+                      className="block bg-[#FEF2F2] rounded-xl border border-[#EF4444]/20 p-5 hover:border-[#EF4444]/40 transition-colors"
                     >
                       <div className="flex items-start justify-between gap-4">
                         <div className="flex items-start gap-3">
-                          <Pin className="w-5 h-5 text-sky-500 flex-shrink-0 mt-0.5" />
+                          <Pin className="w-5 h-5 text-[#EF4444] flex-shrink-0 mt-0.5" />
                           <div>
                             <div className="flex items-center gap-2 mb-1">
                               <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${categoryColors[notice.category]}`}>
@@ -158,9 +158,9 @@ export default function NoticePage() {
             {/* Pagination Placeholder */}
             <AnimatedSection delay={0.2} className="mt-8 flex justify-center">
               <div className="flex items-center gap-2">
-                <button className="w-10 h-10 rounded-lg bg-sky-500 text-white font-medium">1</button>
-                <button className="w-10 h-10 rounded-lg bg-white border border-gray-200 text-gray-600 hover:border-sky-300">2</button>
-                <button className="w-10 h-10 rounded-lg bg-white border border-gray-200 text-gray-600 hover:border-sky-300">3</button>
+                <button className="w-10 h-10 rounded-lg bg-[#EF4444] text-white font-medium">1</button>
+                <button className="w-10 h-10 rounded-lg bg-white border border-gray-200 text-gray-600 hover:border-[#EF4444]">2</button>
+                <button className="w-10 h-10 rounded-lg bg-white border border-gray-200 text-gray-600 hover:border-[#EF4444]">3</button>
               </div>
             </AnimatedSection>
           </div>

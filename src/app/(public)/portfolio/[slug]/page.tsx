@@ -33,11 +33,11 @@ export default async function PortfolioDetailPage({ params }: PageProps) {
   }
 
   const productColors: Record<string, { bg: string; text: string }> = {
-    '시스템창호': { bg: 'bg-amber-100', text: 'text-amber-700' },
-    '알루미늄 창호': { bg: 'bg-emerald-100', text: 'text-emerald-700' },
-    'PVC창호': { bg: 'bg-sky-100', text: 'text-sky-700' },
-    '이중창': { bg: 'bg-violet-100', text: 'text-violet-700' },
-    '발코니 창호': { bg: 'bg-rose-100', text: 'text-rose-700' },
+    '시스템창호': { bg: 'bg-[#FFF3E8]', text: 'text-[#FF6F0F]' },
+    '알루미늄 창호': { bg: 'bg-[#E0F7F6]', text: 'text-[#2AC1BC]' },
+    'PVC창호': { bg: 'bg-[#FEF2F2]', text: 'text-[#EF4444]' },
+    '이중창': { bg: 'bg-[#E5630D]/15', text: 'text-[#E5630D]' },
+    '발코니 창호': { bg: 'bg-[#1FA9A5]/15', text: 'text-[#1FA9A5]' },
   };
 
   const colors = productColors[portfolio.product] || productColors['PVC창호'];
@@ -50,7 +50,7 @@ export default async function PortfolioDetailPage({ params }: PageProps) {
       <section className="page-hero">
         <div className="container mx-auto px-4">
           <AnimatedSection className="max-w-3xl mx-auto text-center">
-            <Link href="/portfolio" className="inline-flex items-center gap-2 text-gray-500 hover:text-sky-600 mb-6 transition-colors">
+            <Link href="/portfolio" className="inline-flex items-center gap-2 text-gray-500 hover:text-[#EF4444] mb-6 transition-colors">
               <ArrowLeft className="w-4 h-4" />
               시공사례 목록으로
             </Link>
@@ -98,7 +98,7 @@ export default async function PortfolioDetailPage({ params }: PageProps) {
                       fill
                       className="object-cover"
                     />
-                    <div className="absolute bottom-4 left-4 px-3 py-1 bg-sky-500 text-white text-sm rounded-lg">
+                    <div className="absolute bottom-4 left-4 px-3 py-1 bg-[#EF4444] text-white text-sm rounded-lg">
                       After
                     </div>
                   </div>
@@ -120,10 +120,10 @@ export default async function PortfolioDetailPage({ params }: PageProps) {
                       <p className="text-gray-400 text-sm">Before</p>
                     </div>
                   </div>
-                  <div className="aspect-[4/3] bg-gradient-to-br from-sky-50 to-sky-100 rounded-2xl flex items-center justify-center">
+                  <div className="aspect-[4/3] bg-gradient-to-br from-[#FEF2F2] to-[#FEF2F2] rounded-2xl flex items-center justify-center">
                     <div className="text-center">
-                      <Home className="w-12 h-12 text-sky-300 mx-auto mb-2" />
-                      <p className="text-sky-400 text-sm">After</p>
+                      <Home className="w-12 h-12 text-[#EF4444]/30 mx-auto mb-2" />
+                      <p className="text-[#EF4444]/40 text-sm">After</p>
                     </div>
                   </div>
                 </div>
@@ -167,7 +167,7 @@ export default async function PortfolioDetailPage({ params }: PageProps) {
                   <div className="grid grid-cols-2 gap-4 mb-8">
                     {portfolio.features.map((feature) => (
                       <div key={feature} className="flex items-center gap-2">
-                        <CheckCircle className="w-5 h-5 text-sky-500" />
+                        <CheckCircle className="w-5 h-5 text-[#EF4444]" />
                         <span className="text-gray-700">{feature}</span>
                       </div>
                     ))}
@@ -177,10 +177,10 @@ export default async function PortfolioDetailPage({ params }: PageProps) {
                 {/* Review */}
                 {portfolio.review && (
                   <AnimatedSection delay={0.1}>
-                    <div className="bg-sky-50 rounded-2xl p-6 border border-sky-100">
+                    <div className="bg-[#FEF2F2] rounded-2xl p-6 border border-[#EF4444]/10">
                       <div className="flex items-center gap-1 mb-3">
                         {[...Array(portfolio.rating)].map((_, i) => (
-                          <Star key={i} className="w-5 h-5 fill-amber-400 text-amber-400" />
+                          <Star key={i} className="w-5 h-5 fill-[#FF6F0F] text-[#FF6F0F]" />
                         ))}
                       </div>
                       <p className="text-gray-700 leading-relaxed italic">
@@ -229,7 +229,7 @@ export default async function PortfolioDetailPage({ params }: PageProps) {
 
                     <div className="h-px bg-gray-100 my-6" />
 
-                    <Button asChild className="w-full bg-sky-500 hover:bg-sky-600">
+                    <Button asChild className="w-full bg-[#EF4444] hover:bg-[#DC2626]">
                       <Link href="/estimate">
                         무료 견적 받기
                         <ArrowRight className="w-4 h-4 ml-2" />
@@ -250,17 +250,17 @@ export default async function PortfolioDetailPage({ params }: PageProps) {
             <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-4">
               비슷한 시공을 원하시나요?
             </h2>
-            <p className="text-sky-100 text-sm sm:text-base mb-6 sm:mb-8">
+            <p className="text-[#FEF2F2] text-sm sm:text-base mb-6 sm:mb-8">
               무료 견적을 통해 예상 비용을 확인하세요.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" className="bg-white text-sky-600 hover:bg-sky-50 rounded-xl">
+              <Button asChild size="lg" className="bg-white text-[#EF4444] hover:bg-[#FEF2F2] rounded-xl">
                 <Link href="/estimate">
                   무료 견적받기
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </Link>
               </Button>
-              <Button asChild size="lg" className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-sky-600 rounded-xl">
+              <Button asChild size="lg" className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-[#EF4444] rounded-xl">
                 <Link href="/support/inquiry">상담 신청</Link>
               </Button>
             </div>

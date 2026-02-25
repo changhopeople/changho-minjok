@@ -57,7 +57,7 @@ export default function BannerForm({ banner }: BannerFormProps) {
               name="title"
               defaultValue={banner?.title || ''}
               required
-              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none"
+              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#EF4444] focus:border-[#EF4444] outline-none"
               placeholder="배너 제목을 입력하세요"
             />
           </div>
@@ -72,7 +72,7 @@ export default function BannerForm({ banner }: BannerFormProps) {
               name="image_url"
               defaultValue={banner?.image_url || ''}
               required
-              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none"
+              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#EF4444] focus:border-[#EF4444] outline-none"
               placeholder="데스크톱용 이미지 URL을 입력하세요"
             />
             <p className="text-xs text-gray-500 mt-1">권장 사이즈: 1920x600px</p>
@@ -87,7 +87,7 @@ export default function BannerForm({ banner }: BannerFormProps) {
               type="url"
               name="mobile_image_url"
               defaultValue={banner?.mobile_image_url || ''}
-              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none"
+              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#EF4444] focus:border-[#EF4444] outline-none"
               placeholder="모바일용 이미지 URL (선택사항)"
             />
             <p className="text-xs text-gray-500 mt-1">권장 사이즈: 768x400px</p>
@@ -101,7 +101,7 @@ export default function BannerForm({ banner }: BannerFormProps) {
               type="url"
               name="link_url"
               defaultValue={banner?.link_url || ''}
-              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none"
+              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#EF4444] focus:border-[#EF4444] outline-none"
               placeholder="클릭 시 이동할 URL을 입력하세요"
             />
           </div>
@@ -119,7 +119,7 @@ export default function BannerForm({ banner }: BannerFormProps) {
             <select
               name="location"
               defaultValue={banner?.location || 'main'}
-              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none"
+              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#EF4444] focus:border-[#EF4444] outline-none"
             >
               <option value="main">메인</option>
               <option value="sub">서브</option>
@@ -136,7 +136,7 @@ export default function BannerForm({ banner }: BannerFormProps) {
               name="display_order"
               defaultValue={banner?.display_order || 1}
               min={1}
-              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none"
+              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#EF4444] focus:border-[#EF4444] outline-none"
             />
           </div>
 
@@ -147,7 +147,7 @@ export default function BannerForm({ banner }: BannerFormProps) {
             <select
               name="is_active"
               defaultValue={banner?.is_active !== false ? 'true' : 'false'}
-              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none"
+              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#EF4444] focus:border-[#EF4444] outline-none"
             >
               <option value="true">활성</option>
               <option value="false">비활성</option>
@@ -168,7 +168,7 @@ export default function BannerForm({ banner }: BannerFormProps) {
         <button
           type="submit"
           disabled={isLoading}
-          className="inline-flex items-center gap-2 bg-sky-500 text-white font-semibold py-3 px-6 rounded-xl hover:bg-sky-600 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+          className="inline-flex items-center gap-2 bg-[#EF4444] text-white font-semibold py-3 px-6 rounded-xl hover:bg-[#DC2626] disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
         >
           {isLoading ? (
             <Loader2 className="w-5 h-5 animate-spin" />

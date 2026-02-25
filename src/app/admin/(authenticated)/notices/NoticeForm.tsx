@@ -55,7 +55,7 @@ export default function NoticeForm({ notice }: NoticeFormProps) {
               name="title"
               defaultValue={notice?.title || ''}
               required
-              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none"
+              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#EF4444] focus:border-[#EF4444] outline-none"
               placeholder="공지사항 제목을 입력하세요"
             />
           </div>
@@ -69,7 +69,7 @@ export default function NoticeForm({ notice }: NoticeFormProps) {
               defaultValue={notice?.content || ''}
               required
               rows={12}
-              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none resize-none"
+              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#EF4444] focus:border-[#EF4444] outline-none resize-none"
               placeholder="공지사항 내용을 입력하세요"
             />
           </div>
@@ -87,7 +87,7 @@ export default function NoticeForm({ notice }: NoticeFormProps) {
             <select
               name="is_pinned"
               defaultValue={notice?.is_pinned ? 'true' : 'false'}
-              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none"
+              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#EF4444] focus:border-[#EF4444] outline-none"
             >
               <option value="false">일반</option>
               <option value="true">고정</option>
@@ -101,7 +101,7 @@ export default function NoticeForm({ notice }: NoticeFormProps) {
             <select
               name="is_active"
               defaultValue={notice?.is_active !== false ? 'true' : 'false'}
-              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none"
+              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#EF4444] focus:border-[#EF4444] outline-none"
             >
               <option value="true">공개</option>
               <option value="false">비공개</option>
@@ -122,7 +122,7 @@ export default function NoticeForm({ notice }: NoticeFormProps) {
         <button
           type="submit"
           disabled={isLoading}
-          className="inline-flex items-center gap-2 bg-sky-500 text-white font-semibold py-3 px-6 rounded-xl hover:bg-sky-600 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+          className="inline-flex items-center gap-2 bg-[#EF4444] text-white font-semibold py-3 px-6 rounded-xl hover:bg-[#DC2626] disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
         >
           {isLoading ? (
             <Loader2 className="w-5 h-5 animate-spin" />

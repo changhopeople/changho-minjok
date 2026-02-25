@@ -27,7 +27,7 @@ export default function SeedPortfoliosButton() {
     <button
       onClick={handleSeed}
       disabled={loading}
-      className="inline-flex items-center gap-2 bg-amber-500 text-white px-6 py-3 rounded-xl hover:bg-amber-600 transition-colors disabled:opacity-50"
+      className="inline-flex items-center gap-2 bg-[#FF6F0F] text-white px-6 py-3 rounded-xl hover:bg-[#E5630D] transition-colors disabled:opacity-50"
     >
       <Download className="w-5 h-5" />
       {loading ? '불러오는 중...' : '기존 시공사례 4건 불러오기'}

@@ -88,8 +88,8 @@ export default function LandingObjections() {
 
                 {/* Doubt (Question) */}
                 <div className="flex items-start gap-3 mb-3 sm:mb-4">
-                  <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-red-500/20 flex items-center justify-center flex-shrink-0">
-                    <span className="text-red-400 text-sm sm:text-base">?</span>
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-[#EF4444]/20 flex items-center justify-center flex-shrink-0">
+                    <span className="text-[#EF4444] text-sm sm:text-base">?</span>
                   </div>
                   <p className="text-sm sm:text-base text-gray-500 italic leading-relaxed">
                     {obj.doubt}

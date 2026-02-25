@@ -48,18 +48,18 @@ export default async function AdminEstimatesPage() {
           <p className="text-sm text-gray-500">전체 견적</p>
           <p className="text-2xl font-bold text-gray-900">{stats.total}</p>
         </div>
-        <div className="bg-sky-50 rounded-xl p-4 shadow-sm">
-          <p className="text-sm text-sky-600">이번 달 견적</p>
-          <p className="text-2xl font-bold text-sky-700">{stats.thisMonth}</p>
+        <div className="bg-[#FEF2F2] rounded-xl p-4 shadow-sm">
+          <p className="text-sm text-[#EF4444]">이번 달 견적</p>
+          <p className="text-2xl font-bold text-[#EF4444]">{stats.thisMonth}</p>
         </div>
-        <div className="bg-emerald-50 rounded-xl p-4 shadow-sm flex items-center justify-between">
+        <div className="bg-[#E0F7F6] rounded-xl p-4 shadow-sm flex items-center justify-between">
           <div>
-            <p className="text-sm text-emerald-600">평균 견적가</p>
-            <p className="text-2xl font-bold text-emerald-700">
+            <p className="text-sm text-[#2AC1BC]">평균 견적가</p>
+            <p className="text-2xl font-bold text-[#2AC1BC]">
               {stats.avgPrice > 0 ? `${stats.avgPrice.toLocaleString()}원` : '-'}
             </p>
           </div>
-          <TrendingUp className="w-8 h-8 text-emerald-400" />
+          <TrendingUp className="w-8 h-8 text-[#2AC1BC]" />
         </div>
       </div>
 
@@ -96,7 +96,7 @@ export default async function AdminEstimatesPage() {
                       {estimate.phone && (
                         <a
                           href={`tel:${estimate.phone}`}
-                          className="flex items-center gap-1 text-xs text-gray-500 hover:text-sky-600"
+                          className="flex items-center gap-1 text-xs text-gray-500 hover:text-[#EF4444]"
                         >
                           <Phone className="w-3 h-3" />
                           {estimate.phone}
@@ -105,7 +105,7 @@ export default async function AdminEstimatesPage() {
                       {estimate.email && (
                         <a
                           href={`mailto:${estimate.email}`}
-                          className="flex items-center gap-1 text-xs text-gray-500 hover:text-sky-600"
+                          className="flex items-center gap-1 text-xs text-gray-500 hover:text-[#EF4444]"
                         >
                           <Mail className="w-3 h-3" />
                           {estimate.email}
@@ -137,7 +137,7 @@ export default async function AdminEstimatesPage() {
                   </td>
                   <td className="px-6 py-4">
                     {estimate.estimated_price ? (
-                      <span className="font-semibold text-sky-600">
+                      <span className="font-semibold text-[#EF4444]">
                         {estimate.estimated_price.toLocaleString()}원
                       </span>
                     ) : (

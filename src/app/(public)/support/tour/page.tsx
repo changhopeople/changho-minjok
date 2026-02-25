@@ -39,8 +39,8 @@ export default function TourPage() {
         <section className="section">
           <div className="container mx-auto px-4">
             <div className="max-w-md mx-auto text-center">
-              <div className="w-20 h-20 bg-sky-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <CheckCircle className="w-10 h-10 text-sky-600" />
+              <div className="w-20 h-20 bg-[#FEF2F2] rounded-full flex items-center justify-center mx-auto mb-6">
+                <CheckCircle className="w-10 h-10 text-[#EF4444]" />
               </div>
               <h1 className="text-2xl font-bold text-gray-900 mb-4">
                 견학 예약이 완료되었습니다
@@ -50,7 +50,7 @@ export default function TourPage() {
                 <br />
                 감사합니다.
               </p>
-              <Button asChild className="bg-sky-500 hover:bg-sky-600">
+              <Button asChild className="bg-[#EF4444] hover:bg-[#DC2626]">
                 <a href="/">홈으로 돌아가기</a>
               </Button>
             </div>
@@ -121,13 +121,13 @@ export default function TourPage() {
             <AnimatedSection delay={0.4}>
               <div className="bg-white rounded-2xl p-4 sm:p-6 md:p-8 border border-gray-100">
                 <div className="flex items-center gap-3 mb-6">
-                  <Factory className="w-6 h-6 text-sky-500" />
+                  <Factory className="w-6 h-6 text-[#EF4444]" />
                   <h3 className="text-lg font-semibold text-gray-900">견학 포함 내용</h3>
                 </div>
                 <div className="grid md:grid-cols-2 gap-4">
                   {tourIncludes.map((item) => (
                     <div key={item} className="flex items-center gap-3">
-                      <CheckCircle className="w-5 h-5 text-sky-500 flex-shrink-0" />
+                      <CheckCircle className="w-5 h-5 text-[#EF4444] flex-shrink-0" />
                       <span className="text-gray-700">{item}</span>
                     </div>
                   ))}
@@ -184,8 +184,8 @@ export default function TourPage() {
                           onClick={() => setSelectedTime(time)}
                           className={`px-4 py-2 rounded-lg border transition-colors ${
                             selectedTime === time
-                              ? 'bg-sky-500 text-white border-sky-500'
-                              : 'bg-white text-gray-700 border-gray-200 hover:border-sky-300'
+                              ? 'bg-[#EF4444] text-white border-[#EF4444]'
+                              : 'bg-white text-gray-700 border-gray-200 hover:border-[#EF4444]'
                           }`}
                         >
                           {time}
@@ -208,7 +208,7 @@ export default function TourPage() {
                   <p className="text-sm text-gray-500">
                     * 필수 입력 항목
                   </p>
-                  <Button type="submit" className="bg-sky-500 hover:bg-sky-600 px-8">
+                  <Button type="submit" className="bg-[#EF4444] hover:bg-[#DC2626] px-8">
                     <Calendar className="w-4 h-4 mr-2" />
                     견학 예약하기
                   </Button>

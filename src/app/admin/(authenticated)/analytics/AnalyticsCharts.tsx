@@ -43,7 +43,7 @@ export default function AnalyticsCharts({ dailyStats, monthlyStats }: AnalyticsC
               onClick={() => setView('daily')}
               className={`px-3 py-1.5 text-sm rounded-lg transition-colors ${
                 view === 'daily'
-                  ? 'bg-sky-500 text-white'
+                  ? 'bg-[#EF4444] text-white'
                   : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
               }`}
             >
@@ -53,7 +53,7 @@ export default function AnalyticsCharts({ dailyStats, monthlyStats }: AnalyticsC
               onClick={() => setView('monthly')}
               className={`px-3 py-1.5 text-sm rounded-lg transition-colors ${
                 view === 'monthly'
-                  ? 'bg-sky-500 text-white'
+                  ? 'bg-[#EF4444] text-white'
                   : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
               }`}
             >
@@ -82,7 +82,7 @@ export default function AnalyticsCharts({ dailyStats, monthlyStats }: AnalyticsC
                         {stat.count}건
                       </div>
                       <div
-                        className="w-full bg-sky-500 rounded-t transition-all hover:bg-sky-600"
+                        className="w-full bg-[#EF4444] rounded-t transition-all hover:bg-[#DC2626]"
                         style={{ height: `${Math.max(height, 2)}%` }}
                       />
                     </div>

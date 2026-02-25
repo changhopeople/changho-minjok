@@ -27,7 +27,7 @@ export default async function AdminNoticesPage() {
         </div>
         <Link
           href="/admin/notices/new"
-          className="inline-flex items-center gap-2 bg-sky-500 text-white px-4 py-2.5 rounded-xl hover:bg-sky-600 transition-colors"
+          className="inline-flex items-center gap-2 bg-[#EF4444] text-white px-4 py-2.5 rounded-xl hover:bg-[#DC2626] transition-colors"
         >
           <Plus className="w-5 h-5" />
           새 공지사항
@@ -41,7 +41,7 @@ export default async function AdminNoticesPage() {
           <p className="text-gray-500 mb-4">등록된 공지사항이 없습니다.</p>
           <Link
             href="/admin/notices/new"
-            className="inline-flex items-center gap-2 bg-sky-500 text-white px-6 py-3 rounded-xl hover:bg-sky-600 transition-colors"
+            className="inline-flex items-center gap-2 bg-[#EF4444] text-white px-6 py-3 rounded-xl hover:bg-[#DC2626] transition-colors"
           >
             <Plus className="w-5 h-5" />
             첫 공지사항 등록하기
@@ -65,7 +65,7 @@ export default async function AdminNoticesPage() {
                   <td className="px-6 py-4">
                     <div className="flex items-center gap-2">
                       {notice.is_pinned && (
-                        <span className="text-amber-500">
+                        <span className="text-[#FF6F0F]">
                           <Pin className="w-4 h-4" />
                         </span>
                       )}
@@ -91,7 +91,7 @@ export default async function AdminNoticesPage() {
                           type="submit"
                           className={`p-1.5 rounded-lg transition-colors ${
                             notice.is_pinned
-                              ? 'text-amber-600 bg-amber-50 hover:bg-amber-100'
+                              ? 'text-[#FF6F0F] bg-[#FFF3E8] hover:bg-[#FF6F0F]/20'
                               : 'text-gray-400 hover:bg-gray-100'
                           }`}
                           title={notice.is_pinned ? '고정 해제' : '상단 고정'}
@@ -108,7 +108,7 @@ export default async function AdminNoticesPage() {
                           type="submit"
                           className={`inline-flex items-center gap-1 px-2 py-1 text-xs font-medium rounded-full transition-colors ${
                             notice.is_active
-                              ? 'bg-green-100 text-green-700 hover:bg-green-200'
+                              ? 'bg-[#E0F7F6] text-[#2AC1BC] hover:bg-[#2AC1BC]/20'
                               : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
                           }`}
                         >
@@ -131,7 +131,7 @@ export default async function AdminNoticesPage() {
                     <div className="flex items-center justify-end gap-2">
                       <Link
                         href={`/admin/notices/${notice.id}`}
-                        className="p-2 text-gray-500 hover:text-sky-600 hover:bg-sky-50 rounded-lg transition-colors"
+                        className="p-2 text-gray-500 hover:text-[#EF4444] hover:bg-[#FEF2F2] rounded-lg transition-colors"
                         title="수정"
                       >
                         <Edit className="w-4 h-4" />

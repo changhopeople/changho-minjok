@@ -41,14 +41,14 @@ export default function LandingProblem() {
       <div className="container mx-auto px-4 lg:px-8">
         {/* Header - 고통 강조 */}
         <AnimatedSection className="text-center mb-10 sm:mb-16">
-          <span className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 bg-red-100 text-red-600 rounded-full text-xs sm:text-sm font-bold mb-4 sm:mb-6">
+          <span className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 bg-[#FEF2F2] text-[#EF4444] rounded-full text-xs sm:text-sm font-bold mb-4 sm:mb-6">
             <AlertTriangle className="w-3 h-3 sm:w-4 sm:h-4" />
             지금 손해보고 계십니다
           </span>
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#1E1E1E] mb-3 sm:mb-4 tracking-tight leading-tight">
             낡은 창호 1년 방치하면
             <br />
-            <span className="text-red-500">난방비만 48만원 더 나갑니다</span>
+            <span className="text-[#EF4444]">난방비만 48만원 더 나갑니다</span>
           </h2>
           <p className="text-sm sm:text-base md:text-lg text-[#767676] max-w-2xl mx-auto px-2">
             창호 교체 미루는 동안, 매일 돈이 새고 있습니다
@@ -61,18 +61,18 @@ export default function LandingProblem() {
             <AnimatedSection key={problem.title} delay={index * 0.1}>
               <motion.div
                 whileHover={{ y: -8 }}
-                className="bg-gray-50 rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 border-2 border-gray-100 hover:border-red-300 transition-colors h-full relative overflow-hidden"
+                className="bg-gray-50 rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 border-2 border-gray-100 hover:border-[#EF4444] transition-colors h-full relative overflow-hidden"
               >
                 {/* Stat Badge */}
-                <div className="absolute top-2 sm:top-4 right-2 sm:right-4 px-2 sm:px-3 py-0.5 sm:py-1 bg-red-500 text-white text-[10px] sm:text-xs font-bold rounded-full">
+                <div className="absolute top-2 sm:top-4 right-2 sm:right-4 px-2 sm:px-3 py-0.5 sm:py-1 bg-[#EF4444] text-white text-[10px] sm:text-xs font-bold rounded-full">
                   {problem.stat}
                 </div>
 
-                <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-red-100 flex items-center justify-center mb-3 sm:mb-5">
-                  <problem.icon className="w-5 h-5 sm:w-7 sm:h-7 text-red-500" />
+                <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-[#FEF2F2] flex items-center justify-center mb-3 sm:mb-5">
+                  <problem.icon className="w-5 h-5 sm:w-7 sm:h-7 text-[#EF4444]" />
                 </div>
 
-                <p className="text-[10px] sm:text-sm text-red-500 font-semibold mb-0.5 sm:mb-1">
+                <p className="text-[10px] sm:text-sm text-[#EF4444] font-semibold mb-0.5 sm:mb-1">
                   {problem.subtitle}
                 </p>
                 <h3 className="text-sm sm:text-lg md:text-xl font-bold text-[#1E1E1E] mb-2 sm:mb-3 leading-tight">

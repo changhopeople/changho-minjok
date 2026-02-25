@@ -15,9 +15,9 @@ import {
 export const dynamic = 'force-dynamic';
 
 const statusConfig = {
-  pending: { label: '대기중', color: 'bg-yellow-100 text-yellow-700', icon: Clock },
-  in_progress: { label: '처리중', color: 'bg-blue-100 text-blue-700', icon: Eye },
-  completed: { label: '완료', color: 'bg-green-100 text-green-700', icon: CheckCircle2 },
+  pending: { label: '대기중', color: 'bg-[#FFF3E8] text-[#FF6F0F]', icon: Clock },
+  in_progress: { label: '처리중', color: 'bg-[#FEF2F2] text-[#EF4444]', icon: Eye },
+  completed: { label: '완료', color: 'bg-[#E0F7F6] text-[#2AC1BC]', icon: CheckCircle2 },
   cancelled: { label: '취소', color: 'bg-gray-100 text-gray-500', icon: XCircle },
 };
 
@@ -52,17 +52,17 @@ export default async function AdminInquiriesPage() {
           <p className="text-sm text-gray-500">전체</p>
           <p className="text-2xl font-bold text-gray-900">{stats.total}</p>
         </div>
-        <div className="bg-yellow-50 rounded-xl p-4 shadow-sm">
-          <p className="text-sm text-yellow-600">대기중</p>
-          <p className="text-2xl font-bold text-yellow-700">{stats.pending}</p>
+        <div className="bg-[#FFF3E8] rounded-xl p-4 shadow-sm">
+          <p className="text-sm text-[#FF6F0F]">대기중</p>
+          <p className="text-2xl font-bold text-[#FF6F0F]">{stats.pending}</p>
         </div>
-        <div className="bg-blue-50 rounded-xl p-4 shadow-sm">
-          <p className="text-sm text-blue-600">처리중</p>
-          <p className="text-2xl font-bold text-blue-700">{stats.in_progress}</p>
+        <div className="bg-[#FEF2F2] rounded-xl p-4 shadow-sm">
+          <p className="text-sm text-[#EF4444]">처리중</p>
+          <p className="text-2xl font-bold text-[#EF4444]">{stats.in_progress}</p>
         </div>
-        <div className="bg-green-50 rounded-xl p-4 shadow-sm">
-          <p className="text-sm text-green-600">완료</p>
-          <p className="text-2xl font-bold text-green-700">{stats.completed}</p>
+        <div className="bg-[#E0F7F6] rounded-xl p-4 shadow-sm">
+          <p className="text-sm text-[#2AC1BC]">완료</p>
+          <p className="text-2xl font-bold text-[#2AC1BC]">{stats.completed}</p>
         </div>
       </div>
 
@@ -110,12 +110,12 @@ export default async function AdminInquiriesPage() {
                     </td>
                     <td className="px-6 py-4">
                       <div className="flex flex-col gap-1">
-                        <a href={`tel:${item.phone}`} className="flex items-center gap-1 text-sm text-gray-900 hover:text-sky-600">
+                        <a href={`tel:${item.phone}`} className="flex items-center gap-1 text-sm text-gray-900 hover:text-[#EF4444]">
                           <Phone className="w-3 h-3" />
                           {item.phone}
                         </a>
                         {item.email && (
-                          <a href={`mailto:${item.email}`} className="flex items-center gap-1 text-xs text-gray-500 hover:text-sky-600">
+                          <a href={`mailto:${item.email}`} className="flex items-center gap-1 text-xs text-gray-500 hover:text-[#EF4444]">
                             <Mail className="w-3 h-3" />
                             {item.email}
                           </a>
@@ -137,11 +137,11 @@ export default async function AdminInquiriesPage() {
                       {funnel ? (
                         <span className={`inline-flex items-center gap-1 px-2 py-1 text-xs font-medium rounded-full ${
                           funnel.status === 'active'
-                            ? 'bg-purple-100 text-purple-700'
+                            ? 'bg-[#FEF2F2] text-[#EF4444]'
                             : funnel.status === 'paused'
-                            ? 'bg-yellow-100 text-yellow-700'
+                            ? 'bg-[#FFF3E8] text-[#FF6F0F]'
                             : funnel.status === 'completed'
-                            ? 'bg-green-100 text-green-700'
+                            ? 'bg-[#E0F7F6] text-[#2AC1BC]'
                             : 'bg-gray-100 text-gray-500'
                         }`}>
                           <Zap className="w-3 h-3" />
@@ -158,7 +158,7 @@ export default async function AdminInquiriesPage() {
                       <div className="flex items-center justify-end">
                         <Link
                           href={`/admin/inquiries/${item.id}`}
-                          className="px-3 py-1.5 text-sm text-sky-600 hover:bg-sky-50 rounded-lg transition-colors"
+                          className="px-3 py-1.5 text-sm text-[#EF4444] hover:bg-[#FEF2F2] rounded-lg transition-colors"
                         >
                           상세보기
                         </Link>

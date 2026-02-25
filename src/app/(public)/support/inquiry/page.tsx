@@ -45,8 +45,8 @@ export default function InquiryPage() {
         <section className="section">
           <div className="container mx-auto px-4">
             <div className="max-w-md mx-auto text-center">
-              <div className="w-20 h-20 bg-sky-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <CheckCircle className="w-10 h-10 text-sky-600" />
+              <div className="w-20 h-20 bg-[#FEF2F2] rounded-full flex items-center justify-center mx-auto mb-6">
+                <CheckCircle className="w-10 h-10 text-[#EF4444]" />
               </div>
               <h1 className="text-2xl font-bold text-gray-900 mb-4">
                 상담 신청이 완료되었습니다
@@ -56,7 +56,7 @@ export default function InquiryPage() {
                 <br />
                 감사합니다.
               </p>
-              <Button asChild className="bg-sky-500 hover:bg-sky-600">
+              <Button asChild className="bg-[#EF4444] hover:bg-[#DC2626]">
                 <a href="/">홈으로 돌아가기</a>
               </Button>
             </div>
@@ -100,7 +100,7 @@ export default function InquiryPage() {
                       </div>
                       <div>
                         <p className="text-sm text-gray-500">전화 상담</p>
-                        <a href={`tel:${COMPANY_INFO.phone}`} className="font-semibold text-gray-900 hover:text-sky-600">
+                        <a href={`tel:${COMPANY_INFO.phone}`} className="font-semibold text-gray-900 hover:text-[#EF4444]">
                           {COMPANY_INFO.phone}
                         </a>
                       </div>
@@ -112,7 +112,7 @@ export default function InquiryPage() {
                       </div>
                       <div>
                         <p className="text-sm text-gray-500">이메일</p>
-                        <a href={`mailto:${COMPANY_INFO.email}`} className="font-semibold text-gray-900 hover:text-sky-600">
+                        <a href={`mailto:${COMPANY_INFO.email}`} className="font-semibold text-gray-900 hover:text-[#EF4444]">
                           {COMPANY_INFO.email}
                         </a>
                       </div>
@@ -137,7 +137,7 @@ export default function InquiryPage() {
                 <AnimatedSection delay={0.1}>
                   <form onSubmit={handleSubmit} className="card-clean">
                     {error && (
-                      <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-xl text-red-600 text-sm">
+                      <div className="mb-6 p-4 bg-[#FEF2F2] border border-[#EF4444]/30 rounded-xl text-[#EF4444] text-sm">
                         {error}
                       </div>
                     )}
@@ -183,7 +183,7 @@ export default function InquiryPage() {
                       <p className="text-sm text-gray-500">
                         * 필수 입력 항목
                       </p>
-                      <Button type="submit" disabled={isLoading} className="bg-sky-500 hover:bg-sky-600 px-8">
+                      <Button type="submit" disabled={isLoading} className="bg-[#EF4444] hover:bg-[#DC2626] px-8">
                         {isLoading ? (
                           <>
                             <Loader2 className="w-4 h-4 mr-2 animate-spin" />

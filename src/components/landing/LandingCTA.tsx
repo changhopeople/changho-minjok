@@ -93,7 +93,7 @@ export default function LandingCTA() {
                 <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
                   <div>
                     <label className="block text-xs sm:text-sm font-bold text-[#1E1E1E] mb-1.5 sm:mb-2">
-                      이름 <span className="text-red-500">*</span>
+                      이름 <span className="text-[#EF4444]">*</span>
                     </label>
                     <Input
                       type="text"
@@ -106,7 +106,7 @@ export default function LandingCTA() {
                   </div>
                   <div>
                     <label className="block text-xs sm:text-sm font-bold text-[#1E1E1E] mb-1.5 sm:mb-2">
-                      연락처 <span className="text-red-500">*</span>
+                      연락처 <span className="text-[#EF4444]">*</span>
                     </label>
                     <Input
                       type="tel"
@@ -141,7 +141,7 @@ export default function LandingCTA() {
                     />
                   </div>
                   {error && (
-                    <div className="flex items-center gap-2 p-3 bg-red-50 border border-red-200 rounded-lg text-red-600 text-sm">
+                    <div className="flex items-center gap-2 p-3 bg-[#FEF2F2] border border-[#EF4444]/30 rounded-lg text-[#EF4444] text-sm">
                       <AlertCircle className="w-4 h-4 flex-shrink-0" />
                       <span>{error}</span>
                     </div>

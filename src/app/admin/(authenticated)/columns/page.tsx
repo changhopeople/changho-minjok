@@ -19,7 +19,7 @@ export default async function AdminColumnsPage() {
         </div>
         <Link
           href="/admin/columns/new"
-          className="inline-flex items-center gap-2 bg-sky-500 text-white px-4 py-2.5 rounded-xl hover:bg-sky-600 transition-colors"
+          className="inline-flex items-center gap-2 bg-[#EF4444] text-white px-4 py-2.5 rounded-xl hover:bg-[#DC2626] transition-colors"
         >
           <Plus className="w-5 h-5" />
           새 칼럼
@@ -33,7 +33,7 @@ export default async function AdminColumnsPage() {
           <p className="text-gray-500 mb-4">등록된 칼럼이 없습니다.</p>
           <Link
             href="/admin/columns/new"
-            className="inline-flex items-center gap-2 bg-sky-500 text-white px-6 py-3 rounded-xl hover:bg-sky-600 transition-colors"
+            className="inline-flex items-center gap-2 bg-[#EF4444] text-white px-6 py-3 rounded-xl hover:bg-[#DC2626] transition-colors"
           >
             <Plus className="w-5 h-5" />
             첫 칼럼 작성하기
@@ -70,14 +70,14 @@ export default async function AdminColumnsPage() {
                   <td className="px-6 py-4 text-sm text-gray-600">{item.author}</td>
                   <td className="px-6 py-4">
                     {item.is_featured ? (
-                      <Star className="w-4 h-4 fill-amber-400 text-amber-400" />
+                      <Star className="w-4 h-4 fill-[#FF6F0F] text-[#FF6F0F]" />
                     ) : (
                       <Star className="w-4 h-4 text-gray-300" />
                     )}
                   </td>
                   <td className="px-6 py-4">
                     {item.is_published ? (
-                      <span className="inline-flex items-center gap-1 text-green-600 text-sm">
+                      <span className="inline-flex items-center gap-1 text-[#2AC1BC] text-sm">
                         <Eye className="w-4 h-4" />
                         공개
                       </span>
@@ -95,7 +95,7 @@ export default async function AdminColumnsPage() {
                     <div className="flex items-center justify-end gap-2">
                       <Link
                         href={`/admin/columns/${item.id}`}
-                        className="p-2 text-gray-500 hover:text-sky-600 hover:bg-sky-50 rounded-lg transition-colors"
+                        className="p-2 text-gray-500 hover:text-[#EF4444] hover:bg-[#FEF2F2] rounded-lg transition-colors"
                         title="수정"
                       >
                         <Edit className="w-4 h-4" />
@@ -103,7 +103,7 @@ export default async function AdminColumnsPage() {
                       <Link
                         href={`/column/${item.slug}`}
                         target="_blank"
-                        className="p-2 text-gray-500 hover:text-green-600 hover:bg-green-50 rounded-lg transition-colors"
+                        className="p-2 text-gray-500 hover:text-[#2AC1BC] hover:bg-[#E0F7F6] rounded-lg transition-colors"
                         title="미리보기"
                       >
                         <ExternalLink className="w-4 h-4" />

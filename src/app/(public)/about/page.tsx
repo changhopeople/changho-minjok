@@ -43,10 +43,10 @@ export default function AboutPage() {
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">
               화려한 광고보다
               <br />
-              <span className="text-blue-400">공장의 기계 소리</span>를 믿습니다
+              <span className="text-[#EF4444]">공장의 기계 소리</span>를 믿습니다
             </h1>
             <p className="text-sm sm:text-base md:text-lg text-gray-300 mb-6 sm:mb-8 px-2">
-              <span className="text-blue-400 font-semibold">&apos;창호의민족&apos;</span>은 (주)현경시스템이 10년 이상의 제조 노하우를 집약해
+              <span className="text-[#EF4444] font-semibold">&apos;창호의민족&apos;</span>은 (주)현경시스템이 10년 이상의 제조 노하우를 집약해
               <br />
               런칭한 프리미엄 창호 브랜드입니다. 본사-브랜드 일원화로 책임 있는 서비스를 제공합니다.
             </p>
@@ -65,7 +65,7 @@ export default function AboutPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <AnimatedSection className="text-center mb-8 sm:mb-12 md:mb-16">
-              <span className="text-blue-600 font-medium text-xs sm:text-sm tracking-wider uppercase">
+              <span className="text-[#EF4444] font-medium text-xs sm:text-sm tracking-wider uppercase">
                 Our Story
               </span>
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mt-2 sm:mt-3 mb-4 sm:mb-6">
@@ -157,7 +157,7 @@ export default function AboutPage() {
       <section className="py-12 sm:py-16 md:py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <AnimatedSection className="text-center mb-8 sm:mb-12 md:mb-16">
-            <span className="text-blue-600 font-medium text-xs sm:text-sm tracking-wider uppercase">
+            <span className="text-[#EF4444] font-medium text-xs sm:text-sm tracking-wider uppercase">
               Core Values
             </span>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mt-2 sm:mt-3">
@@ -169,8 +169,8 @@ export default function AboutPage() {
             {values.map((value, index) => (
               <AnimatedSection key={value.title} delay={index * 0.1}>
                 <div className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 h-full">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-100 rounded-lg sm:rounded-xl flex items-center justify-center mb-3 sm:mb-4">
-                    <value.icon className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600" />
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#FEF2F2] rounded-lg sm:rounded-xl flex items-center justify-center mb-3 sm:mb-4">
+                    <value.icon className="w-5 h-5 sm:w-6 sm:h-6 text-[#EF4444]" />
                   </div>
                   <h3 className="text-sm sm:text-lg font-semibold text-gray-900 mb-1 sm:mb-2">
                     {value.title}

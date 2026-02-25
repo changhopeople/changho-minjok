@@ -104,7 +104,7 @@ export default function FAQManager({ initialFaqs }: FAQManagerProps) {
       {/* Add Button */}
       <button
         onClick={() => setIsFormOpen(true)}
-        className="inline-flex items-center gap-2 bg-sky-500 text-white px-4 py-2.5 rounded-xl hover:bg-sky-600 transition-colors"
+        className="inline-flex items-center gap-2 bg-[#EF4444] text-white px-4 py-2.5 rounded-xl hover:bg-[#DC2626] transition-colors"
       >
         <Plus className="w-5 h-5" />
         새 FAQ
@@ -131,7 +131,7 @@ export default function FAQManager({ initialFaqs }: FAQManagerProps) {
                 <select
                   name="category"
                   defaultValue={editingFaq?.category || 'general'}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#EF4444] focus:border-[#EF4444] outline-none"
                 >
                   {Object.entries(categoryLabels).map(([value, label]) => (
                     <option key={value} value={value}>
@@ -150,7 +150,7 @@ export default function FAQManager({ initialFaqs }: FAQManagerProps) {
                   name="question"
                   defaultValue={editingFaq?.question || ''}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#EF4444] focus:border-[#EF4444] outline-none"
                   placeholder="질문을 입력하세요"
                 />
               </div>
@@ -164,7 +164,7 @@ export default function FAQManager({ initialFaqs }: FAQManagerProps) {
                   defaultValue={editingFaq?.answer || ''}
                   required
                   rows={4}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none resize-none"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#EF4444] focus:border-[#EF4444] outline-none resize-none"
                   placeholder="답변을 입력하세요"
                 />
               </div>
@@ -179,7 +179,7 @@ export default function FAQManager({ initialFaqs }: FAQManagerProps) {
                     name="display_order"
                     defaultValue={editingFaq?.display_order || 1}
                     min={1}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#EF4444] focus:border-[#EF4444] outline-none"
                   />
                 </div>
 
@@ -190,7 +190,7 @@ export default function FAQManager({ initialFaqs }: FAQManagerProps) {
                   <select
                     name="is_active"
                     defaultValue={editingFaq?.is_active !== false ? 'true' : 'false'}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#EF4444] focus:border-[#EF4444] outline-none"
                   >
                     <option value="true">활성</option>
                     <option value="false">비활성</option>
@@ -209,7 +209,7 @@ export default function FAQManager({ initialFaqs }: FAQManagerProps) {
                 <button
                   type="submit"
                   disabled={isLoading}
-                  className="inline-flex items-center gap-2 bg-sky-500 text-white px-4 py-2.5 rounded-xl hover:bg-sky-600 disabled:opacity-50 transition-colors"
+                  className="inline-flex items-center gap-2 bg-[#EF4444] text-white px-4 py-2.5 rounded-xl hover:bg-[#DC2626] disabled:opacity-50 transition-colors"
                 >
                   {isLoading ? (
                     <Loader2 className="w-5 h-5 animate-spin" />
@@ -267,7 +267,7 @@ export default function FAQManager({ initialFaqs }: FAQManagerProps) {
                     onClick={() => handleToggleStatus(faq.id, faq.is_active)}
                     className={`p-2 rounded-lg transition-colors ${
                       faq.is_active
-                        ? 'text-green-600 hover:bg-green-50'
+                        ? 'text-[#2AC1BC] hover:bg-[#E0F7F6]'
                         : 'text-gray-400 hover:bg-gray-100'
                     }`}
                     title={faq.is_active ? '비활성화' : '활성화'}
@@ -276,14 +276,14 @@ export default function FAQManager({ initialFaqs }: FAQManagerProps) {
                   </button>
                   <button
                     onClick={() => handleEdit(faq)}
-                    className="p-2 text-gray-500 hover:text-sky-600 hover:bg-sky-50 rounded-lg transition-colors"
+                    className="p-2 text-gray-500 hover:text-[#EF4444] hover:bg-[#FEF2F2] rounded-lg transition-colors"
                     title="수정"
                   >
                     <Edit className="w-5 h-5" />
                   </button>
                   <button
                     onClick={() => handleDelete(faq.id)}
-                    className="p-2 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors"
+                    className="p-2 text-gray-500 hover:text-[#EF4444] hover:bg-[#FEF2F2] rounded-lg transition-colors"
                     title="삭제"
                   >
                     <Trash2 className="w-5 h-5" />

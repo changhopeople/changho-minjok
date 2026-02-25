@@ -18,17 +18,17 @@ import {
 export const dynamic = 'force-dynamic';
 
 const statusConfig = {
-  pending: { label: '대기중', color: 'bg-yellow-100 text-yellow-700' },
-  in_progress: { label: '처리중', color: 'bg-blue-100 text-blue-700' },
-  completed: { label: '완료', color: 'bg-green-100 text-green-700' },
+  pending: { label: '대기중', color: 'bg-[#FFF3E8] text-[#FF6F0F]' },
+  in_progress: { label: '처리중', color: 'bg-[#FEF2F2] text-[#EF4444]' },
+  completed: { label: '완료', color: 'bg-[#E0F7F6] text-[#2AC1BC]' },
   cancelled: { label: '취소', color: 'bg-gray-100 text-gray-500' },
 };
 
 const quickLinks = [
-  { href: '/admin/portfolio/new', label: '시공사례 등록', icon: FolderOpen, color: 'bg-sky-500' },
-  { href: '/admin/inquiries', label: '상담신청 관리', icon: MessageSquare, color: 'bg-amber-500' },
-  { href: '/admin/customers', label: '고객관리', icon: Users, color: 'bg-emerald-500' },
-  { href: '/admin/estimates', label: '견적 관리', icon: Calculator, color: 'bg-purple-500' },
+  { href: '/admin/portfolio/new', label: '시공사례 등록', icon: FolderOpen, color: 'bg-[#EF4444]' },
+  { href: '/admin/inquiries', label: '상담신청 관리', icon: MessageSquare, color: 'bg-[#FF6F0F]' },
+  { href: '/admin/customers', label: '고객관리', icon: Users, color: 'bg-[#2AC1BC]' },
+  { href: '/admin/estimates', label: '견적 관리', icon: Calculator, color: 'bg-[#EF4444]' },
   { href: '/admin/settings', label: '설정', icon: Settings, color: 'bg-gray-500' },
 ];
 
@@ -59,8 +59,8 @@ export default async function AdminDashboardPage() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
         <div className="bg-white rounded-2xl p-6 shadow-sm">
           <div className="flex items-center justify-between mb-4">
-            <div className="w-12 h-12 bg-sky-100 rounded-xl flex items-center justify-center">
-              <Calendar className="w-6 h-6 text-sky-600" />
+            <div className="w-12 h-12 bg-[#FEF2F2] rounded-xl flex items-center justify-center">
+              <Calendar className="w-6 h-6 text-[#EF4444]" />
             </div>
             <span className="text-xs text-gray-400">오늘</span>
           </div>
@@ -70,8 +70,8 @@ export default async function AdminDashboardPage() {
 
         <div className="bg-white rounded-2xl p-6 shadow-sm">
           <div className="flex items-center justify-between mb-4">
-            <div className="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center">
-              <TrendingUp className="w-6 h-6 text-emerald-600" />
+            <div className="w-12 h-12 bg-[#E0F7F6] rounded-xl flex items-center justify-center">
+              <TrendingUp className="w-6 h-6 text-[#2AC1BC]" />
             </div>
             <span className="text-xs text-gray-400">이번 달</span>
           </div>
@@ -81,8 +81,8 @@ export default async function AdminDashboardPage() {
 
         <div className="bg-white rounded-2xl p-6 shadow-sm">
           <div className="flex items-center justify-between mb-4">
-            <div className="w-12 h-12 bg-yellow-100 rounded-xl flex items-center justify-center">
-              <Clock className="w-6 h-6 text-yellow-600" />
+            <div className="w-12 h-12 bg-[#FFF3E8] rounded-xl flex items-center justify-center">
+              <Clock className="w-6 h-6 text-[#FF6F0F]" />
             </div>
             <span className="text-xs text-gray-400">처리 필요</span>
           </div>
@@ -92,8 +92,8 @@ export default async function AdminDashboardPage() {
 
         <div className="bg-white rounded-2xl p-6 shadow-sm">
           <div className="flex items-center justify-between mb-4">
-            <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center">
-              <CheckCircle2 className="w-6 h-6 text-purple-600" />
+            <div className="w-12 h-12 bg-[#FEF2F2] rounded-xl flex items-center justify-center">
+              <CheckCircle2 className="w-6 h-6 text-[#EF4444]" />
             </div>
             <span className="text-xs text-gray-400">전체</span>
           </div>
@@ -109,7 +109,7 @@ export default async function AdminDashboardPage() {
             <h2 className="font-semibold text-gray-900">최근 상담신청</h2>
             <Link
               href="/admin/inquiries"
-              className="text-sm text-sky-600 hover:text-sky-700 flex items-center gap-1"
+              className="text-sm text-[#EF4444] hover:text-[#DC2626] flex items-center gap-1"
             >
               전체보기 <ArrowRight className="w-4 h-4" />
             </Link>
@@ -196,17 +196,17 @@ export default async function AdminDashboardPage() {
             <p className="text-2xl font-bold text-gray-900">{stats.total}</p>
             <p className="text-sm text-gray-500">전체</p>
           </div>
-          <div className="text-center p-4 rounded-xl bg-yellow-50">
-            <p className="text-2xl font-bold text-yellow-700">{stats.pending}</p>
-            <p className="text-sm text-yellow-600">대기중</p>
+          <div className="text-center p-4 rounded-xl bg-[#FFF3E8]">
+            <p className="text-2xl font-bold text-[#FF6F0F]">{stats.pending}</p>
+            <p className="text-sm text-[#FF6F0F]">대기중</p>
           </div>
-          <div className="text-center p-4 rounded-xl bg-blue-50">
-            <p className="text-2xl font-bold text-blue-700">{stats.in_progress}</p>
-            <p className="text-sm text-blue-600">처리중</p>
+          <div className="text-center p-4 rounded-xl bg-[#FEF2F2]">
+            <p className="text-2xl font-bold text-[#EF4444]">{stats.in_progress}</p>
+            <p className="text-sm text-[#EF4444]">처리중</p>
           </div>
-          <div className="text-center p-4 rounded-xl bg-green-50">
-            <p className="text-2xl font-bold text-green-700">{stats.completed}</p>
-            <p className="text-sm text-green-600">완료</p>
+          <div className="text-center p-4 rounded-xl bg-[#E0F7F6]">
+            <p className="text-2xl font-bold text-[#2AC1BC]">{stats.completed}</p>
+            <p className="text-sm text-[#2AC1BC]">완료</p>
           </div>
         </div>
       </div>

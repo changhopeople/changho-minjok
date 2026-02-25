@@ -141,7 +141,7 @@ export default function LandingReviews() {
                           key={i}
                           className={`w-4 h-4 sm:w-5 sm:h-5 ${
                             i < currentReview.rating
-                              ? 'text-yellow-400 fill-yellow-400'
+                              ? 'text-[#FF6F0F] fill-[#FF6F0F]'
                               : 'text-gray-600'
                           }`}
                         />

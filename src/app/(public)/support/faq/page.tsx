@@ -114,7 +114,7 @@ export default function FAQPage() {
             {faqCategories.map((category, categoryIndex) => (
               <AnimatedSection key={category.category} delay={categoryIndex * 0.1} className="mb-12 last:mb-0">
                 <h2 className="text-xl font-bold text-gray-900 mb-6 flex items-center gap-3">
-                  <span className="w-8 h-8 rounded-lg bg-sky-100 text-sky-600 flex items-center justify-center text-sm font-bold">
+                  <span className="w-8 h-8 rounded-lg bg-[#FEF2F2] text-[#EF4444] flex items-center justify-center text-sm font-bold">
                     {categoryIndex + 1}
                   </span>
                   {category.category}
@@ -133,10 +133,10 @@ export default function FAQPage() {
             <h2 className="text-3xl font-bold text-white mb-4">
               원하는 답변을 찾지 못하셨나요?
             </h2>
-            <p className="text-sky-100 mb-8">
+            <p className="text-[#FEF2F2] mb-8">
               전문 상담원이 친절하게 답변해드립니다.
             </p>
-            <Button asChild size="lg" className="bg-white text-sky-600 hover:bg-sky-50 rounded-xl">
+            <Button asChild size="lg" className="bg-white text-[#EF4444] hover:bg-[#FEF2F2] rounded-xl">
               <Link href="/support/inquiry">
                 상담 신청하기
                 <ArrowRight className="w-4 h-4 ml-2" />

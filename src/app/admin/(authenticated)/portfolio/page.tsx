@@ -20,7 +20,7 @@ export default async function AdminPortfolioPage() {
         </div>
         <Link
           href="/admin/portfolio/new"
-          className="inline-flex items-center gap-2 bg-sky-500 text-white px-4 py-2.5 rounded-xl hover:bg-sky-600 transition-colors"
+          className="inline-flex items-center gap-2 bg-[#EF4444] text-white px-4 py-2.5 rounded-xl hover:bg-[#DC2626] transition-colors"
         >
           <Plus className="w-5 h-5" />
           새 시공사례
@@ -36,7 +36,7 @@ export default async function AdminPortfolioPage() {
             <SeedPortfoliosButton />
             <Link
               href="/admin/portfolio/new"
-              className="inline-flex items-center gap-2 bg-sky-500 text-white px-6 py-3 rounded-xl hover:bg-sky-600 transition-colors"
+              className="inline-flex items-center gap-2 bg-[#EF4444] text-white px-6 py-3 rounded-xl hover:bg-[#DC2626] transition-colors"
             >
               <Plus className="w-5 h-5" />
               첫 시공사례 등록하기
@@ -67,17 +67,17 @@ export default async function AdminPortfolioPage() {
                   <td className="px-6 py-4 text-sm text-gray-600">{item.location}</td>
                   <td className="px-6 py-4">
                     <span className={`inline-flex px-2 py-1 text-xs font-medium rounded-full ${
-                      item.product === '시스템창호' ? 'bg-amber-100 text-amber-700' :
-                      item.product === '알루미늄 창호' ? 'bg-emerald-100 text-emerald-700' :
-                      item.product === '발코니 창호' ? 'bg-rose-100 text-rose-700' :
-                      'bg-sky-100 text-sky-700'
+                      item.product === '시스템창호' ? 'bg-[#FFF3E8] text-[#FF6F0F]' :
+                      item.product === '알루미늄 창호' ? 'bg-[#E0F7F6] text-[#2AC1BC]' :
+                      item.product === '발코니 창호' ? 'bg-[#1FA9A5]/15 text-[#1FA9A5]' :
+                      'bg-[#FEF2F2] text-[#EF4444]'
                     }`}>
                       {item.product}
                     </span>
                   </td>
                   <td className="px-6 py-4">
                     {item.published ? (
-                      <span className="inline-flex items-center gap-1 text-green-600 text-sm">
+                      <span className="inline-flex items-center gap-1 text-[#2AC1BC] text-sm">
                         <Eye className="w-4 h-4" />
                         공개
                       </span>
@@ -92,7 +92,7 @@ export default async function AdminPortfolioPage() {
                     <div className="flex items-center justify-end gap-2">
                       <Link
                         href={`/admin/portfolio/${item.id}`}
-                        className="p-2 text-gray-500 hover:text-sky-600 hover:bg-sky-50 rounded-lg transition-colors"
+                        className="p-2 text-gray-500 hover:text-[#EF4444] hover:bg-[#FEF2F2] rounded-lg transition-colors"
                         title="수정"
                       >
                         <Edit className="w-4 h-4" />
@@ -100,7 +100,7 @@ export default async function AdminPortfolioPage() {
                       <Link
                         href={`/portfolio/${item.slug}`}
                         target="_blank"
-                        className="p-2 text-gray-500 hover:text-green-600 hover:bg-green-50 rounded-lg transition-colors"
+                        className="p-2 text-gray-500 hover:text-[#2AC1BC] hover:bg-[#E0F7F6] rounded-lg transition-colors"
                         title="미리보기"
                       >
                         <ExternalLink className="w-4 h-4" />

@@ -48,7 +48,7 @@ export default async function ColumnListPage({ searchParams }: PageProps) {
           <div className="container mx-auto px-4 lg:px-8">
             <AnimatedSection>
               <div className="flex items-center gap-2 mb-8">
-                <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
+                <Star className="w-5 h-5 fill-[#FF6F0F] text-[#FF6F0F]" />
                 <h2 className="text-xl font-bold text-[#1E1E1E]">추천 칼럼</h2>
               </div>
             </AnimatedSection>

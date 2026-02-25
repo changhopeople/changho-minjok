@@ -21,15 +21,15 @@ export default async function AdminLoginPage({ searchParams }: PageProps) {
       <div className="w-full max-w-md">
         <div className="bg-white rounded-2xl shadow-lg p-8">
           <div className="text-center mb-8">
-            <div className="w-16 h-16 bg-sky-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Lock className="w-8 h-8 text-sky-600" />
+            <div className="w-16 h-16 bg-[#FEF2F2] rounded-full flex items-center justify-center mx-auto mb-4">
+              <Lock className="w-8 h-8 text-[#EF4444]" />
             </div>
             <h1 className="text-2xl font-bold text-gray-900">관리자 로그인</h1>
             <p className="text-gray-500 mt-2">시공사례를 관리하려면 로그인하세요.</p>
           </div>
 
           {error === 'invalid' && (
-            <div className="mb-6 flex items-center gap-2 px-4 py-3 bg-red-50 border border-red-200 text-red-700 rounded-xl text-sm">
+            <div className="mb-6 flex items-center gap-2 px-4 py-3 bg-[#FEF2F2] border border-[#EF4444]/30 text-[#EF4444] rounded-xl text-sm">
               <AlertCircle className="w-5 h-5 shrink-0" />
               아이디 또는 비밀번호가 올바르지 않습니다.
             </div>
@@ -45,7 +45,7 @@ export default async function AdminLoginPage({ searchParams }: PageProps) {
                 id="username"
                 name="username"
                 required
-                className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none transition-all"
+                className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#EF4444] focus:border-[#EF4444] outline-none transition-all"
                 placeholder="관리자 아이디 입력"
               />
             </div>
@@ -59,14 +59,14 @@ export default async function AdminLoginPage({ searchParams }: PageProps) {
                 id="password"
                 name="password"
                 required
-                className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none transition-all"
+                className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#EF4444] focus:border-[#EF4444] outline-none transition-all"
                 placeholder="관리자 비밀번호 입력"
               />
             </div>
 
             <button
               type="submit"
-              className="w-full bg-sky-500 text-white font-semibold py-3 px-4 rounded-xl hover:bg-sky-600 transition-colors"
+              className="w-full bg-[#EF4444] text-white font-semibold py-3 px-4 rounded-xl hover:bg-[#DC2626] transition-colors"
             >
               로그인
             </button>
