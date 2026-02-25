@@ -126,7 +126,7 @@ export default function LandingSolution() {
                   <div className="p-3 sm:p-4 md:p-5 text-center text-[#767676] text-[11px] sm:text-sm md:text-base border-l border-gray-100">
                     {typeof row.others === 'boolean' ? (
                       row.others ? (
-                        <Check className="w-4 h-4 sm:w-5 sm:h-5 text-green-500 mx-auto" />
+                        <Check className="w-4 h-4 sm:w-5 sm:h-5 text-[#2AC1BC] mx-auto" />
                       ) : (
                         <X className="w-4 h-4 sm:w-5 sm:h-5 text-red-400 mx-auto" />
                       )

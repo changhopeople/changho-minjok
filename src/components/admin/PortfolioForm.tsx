@@ -66,7 +66,7 @@ export default function PortfolioForm({ portfolio, action, submitLabel }: Portfo
               required
               defaultValue={portfolio?.title}
               placeholder="예: 강남 OO아파트 전체 교체"
-              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none"
+              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#EF4444] focus:border-[#EF4444] outline-none"
             />
           </div>
 
@@ -80,7 +80,7 @@ export default function PortfolioForm({ portfolio, action, submitLabel }: Portfo
               required
               defaultValue={portfolio?.location}
               placeholder="예: 서울 강남구"
-              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none"
+              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#EF4444] focus:border-[#EF4444] outline-none"
             />
           </div>
 
@@ -94,7 +94,7 @@ export default function PortfolioForm({ portfolio, action, submitLabel }: Portfo
               required
               defaultValue={portfolio?.date}
               placeholder="예: 2025년 1월"
-              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none"
+              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#EF4444] focus:border-[#EF4444] outline-none"
             />
           </div>
 
@@ -106,7 +106,7 @@ export default function PortfolioForm({ portfolio, action, submitLabel }: Portfo
               name="buildingType"
               required
               defaultValue={portfolio?.building_type || '아파트'}
-              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none"
+              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#EF4444] focus:border-[#EF4444] outline-none"
             >
               <option value="아파트">아파트</option>
               <option value="빌라">빌라</option>
@@ -124,7 +124,7 @@ export default function PortfolioForm({ portfolio, action, submitLabel }: Portfo
               name="product"
               required
               defaultValue={portfolio?.product || '시스템창호'}
-              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none"
+              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#EF4444] focus:border-[#EF4444] outline-none"
             >
               <option value="시스템창호">시스템창호</option>
               <option value="알루미늄 창호">알루미늄 창호</option>
@@ -149,7 +149,7 @@ export default function PortfolioForm({ portfolio, action, submitLabel }: Portfo
               required
               defaultValue={portfolio?.area}
               placeholder="예: 84㎡ (34평형)"
-              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none"
+              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#EF4444] focus:border-[#EF4444] outline-none"
             />
           </div>
 
@@ -163,7 +163,7 @@ export default function PortfolioForm({ portfolio, action, submitLabel }: Portfo
               required
               defaultValue={portfolio?.window_count}
               placeholder="예: 12개"
-              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none"
+              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#EF4444] focus:border-[#EF4444] outline-none"
             />
           </div>
 
@@ -177,7 +177,7 @@ export default function PortfolioForm({ portfolio, action, submitLabel }: Portfo
               required
               defaultValue={portfolio?.duration}
               placeholder="예: 1일"
-              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none"
+              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#EF4444] focus:border-[#EF4444] outline-none"
             />
           </div>
         </div>
@@ -192,7 +192,7 @@ export default function PortfolioForm({ portfolio, action, submitLabel }: Portfo
             rows={4}
             defaultValue={portfolio?.description}
             placeholder="시공 내용에 대한 상세 설명을 작성하세요."
-            className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none resize-none"
+            className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#EF4444] focus:border-[#EF4444] outline-none resize-none"
           />
         </div>
 
@@ -206,7 +206,7 @@ export default function PortfolioForm({ portfolio, action, submitLabel }: Portfo
             rows={4}
             defaultValue={portfolio?.features?.join('\n')}
             placeholder="시스템창호 전체 교체&#10;삼중유리 적용&#10;TPS 단열간봉&#10;로이유리 코팅"
-            className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none resize-none font-mono text-sm"
+            className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#EF4444] focus:border-[#EF4444] outline-none resize-none font-mono text-sm"
           />
         </div>
       </div>
@@ -220,7 +220,7 @@ export default function PortfolioForm({ portfolio, action, submitLabel }: Portfo
             <select
               name="rating"
               defaultValue={portfolio?.rating || 5}
-              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none"
+              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#EF4444] focus:border-[#EF4444] outline-none"
             >
               <option value="5">★★★★★ (5점)</option>
               <option value="4">★★★★☆ (4점)</option>
@@ -236,7 +236,7 @@ export default function PortfolioForm({ portfolio, action, submitLabel }: Portfo
               rows={3}
               defaultValue={portfolio?.review || ''}
               placeholder="고객님의 후기를 입력하세요. (없으면 비워두세요)"
-              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none resize-none"
+              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#EF4444] focus:border-[#EF4444] outline-none resize-none"
             />
           </div>
         </div>
@@ -264,7 +264,7 @@ export default function PortfolioForm({ portfolio, action, submitLabel }: Portfo
                   </button>
                 </div>
               ) : (
-                <label className="flex flex-col items-center justify-center aspect-[4/3] border-2 border-dashed border-gray-300 rounded-xl cursor-pointer hover:border-sky-500 transition-colors">
+                <label className="flex flex-col items-center justify-center aspect-[4/3] border-2 border-dashed border-gray-300 rounded-xl cursor-pointer hover:border-[#EF4444] transition-colors">
                   <Upload className="w-8 h-8 text-gray-400 mb-2" />
                   <span className="text-sm text-gray-500">이미지 선택</span>
                   <input
@@ -297,7 +297,7 @@ export default function PortfolioForm({ portfolio, action, submitLabel }: Portfo
                   </button>
                 </div>
               ) : (
-                <label className="flex flex-col items-center justify-center aspect-[4/3] border-2 border-dashed border-gray-300 rounded-xl cursor-pointer hover:border-sky-500 transition-colors">
+                <label className="flex flex-col items-center justify-center aspect-[4/3] border-2 border-dashed border-gray-300 rounded-xl cursor-pointer hover:border-[#EF4444] transition-colors">
                   <Upload className="w-8 h-8 text-gray-400 mb-2" />
                   <span className="text-sm text-gray-500">이미지 선택</span>
                   <input
@@ -330,7 +330,7 @@ export default function PortfolioForm({ portfolio, action, submitLabel }: Portfo
                   </button>
                 </div>
               ) : (
-                <label className="flex flex-col items-center justify-center aspect-[4/3] border-2 border-dashed border-gray-300 rounded-xl cursor-pointer hover:border-sky-500 transition-colors">
+                <label className="flex flex-col items-center justify-center aspect-[4/3] border-2 border-dashed border-gray-300 rounded-xl cursor-pointer hover:border-[#EF4444] transition-colors">
                   <Upload className="w-8 h-8 text-gray-400 mb-2" />
                   <span className="text-sm text-gray-500">이미지 선택</span>
                   <input
@@ -356,7 +356,7 @@ export default function PortfolioForm({ portfolio, action, submitLabel }: Portfo
             <select
               name="published"
               defaultValue={portfolio?.published ? 'true' : 'false'}
-              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none"
+              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#EF4444] focus:border-[#EF4444] outline-none"
             >
               <option value="true">공개</option>
               <option value="false">비공개</option>
@@ -369,7 +369,7 @@ export default function PortfolioForm({ portfolio, action, submitLabel }: Portfo
               name="displayOrder"
               defaultValue={portfolio?.display_order || 1}
               min={1}
-              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none"
+              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#EF4444] focus:border-[#EF4444] outline-none"
             />
             <p className="text-xs text-gray-500 mt-1">숫자가 작을수록 먼저 표시됩니다.</p>
           </div>
@@ -381,7 +381,7 @@ export default function PortfolioForm({ portfolio, action, submitLabel }: Portfo
         <button
           type="submit"
           disabled={isSubmitting}
-          className="px-8 py-3 bg-sky-500 text-white font-semibold rounded-xl hover:bg-sky-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+          className="px-8 py-3 bg-[#EF4444] text-white font-semibold rounded-xl hover:bg-[#DC2626] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {isSubmitting ? '저장 중...' : submitLabel}
         </button>

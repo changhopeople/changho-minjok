@@ -67,7 +67,7 @@ export default function WindowInfoStep() {
           className={cn(
             'px-4 py-2 rounded-lg text-sm font-medium transition-colors',
             step4.inputMode === 'simple'
-              ? 'bg-blue-600 text-white'
+              ? 'bg-[#EF4444] text-white'
               : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
           )}
         >
@@ -78,7 +78,7 @@ export default function WindowInfoStep() {
           className={cn(
             'px-4 py-2 rounded-lg text-sm font-medium transition-colors',
             step4.inputMode === 'detailed'
-              ? 'bg-blue-600 text-white'
+              ? 'bg-[#EF4444] text-white'
               : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
           )}
         >
@@ -87,8 +87,8 @@ export default function WindowInfoStep() {
       </div>
 
       {/* Summary */}
-      <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 text-center">
-        <span className="text-blue-800">
+      <div className="bg-[#FEF2F2] border border-[#EF4444]/30 rounded-lg p-4 text-center">
+        <span className="text-[#EF4444]">
           총 <strong>{step4.windows.length}</strong>개 항목,{' '}
           <strong>{totalWindows}</strong>개 창문
         </span>

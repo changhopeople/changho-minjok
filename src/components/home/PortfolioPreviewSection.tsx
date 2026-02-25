@@ -6,11 +6,11 @@ import AnimatedSection from '@/components/shared/AnimatedSection';
 import { getPublishedPortfolios } from '@/lib/portfolio-db';
 
 const productColors: Record<string, string> = {
-  '시스템창호': 'bg-amber-500',
-  '알루미늄 창호': 'bg-emerald-500',
-  'PVC창호': 'bg-sky-500',
-  '이중창': 'bg-violet-500',
-  '발코니 창호': 'bg-rose-500',
+  '시스템창호': 'bg-[#FF6F0F]',
+  '알루미늄 창호': 'bg-[#2AC1BC]',
+  'PVC창호': 'bg-[#EF4444]',
+  '이중창': 'bg-[#E5630D]',
+  '발코니 창호': 'bg-[#1FA9A5]',
 };
 
 export default async function PortfolioPreviewSection() {

@@ -42,7 +42,7 @@ export default function AdditionalOptionsStep() {
               className={cn(
                 'p-4 rounded-lg border-2 transition-all text-left',
                 step5.options.screen === option.value
-                  ? 'border-blue-500 bg-blue-50'
+                  ? 'border-[#EF4444] bg-[#FEF2F2]'
                   : 'border-gray-200 hover:border-gray-300'
               )}
             >
@@ -64,7 +64,7 @@ export default function AdditionalOptionsStep() {
             className={cn(
               'p-4 cursor-pointer transition-all',
               step5.options.safetyLock
-                ? 'ring-2 ring-blue-500 bg-blue-50'
+                ? 'ring-2 ring-[#EF4444] bg-[#FEF2F2]'
                 : 'hover:bg-gray-50'
             )}
           >
@@ -73,7 +73,7 @@ export default function AdditionalOptionsStep() {
                 type="checkbox"
                 checked={step5.options.safetyLock}
                 readOnly
-                className="w-5 h-5 text-blue-600"
+                className="w-5 h-5 text-[#EF4444]"
               />
               <div>
                 <div className="font-medium text-gray-900">잠금장치</div>
@@ -87,7 +87,7 @@ export default function AdditionalOptionsStep() {
             className={cn(
               'p-4 cursor-pointer transition-all',
               step5.options.fallPrevention
-                ? 'ring-2 ring-blue-500 bg-blue-50'
+                ? 'ring-2 ring-[#EF4444] bg-[#FEF2F2]'
                 : 'hover:bg-gray-50'
             )}
           >
@@ -96,7 +96,7 @@ export default function AdditionalOptionsStep() {
                 type="checkbox"
                 checked={step5.options.fallPrevention}
                 readOnly
-                className="w-5 h-5 text-blue-600"
+                className="w-5 h-5 text-[#EF4444]"
               />
               <div>
                 <div className="font-medium text-gray-900">추락방지대</div>
@@ -124,7 +124,7 @@ export default function AdditionalOptionsStep() {
               className={cn(
                 'p-4 rounded-lg border-2 transition-all text-left',
                 step5.options.installation === option.value
-                  ? 'border-blue-500 bg-blue-50'
+                  ? 'border-[#EF4444] bg-[#FEF2F2]'
                   : 'border-gray-200 hover:border-gray-300'
               )}
             >

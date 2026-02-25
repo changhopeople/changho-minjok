@@ -19,7 +19,7 @@ const objections = [
     answer: '추가비용 0원 서면 보장',
     detail: '현장 방문 후 견적 = 최종 금액. 철거비, 마감비, 부자재비 전부 포함. 계약서에 명시하고, 추가 청구 시 전액 환불해드립니다.',
     badge: '0원 보장',
-    color: 'bg-green-500',
+    color: 'bg-[#2AC1BC]',
   },
   {
     icon: Factory,
@@ -43,7 +43,7 @@ const objections = [
     answer: '창호 미리 제작 → 설치만 당일 진행',
     detail: '창호는 계약 후 공장에서 미리 제작 완료. 시공 당일은 철거→설치→마감만. 그래서 아침 9시 시작, 저녁 6시 완료가 가능합니다.',
     badge: '1-day 시공',
-    color: 'bg-purple-500',
+    color: 'bg-[#EF4444]',
   },
 ];
 

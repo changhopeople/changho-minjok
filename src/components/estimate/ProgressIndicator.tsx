@@ -44,8 +44,8 @@ export default function ProgressIndicator({
                 <div
                   className={cn(
                     'w-10 h-10 rounded-full flex items-center justify-center text-sm font-medium transition-colors',
-                    isCompleted && 'bg-green-500 text-white',
-                    isCurrent && !isCompleted && 'bg-blue-600 text-white',
+                    isCompleted && 'bg-[#2AC1BC] text-white',
+                    isCurrent && !isCompleted && 'bg-[#EF4444] text-white',
                     !isCurrent && !isCompleted && 'bg-gray-200 text-gray-500'
                   )}
                 >
@@ -58,7 +58,7 @@ export default function ProgressIndicator({
                 <span
                   className={cn(
                     'text-sm font-medium',
-                    isCurrent && 'text-blue-600',
+                    isCurrent && 'text-[#EF4444]',
                     !isCurrent && 'text-gray-500'
                   )}
                 >
@@ -73,7 +73,7 @@ export default function ProgressIndicator({
                     className={cn(
                       'h-0.5 transition-colors',
                       completedSteps.includes(step.number)
-                        ? 'bg-green-500'
+                        ? 'bg-[#2AC1BC]'
                         : 'bg-gray-200'
                     )}
                   />
@@ -90,13 +90,13 @@ export default function ProgressIndicator({
           <span className="text-sm font-medium text-gray-600">
             {currentStep}단계 / {steps.length}단계
           </span>
-          <span className="text-sm font-semibold text-blue-600">
+          <span className="text-sm font-semibold text-[#EF4444]">
             {steps[currentStep - 1].title}
           </span>
         </div>
         <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
           <div
-            className="h-full bg-blue-600 transition-all duration-300"
+            className="h-full bg-[#EF4444] transition-all duration-300"
             style={{ width: `${(currentStep / steps.length) * 100}%` }}
           />
         </div>

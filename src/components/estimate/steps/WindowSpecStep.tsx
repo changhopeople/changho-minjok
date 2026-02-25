@@ -36,7 +36,7 @@ export default function WindowSpecStep() {
               className={cn(
                 'p-5 cursor-pointer transition-all hover:shadow-md',
                 step3.frameType === frame.value
-                  ? 'ring-2 ring-blue-500 bg-blue-50'
+                  ? 'ring-2 ring-[#EF4444] bg-[#FEF2F2]'
                   : 'hover:bg-gray-50'
               )}
             >
@@ -44,7 +44,7 @@ export default function WindowSpecStep() {
                 <h3 className="font-semibold text-gray-900">{frame.label}</h3>
                 <div className="flex gap-0.5">
                   {[...Array(frame.priceLevel)].map((_, i) => (
-                    <span key={i} className="text-amber-500 text-sm">₩</span>
+                    <span key={i} className="text-[#FF6F0F] text-sm">₩</span>
                   ))}
                 </div>
               </div>
@@ -67,7 +67,7 @@ export default function WindowSpecStep() {
               className={cn(
                 'p-5 cursor-pointer transition-all hover:shadow-md relative',
                 step3.glassType === glass.value
-                  ? 'ring-2 ring-blue-500 bg-blue-50'
+                  ? 'ring-2 ring-[#EF4444] bg-[#FEF2F2]'
                   : 'hover:bg-gray-50'
               )}
             >
@@ -76,8 +76,8 @@ export default function WindowSpecStep() {
                   className={cn(
                     'absolute -top-2 -right-2 px-2 py-0.5 text-xs font-medium rounded-full',
                     glass.badge === '추천'
-                      ? 'bg-blue-500 text-white'
-                      : 'bg-amber-500 text-white'
+                      ? 'bg-[#EF4444] text-white'
+                      : 'bg-[#FF6F0F] text-white'
                   )}
                 >
                   {glass.badge}
@@ -103,7 +103,7 @@ export default function WindowSpecStep() {
               className={cn(
                 'p-5 cursor-pointer transition-all hover:shadow-md',
                 step3.spacerType === spacer.value
-                  ? 'ring-2 ring-blue-500 bg-blue-50'
+                  ? 'ring-2 ring-[#EF4444] bg-[#FEF2F2]'
                   : 'hover:bg-gray-50'
               )}
             >
@@ -115,9 +115,9 @@ export default function WindowSpecStep() {
 
         {/* TPS Info */}
         {step3.spacerType === 'tps' && (
-          <div className="mt-4 p-4 bg-blue-50 border border-blue-200 rounded-lg flex gap-3 max-w-2xl">
-            <Info className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
-            <div className="text-sm text-blue-800">
+          <div className="mt-4 p-4 bg-[#E0F7F6] border border-[#2AC1BC]/30 rounded-lg flex gap-3 max-w-2xl">
+            <Info className="w-5 h-5 text-[#2AC1BC] flex-shrink-0 mt-0.5" />
+            <div className="text-sm text-[#1E1E1E]">
               <strong>TPS 단열 간봉</strong>은 창호의 민족 자체 스마트 팩토리에서 생산합니다.
               알루미늄 간봉 대비 단열·결로 방지 성능이 탁월합니다.
             </div>

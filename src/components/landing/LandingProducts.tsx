@@ -38,7 +38,7 @@ const recommendations = [
     features: ['슬림한 프레임', '모던한 디자인', '우수한 기밀성'],
     priceRange: '500~600만원대',
     target: '디자인 + 성능',
-    color: 'bg-pink-500',
+    color: 'bg-[#EF4444]',
     popular: false,
   },
   {
@@ -50,7 +50,7 @@ const recommendations = [
     features: ['이중 유리 방음', '소음 차단 효과', '쾌적한 실내'],
     priceRange: '550~650만원대',
     target: '소음 고민 해결',
-    color: 'bg-blue-500',
+    color: 'bg-[#2AC1BC]',
     popular: false,
   },
   {
@@ -62,7 +62,7 @@ const recommendations = [
     features: ['넓은 채광', '최상급 단열', '프리미엄 마감'],
     priceRange: '650~800만원대',
     target: '최고급 사양',
-    color: 'bg-purple-500',
+    color: 'bg-[#FF6F0F]',
     popular: false,
   },
 ];

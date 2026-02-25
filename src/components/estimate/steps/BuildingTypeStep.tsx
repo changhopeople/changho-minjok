@@ -33,7 +33,7 @@ export default function BuildingTypeStep() {
             className={cn(
               'p-6 cursor-pointer transition-all hover:shadow-md text-center',
               step1.buildingType === type.value
-                ? 'ring-2 ring-blue-500 bg-blue-50'
+                ? 'ring-2 ring-[#EF4444] bg-[#FEF2F2]'
                 : 'hover:bg-gray-50'
             )}
           >

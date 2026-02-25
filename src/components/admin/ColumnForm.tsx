@@ -74,7 +74,7 @@ export default function ColumnForm({ column, action, submitLabel }: ColumnFormPr
               required
               defaultValue={column?.title}
               placeholder="칼럼 제목을 입력하세요"
-              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none"
+              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#EF4444] focus:border-[#EF4444] outline-none"
             />
           </div>
 
@@ -88,7 +88,7 @@ export default function ColumnForm({ column, action, submitLabel }: ColumnFormPr
               required
               defaultValue={column?.category}
               placeholder="예: 창호 가이드, 시공 팁, 업계 동향"
-              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none"
+              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#EF4444] focus:border-[#EF4444] outline-none"
             />
           </div>
 
@@ -102,7 +102,7 @@ export default function ColumnForm({ column, action, submitLabel }: ColumnFormPr
               required
               defaultValue={column?.author || '창호의민족'}
               placeholder="작성자 이름"
-              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none"
+              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#EF4444] focus:border-[#EF4444] outline-none"
             />
           </div>
 
@@ -116,7 +116,7 @@ export default function ColumnForm({ column, action, submitLabel }: ColumnFormPr
               rows={2}
               defaultValue={column?.excerpt}
               placeholder="칼럼의 간단한 요약을 작성하세요 (목록에 표시됩니다)"
-              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none resize-none"
+              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#EF4444] focus:border-[#EF4444] outline-none resize-none"
             />
           </div>
         </div>
@@ -147,7 +147,7 @@ export default function ColumnForm({ column, action, submitLabel }: ColumnFormPr
               )}
             </div>
           ) : (
-            <label className="flex flex-col items-center justify-center aspect-[16/9] border-2 border-dashed border-gray-300 rounded-xl cursor-pointer hover:border-sky-500 transition-colors">
+            <label className="flex flex-col items-center justify-center aspect-[16/9] border-2 border-dashed border-gray-300 rounded-xl cursor-pointer hover:border-[#EF4444] transition-colors">
               <Upload className="w-8 h-8 text-gray-400 mb-2" />
               <span className="text-sm text-gray-500">썸네일 이미지 선택</span>
               <input
@@ -177,7 +177,7 @@ export default function ColumnForm({ column, action, submitLabel }: ColumnFormPr
             <select
               name="isPublished"
               defaultValue={column?.is_published ? 'true' : 'false'}
-              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none"
+              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#EF4444] focus:border-[#EF4444] outline-none"
             >
               <option value="true">공개</option>
               <option value="false">비공개</option>
@@ -188,7 +188,7 @@ export default function ColumnForm({ column, action, submitLabel }: ColumnFormPr
             <select
               name="isFeatured"
               defaultValue={column?.is_featured ? 'true' : 'false'}
-              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none"
+              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#EF4444] focus:border-[#EF4444] outline-none"
             >
               <option value="false">일반</option>
               <option value="true">추천</option>
@@ -202,7 +202,7 @@ export default function ColumnForm({ column, action, submitLabel }: ColumnFormPr
         <button
           type="submit"
           disabled={isSubmitting || isUploading}
-          className="px-8 py-3 bg-sky-500 text-white font-semibold rounded-xl hover:bg-sky-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+          className="px-8 py-3 bg-[#EF4444] text-white font-semibold rounded-xl hover:bg-[#DC2626] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {isSubmitting ? '저장 중...' : submitLabel}
         </button>

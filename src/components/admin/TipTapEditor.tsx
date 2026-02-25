@@ -228,7 +228,7 @@ function ToolbarButton({
       title={title}
       className={`p-2 rounded-lg transition-colors ${
         active
-          ? 'bg-sky-100 text-sky-700'
+          ? 'bg-[#FEF2F2] text-[#EF4444]'
           : 'text-gray-600 hover:bg-gray-200 hover:text-gray-900'
       } ${disabled ? 'opacity-30 cursor-not-allowed' : ''}`}
     >

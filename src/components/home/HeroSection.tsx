@@ -177,7 +177,7 @@ export default function HeroSection() {
                     </div>
                     <div className="flex gap-0.5">
                       {[1, 2, 3, 4, 5].map((i) => (
-                        <span key={i} className="text-amber-400 text-lg">★</span>
+                        <span key={i} className="text-[#FF6F0F] text-lg">★</span>
                       ))}
                     </div>
                   </div>

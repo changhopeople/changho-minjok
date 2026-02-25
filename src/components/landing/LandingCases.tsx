@@ -30,7 +30,7 @@ const brands = [
   {
     id: 'kcc',
     name: 'KCC',
-    color: '#1976D2',
+    color: '#2AC1BC',
     before: [
       { src: '/images/landing/cases/kcc/before/1.jpg', alt: 'KCC 시공 전 1' },
       { src: '/images/landing/cases/kcc/before/2.jpg', alt: 'KCC 시공 전 2' },
@@ -45,7 +45,7 @@ const brands = [
   {
     id: 'huggreen',
     name: '휴그린',
-    color: '#4CAF50',
+    color: '#FF6F0F',
     before: [
       { src: '/images/landing/cases/huggreen/before/1.jpg', alt: '휴그린 시공 전 1' },
       { src: '/images/landing/cases/huggreen/before/2.jpg', alt: '휴그린 시공 전 2' },
@@ -178,7 +178,7 @@ export default function LandingCases() {
                       {/* View All Button */}
                       <button
                         onClick={() => openModal(allImages, 0)}
-                        className="w-full flex items-center justify-center gap-2 py-2.5 rounded-lg text-sm font-semibold transition-colors hover:bg-gray-200 text-[#555]"
+                        className="w-full flex items-center justify-center gap-2 py-2.5 rounded-lg text-sm font-semibold transition-colors hover:bg-gray-200 text-[#767676]"
                       >
                         <Camera className="w-4 h-4" />
                         전체 {totalCount}장 보기

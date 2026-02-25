@@ -35,8 +35,8 @@ export default function ResultStep() {
   return (
     <div className="space-y-8">
       <div className="text-center">
-        <div className="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-4">
-          <svg className="w-8 h-8 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <div className="inline-flex items-center justify-center w-16 h-16 bg-[#E0F7F6] rounded-full mb-4">
+          <svg className="w-8 h-8 text-[#2AC1BC]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
           </svg>
         </div>
@@ -115,21 +115,21 @@ export default function ResultStep() {
             <span>{formatPrice(result.subtotal)}원</span>
           </div>
           {result.discountAmount > 0 && (
-            <div className="flex justify-between text-sm text-green-600">
+            <div className="flex justify-between text-sm text-[#2AC1BC]">
               <span>할인 ({result.discountRate}%)</span>
               <span>-{formatPrice(result.discountAmount)}원</span>
             </div>
           )}
           <div className="flex justify-between text-lg font-bold pt-2 border-t">
             <span>예상 총액</span>
-            <span className="text-blue-600">약 {formatPrice(result.totalAmount)}원</span>
+            <span className="text-[#EF4444]">약 {formatPrice(result.totalAmount)}원</span>
           </div>
           <p className="text-xs text-gray-500 text-right">(VAT 별도)</p>
         </div>
 
         {/* Disclaimer */}
-        <div className="mt-4 p-3 bg-amber-50 border border-amber-200 rounded-lg">
-          <p className="text-sm text-amber-800">
+        <div className="mt-4 p-3 bg-[#FFF3EB] border border-[#FF6F0F]/30 rounded-lg">
+          <p className="text-sm text-[#FF6F0F]">
             ⚠️ 본 견적은 예상 금액이며, 정확한 견적은 현장 실측 후 확정됩니다.
           </p>
         </div>

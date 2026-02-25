@@ -57,7 +57,7 @@ export default function ScopeStep() {
             className={cn(
               'p-6 cursor-pointer transition-all hover:shadow-md',
               step2.scopeType === option.value
-                ? 'ring-2 ring-blue-500 bg-blue-50'
+                ? 'ring-2 ring-[#EF4444] bg-[#FEF2F2]'
                 : 'hover:bg-gray-50'
             )}
           >
@@ -66,7 +66,7 @@ export default function ScopeStep() {
                 className={cn(
                   'p-3 rounded-lg',
                   step2.scopeType === option.value
-                    ? 'bg-blue-100 text-blue-600'
+                    ? 'bg-[#FEF2F2] text-[#EF4444]'
                     : 'bg-gray-100 text-gray-500'
                 )}
               >
@@ -97,7 +97,7 @@ export default function ScopeStep() {
                 className={cn(
                   'p-4 rounded-lg border-2 transition-all text-center',
                   step2.floorSize === size.value
-                    ? 'border-blue-500 bg-blue-50 text-blue-700'
+                    ? 'border-[#EF4444] bg-[#FEF2F2] text-[#EF4444]'
                     : 'border-gray-200 hover:border-gray-300 text-gray-700'
                 )}
               >
@@ -123,7 +123,7 @@ export default function ScopeStep() {
               className={cn(
                 'p-4 rounded-lg border-2 transition-all',
                 step2.demolition
-                  ? 'border-blue-500 bg-blue-50 text-blue-700'
+                  ? 'border-[#EF4444] bg-[#FEF2F2] text-[#EF4444]'
                   : 'border-gray-200 hover:border-gray-300 text-gray-700'
               )}
             >
@@ -134,7 +134,7 @@ export default function ScopeStep() {
               className={cn(
                 'p-4 rounded-lg border-2 transition-all',
                 !step2.demolition
-                  ? 'border-blue-500 bg-blue-50 text-blue-700'
+                  ? 'border-[#EF4444] bg-[#FEF2F2] text-[#EF4444]'
                   : 'border-gray-200 hover:border-gray-300 text-gray-700'
               )}
             >

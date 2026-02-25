@@ -91,7 +91,7 @@ export default function AdminSidebar({ onLogout }: AdminSidebarProps) {
       {/* Logo */}
       <div className="p-4 border-b border-gray-800 flex items-center justify-between">
         {!collapsed && (
-          <Link href="/" className="flex items-center gap-2 text-white hover:text-sky-400">
+          <Link href="/" className="flex items-center gap-2 text-white hover:text-[#EF4444]">
             <Home className="w-5 h-5" />
             <span className="font-bold">창호의민족</span>
           </Link>
@@ -123,7 +123,7 @@ export default function AdminSidebar({ onLogout }: AdminSidebarProps) {
                       href={item.href}
                       className={`flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors ${
                         isActive
-                          ? 'bg-sky-600 text-white'
+                          ? 'bg-[#EF4444] text-white'
                           : 'text-gray-300 hover:bg-gray-800 hover:text-white'
                       } ${collapsed ? 'justify-center' : ''}`}
                       title={collapsed ? item.label : undefined}

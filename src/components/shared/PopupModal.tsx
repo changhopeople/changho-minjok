@@ -114,7 +114,7 @@ export default function PopupModal({ popups }: PopupModalProps) {
               </span>
               <button
                 onClick={handleNext}
-                className="px-4 py-2 text-sm font-medium text-white bg-sky-500 rounded-lg hover:bg-sky-600 transition-colors"
+                className="px-4 py-2 text-sm font-medium text-white bg-[#EF4444] rounded-lg hover:bg-[#DC2626] transition-colors"
               >
                 {currentIndex < visiblePopups.length - 1 ? '다음' : '닫기'}
               </button>
@@ -124,7 +124,7 @@ export default function PopupModal({ popups }: PopupModalProps) {
           {visiblePopups.length === 1 && (
             <button
               onClick={handleClose}
-              className="px-4 py-2 text-sm font-medium text-white bg-sky-500 rounded-lg hover:bg-sky-600 transition-colors"
+              className="px-4 py-2 text-sm font-medium text-white bg-[#EF4444] rounded-lg hover:bg-[#DC2626] transition-colors"
             >
               닫기
             </button>
