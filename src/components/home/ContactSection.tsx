@@ -72,15 +72,15 @@ export default function ContactSection() {
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4 p-4 bg-[#FEE500] rounded-xl">
-                  <div className="p-3 bg-[#3C1E1E] rounded-lg">
-                    <MessageCircle className="w-6 h-6 text-[#FEE500]" />
+                <div className="flex items-start gap-4 p-4 bg-[#2AC1BC] rounded-xl">
+                  <div className="p-3 bg-white/20 rounded-lg">
+                    <MessageCircle className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-gray-900 mb-1">
+                    <h3 className="font-semibold text-white mb-1">
                       카카오 플러스 채널 상담 😊
                     </h3>
-                    <p className="text-gray-700 text-sm mb-2">
+                    <p className="text-white/80 text-sm mb-2">
                       24시간 편하게 문의 주세요!
                     </p>
                     <a
@@ -88,7 +88,7 @@ export default function ContactSection() {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <Button size="sm" className="mt-1 bg-[#3C1E1E] hover:bg-[#2a1515] text-[#FEE500]">
+                      <Button size="sm" className="mt-1 bg-white hover:bg-gray-100 text-[#2AC1BC]">
                         카카오톡 상담하기
                       </Button>
                     </a>

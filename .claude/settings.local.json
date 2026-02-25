@@ -56,7 +56,11 @@
       "Bash(python3:*)",
       "Bash(pip install:*)",
       "Bash(copy \"C:\\\\Users\\\\u\\\\Downloads\\\\KakaoTalk_20260224_150402409.png\" \"G:\\\\내 드라이브\\\\developer\\\\changho-minjok\\\\public\\\\images\\\\logo-character.png\" /Y)",
-      "Bash(identify:*)"
+      "Bash(identify:*)",
+      "Bash(where:*)",
+      "Bash(copy:*)",
+      "Bash(npm cache clean:*)",
+      "Bash(cmd /c \"if not exist C:\\\\temp_tiptap mkdir C:\\\\temp_tiptap && cd /d C:\\\\temp_tiptap && npm init -y && npm install @tiptap/react @tiptap/starter-kit @tiptap/extension-image @tiptap/extension-link @tiptap/extension-placeholder @tiptap/pm\")"
     ]
   }
 }

@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation';
 import {
   LayoutDashboard,
   FolderOpen,
+  FileText,
   MessageSquare,
   Users,
   Calculator,
@@ -46,6 +47,7 @@ const navGroups: NavGroup[] = [
     title: '콘텐츠 관리',
     items: [
       { href: '/admin/portfolio', label: '시공사례', icon: FolderOpen },
+      { href: '/admin/columns', label: '칼럼 관리', icon: FileText },
       { href: '/admin/banners', label: '배너 관리', icon: Image },
       { href: '/admin/popups', label: '팝업 관리', icon: Megaphone },
       { href: '/admin/faqs', label: 'FAQ 관리', icon: HelpCircle },

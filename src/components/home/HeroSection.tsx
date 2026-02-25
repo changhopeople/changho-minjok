@@ -80,7 +80,7 @@ export default function HeroSection() {
                   className="text-center"
                 >
                   <div className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
-                    {stat.number}<span className="text-xl md:text-2xl text-[#EF4444]">{stat.unit}</span>
+                    {stat.number}<span className={`text-xl md:text-2xl ${index === 1 ? 'text-[#2AC1BC]' : 'text-[#EF4444]'}`}>{stat.unit}</span>
                   </div>
                   <div className="text-sm text-white/60 font-medium mt-1">{stat.label}</div>
                 </motion.div>
@@ -159,7 +159,7 @@ export default function HeroSection() {
                     <span>전 공정 자동화 시스템</span>
                   </div>
                   <div className="flex items-center gap-3 text-white/80 text-sm">
-                    <div className="w-1.5 h-1.5 rounded-full bg-[#EF4444]" />
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#2AC1BC]" />
                     <span>TPS 단열 간봉 자체 생산</span>
                   </div>
                   <div className="flex items-center gap-3 text-white/80 text-sm">

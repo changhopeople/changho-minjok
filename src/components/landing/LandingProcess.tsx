@@ -142,7 +142,7 @@ export default function LandingProcess() {
                     >
                       <step.icon className="w-7 h-7 lg:w-8 lg:h-8 text-white" />
                       {step.highlight && (
-                        <span className="absolute -top-2 -right-2 px-2 py-0.5 bg-[#1E1E1E] text-white text-[10px] font-bold rounded-full">
+                        <span className="absolute -top-2 -right-2 px-2 py-0.5 bg-[#EF4444] text-white text-[10px] font-bold rounded-full">
                           핵심
                         </span>
                       )}
@@ -222,7 +222,7 @@ export default function LandingProcess() {
           </p>
           <a
             href="#contact-form"
-            className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-[#1E1E1E] text-white rounded-xl font-bold text-sm sm:text-base hover:bg-[#292929] transition-colors"
+            className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-[#2AC1BC] text-white rounded-xl font-bold text-sm sm:text-base hover:bg-[#1FA9A5] transition-colors"
           >
             <Ruler className="w-4 h-4 sm:w-5 sm:h-5" />
             무료 방문견적 신청하기

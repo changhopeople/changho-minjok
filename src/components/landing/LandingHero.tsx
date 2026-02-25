@@ -20,17 +20,17 @@ const trustBadges = [
 
 export default function LandingHero() {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-[#1E1E1E]">
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-white">
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image
           src="/images/trust/factory-aerial.jpg"
           alt="창호의 민족 스마트 팩토리"
           fill
-          className="object-cover opacity-30"
+          className="object-cover opacity-15"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-[#1E1E1E]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/60 to-white" />
       </div>
 
       {/* Content */}
@@ -54,7 +54,7 @@ export default function LandingHero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-white leading-[1.15] mb-4 md:mb-6 tracking-tight text-center lg:text-left"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-[#1E1E1E] leading-[1.15] mb-4 md:mb-6 tracking-tight text-center lg:text-left"
           >
             창호 견적 받고
             <br />
@@ -68,14 +68,14 @@ export default function LandingHero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-sm sm:text-base md:text-lg lg:text-xl text-white/90 mb-6 md:mb-10 max-w-2xl leading-relaxed text-center lg:text-left px-2 sm:px-0"
+            className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 mb-6 md:mb-10 max-w-2xl leading-relaxed text-center lg:text-left px-2 sm:px-0"
           >
             <span className="text-[#EF4444] font-semibold">발코니창호 정품</span>을 공장에서 직접 받으세요.
             <br />
-            <span className="text-white/70 text-sm sm:text-base md:text-lg">
+            <span className="text-gray-500 text-sm sm:text-base md:text-lg">
               중간 유통상 빼고, 3,500평 공장에서 바로 고객님 집으로.
               <br className="hidden sm:block" />
-              <span className="text-white font-semibold">15,000가구+</span>가 평균 <span className="text-[#FF6F0F] font-bold">203만원</span> 절약했습니다.
+              <span className="text-gray-900 font-semibold">15,000가구+</span>가 평균 <span className="text-[#FF6F0F] font-bold">203만원</span> 절약했습니다.
             </span>
           </motion.p>
 
@@ -94,11 +94,11 @@ export default function LandingHero() {
                 transition={{ duration: 0.4, delay: 0.4 + index * 0.1 }}
                 className="text-center"
               >
-                <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-extrabold text-white tracking-tight">
+                <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-extrabold text-[#1E1E1E] tracking-tight">
                   {stat.number}
                   <span className="text-sm sm:text-lg md:text-xl text-[#EF4444]">{stat.unit}</span>
                 </div>
-                <div className="text-xs md:text-sm text-white/60 font-medium mt-1">{stat.label}</div>
+                <div className="text-xs md:text-sm text-gray-500 font-medium mt-1">{stat.label}</div>
               </motion.div>
             ))}
           </motion.div>
@@ -123,7 +123,7 @@ export default function LandingHero() {
             <Button
               asChild
               size="lg"
-              className="h-14 sm:h-16 px-6 sm:px-10 bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white hover:bg-white hover:text-[#1E1E1E] rounded-2xl font-bold text-base sm:text-xl"
+              className="h-14 sm:h-16 px-6 sm:px-10 bg-gray-100 border-2 border-gray-300 text-gray-900 hover:bg-gray-200 hover:text-[#1E1E1E] rounded-2xl font-bold text-base sm:text-xl"
             >
               <a href={`tel:${COMPANY_INFO.phone}`} className="flex items-center justify-center gap-2 sm:gap-3">
                 <Phone className="w-5 h-5 sm:w-6 sm:h-6" />
@@ -142,10 +142,10 @@ export default function LandingHero() {
             {trustBadges.map((badge, index) => (
               <div
                 key={index}
-                className="flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full"
+                className="flex items-center gap-2 px-4 py-2 bg-gray-100 rounded-full"
               >
                 <badge.icon className="w-4 h-4 text-[#EF4444]" />
-                <span className="text-white/80 text-sm font-medium">{badge.text}</span>
+                <span className="text-gray-600 text-sm font-medium">{badge.text}</span>
               </div>
             ))}
           </motion.div>
@@ -159,13 +159,13 @@ export default function LandingHero() {
         transition={{ duration: 0.5, delay: 1 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
       >
-        <span className="text-white/50 text-sm">아래로 스크롤</span>
+        <span className="text-gray-400 text-sm">아래로 스크롤</span>
         <motion.div
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 1.5, repeat: Infinity }}
-          className="w-6 h-10 rounded-full border-2 border-white/30 flex items-start justify-center p-2"
+          className="w-6 h-10 rounded-full border-2 border-gray-300 flex items-start justify-center p-2"
         >
-          <div className="w-1.5 h-3 bg-white/50 rounded-full" />
+          <div className="w-1.5 h-3 bg-gray-400 rounded-full" />
         </motion.div>
       </motion.div>
     </section>

@@ -28,8 +28,8 @@ const products = [
     name: '시스템창호',
     description: '최고급 기밀성과 단열성을 자랑하는 프리미엄 창호',
     features: ['최고급 사양', '에너지 절감', '방음 효과'],
-    color: 'bg-[#1E1E1E]',
-    image: '/images/products/system-window.png',
+    color: 'bg-gray-100',
+    image: '/images/products/system-window.jpg',
   },
 ];
 
@@ -76,7 +76,7 @@ export default function ProductHighlightSection() {
                       {product.features.map((feature) => (
                         <span
                           key={feature}
-                          className="text-xs px-3 py-1 bg-[#FFF3EB] text-[#FF6F0F] rounded-lg font-bold"
+                          className={`text-xs px-3 py-1 rounded-lg font-bold ${index === 1 ? 'bg-[#E0F7F6] text-[#2AC1BC]' : 'bg-[#FFF3EB] text-[#FF6F0F]'}`}
                         >
                           {feature}
                         </span>
@@ -100,7 +100,7 @@ export default function ProductHighlightSection() {
             asChild
             variant="outline"
             size="lg"
-            className="border-2 border-[#1E1E1E] text-[#1E1E1E] hover:bg-[#1E1E1E] hover:text-white font-bold rounded-xl px-8"
+            className="border-2 border-[#2AC1BC] text-[#2AC1BC] hover:bg-[#2AC1BC] hover:text-white font-bold rounded-xl px-8"
           >
             <Link href="/products">
               전체 제품 보기

@@ -63,7 +63,7 @@ export default function StickyHeader() {
                 <Button
                   asChild
                   variant="outline"
-                  className="hidden md:flex h-11 px-5 rounded-xl border-2 border-[#1E1E1E] text-[#1E1E1E] font-bold hover:bg-[#1E1E1E] hover:text-white"
+                  className="hidden md:flex h-11 px-5 rounded-xl border-2 border-[#2AC1BC] text-[#2AC1BC] font-bold hover:bg-[#2AC1BC] hover:text-white"
                 >
                   <a href={`tel:${COMPANY_INFO.phone}`} className="flex items-center gap-2">
                     <Phone className="w-4 h-4" />

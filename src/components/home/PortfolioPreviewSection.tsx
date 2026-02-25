@@ -58,7 +58,7 @@ export default async function PortfolioPreviewSection() {
                   </div>
 
                   {/* Badge - Building Type */}
-                  <div className="absolute top-3 left-3 px-3 py-1.5 bg-white rounded-lg text-xs font-bold text-[#1E1E1E]">
+                  <div className="absolute top-3 left-3 px-3 py-1.5 bg-[#E0F7F6] rounded-lg text-xs font-bold text-[#2AC1BC]">
                     {item.building_type}
                   </div>
 

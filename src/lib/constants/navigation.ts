@@ -35,6 +35,10 @@ export const MAIN_NAV: NavItem[] = [
     href: '/portfolio',
   },
   {
+    title: '칼럼',
+    href: '/column',
+  },
+  {
     title: '고객센터',
     href: '/support',
     children: [
@@ -62,6 +66,7 @@ export const FOOTER_LINKS = {
     { title: '상담 신청', href: '/estimate' },
     { title: '상담 신청', href: '/support/inquiry' },
     { title: 'FAQ', href: '/support/faq' },
+    { title: '칼럼', href: '/column' },
   ],
 };
 

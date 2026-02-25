@@ -153,7 +153,7 @@ export default function VerifyPage() {
                   </p>
                   <a
                     href={`tel:${COMPANY_INFO.phone}`}
-                    className="inline-flex items-center gap-2 px-6 py-3 bg-[#1E1E1E] text-white rounded-xl font-bold text-sm hover:bg-gray-800 transition-colors"
+                    className="inline-flex items-center gap-2 px-6 py-3 bg-[#2AC1BC] text-white rounded-xl font-bold text-sm hover:bg-[#1FA9A5] transition-colors"
                   >
                     <Phone className="w-4 h-4" />
                     본사 대표번호: {COMPANY_INFO.phone}

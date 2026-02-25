@@ -36,20 +36,20 @@ const gasketTypes = [
 
 export default function LandingGasketTech() {
   return (
-    <section className="py-12 sm:py-16 md:py-28 bg-[#1E1E1E]">
+    <section className="py-12 sm:py-16 md:py-28 bg-white">
       <div className="container mx-auto px-4 lg:px-8">
         {/* Header */}
         <AnimatedSection className="text-center mb-10 sm:mb-16">
           <span className="inline-block px-3 sm:px-4 py-2 bg-[#FF6F0F]/20 text-[#FF6F0F] rounded-full text-xs sm:text-sm font-bold mb-4 sm:mb-6">
             기술 차별화
           </span>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-3 sm:mb-4 tracking-tight leading-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-3 sm:mb-4 tracking-tight leading-tight">
             모든 제품에 <span className="text-[#FF6F0F]">최적의 공법</span>을
           </h2>
           <p className="text-sm sm:text-base md:text-lg text-[#767676] max-w-2xl mx-auto px-2">
             자체 브랜드부터 대기업 브랜드까지, 모든 제품을 취급합니다.
             <br />
-            <span className="text-white font-semibold">제품 특성에 맞는 최적의 마감 공법을 적용합니다.</span>
+            <span className="text-gray-900 font-semibold">제품 특성에 맞는 최적의 마감 공법을 적용합니다.</span>
           </p>
         </AnimatedSection>
 
@@ -59,10 +59,10 @@ export default function LandingGasketTech() {
             <AnimatedSection key={type.title} delay={index * 0.15}>
               <motion.div
                 whileHover={{ y: -4 }}
-                className={`relative bg-[#292929] rounded-2xl sm:rounded-3xl p-5 sm:p-6 md:p-8 border-2 ${
+                className={`relative bg-gray-50 rounded-2xl sm:rounded-3xl p-5 sm:p-6 md:p-8 border-2 ${
                   type.highlight
                     ? 'border-[#EF4444] shadow-lg shadow-[#EF4444]/20'
-                    : 'border-[#3A3A3A]'
+                    : 'border-gray-200'
                 } transition-all h-full`}
               >
                 {/* Badge */}
@@ -73,7 +73,7 @@ export default function LandingGasketTech() {
                 </span>
 
                 {/* Title */}
-                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-2">
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 mb-2">
                   {type.title}
                 </h3>
                 <p className="text-[#EF4444] font-semibold text-sm sm:text-base mb-4">
@@ -90,11 +90,11 @@ export default function LandingGasketTech() {
                   {type.features.map((feature) => (
                     <div
                       key={feature.text}
-                      className="flex items-center gap-3 p-3 bg-[#1E1E1E] rounded-xl"
+                      className="flex items-center gap-3 p-3 bg-gray-100 rounded-xl"
                     >
                       <div
                         className={`w-8 h-8 rounded-lg ${
-                          type.highlight ? 'bg-[#EF4444]/20' : 'bg-[#3A3A3A]'
+                          type.highlight ? 'bg-[#EF4444]/20' : 'bg-gray-200'
                         } flex items-center justify-center`}
                       >
                         <feature.icon
@@ -103,7 +103,7 @@ export default function LandingGasketTech() {
                           }`}
                         />
                       </div>
-                      <span className="text-white text-sm font-medium">
+                      <span className="text-gray-900 text-sm font-medium">
                         {feature.text}
                       </span>
                       {type.highlight && (
@@ -127,7 +127,7 @@ export default function LandingGasketTech() {
         {/* Comparison Image */}
         <AnimatedSection delay={0.3} className="mt-10 sm:mt-16">
           <div className="max-w-4xl mx-auto">
-            <div className="relative w-full aspect-[16/12] rounded-2xl sm:rounded-3xl overflow-hidden border-2 border-[#3A3A3A]">
+            <div className="relative w-full aspect-[16/12] rounded-2xl sm:rounded-3xl overflow-hidden border-2 border-gray-200">
               <Image
                 src="/images/landing/comparison.png"
                 alt="마감 방식 및 단열 간봉 비교"

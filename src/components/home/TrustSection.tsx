@@ -125,10 +125,10 @@ export default function TrustSection() {
               {certifications.map((cert, index) => (
                 <div
                   key={cert.title}
-                  className="flex items-start gap-3 md:gap-4 p-4 md:p-5 bg-white rounded-xl md:rounded-2xl border-2 border-gray-100 hover:border-red-300 hover:shadow-lg transition-all"
+                  className={`flex items-start gap-3 md:gap-4 p-4 md:p-5 bg-white rounded-xl md:rounded-2xl border-2 border-gray-100 ${index % 2 === 0 ? 'hover:border-[#2AC1BC]/50' : 'hover:border-red-300'} hover:shadow-lg transition-all`}
                 >
-                  <div className="w-12 h-12 md:w-14 md:h-14 rounded-xl bg-red-50 flex items-center justify-center flex-shrink-0">
-                    <cert.icon className="w-6 h-6 md:w-7 md:h-7 text-red-600" />
+                  <div className={`w-12 h-12 md:w-14 md:h-14 rounded-xl ${index % 2 === 0 ? 'bg-[#E0F7F6]' : 'bg-red-50'} flex items-center justify-center flex-shrink-0`}>
+                    <cert.icon className={`w-6 h-6 md:w-7 md:h-7 ${index % 2 === 0 ? 'text-[#2AC1BC]' : 'text-red-600'}`} />
                   </div>
                   <div className="min-w-0">
                     <h3 className="font-bold text-[#1E1E1E] text-base md:text-lg mb-0.5 md:mb-1">{cert.title}</h3>

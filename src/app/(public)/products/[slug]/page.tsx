@@ -71,7 +71,7 @@ const products: Record<string, {
       { title: '프리미엄 품질', description: '유럽 인증을 받은 최고급 자재만 사용합니다.' },
     ],
     color: 'amber',
-    image: '/images/products/hisash-window.png',
+    image: '/images/products/system-window.jpg',
   },
   glass: {
     name: '유리 종류',

@@ -84,9 +84,9 @@ export default function LandingPromo() {
                 <Clock className="w-4 h-4 text-white" />
                 <span className="text-white text-sm sm:text-base font-bold">
                   {daysLeft > 0 ? (
-                    <>마감까지 <span className="text-yellow-300">{daysLeft}일</span> 남음</>
+                    <>마감까지 <span className="text-white">{daysLeft}일</span> 남음</>
                   ) : (
-                    <span className="text-yellow-300">마감 임박!</span>
+                    <span className="text-white">마감 임박!</span>
                   )}
                 </span>
               </div>

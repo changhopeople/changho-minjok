@@ -91,6 +91,35 @@ export interface InquiryInput {
   message: string;
 }
 
+// 칼럼(블로그) 타입 정의
+export interface ColumnRecord {
+  id: string;
+  title: string;
+  slug: string;
+  content: string;
+  excerpt: string;
+  thumbnail_url: string | null;
+  category: string;
+  author: string;
+  is_published: boolean;
+  is_featured: boolean;
+  view_count: number;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface ColumnInput {
+  title: string;
+  slug: string;
+  content: string;
+  excerpt: string;
+  thumbnail_url?: string | null;
+  category: string;
+  author: string;
+  is_published?: boolean;
+  is_featured?: boolean;
+}
+
 // 퍼널 템플릿 타입 정의
 export interface FunnelTemplateRecord {
   id: string;

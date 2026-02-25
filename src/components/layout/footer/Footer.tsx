@@ -34,12 +34,12 @@ export default function Footer() {
           {/* Company Info */}
           <div className="col-span-2 sm:col-span-2 lg:col-span-4">
             <Link href="/" className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
-              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-[#EF4444] text-white flex items-center justify-center font-extrabold text-base sm:text-xl">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-[#2AC1BC] text-white flex items-center justify-center font-extrabold text-base sm:text-xl">
                 창
               </div>
               <div>
                 <span className="text-lg sm:text-2xl font-extrabold text-white tracking-tight">창호의</span>
-                <span className="text-lg sm:text-2xl font-extrabold text-[#EF4444] tracking-tight">민족</span>
+                <span className="text-lg sm:text-2xl font-extrabold text-[#2AC1BC] tracking-tight">민족</span>
               </div>
             </Link>
             <p className="text-[#767676] text-sm sm:text-base mb-6 sm:mb-8 leading-relaxed">

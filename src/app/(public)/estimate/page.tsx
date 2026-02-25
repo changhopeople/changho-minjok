@@ -81,16 +81,16 @@ export default function EstimatePage() {
                   rel="noopener noreferrer"
                   className="block group h-full"
                 >
-                  <div className="bg-white rounded-3xl p-8 md:p-10 border-2 border-gray-100 hover:border-[#FEE500] transition-all h-full text-center">
-                    <div className="w-20 h-20 rounded-2xl bg-[#FEE500]/20 flex items-center justify-center mx-auto mb-6 group-hover:bg-[#FEE500] transition-colors">
-                      <MessageCircle className="w-10 h-10 text-[#3C1E1E] group-hover:text-[#3C1E1E] transition-colors" />
+                  <div className="bg-white rounded-3xl p-8 md:p-10 border-2 border-gray-100 hover:border-[#2AC1BC] transition-all h-full text-center">
+                    <div className="w-20 h-20 rounded-2xl bg-[#2AC1BC]/20 flex items-center justify-center mx-auto mb-6 group-hover:bg-[#2AC1BC] transition-colors">
+                      <MessageCircle className="w-10 h-10 text-[#2AC1BC] group-hover:text-white transition-colors" />
                     </div>
                     <h2 className="text-2xl font-extrabold text-[#1E1E1E] mb-2">카카오톡 상담</h2>
                     <p className="text-[#767676] mb-6">24시간 접수 가능 (영업시간 내 답변)</p>
                     <div className="text-xl font-bold text-[#1E1E1E] mb-4">
                       사진으로 간편 상담
                     </div>
-                    <div className="inline-flex items-center gap-2 px-6 py-3 bg-[#FEE500] text-[#3C1E1E] rounded-xl font-bold group-hover:bg-[#F5DC00] transition-colors">
+                    <div className="inline-flex items-center gap-2 px-6 py-3 bg-[#2AC1BC] text-white rounded-xl font-bold group-hover:bg-[#1FA9A5] transition-colors">
                       카카오톡 상담하기
                       <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                     </div>
@@ -132,7 +132,7 @@ export default function EstimatePage() {
                 </p>
                 <Link
                   href="/support/inquiry"
-                  className="inline-flex items-center gap-2 px-8 py-4 bg-[#1E1E1E] text-white rounded-xl font-bold hover:bg-[#292929] transition-colors"
+                  className="inline-flex items-center gap-2 px-8 py-4 bg-[#2AC1BC] text-white rounded-xl font-bold hover:bg-[#1FA9A5] transition-colors"
                 >
                   온라인 상담 신청
                   <ArrowRight className="w-5 h-5" />

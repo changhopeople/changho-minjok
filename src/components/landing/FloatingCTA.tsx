@@ -30,7 +30,7 @@ export default function FloatingCTA() {
         <div className="flex gap-2 sm:gap-3">
           <a
             href={`tel:${COMPANY_INFO.phone}`}
-            className="flex-1 flex items-center justify-center gap-1.5 sm:gap-2 h-12 sm:h-14 bg-[#1E1E1E] text-white rounded-lg sm:rounded-xl font-bold text-sm sm:text-base"
+            className="flex-1 flex items-center justify-center gap-1.5 sm:gap-2 h-12 sm:h-14 bg-[#2AC1BC] text-white rounded-lg sm:rounded-xl font-bold text-sm sm:text-base"
           >
             <Phone className="w-4 h-4 sm:w-5 sm:h-5" />
             바로 전화
@@ -58,7 +58,7 @@ export default function FloatingCTA() {
               {/* Phone Button */}
               <a
                 href={`tel:${COMPANY_INFO.phone}`}
-                className="flex items-center gap-3 px-5 py-3 bg-[#1E1E1E] text-white rounded-full shadow-lg hover:bg-[#292929] transition-colors"
+                className="flex items-center gap-3 px-5 py-3 bg-[#2AC1BC] text-white rounded-full shadow-lg hover:bg-[#1FA9A5] transition-colors"
               >
                 <Phone className="w-5 h-5" />
                 <span className="font-bold whitespace-nowrap">{COMPANY_INFO.phone}</span>
@@ -69,7 +69,7 @@ export default function FloatingCTA() {
                 href={COMPANY_INFO.kakaoChannel}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 px-5 py-3 bg-[#FEE500] text-[#3C1E1E] rounded-full shadow-lg hover:bg-[#F5DC00] transition-colors"
+                className="flex items-center gap-3 px-5 py-3 bg-[#2AC1BC] text-white rounded-full shadow-lg hover:bg-[#1FA9A5] transition-colors"
               >
                 <MessageCircle className="w-5 h-5" />
                 <span className="font-bold whitespace-nowrap">카카오톡 상담</span>
@@ -87,7 +87,7 @@ export default function FloatingCTA() {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           className={`w-16 h-16 rounded-full flex items-center justify-center shadow-2xl transition-colors ${
-            isExpanded ? 'bg-[#1E1E1E]' : 'bg-[#EF4444]'
+            isExpanded ? 'bg-gray-800' : 'bg-[#EF4444]'
           }`}
         >
           {isExpanded ? (

@@ -44,7 +44,7 @@ export default function LandingCTA() {
   };
 
   return (
-    <section id="contact-form" className="py-12 sm:py-16 md:py-28 bg-[#1E1E1E]">
+    <section id="contact-form" className="py-12 sm:py-16 md:py-28 bg-gray-50">
       <div className="container mx-auto px-4 lg:px-8">
         {/* Header */}
         <AnimatedSection className="text-center mb-10 sm:mb-16">
@@ -52,20 +52,20 @@ export default function LandingCTA() {
             <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
             지금 상담 가능 · 무료 방문견적
           </span>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-4 sm:mb-6 tracking-tight leading-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-4 sm:mb-6 tracking-tight leading-tight">
             간편하게,
             <br />
             <span className="text-[#EF4444]">무료 방문견적 신청</span>
           </h2>
-          <p className="text-sm sm:text-base md:text-lg text-gray-300 max-w-2xl mx-auto px-2">
+          <p className="text-sm sm:text-base md:text-lg text-gray-600 max-w-2xl mx-auto px-2">
             전문가가 직접 방문해서 정확한 견적을 알려드립니다
             <br />
-            <span className="text-gray-400">강매 없음 · 부담 없이 비교만 해보세요</span>
+            <span className="text-gray-500">강매 없음 · 부담 없이 비교만 해보세요</span>
           </p>
           <div className="mt-4 flex flex-wrap justify-center gap-2 text-xs sm:text-sm">
-            <span className="px-3 py-1 bg-white/10 rounded-full text-gray-300">부산·울산·경남</span>
-            <span className="px-3 py-1 bg-white/10 rounded-full text-gray-300">대구·경북</span>
-            <span className="px-3 py-1 bg-white/10 rounded-full text-gray-300">전국 출장 가능</span>
+            <span className="px-3 py-1 bg-gray-100 rounded-full text-gray-600">부산·울산·경남</span>
+            <span className="px-3 py-1 bg-gray-100 rounded-full text-gray-600">대구·경북</span>
+            <span className="px-3 py-1 bg-gray-100 rounded-full text-gray-600">전국 출장 가능</span>
           </div>
         </AnimatedSection>
 
@@ -187,15 +187,15 @@ export default function LandingCTA() {
                 href={COMPANY_INFO.kakaoChannel}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block bg-[#FEE500] rounded-2xl sm:rounded-3xl p-5 sm:p-8 hover:bg-[#F5DC00] transition-colors group"
+                className="block bg-[#2AC1BC] rounded-2xl sm:rounded-3xl p-5 sm:p-8 hover:bg-[#1FA9A5] transition-colors group"
               >
                 <div className="flex items-center gap-4 sm:gap-6">
-                  <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl bg-[#3C1E1E]/10 flex items-center justify-center flex-shrink-0">
-                    <MessageCircle className="w-6 h-6 sm:w-8 sm:h-8 text-[#3C1E1E]" />
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl bg-white/20 flex items-center justify-center flex-shrink-0">
+                    <MessageCircle className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
                   </div>
                   <div>
-                    <p className="text-[#3C1E1E]/70 text-xs sm:text-sm mb-0.5 sm:mb-1">카카오톡 상담</p>
-                    <p className="text-[#3C1E1E] text-base sm:text-xl md:text-2xl font-extrabold">
+                    <p className="text-white/80 text-xs sm:text-sm mb-0.5 sm:mb-1">카카오톡 상담</p>
+                    <p className="text-white text-base sm:text-xl md:text-2xl font-extrabold">
                       채널 추가하고 상담받기
                     </p>
                   </div>
@@ -204,23 +204,23 @@ export default function LandingCTA() {
 
               {/* Info Cards */}
               <div className="grid grid-cols-2 gap-3 sm:gap-4">
-                <div className="bg-[#292929] rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-[#3A3A3A]">
+                <div className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 border-2 border-gray-100">
                   <Clock className="w-6 h-6 sm:w-8 sm:h-8 text-[#EF4444] mb-2 sm:mb-4" />
-                  <p className="text-white font-bold text-sm sm:text-base mb-0.5 sm:mb-1">상담 시간</p>
-                  <p className="text-gray-400 text-xs sm:text-sm">평일 09:00 - 18:00</p>
+                  <p className="text-gray-900 font-bold text-sm sm:text-base mb-0.5 sm:mb-1">상담 시간</p>
+                  <p className="text-gray-500 text-xs sm:text-sm">평일 09:00 - 18:00</p>
                 </div>
-                <div className="bg-[#292929] rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-[#3A3A3A]">
+                <div className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 border-2 border-gray-100">
                   <MapPin className="w-6 h-6 sm:w-8 sm:h-8 text-[#EF4444] mb-2 sm:mb-4" />
-                  <p className="text-white font-bold text-sm sm:text-base mb-0.5 sm:mb-1">공장 위치</p>
-                  <p className="text-gray-400 text-xs sm:text-sm">경북 청도군</p>
+                  <p className="text-gray-900 font-bold text-sm sm:text-base mb-0.5 sm:mb-1">공장 위치</p>
+                  <p className="text-gray-500 text-xs sm:text-sm">경북 청도군</p>
                 </div>
               </div>
 
               {/* Office Address */}
-              <div className="bg-[#292929] rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-[#3A3A3A]">
+              <div className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 border-2 border-gray-100">
                 <MapPin className="w-6 h-6 sm:w-8 sm:h-8 text-[#FF6F0F] mb-2 sm:mb-4" />
-                <p className="text-white font-bold text-sm sm:text-base mb-0.5 sm:mb-1">창호의민족 사무실</p>
-                <p className="text-gray-400 text-xs sm:text-sm leading-relaxed">
+                <p className="text-gray-900 font-bold text-sm sm:text-base mb-0.5 sm:mb-1">창호의민족 사무실</p>
+                <p className="text-gray-500 text-xs sm:text-sm leading-relaxed">
                   경남 창원시 의창구 용동로 45
                   <br />
                   현대썬엔빌더스퀘어 F동 106호

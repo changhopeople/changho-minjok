@@ -31,7 +31,7 @@ const productCategories = [
     name: '시스템창호',
     description: '최고급 기밀성과 단열성을 자랑하는 프리미엄 창호입니다. 에너지 효율을 극대화하여 냉난방비를 절감합니다.',
     features: ['최고급 기밀성', '탁월한 단열성능', '방음 효과', '에너지 절감'],
-    image: '/images/products/system-window.png',
+    image: '/images/products/system-window.jpg',
     color: 'from-amber-500 to-amber-600',
   },
   {

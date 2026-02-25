@@ -59,17 +59,9 @@ export default function SmartFactorySection() {
   const [showVideo, setShowVideo] = useState(false);
 
   return (
-    <section className="relative py-16 md:py-24 lg:py-32 bg-[#1E1E1E] overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0" style={{
-          backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)',
-          backgroundSize: '40px 40px'
-        }} />
-      </div>
-
+    <section className="relative py-16 md:py-24 lg:py-32 bg-gray-50 overflow-hidden">
       {/* Gradient Accent */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#EF4444] rounded-full blur-[200px] opacity-10" />
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#2AC1BC] rounded-full blur-[200px] opacity-5" />
 
       <div className="relative container mx-auto px-4 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
@@ -80,7 +72,7 @@ export default function SmartFactorySection() {
                 Smart Factory
               </span>
 
-              <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-white mb-4 md:mb-6 tracking-tight leading-[1.1]">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-[#1E1E1E] mb-4 md:mb-6 tracking-tight leading-[1.1]">
                 스마트 팩토리로
                 <br />
                 완성한{' '}
@@ -101,10 +93,10 @@ export default function SmartFactorySection() {
                 {features.map((item, idx) => (
                   <div
                     key={idx}
-                    className="flex items-center gap-3 p-3 md:p-4 bg-[#292929] rounded-xl border-2 border-[#3A3A3A]"
+                    className="flex items-center gap-3 p-3 md:p-4 bg-white rounded-xl border-2 border-gray-200"
                   >
-                    <CheckCircle className="w-5 h-5 text-[#EF4444] flex-shrink-0" />
-                    <span className="text-white text-sm font-medium">{item}</span>
+                    <CheckCircle className="w-5 h-5 text-[#2AC1BC] flex-shrink-0" />
+                    <span className="text-[#1E1E1E] text-sm font-medium">{item}</span>
                   </div>
                 ))}
               </div>
@@ -121,9 +113,9 @@ export default function SmartFactorySection() {
                 </Link>
                 <Link
                   href="/about/factory"
-                  className="group inline-flex items-center justify-center gap-2 md:gap-3 px-5 md:px-6 py-3 md:py-4 bg-[#292929] border-2 border-[#3A3A3A] rounded-xl text-white font-bold hover:border-[#EF4444] transition-colors text-sm md:text-base"
+                  className="group inline-flex items-center justify-center gap-2 md:gap-3 px-5 md:px-6 py-3 md:py-4 bg-white border-2 border-gray-200 rounded-xl text-[#1E1E1E] font-bold hover:border-[#EF4444] transition-colors text-sm md:text-base"
                 >
-                  <div className="w-8 h-8 md:w-10 md:h-10 rounded-lg bg-[#3A3A3A] flex items-center justify-center group-hover:bg-[#EF4444] transition-colors">
+                  <div className="w-8 h-8 md:w-10 md:h-10 rounded-lg bg-gray-100 flex items-center justify-center group-hover:bg-[#EF4444] transition-colors">
                     <Play className="w-4 h-4 md:w-5 md:h-5 ml-0.5" />
                   </div>
                   공장 둘러보기
@@ -181,12 +173,12 @@ export default function SmartFactorySection() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.1 }}
                     viewport={{ once: true }}
-                    className="bg-[#292929] border border-[#3A3A3A] rounded-xl p-3 md:p-4 text-center"
+                    className="bg-white border border-gray-200 rounded-xl p-3 md:p-4 text-center"
                   >
-                    <div className="text-xl md:text-2xl lg:text-3xl font-extrabold text-[#EF4444] mb-1 tracking-tight">
+                    <div className={`text-xl md:text-2xl lg:text-3xl font-extrabold ${index === 1 || index === 3 ? 'text-[#2AC1BC]' : 'text-[#EF4444]'} mb-1 tracking-tight`}>
                       <CountUp end={stat.value} suffix={stat.suffix} />
                     </div>
-                    <div className="text-white text-xs md:text-sm font-bold">{stat.label}</div>
+                    <div className="text-[#1E1E1E] text-xs md:text-sm font-bold">{stat.label}</div>
                   </motion.div>
                 ))}
               </div>

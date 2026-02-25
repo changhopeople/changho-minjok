@@ -83,13 +83,13 @@ export default function LandingFactory() {
 
   return (
     <>
-      <section className="py-12 sm:py-16 md:py-28 bg-[#1E1E1E] overflow-hidden relative">
+      <section className="py-12 sm:py-16 md:py-28 bg-white overflow-hidden relative">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-5">
           <div
             className="absolute inset-0"
             style={{
-              backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)',
+              backgroundImage: 'radial-gradient(circle at 2px 2px, #d1d5db 1px, transparent 0)',
               backgroundSize: '40px 40px',
             }}
           />
@@ -106,23 +106,23 @@ export default function LandingFactory() {
                     <EyeOff className="w-3 h-3 sm:w-4 sm:h-4 text-red-400" />
                     <span className="text-red-400 text-xs sm:text-sm font-bold">숨기는 업체</span>
                   </div>
-                  <span className="text-white/50 text-sm">vs</span>
+                  <span className="text-gray-400 text-sm">vs</span>
                   <div className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-[#EF4444] rounded-full">
                     <Eye className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
                     <span className="text-white text-xs sm:text-sm font-bold">보여주는 업체</span>
                   </div>
                 </div>
 
-                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-4 sm:mb-6 tracking-tight leading-tight">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-4 sm:mb-6 tracking-tight leading-tight">
                   공장 공개하는 창호업체,
                   <br />
                   <span className="text-[#EF4444]">전국에 몇 개나 될까요?</span>
                 </h2>
 
-                <p className="text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed mb-3 sm:mb-4 max-w-xl">
+                <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed mb-3 sm:mb-4 max-w-xl">
                   저희가 자신 있게 공장 문을 여는 이유?
                   <br />
-                  <span className="text-white font-semibold">
+                  <span className="text-gray-900 font-semibold">
                     보시면 가격이 왜 이렇게 나오는지 이해되실 겁니다.
                   </span>
                 </p>
@@ -136,10 +136,10 @@ export default function LandingFactory() {
                   {features.map((item, idx) => (
                     <div
                       key={idx}
-                      className="flex items-center gap-2 sm:gap-3 p-2.5 sm:p-4 bg-[#292929] rounded-lg sm:rounded-xl border border-[#3A3A3A]"
+                      className="flex items-center gap-2 sm:gap-3 p-2.5 sm:p-4 bg-gray-50 rounded-lg sm:rounded-xl border border-gray-200"
                     >
                       <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-[#EF4444] flex-shrink-0" />
-                      <span className="text-white text-xs sm:text-sm font-medium">{item}</span>
+                      <span className="text-gray-900 text-xs sm:text-sm font-medium">{item}</span>
                     </div>
                   ))}
                 </div>

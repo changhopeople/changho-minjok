@@ -78,19 +78,19 @@ export default function LandingReviews() {
   const currentReview = reviews[currentIndex];
 
   return (
-    <section className="py-12 sm:py-16 md:py-28 bg-[#1E1E1E] overflow-hidden">
+    <section className="py-12 sm:py-16 md:py-28 bg-gray-50 overflow-hidden">
       <div className="container mx-auto px-4 lg:px-8">
         {/* Header */}
         <AnimatedSection className="text-center mb-10 sm:mb-16">
           <span className="inline-block px-3 sm:px-4 py-2 bg-[#EF4444] text-white rounded-full text-xs sm:text-sm font-bold mb-4 sm:mb-6">
             Real Reviews
           </span>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-4 sm:mb-6 tracking-tight leading-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-4 sm:mb-6 tracking-tight leading-tight">
             <span className="text-[#EF4444]">15,000세대</span>가
             <br className="sm:hidden" />
             선택한 이유
           </h2>
-          <p className="text-sm sm:text-base md:text-lg text-gray-400 max-w-2xl mx-auto px-2">
+          <p className="text-sm sm:text-base md:text-lg text-gray-600 max-w-2xl mx-auto px-2">
             직접 경험하신 고객님들의 생생한 후기입니다
           </p>
         </AnimatedSection>
@@ -107,7 +107,7 @@ export default function LandingReviews() {
                 transition={{ delay: index * 0.1 }}
                 className="text-center"
               >
-                <div className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white">
+                <div className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900">
                   {stat.number}
                   <span className="text-sm sm:text-lg md:text-xl text-[#EF4444]">{stat.suffix}</span>
                 </div>
@@ -120,7 +120,7 @@ export default function LandingReviews() {
         {/* Review Card */}
         <AnimatedSection delay={0.2}>
           <div className="max-w-3xl mx-auto">
-            <div className="relative bg-[#292929] rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 border border-[#3A3A3A]">
+            <div className="relative bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 border-2 border-gray-100">
               {/* Quote Icon */}
               <Quote className="absolute top-4 sm:top-6 right-4 sm:right-6 w-8 h-8 sm:w-12 sm:h-12 text-[#EF4444]/20" />
 
@@ -163,18 +163,18 @@ export default function LandingReviews() {
                   </div>
 
                   {/* Content */}
-                  <p className="text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed mb-6 sm:mb-8">
+                  <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed mb-6 sm:mb-8">
                     "{currentReview.content}"
                   </p>
 
                   {/* Footer */}
-                  <div className="flex flex-wrap items-center justify-between gap-4 pt-4 sm:pt-6 border-t border-[#3A3A3A]">
+                  <div className="flex flex-wrap items-center justify-between gap-4 pt-4 sm:pt-6 border-t border-gray-200">
                     <div className="flex items-center gap-3 sm:gap-4">
                       <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#EF4444] flex items-center justify-center text-white font-bold text-base sm:text-lg">
                         {currentReview.name.charAt(0)}
                       </div>
                       <div>
-                        <p className="text-white font-bold text-sm sm:text-base">{currentReview.name} 님</p>
+                        <p className="text-gray-900 font-bold text-sm sm:text-base">{currentReview.name} 님</p>
                         <div className="flex items-center gap-2 sm:gap-3 text-gray-500 text-xs sm:text-sm">
                           <span className="flex items-center gap-1">
                             <MapPin className="w-3 h-3" />
@@ -195,9 +195,9 @@ export default function LandingReviews() {
               <div className="flex justify-center gap-3 mt-6 sm:mt-8">
                 <button
                   onClick={prevReview}
-                  className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#3A3A3A] flex items-center justify-center hover:bg-[#4A4A4A] transition-colors"
+                  className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gray-200 flex items-center justify-center hover:bg-gray-300 transition-colors"
                 >
-                  <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+                  <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6 text-gray-700" />
                 </button>
                 <div className="flex items-center gap-2">
                   {reviews.map((_, index) => (
@@ -205,16 +205,16 @@ export default function LandingReviews() {
                       key={index}
                       onClick={() => setCurrentIndex(index)}
                       className={`w-2 h-2 rounded-full transition-colors ${
-                        index === currentIndex ? 'bg-[#EF4444]' : 'bg-[#3A3A3A]'
+                        index === currentIndex ? 'bg-[#EF4444]' : 'bg-gray-300'
                       }`}
                     />
                   ))}
                 </div>
                 <button
                   onClick={nextReview}
-                  className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#3A3A3A] flex items-center justify-center hover:bg-[#4A4A4A] transition-colors"
+                  className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gray-200 flex items-center justify-center hover:bg-gray-300 transition-colors"
                 >
-                  <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+                  <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6 text-gray-700" />
                 </button>
               </div>
             </div>

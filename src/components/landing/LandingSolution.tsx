@@ -30,7 +30,7 @@ const solutions = [
     subtitle: '전문건설업 면허 + 3,500평 공장',
     description: '인터넷 업체가 1년 뒤에도 있을까요? 저희는 면허와 공장이 있습니다. 도망갈 수가 없어요.',
     highlight: '10년 이상 무상보증',
-    color: 'bg-[#1E1E1E]',
+    color: 'bg-[#2AC1BC]',
   },
 ];
 
@@ -108,7 +108,7 @@ export default function LandingSolution() {
             </h3>
             <div className="bg-white rounded-2xl sm:rounded-3xl overflow-hidden border-2 border-gray-100 shadow-lg overflow-x-auto">
               {/* Table Header */}
-              <div className="grid grid-cols-3 bg-[#1E1E1E] text-white min-w-[320px]">
+              <div className="grid grid-cols-3 bg-[#EF4444] text-white min-w-[320px]">
                 <div className="p-3 sm:p-4 md:p-6 font-bold text-[11px] sm:text-sm md:text-base">비교 항목</div>
                 <div className="p-3 sm:p-4 md:p-6 font-bold text-center text-[11px] sm:text-sm md:text-base border-l border-white/20">일반 업체</div>
                 <div className="p-3 sm:p-4 md:p-6 font-bold text-center text-[11px] sm:text-sm md:text-base border-l border-white/20 bg-[#EF4444]">창호의 민족</div>

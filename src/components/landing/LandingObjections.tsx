@@ -55,20 +55,20 @@ const guarantees = [
 
 export default function LandingObjections() {
   return (
-    <section className="py-12 sm:py-16 md:py-28 bg-[#1E1E1E]">
+    <section className="py-12 sm:py-16 md:py-28 bg-gray-50">
       <div className="container mx-auto px-4 lg:px-8">
         {/* Header */}
         <AnimatedSection className="text-center mb-10 sm:mb-16">
-          <span className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 bg-white/10 text-white rounded-full text-xs sm:text-sm font-bold mb-4 sm:mb-6">
+          <span className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 bg-gray-100 text-gray-900 rounded-full text-xs sm:text-sm font-bold mb-4 sm:mb-6">
             <ShieldCheck className="w-3 h-3 sm:w-4 sm:h-4" />
             의심 해소 보장
           </span>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-3 sm:mb-4 tracking-tight leading-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-3 sm:mb-4 tracking-tight leading-tight">
             아직도 <span className="text-[#FF6F0F]">찜찜하시다면</span>
             <br />
             이것만 확인하세요
           </h2>
-          <p className="text-sm sm:text-base md:text-lg text-gray-400 max-w-2xl mx-auto px-2">
+          <p className="text-sm sm:text-base md:text-lg text-gray-600 max-w-2xl mx-auto px-2">
             고객님이 걱정하시는 부분, 저희가 먼저 해결해 드립니다
           </p>
         </AnimatedSection>
@@ -79,7 +79,7 @@ export default function LandingObjections() {
             <AnimatedSection key={obj.doubt} delay={index * 0.1}>
               <motion.div
                 whileHover={{ y: -4 }}
-                className="bg-[#292929] rounded-2xl sm:rounded-3xl p-5 sm:p-6 md:p-8 border border-[#3A3A3A] hover:border-[#EF4444] transition-all h-full"
+                className="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-6 md:p-8 border-2 border-gray-100 hover:border-[#EF4444] transition-all h-full"
               >
                 {/* Badge */}
                 <span className={`inline-block px-2 sm:px-3 py-1 ${obj.color} text-white text-[10px] sm:text-xs font-bold rounded-full mb-3 sm:mb-4`}>
@@ -91,7 +91,7 @@ export default function LandingObjections() {
                   <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-red-500/20 flex items-center justify-center flex-shrink-0">
                     <span className="text-red-400 text-sm sm:text-base">?</span>
                   </div>
-                  <p className="text-sm sm:text-base text-gray-400 italic leading-relaxed">
+                  <p className="text-sm sm:text-base text-gray-500 italic leading-relaxed">
                     {obj.doubt}
                   </p>
                 </div>
@@ -101,7 +101,7 @@ export default function LandingObjections() {
                   <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-[#EF4444]/20 flex items-center justify-center flex-shrink-0">
                     <obj.icon className="w-4 h-4 sm:w-5 sm:h-5 text-[#EF4444]" />
                   </div>
-                  <p className="text-base sm:text-lg md:text-xl font-bold text-white leading-tight">
+                  <p className="text-base sm:text-lg md:text-xl font-bold text-gray-900 leading-tight">
                     {obj.answer}
                   </p>
                 </div>
@@ -117,8 +117,8 @@ export default function LandingObjections() {
 
         {/* Guarantee Badges */}
         <AnimatedSection delay={0.4}>
-          <div className="bg-gradient-to-r from-[#EF4444]/20 to-[#EF4444]/10 rounded-2xl sm:rounded-3xl p-5 sm:p-8 border border-[#EF4444]/30">
-            <h3 className="text-center text-white font-bold text-base sm:text-lg md:text-xl mb-4 sm:mb-6">
+          <div className="bg-gradient-to-r from-[#FEF2F2] to-[#FFF5F5] rounded-2xl sm:rounded-3xl p-5 sm:p-8 border border-[#EF4444]/30">
+            <h3 className="text-center text-gray-900 font-bold text-base sm:text-lg md:text-xl mb-4 sm:mb-6">
               창호의 민족 <span className="text-[#EF4444]">3대 보장</span>
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
@@ -129,12 +129,12 @@ export default function LandingObjections() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="flex items-center gap-3 bg-white/5 rounded-xl px-4 py-3"
+                  className="flex items-center gap-3 bg-white rounded-xl px-4 py-3"
                 >
                   <div className="w-8 h-8 rounded-lg bg-[#EF4444] flex items-center justify-center flex-shrink-0">
                     <g.icon className="w-4 h-4 text-white" />
                   </div>
-                  <p className="text-white text-sm sm:text-base font-medium">{g.text}</p>
+                  <p className="text-gray-900 text-sm sm:text-base font-medium">{g.text}</p>
                 </motion.div>
               ))}
             </div>
