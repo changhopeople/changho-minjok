@@ -1,8 +1,18 @@
 'use client';
 
+import { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Shield, Award, Building2, FileCheck, Rocket } from 'lucide-react';
 import AnimatedSection from '@/components/shared/AnimatedSection';
+
+const certImages = [
+  { src: '/images/trust/construction-license.jpg', alt: '건설업등록증', title: '건설업등록증', sub: '(주)현경시스템' },
+  { src: '/images/trust/starplus-certificate.jpg', alt: 'KCC Star Plus 인증서', title: 'KCC Star Plus', sub: 'e-MAX Club Prime Distributor' },
+  { src: '/images/trust/ks-certificate.jpg', alt: 'KS 제품인증서', title: 'KS 제품인증서', sub: '한국산업표준 인증' },
+  { src: '/images/trust/emaster-certificate.jpg', alt: 'e-MASTER Club 인증서', title: 'e-MASTER 인증서', sub: '이마스터클럽 회원사' },
+  { src: '/images/trust/business-registration.jpg', alt: '사업자등록증', title: '사업자등록증', sub: '(주)현경시스템' },
+];
 
 const certifications = [
   {
@@ -44,6 +54,19 @@ const certifications = [
 ];
 
 export default function TrustSection() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const nextSlide = useCallback(() => {
+    setCurrentIndex((prev) => (prev + 1) % certImages.length);
+  }, []);
+
+  useEffect(() => {
+    const timer = setInterval(nextSlide, 3500);
+    return () => clearInterval(timer);
+  }, [nextSlide]);
+
+  const current = certImages[currentIndex];
+
   return (
     <section className="py-20 md:py-28 bg-gradient-to-b from-gray-50 to-white">
       <div className="container mx-auto px-4 lg:px-8">
@@ -61,74 +84,43 @@ export default function TrustSection() {
         </AnimatedSection>
 
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center max-w-6xl mx-auto">
-          {/* Certification Images */}
+          {/* Certification Image Carousel */}
           <AnimatedSection>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
-              <div className="relative aspect-[3/4] rounded-xl md:rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-                <Image
-                  src="/images/trust/construction-license.jpg"
-                  alt="건설업등록증"
-                  fill
-                  className="object-cover"
+            <div className="relative aspect-[3/4] max-w-md mx-auto rounded-2xl overflow-hidden shadow-lg">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={current.src}
+                  initial={{ opacity: 0, x: 40 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -40 }}
+                  transition={{ duration: 0.4 }}
+                  className="absolute inset-0"
+                >
+                  <Image
+                    src={current.src}
+                    alt={current.alt}
+                    fill
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6">
+                    <p className="text-white font-bold text-sm md:text-lg">{current.title}</p>
+                    <p className="text-white/80 text-xs md:text-sm">{current.sub}</p>
+                  </div>
+                </motion.div>
+              </AnimatePresence>
+            </div>
+            {/* Dot Indicators */}
+            <div className="flex justify-center gap-2 mt-4">
+              {certImages.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentIndex(index)}
+                  className={`w-2.5 h-2.5 rounded-full transition-colors ${
+                    index === currentIndex ? 'bg-red-600' : 'bg-gray-300'
+                  }`}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-3 md:p-4">
-                  <p className="text-white font-bold text-xs md:text-sm">건설업등록증</p>
-                  <p className="text-white/80 text-[10px] md:text-xs">(주)현경시스템</p>
-                </div>
-              </div>
-              <div className="relative aspect-[3/4] rounded-xl md:rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-                <Image
-                  src="/images/trust/starplus-certificate.jpg"
-                  alt="KCC Star Plus 인증서"
-                  fill
-                  className="object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-3 md:p-4">
-                  <p className="text-white font-bold text-xs md:text-sm">KCC Star Plus</p>
-                  <p className="text-white/80 text-[10px] md:text-xs">e-MAX Club Prime Distributor</p>
-                </div>
-              </div>
-              <div className="relative aspect-[3/4] rounded-xl md:rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-                <Image
-                  src="/images/trust/ks-certificate.jpg"
-                  alt="KS 제품인증서"
-                  fill
-                  className="object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-3 md:p-4">
-                  <p className="text-white font-bold text-xs md:text-sm">KS 제품인증서</p>
-                  <p className="text-white/80 text-[10px] md:text-xs">한국산업표준 인증</p>
-                </div>
-              </div>
-              <div className="relative aspect-[3/4] rounded-xl md:rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-                <Image
-                  src="/images/trust/emaster-certificate.jpg"
-                  alt="e-MASTER Club 인증서"
-                  fill
-                  className="object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-3 md:p-4">
-                  <p className="text-white font-bold text-xs md:text-sm">e-MASTER 인증서</p>
-                  <p className="text-white/80 text-[10px] md:text-xs">이마스터클럽 회원사</p>
-                </div>
-              </div>
-              <div className="relative aspect-[3/4] rounded-xl md:rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-                <Image
-                  src="/images/trust/business-registration.jpg"
-                  alt="사업자등록증"
-                  fill
-                  className="object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-3 md:p-4">
-                  <p className="text-white font-bold text-xs md:text-sm">사업자등록증</p>
-                  <p className="text-white/80 text-[10px] md:text-xs">(주)현경시스템</p>
-                </div>
-              </div>
+              ))}
             </div>
           </AnimatedSection>
 
