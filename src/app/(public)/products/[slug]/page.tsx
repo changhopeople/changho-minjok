@@ -33,7 +33,7 @@ const products: Record<string, {
       { title: '쉬운 관리', description: '별도의 관리 없이도 오랜 시간 깨끗하게 유지됩니다.' },
     ],
     color: 'sky',
-    image: '/images/products/pvc-window.png',
+    image: '/images/products/system-window.jpg',
   },
   aluminum: {
     name: '알루미늄 창호',
@@ -71,7 +71,7 @@ const products: Record<string, {
       { title: '프리미엄 품질', description: '유럽 인증을 받은 최고급 자재만 사용합니다.' },
     ],
     color: 'amber',
-    image: '/images/products/system-window.jpg',
+    image: '/images/products/system-window.png',
   },
   glass: {
     name: '유리 종류',

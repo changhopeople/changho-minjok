@@ -13,7 +13,7 @@ const products = [
     description: '뛰어난 단열성과 가성비를 갖춘 기본 창호',
     features: ['단열성 우수', '다양한 컬러', '경제적'],
     color: 'bg-[#EF4444]',
-    image: '/images/products/pvc-window.png',
+    image: '/images/products/system-window.jpg',
   },
   {
     slug: 'aluminum',
@@ -29,7 +29,7 @@ const products = [
     description: '최고급 기밀성과 단열성을 자랑하는 프리미엄 창호',
     features: ['최고급 사양', '에너지 절감', '방음 효과'],
     color: 'bg-gray-100',
-    image: '/images/products/system-window.jpg',
+    image: '/images/products/system-window.png',
   },
 ];
 

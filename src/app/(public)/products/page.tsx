@@ -15,7 +15,7 @@ const productCategories = [
     name: 'PVC 창호',
     description: '뛰어난 단열성과 가성비를 갖춘 기본 창호입니다. 다양한 컬러와 디자인으로 어떤 인테리어에도 어울립니다.',
     features: ['우수한 단열성능', '다양한 컬러 선택', '경제적인 가격', '손쉬운 유지관리'],
-    image: '/images/products/pvc-window.png',
+    image: '/images/products/system-window.jpg',
     color: 'from-[#EF4444] to-[#DC2626]',
   },
   {
@@ -31,7 +31,7 @@ const productCategories = [
     name: '시스템창호',
     description: '최고급 기밀성과 단열성을 자랑하는 프리미엄 창호입니다. 에너지 효율을 극대화하여 냉난방비를 절감합니다.',
     features: ['최고급 기밀성', '탁월한 단열성능', '방음 효과', '에너지 절감'],
-    image: '/images/products/system-window.jpg',
+    image: '/images/products/system-window.png',
     color: 'from-[#FF6F0F] to-[#FF6F0F]',
   },
   {
