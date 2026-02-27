@@ -1,11 +1,15 @@
-'use client';
-
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import AnimatedSection from '@/components/shared/AnimatedSection';
 import BeforeAfterSlider from '@/components/tools/BeforeAfterSlider';
+import { getPublishedPortfolios } from '@/lib/portfolio-db';
 
-export default function BeforeAfterShowcase() {
+export default async function BeforeAfterShowcase() {
+  const portfolios = await getPublishedPortfolios();
+  const showcase = portfolios.find((p) => p.before_url && p.after_url);
+
+  if (!showcase) return null;
+
   return (
     <section className="py-24 md:py-32 bg-[#F5F5F5]">
       <div className="container mx-auto px-4 lg:px-8">
@@ -25,13 +29,13 @@ export default function BeforeAfterShowcase() {
         {/* Slider */}
         <AnimatedSection delay={0.2} className="max-w-4xl mx-auto">
           <BeforeAfterSlider
-            beforeSrc="/images/portfolio/before-sample.jpg"
-            afterSrc="/images/portfolio/after-sample.jpg"
-            beforeAlt="시공 전 - 낡은 창호"
-            afterAlt="시공 후 - 새 창호"
+            beforeSrc={showcase.before_url!}
+            afterSrc={showcase.after_url!}
+            beforeAlt={`${showcase.title} - 시공 전`}
+            afterAlt={`${showcase.title} - 시공 후`}
           />
           <p className="text-center text-[#767676] text-sm mt-4">
-            드래그하여 비교해보세요
+            드래그하여 비교해보세요 &middot; {showcase.title}
           </p>
         </AnimatedSection>
 
