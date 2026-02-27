@@ -16,6 +16,28 @@ function generateSlug(title: string): string {
     || `portfolio-${Date.now()}`;
 }
 
+/** before_0~2, after_0~2 이미지를 처리하여 URL 배열로 반환 */
+async function processMultiImages(
+  formData: FormData,
+  prefix: 'before' | 'after',
+  slug: string,
+  isUpdate: boolean
+): Promise<string[]> {
+  const urls: string[] = [];
+  for (let i = 0; i < 3; i++) {
+    const file = formData.get(`${prefix}_${i}`) as File | null;
+    const existingUrl = isUpdate ? (formData.get(`existing${prefix === 'before' ? 'Before' : 'After'}_${i}`) as string) : '';
+
+    if (file && file.size > 0) {
+      const uploaded = await uploadImage(file, slug);
+      if (uploaded) urls.push(uploaded);
+    } else if (existingUrl) {
+      urls.push(existingUrl);
+    }
+  }
+  return urls;
+}
+
 export async function createPortfolioAction(formData: FormData): Promise<void> {
   const title = formData.get('title') as string;
   const location = formData.get('location') as string;
@@ -33,24 +55,16 @@ export async function createPortfolioAction(formData: FormData): Promise<void> {
   const displayOrder = parseInt(formData.get('displayOrder') as string) || 1;
 
   const thumbnail = formData.get('thumbnail') as File;
-  const before = formData.get('before') as File;
-  const after = formData.get('after') as File;
-
   let thumbnailUrl = null;
-  let beforeUrl = null;
-  let afterUrl = null;
 
   const slug = generateSlug(title) + '-' + Date.now().toString().slice(-6);
 
   if (thumbnail && thumbnail.size > 0) {
     thumbnailUrl = await uploadImage(thumbnail, slug);
   }
-  if (before && before.size > 0) {
-    beforeUrl = await uploadImage(before, slug);
-  }
-  if (after && after.size > 0) {
-    afterUrl = await uploadImage(after, slug);
-  }
+
+  const beforeUrls = await processMultiImages(formData, 'before', slug, false);
+  const afterUrls = await processMultiImages(formData, 'after', slug, false);
 
   const features = (featuresRaw || '')
     .split('\n')
@@ -72,9 +86,9 @@ export async function createPortfolioAction(formData: FormData): Promise<void> {
     features,
     review: review || null,
     thumbnail_url: thumbnailUrl || null,
-    before_url: beforeUrl || null,
-    after_url: afterUrl || null,
-    gallery_urls: [],
+    before_url: beforeUrls[0] || null,
+    after_url: afterUrls[0] || null,
+    gallery_urls: [...beforeUrls, ...afterUrls],
     published,
     display_order: displayOrder,
   });
@@ -107,26 +121,15 @@ export async function updatePortfolioAction(formData: FormData): Promise<void> {
   const displayOrder = parseInt(formData.get('displayOrder') as string) || 1;
 
   const existingThumbnail = formData.get('existingThumbnail') as string;
-  const existingBefore = formData.get('existingBefore') as string;
-  const existingAfter = formData.get('existingAfter') as string;
-
   const thumbnail = formData.get('thumbnail') as File;
-  const before = formData.get('before') as File;
-  const after = formData.get('after') as File;
-
   let thumbnailUrl = existingThumbnail || null;
-  let beforeUrl = existingBefore || null;
-  let afterUrl = existingAfter || null;
 
   if (thumbnail && thumbnail.size > 0) {
     thumbnailUrl = await uploadImage(thumbnail, slug);
   }
-  if (before && before.size > 0) {
-    beforeUrl = await uploadImage(before, slug);
-  }
-  if (after && after.size > 0) {
-    afterUrl = await uploadImage(after, slug);
-  }
+
+  const beforeUrls = await processMultiImages(formData, 'before', slug, true);
+  const afterUrls = await processMultiImages(formData, 'after', slug, true);
 
   const features = (featuresRaw || '')
     .split('\n')
@@ -147,8 +150,9 @@ export async function updatePortfolioAction(formData: FormData): Promise<void> {
     features,
     review: review || null,
     thumbnail_url: thumbnailUrl || null,
-    before_url: beforeUrl || null,
-    after_url: afterUrl || null,
+    before_url: beforeUrls[0] || null,
+    after_url: afterUrls[0] || null,
+    gallery_urls: [...beforeUrls, ...afterUrls],
     published,
     display_order: displayOrder,
   });

@@ -17,106 +17,273 @@ interface PortfolioFormProps {
   submitLabel: string;
 }
 
-const SLOT_LABELS = ['썸네일 (목록용)', '시공 전 (Before)', '시공 후 (After)'];
+function emptySlot(): ImageSlot {
+  return { preview: null, existingUrl: null, newFile: null };
+}
+
+/** gallery_urls에서 before/after 이미지를 분리 (기존 데이터 호환) */
+function parseGalleryUrls(portfolio?: PortfolioRecord): { beforeUrls: (string | null)[]; afterUrls: (string | null)[] } {
+  const beforeUrls: (string | null)[] = [null, null, null];
+  const afterUrls: (string | null)[] = [null, null, null];
+
+  if (!portfolio) return { beforeUrls, afterUrls };
+
+  // before_url을 첫 번째 before 슬롯에
+  if (portfolio.before_url) beforeUrls[0] = portfolio.before_url;
+  // after_url을 첫 번째 after 슬롯에
+  if (portfolio.after_url) afterUrls[0] = portfolio.after_url;
+
+  // gallery_urls에서 추가 이미지 파싱
+  if (portfolio.gallery_urls && portfolio.gallery_urls.length > 0) {
+    const gallery = portfolio.gallery_urls;
+    // gallery_urls 순서: [before들..., after들...]
+    // before_url/after_url과 중복되지 않는 이미지를 추가 슬롯에 배치
+    const extraBefores = gallery.filter(
+      (url) => url !== portfolio.before_url && url !== portfolio.after_url && !url.includes('/after')
+    );
+    const extraAfters = gallery.filter(
+      (url) => url !== portfolio.before_url && url !== portfolio.after_url && url.includes('/after')
+    );
+
+    // 첫 번째가 이미 채워져 있으면 2,3번째 슬롯에
+    extraBefores.forEach((url, i) => {
+      if (i + 1 < 3) beforeUrls[i + 1] = url;
+    });
+    extraAfters.forEach((url, i) => {
+      if (i + 1 < 3) afterUrls[i + 1] = url;
+    });
+  }
+
+  return { beforeUrls, afterUrls };
+}
 
 export default function PortfolioForm({ portfolio, action, submitLabel }: PortfolioFormProps) {
-  const [imageSlots, setImageSlots] = useState<ImageSlot[]>([
-    { preview: portfolio?.thumbnail_url || null, existingUrl: portfolio?.thumbnail_url || null, newFile: null },
-    { preview: portfolio?.before_url || null, existingUrl: portfolio?.before_url || null, newFile: null },
-    { preview: portfolio?.after_url || null, existingUrl: portfolio?.after_url || null, newFile: null },
-  ]);
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [dragIndex, setDragIndex] = useState<number | null>(null);
-  const [dragOverIndex, setDragOverIndex] = useState<number | null>(null);
-  const fileInputRefs = useRef<(HTMLInputElement | null)[]>([null, null, null]);
+  const { beforeUrls, afterUrls } = parseGalleryUrls(portfolio);
 
-  const handleImageChange = (index: number, e: React.ChangeEvent<HTMLInputElement>) => {
+  // 썸네일 (1장)
+  const [thumbnailSlot, setThumbnailSlot] = useState<ImageSlot>({
+    preview: portfolio?.thumbnail_url || null,
+    existingUrl: portfolio?.thumbnail_url || null,
+    newFile: null,
+  });
+
+  // 시공 전 (3장)
+  const [beforeSlots, setBeforeSlots] = useState<ImageSlot[]>(
+    beforeUrls.map((url) => ({ preview: url, existingUrl: url, newFile: null }))
+  );
+
+  // 시공 후 (3장)
+  const [afterSlots, setAfterSlots] = useState<ImageSlot[]>(
+    afterUrls.map((url) => ({ preview: url, existingUrl: url, newFile: null }))
+  );
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [dragState, setDragState] = useState<{ group: string; index: number } | null>(null);
+  const [dragOverState, setDragOverState] = useState<{ group: string; index: number } | null>(null);
+
+  const thumbnailInputRef = useRef<HTMLInputElement | null>(null);
+  const beforeInputRefs = useRef<(HTMLInputElement | null)[]>([null, null, null]);
+  const afterInputRefs = useRef<(HTMLInputElement | null)[]>([null, null, null]);
+
+  // ── 이미지 업로드 핸들러 ──
+  const handleFileSelect = (
+    e: React.ChangeEvent<HTMLInputElement>,
+    setter: React.Dispatch<React.SetStateAction<ImageSlot[]>> | React.Dispatch<React.SetStateAction<ImageSlot>>,
+    index?: number
+  ) => {
     const file = e.target.files?.[0];
     if (!file) return;
     const reader = new FileReader();
     reader.onloadend = () => {
-      setImageSlots((prev) => {
-        const next = [...prev];
-        next[index] = { preview: reader.result as string, existingUrl: null, newFile: file };
-        return next;
-      });
+      const newSlot: ImageSlot = { preview: reader.result as string, existingUrl: null, newFile: file };
+      if (index !== undefined) {
+        (setter as React.Dispatch<React.SetStateAction<ImageSlot[]>>)((prev) => {
+          const next = [...prev];
+          next[index] = newSlot;
+          return next;
+        });
+      } else {
+        (setter as React.Dispatch<React.SetStateAction<ImageSlot>>)(newSlot);
+      }
     };
     reader.readAsDataURL(file);
   };
 
-  const handleClearSlot = (index: number) => {
-    setImageSlots((prev) => {
-      const next = [...prev];
-      next[index] = { preview: null, existingUrl: null, newFile: null };
-      return next;
-    });
-    // file input 초기화
-    if (fileInputRefs.current[index]) {
-      fileInputRefs.current[index]!.value = '';
+  const clearSlot = (
+    setter: React.Dispatch<React.SetStateAction<ImageSlot[]>> | React.Dispatch<React.SetStateAction<ImageSlot>>,
+    index?: number,
+    inputRef?: React.RefObject<HTMLInputElement | null> | { current: (HTMLInputElement | null)[] }
+  ) => {
+    if (index !== undefined) {
+      (setter as React.Dispatch<React.SetStateAction<ImageSlot[]>>)((prev) => {
+        const next = [...prev];
+        next[index] = emptySlot();
+        return next;
+      });
+      if (inputRef && 'current' in inputRef && Array.isArray(inputRef.current)) {
+        const el = inputRef.current[index];
+        if (el) el.value = '';
+      }
+    } else {
+      (setter as React.Dispatch<React.SetStateAction<ImageSlot>>)(emptySlot());
+      if (inputRef && 'current' in inputRef && !Array.isArray(inputRef.current)) {
+        const el = (inputRef as React.RefObject<HTMLInputElement | null>).current;
+        if (el) el.value = '';
+      }
     }
   };
 
-  // --- Drag and Drop ---
-  const handleDragStart = (index: number) => {
-    setDragIndex(index);
+  // ── 드래그앤드롭 (그룹 내에서만) ──
+  const handleDragStart = (group: string, index: number) => {
+    setDragState({ group, index });
   };
 
-  const handleDragOver = (e: React.DragEvent, index: number) => {
+  const handleDragOver = (e: React.DragEvent, group: string, index: number) => {
     e.preventDefault();
-    setDragOverIndex(index);
+    if (dragState?.group === group) {
+      setDragOverState({ group, index });
+    }
   };
 
   const handleDragLeave = () => {
-    setDragOverIndex(null);
+    setDragOverState(null);
   };
 
-  const handleDrop = (targetIndex: number) => {
-    if (dragIndex === null || dragIndex === targetIndex) {
-      setDragIndex(null);
-      setDragOverIndex(null);
+  const handleDrop = (group: string, targetIndex: number) => {
+    if (!dragState || dragState.group !== group || dragState.index === targetIndex) {
+      setDragState(null);
+      setDragOverState(null);
       return;
     }
-    setImageSlots((prev) => {
+    const setter = group === 'before' ? setBeforeSlots : setAfterSlots;
+    setter((prev) => {
       const next = [...prev];
-      [next[dragIndex], next[targetIndex]] = [next[targetIndex], next[dragIndex]];
+      [next[dragState.index], next[targetIndex]] = [next[targetIndex], next[dragState.index]];
       return next;
     });
-    setDragIndex(null);
-    setDragOverIndex(null);
+    setDragState(null);
+    setDragOverState(null);
   };
 
   const handleDragEnd = () => {
-    setDragIndex(null);
-    setDragOverIndex(null);
+    setDragState(null);
+    setDragOverState(null);
   };
 
+  // ── FormData 구성 ──
   const handleSubmit = async (formData: FormData) => {
     setIsSubmitting(true);
     try {
-      // imageSlots 기준으로 FormData 오버라이드
-      const fieldNames = ['thumbnail', 'before', 'after'] as const;
-      const existingFieldNames = ['existingThumbnail', 'existingBefore', 'existingAfter'] as const;
+      // 썸네일
+      formData.delete('existingThumbnail');
+      formData.set('existingThumbnail', thumbnailSlot.existingUrl || '');
+      formData.delete('thumbnail');
+      if (thumbnailSlot.newFile) {
+        formData.set('thumbnail', thumbnailSlot.newFile);
+      } else {
+        formData.set('thumbnail', new File([], '', { type: 'application/octet-stream' }));
+      }
 
+      // 시공 전 3장
       for (let i = 0; i < 3; i++) {
-        const slot = imageSlots[i];
-
-        // 기존 hidden input 값 덮어쓰기
-        formData.delete(existingFieldNames[i]);
-        formData.set(existingFieldNames[i], slot.existingUrl || '');
-
-        // 파일 덮어쓰기
-        formData.delete(fieldNames[i]);
+        const slot = beforeSlots[i];
+        formData.set(`existingBefore_${i}`, slot.existingUrl || '');
         if (slot.newFile) {
-          formData.set(fieldNames[i], slot.newFile);
+          formData.set(`before_${i}`, slot.newFile);
         } else {
-          formData.set(fieldNames[i], new File([], '', { type: 'application/octet-stream' }));
+          formData.set(`before_${i}`, new File([], '', { type: 'application/octet-stream' }));
         }
       }
+
+      // 시공 후 3장
+      for (let i = 0; i < 3; i++) {
+        const slot = afterSlots[i];
+        formData.set(`existingAfter_${i}`, slot.existingUrl || '');
+        if (slot.newFile) {
+          formData.set(`after_${i}`, slot.newFile);
+        } else {
+          formData.set(`after_${i}`, new File([], '', { type: 'application/octet-stream' }));
+        }
+      }
+
+      // 이전 단일 필드 정리
+      formData.delete('existingBefore');
+      formData.delete('existingAfter');
+      formData.delete('before');
+      formData.delete('after');
 
       await action(formData);
     } finally {
       setIsSubmitting(false);
     }
+  };
+
+  // ── 이미지 슬롯 렌더러 ──
+  const renderSlot = (
+    slot: ImageSlot,
+    label: string,
+    group: string,
+    index: number,
+    setter: React.Dispatch<React.SetStateAction<ImageSlot[]>>,
+    inputRefs: React.MutableRefObject<(HTMLInputElement | null)[]>,
+    draggable: boolean
+  ) => {
+    const isDragging = dragState?.group === group && dragState?.index === index;
+    const isDragOver = dragOverState?.group === group && dragOverState?.index === index && !isDragging;
+
+    return (
+      <div key={`${group}-${index}`}>
+        <label className="block text-sm font-medium text-gray-700 mb-2">{label}</label>
+        <div
+          className={`relative transition-all ${isDragOver ? 'ring-2 ring-blue-400 rounded-xl' : ''}`}
+          onDragOver={(e) => handleDragOver(e, group, index)}
+          onDragLeave={handleDragLeave}
+          onDrop={() => handleDrop(group, index)}
+        >
+          {slot.preview ? (
+            <div
+              draggable={draggable}
+              onDragStart={draggable ? () => handleDragStart(group, index) : undefined}
+              onDragEnd={handleDragEnd}
+              className={`relative aspect-[4/3] rounded-xl overflow-hidden bg-gray-100 ${
+                draggable ? 'cursor-grab active:cursor-grabbing' : ''
+              } ${isDragging ? 'opacity-50' : ''}`}
+            >
+              <Image src={slot.preview} alt={label} fill className="object-cover" />
+              {draggable && (
+                <div className="absolute top-2 left-2 p-1 bg-black/40 text-white rounded-lg">
+                  <GripVertical className="w-4 h-4" />
+                </div>
+              )}
+              <button
+                type="button"
+                onClick={() => clearSlot(setter, index, inputRefs)}
+                className="absolute top-2 right-2 p-1 bg-red-500 text-white rounded-full hover:bg-red-600"
+              >
+                <X className="w-4 h-4" />
+              </button>
+              {draggable && (
+                <div className="absolute bottom-0 inset-x-0 bg-black/40 text-white text-xs text-center py-1">
+                  드래그하여 순서 변경
+                </div>
+              )}
+            </div>
+          ) : (
+            <label className="flex flex-col items-center justify-center aspect-[4/3] border-2 border-dashed border-gray-300 rounded-xl cursor-pointer hover:border-[#EF4444] transition-colors">
+              <Upload className="w-8 h-8 text-gray-400 mb-2" />
+              <span className="text-sm text-gray-500">이미지 선택</span>
+              <input
+                type="file"
+                accept="image/*"
+                className="hidden"
+                ref={(el) => { inputRefs.current[index] = el; }}
+                onChange={(e) => handleFileSelect(e, setter, index)}
+              />
+            </label>
+          )}
+        </div>
+      </div>
+    );
   };
 
   return (
@@ -125,9 +292,6 @@ export default function PortfolioForm({ portfolio, action, submitLabel }: Portfo
         <>
           <input type="hidden" name="id" value={portfolio.id} />
           <input type="hidden" name="slug" value={portfolio.slug} />
-          <input type="hidden" name="existingThumbnail" value={portfolio.thumbnail_url || ''} />
-          <input type="hidden" name="existingBefore" value={portfolio.before_url || ''} />
-          <input type="hidden" name="existingAfter" value={portfolio.after_url || ''} />
         </>
       )}
 
@@ -322,66 +486,73 @@ export default function PortfolioForm({ portfolio, action, submitLabel }: Portfo
         </div>
       </div>
 
-      {/* 이미지 (드래그앤드롭) */}
-      <div className="bg-white rounded-2xl p-6 shadow-sm">
-        <h2 className="text-lg font-semibold text-gray-900 mb-2">이미지</h2>
-        <p className="text-sm text-gray-500 mb-6">이미지를 드래그하여 위치를 변경할 수 있습니다.</p>
-        <div className="grid md:grid-cols-3 gap-6">
-          {imageSlots.map((slot, index) => (
-            <div key={index}>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                {SLOT_LABELS[index]}
-              </label>
-              <div
-                className={`relative transition-all ${
-                  dragOverIndex === index && dragIndex !== index
-                    ? 'ring-2 ring-blue-400 rounded-xl'
-                    : ''
-                }`}
-                onDragOver={(e) => handleDragOver(e, index)}
-                onDragLeave={handleDragLeave}
-                onDrop={() => handleDrop(index)}
-              >
-                {slot.preview ? (
-                  <div
-                    draggable
-                    onDragStart={() => handleDragStart(index)}
-                    onDragEnd={handleDragEnd}
-                    className={`relative aspect-[4/3] rounded-xl overflow-hidden bg-gray-100 cursor-grab active:cursor-grabbing ${
-                      dragIndex === index ? 'opacity-50' : ''
-                    }`}
+      {/* 이미지 */}
+      <div className="bg-white rounded-2xl p-6 shadow-sm space-y-8">
+        <div>
+          <h2 className="text-lg font-semibold text-gray-900 mb-2">이미지</h2>
+          <p className="text-sm text-gray-500">같은 그룹 내에서 이미지를 드래그하여 순서를 변경할 수 있습니다.</p>
+        </div>
+
+        {/* 썸네일 */}
+        <div>
+          <h3 className="text-sm font-semibold text-gray-900 mb-3 flex items-center gap-2">
+            <span className="w-2 h-2 rounded-full bg-gray-400" />
+            썸네일 (목록용)
+          </h3>
+          <div className="grid grid-cols-3 gap-4 max-w-xs">
+            <div>
+              {thumbnailSlot.preview ? (
+                <div className="relative aspect-[4/3] rounded-xl overflow-hidden bg-gray-100">
+                  <Image src={thumbnailSlot.preview} alt="썸네일" fill className="object-cover" />
+                  <button
+                    type="button"
+                    onClick={() => clearSlot(setThumbnailSlot, undefined, thumbnailInputRef)}
+                    className="absolute top-2 right-2 p-1 bg-red-500 text-white rounded-full hover:bg-red-600"
                   >
-                    <Image src={slot.preview} alt={SLOT_LABELS[index]} fill className="object-cover" />
-                    <div className="absolute top-2 left-2 p-1 bg-black/40 text-white rounded-lg">
-                      <GripVertical className="w-4 h-4" />
-                    </div>
-                    <button
-                      type="button"
-                      onClick={() => handleClearSlot(index)}
-                      className="absolute top-2 right-2 p-1 bg-red-500 text-white rounded-full hover:bg-red-600"
-                    >
-                      <X className="w-4 h-4" />
-                    </button>
-                    <div className="absolute bottom-0 inset-x-0 bg-black/40 text-white text-xs text-center py-1">
-                      드래그하여 위치 변경
-                    </div>
-                  </div>
-                ) : (
-                  <label className="flex flex-col items-center justify-center aspect-[4/3] border-2 border-dashed border-gray-300 rounded-xl cursor-pointer hover:border-[#EF4444] transition-colors">
-                    <Upload className="w-8 h-8 text-gray-400 mb-2" />
-                    <span className="text-sm text-gray-500">이미지 선택</span>
-                    <input
-                      type="file"
-                      accept="image/*"
-                      className="hidden"
-                      ref={(el) => { fileInputRefs.current[index] = el; }}
-                      onChange={(e) => handleImageChange(index, e)}
-                    />
-                  </label>
-                )}
-              </div>
+                    <X className="w-4 h-4" />
+                  </button>
+                </div>
+              ) : (
+                <label className="flex flex-col items-center justify-center aspect-[4/3] border-2 border-dashed border-gray-300 rounded-xl cursor-pointer hover:border-[#EF4444] transition-colors">
+                  <Upload className="w-6 h-6 text-gray-400 mb-1" />
+                  <span className="text-xs text-gray-500">선택</span>
+                  <input
+                    type="file"
+                    accept="image/*"
+                    className="hidden"
+                    ref={thumbnailInputRef}
+                    onChange={(e) => handleFileSelect(e, setThumbnailSlot)}
+                  />
+                </label>
+              )}
             </div>
-          ))}
+          </div>
+        </div>
+
+        {/* 시공 전 */}
+        <div>
+          <h3 className="text-sm font-semibold text-gray-900 mb-3 flex items-center gap-2">
+            <span className="w-2 h-2 rounded-full bg-blue-400" />
+            시공 전 (Before) — 최대 3장
+          </h3>
+          <div className="grid grid-cols-3 gap-4">
+            {beforeSlots.map((slot, i) =>
+              renderSlot(slot, `시공 전 ${i + 1}`, 'before', i, setBeforeSlots, beforeInputRefs, true)
+            )}
+          </div>
+        </div>
+
+        {/* 시공 후 */}
+        <div>
+          <h3 className="text-sm font-semibold text-gray-900 mb-3 flex items-center gap-2">
+            <span className="w-2 h-2 rounded-full bg-red-400" />
+            시공 후 (After) — 최대 3장
+          </h3>
+          <div className="grid grid-cols-3 gap-4">
+            {afterSlots.map((slot, i) =>
+              renderSlot(slot, `시공 후 ${i + 1}`, 'after', i, setAfterSlots, afterInputRefs, true)
+            )}
+          </div>
         </div>
       </div>
 

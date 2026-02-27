@@ -64,7 +64,7 @@ export const FOOTER_LINKS = {
   ],
   support: [
     { title: '상담 신청', href: '/estimate' },
-    { title: '상담 신청', href: '/support/inquiry' },
+    { title: '온라인 문의', href: '/support/inquiry' },
     { title: 'FAQ', href: '/support/faq' },
     { title: '칼럼', href: '/column' },
   ],

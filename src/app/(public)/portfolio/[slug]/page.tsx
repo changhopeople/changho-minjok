@@ -41,8 +41,14 @@ export default async function PortfolioDetailPage({ params }: PageProps) {
   };
 
   const colors = productColors[portfolio.product] || productColors['PVC창호'];
-  const hasBeforeAfter = portfolio.before_url && portfolio.after_url;
-  const hasGallery = portfolio.gallery_urls && portfolio.gallery_urls.length > 0;
+  const gallery = portfolio.gallery_urls || [];
+  // gallery_urls: [before들..., after들...] 구조에서 분리
+  const beforeImages = gallery.filter((url) => url.includes('/before'));
+  const afterImages = gallery.filter((url) => url.includes('/after'));
+  // gallery에 before/after 패턴이 없으면 기존 before_url/after_url 사용
+  const befores = beforeImages.length > 0 ? beforeImages : (portfolio.before_url ? [portfolio.before_url] : []);
+  const afters = afterImages.length > 0 ? afterImages : (portfolio.after_url ? [portfolio.after_url] : []);
+  const hasBeforeAfter = befores.length > 0 && afters.length > 0;
 
   return (
     <div className="pt-16 sm:pt-20">
@@ -79,38 +85,40 @@ export default async function PortfolioDetailPage({ params }: PageProps) {
           <div className="max-w-5xl mx-auto">
             <AnimatedSection>
               {hasBeforeAfter ? (
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div className="relative aspect-[4/3] rounded-2xl overflow-hidden">
-                    <Image
-                      src={portfolio.before_url!}
-                      alt="시공 전"
-                      fill
-                      className="object-cover"
-                    />
-                    <div className="absolute bottom-4 left-4 px-3 py-1 bg-black/50 text-white text-sm rounded-lg">
-                      Before
+                <div className="space-y-4">
+                  {/* 메인 Before/After 비교 (첫 번째 사진) */}
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div className="relative aspect-[4/3] rounded-2xl overflow-hidden">
+                      <Image src={befores[0]} alt="시공 전" fill className="object-cover" />
+                      <div className="absolute bottom-4 left-4 px-3 py-1 bg-black/50 text-white text-sm rounded-lg">Before</div>
+                    </div>
+                    <div className="relative aspect-[4/3] rounded-2xl overflow-hidden">
+                      <Image src={afters[0]} alt="시공 후" fill className="object-cover" />
+                      <div className="absolute bottom-4 left-4 px-3 py-1 bg-[#EF4444] text-white text-sm rounded-lg">After</div>
                     </div>
                   </div>
-                  <div className="relative aspect-[4/3] rounded-2xl overflow-hidden">
-                    <Image
-                      src={portfolio.after_url!}
-                      alt="시공 후"
-                      fill
-                      className="object-cover"
-                    />
-                    <div className="absolute bottom-4 left-4 px-3 py-1 bg-[#EF4444] text-white text-sm rounded-lg">
-                      After
+
+                  {/* 추가 사진들 (2,3번째) */}
+                  {(befores.length > 1 || afters.length > 1) && (
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                      {befores.slice(1).map((src, i) => (
+                        <div key={`b-${i}`} className="relative aspect-[4/3] rounded-xl overflow-hidden">
+                          <Image src={src} alt={`시공 전 ${i + 2}`} fill className="object-cover hover:scale-105 transition-transform duration-300" />
+                          <div className="absolute bottom-2 left-2 px-2 py-0.5 bg-black/50 text-white text-xs rounded">Before {i + 2}</div>
+                        </div>
+                      ))}
+                      {afters.slice(1).map((src, i) => (
+                        <div key={`a-${i}`} className="relative aspect-[4/3] rounded-xl overflow-hidden">
+                          <Image src={src} alt={`시공 후 ${i + 2}`} fill className="object-cover hover:scale-105 transition-transform duration-300" />
+                          <div className="absolute bottom-2 left-2 px-2 py-0.5 bg-[#EF4444] text-white text-xs rounded">After {i + 2}</div>
+                        </div>
+                      ))}
                     </div>
-                  </div>
+                  )}
                 </div>
               ) : portfolio.thumbnail_url ? (
                 <div className="relative aspect-video rounded-2xl overflow-hidden">
-                  <Image
-                    src={portfolio.thumbnail_url}
-                    alt={portfolio.title}
-                    fill
-                    className="object-cover"
-                  />
+                  <Image src={portfolio.thumbnail_url} alt={portfolio.title} fill className="object-cover" />
                 </div>
               ) : (
                 <div className="grid md:grid-cols-2 gap-4">
@@ -129,24 +137,6 @@ export default async function PortfolioDetailPage({ params }: PageProps) {
                 </div>
               )}
             </AnimatedSection>
-
-            {/* Gallery */}
-            {hasGallery && (
-              <AnimatedSection delay={0.1}>
-                <div className="mt-4 grid grid-cols-2 md:grid-cols-4 gap-4">
-                  {portfolio.gallery_urls!.map((src, index) => (
-                    <div key={index} className="relative aspect-square rounded-xl overflow-hidden">
-                      <Image
-                        src={src}
-                        alt={`${portfolio.title} - ${index + 1}`}
-                        fill
-                        className="object-cover hover:scale-105 transition-transform duration-300"
-                      />
-                    </div>
-                  ))}
-                </div>
-              </AnimatedSection>
-            )}
           </div>
         </div>
       </section>
