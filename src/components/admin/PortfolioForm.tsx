@@ -141,7 +141,7 @@ export default function PortfolioForm({ portfolio, action, submitLabel }: Portfo
         if (draft[key] === undefined) continue;
         const el = formRef.current.elements.namedItem(key);
         if (el && 'value' in el) {
-          (el as HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement).value = draft[key];
+          (el as unknown as HTMLInputElement).value = draft[key];
         }
       }
       setDraftRestored(true);
