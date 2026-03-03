@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { Upload, X, GripVertical } from 'lucide-react';
 import { toast } from 'sonner';
 import { PortfolioRecord } from '@/lib/supabase';
+import { uploadImageClient } from '@/lib/upload-client';
 
 interface ImageSlot {
   preview: string | null;
@@ -286,43 +287,49 @@ export default function PortfolioForm({ portfolio, action, submitLabel }: Portfo
     setDragOverState(null);
   };
 
-  // ── FormData 구성 ──
+  // ── 클라이언트에서 이미지를 Supabase에 직접 업로드 후 URL만 서버로 전달 ──
   const handleSubmit = async (formData: FormData) => {
     setIsSubmitting(true);
     try {
-      // 썸네일
-      formData.delete('existingThumbnail');
-      formData.set('existingThumbnail', thumbnailSlot.existingUrl || '');
-      formData.delete('thumbnail');
-      if (thumbnailSlot.newFile) {
-        formData.set('thumbnail', thumbnailSlot.newFile);
-      } else {
-        formData.set('thumbnail', new File([], '', { type: 'application/octet-stream' }));
-      }
+      const title = formData.get('title') as string;
+      const folder = title.replace(/[^a-zA-Z0-9가-힣]/g, '-').slice(0, 30) + '-' + Date.now().toString().slice(-6);
 
-      // 시공 전 3장
+      // 썸네일 업로드
+      let thumbnailUrl = thumbnailSlot.existingUrl || '';
+      if (thumbnailSlot.newFile) {
+        thumbnailUrl = await uploadImageClient(thumbnailSlot.newFile, folder);
+      }
+      formData.set('thumbnailUrl', thumbnailUrl);
+
+      // 시공 전 3장 업로드
       for (let i = 0; i < 3; i++) {
         const slot = beforeSlots[i];
-        formData.set(`existingBefore_${i}`, slot.existingUrl || '');
+        let url = slot.existingUrl || '';
         if (slot.newFile) {
-          formData.set(`before_${i}`, slot.newFile);
-        } else {
-          formData.set(`before_${i}`, new File([], '', { type: 'application/octet-stream' }));
+          url = await uploadImageClient(slot.newFile, folder);
         }
+        formData.set(`beforeUrl_${i}`, url);
       }
 
-      // 시공 후 3장
+      // 시공 후 3장 업로드
       for (let i = 0; i < 3; i++) {
         const slot = afterSlots[i];
-        formData.set(`existingAfter_${i}`, slot.existingUrl || '');
+        let url = slot.existingUrl || '';
         if (slot.newFile) {
-          formData.set(`after_${i}`, slot.newFile);
-        } else {
-          formData.set(`after_${i}`, new File([], '', { type: 'application/octet-stream' }));
+          url = await uploadImageClient(slot.newFile, folder);
         }
+        formData.set(`afterUrl_${i}`, url);
       }
 
-      // 이전 단일 필드 정리
+      // 파일 바이너리는 FormData에서 제거 (URL만 전달)
+      formData.delete('thumbnail');
+      for (let i = 0; i < 3; i++) {
+        formData.delete(`before_${i}`);
+        formData.delete(`after_${i}`);
+        formData.delete(`existingBefore_${i}`);
+        formData.delete(`existingAfter_${i}`);
+      }
+      formData.delete('existingThumbnail');
       formData.delete('existingBefore');
       formData.delete('existingAfter');
       formData.delete('before');
@@ -335,7 +342,7 @@ export default function PortfolioForm({ portfolio, action, submitLabel }: Portfo
         throw error;
       }
       console.error('시공사례 저장 중 오류:', error);
-      toast.error('저장 중 오류가 발생했습니다. 다시 시도해주세요.');
+      toast.error(error instanceof Error ? error.message : '저장 중 오류가 발생했습니다. 다시 시도해주세요.');
     } finally {
       setIsSubmitting(false);
     }
