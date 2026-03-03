@@ -2,19 +2,9 @@
 
 import { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Snowflake, Thermometer, Sun, TrendingDown, Zap, ThermometerSun } from 'lucide-react';
+import { Snowflake, Thermometer, Sun, TrendingDown, Zap, ThermometerSun, Home, Flame, PiggyBank, TrendingUp } from 'lucide-react';
 
 /* ───────── 온도 → 열화상 색상 매핑 ───────── */
-function tempToColor(temp: number): string {
-  if (temp <= -5) return '#1a0a4e';   // 보라/남색 (극저온)
-  if (temp <= 2) return '#1e3a8a';    // 진한 파랑
-  if (temp <= 8) return '#0891b2';    // 시안
-  if (temp <= 14) return '#22c55e';   // 초록
-  if (temp <= 18) return '#eab308';   // 노랑
-  if (temp <= 20) return '#f97316';   // 주황
-  return '#ef4444';                    // 빨강 (따뜻)
-}
-
 function tempToColorSmooth(temp: number): string {
   // 더 세밀한 색상 보간
   const stops: [number, [number, number, number]][] = [
@@ -182,9 +172,16 @@ function TempIcon({ temp }: { temp: number }) {
   return <Sun className="w-5 h-5 text-yellow-400" />;
 }
 
+/* ───────── 금액 포맷 ───────── */
+function formatWon(value: number): string {
+  if (value >= 10000) return `${Math.round(value / 10000)}만원`;
+  return `${value.toLocaleString()}원`;
+}
+
 /* ───────── 메인 컴포넌트 ───────── */
 export default function ThermalVisualizer() {
   const [outdoorTemp, setOutdoorTemp] = useState(-5);
+  const [area, setArea] = useState(30);
   const [activeTab, setActiveTab] = useState<'regular' | 'insulated'>('regular');
 
   const calc = useMemo(() => {
@@ -200,6 +197,14 @@ export default function ThermalVisualizer() {
     const heatLossReduction = regularHeatLoss - insulatedHeatLoss;
     const tempImprovement = insulatedInnerTemp - regularInnerTemp;
 
+    // 비용 계산 (평당 월 5,000원 기본 난방단가)
+    const baseCost = area * 5000;
+    const regularMonthlyCost = Math.round(baseCost * (1 + (regularHeatLoss / 100) * 0.6));
+    const insulatedMonthlyCost = Math.round(baseCost * (1 + (insulatedHeatLoss / 100) * 0.6));
+    const monthlySaving = regularMonthlyCost - insulatedMonthlyCost;
+    const annualSaving = monthlySaving * 5; // 겨울 5개월 기준
+    const tenYearSaving = annualSaving * 10;
+
     return {
       regularHeatLoss,
       regularInnerTemp,
@@ -208,8 +213,13 @@ export default function ThermalVisualizer() {
       energySaving,
       heatLossReduction,
       tempImprovement,
+      regularMonthlyCost,
+      insulatedMonthlyCost,
+      monthlySaving,
+      annualSaving,
+      tenYearSaving,
     };
-  }, [outdoorTemp]);
+  }, [outdoorTemp, area]);
 
   return (
     <div className="max-w-5xl mx-auto">
@@ -267,34 +277,66 @@ export default function ThermalVisualizer() {
         </AnimatePresence>
       </div>
 
-      {/* 온도 슬라이더 */}
-      <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 mb-8 border border-white/10">
-        <div className="flex items-center justify-between mb-4">
-          <div className="flex items-center gap-2">
-            <TempIcon temp={outdoorTemp} />
-            <span className="text-white font-bold">외부 온도</span>
+      {/* 컨트롤 영역: 온도 + 평수 슬라이더 */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+        {/* 온도 슬라이더 */}
+        <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
+          <div className="flex items-center justify-between mb-4">
+            <div className="flex items-center gap-2">
+              <TempIcon temp={outdoorTemp} />
+              <span className="text-white font-bold">외부 온도</span>
+            </div>
+            <span className="text-2xl font-extrabold text-white">{outdoorTemp}°C</span>
           </div>
-          <span className="text-2xl font-extrabold text-white">{outdoorTemp}°C</span>
+
+          <input
+            type="range"
+            min={-20}
+            max={10}
+            value={outdoorTemp}
+            onChange={(e) => setOutdoorTemp(Number(e.target.value))}
+            className="w-full h-3 rounded-full appearance-none cursor-pointer"
+            style={{
+              background: `linear-gradient(to right, #1a0a4e, #1e3a8a, #0891b2, #22c55e, #eab308)`,
+            }}
+          />
+
+          <div className="flex justify-between text-xs text-white/50 mt-2">
+            <span>-20°C (한파)</span>
+            <span>-10°C</span>
+            <span>0°C</span>
+            <span>10°C (봄)</span>
+          </div>
         </div>
 
-        <input
-          type="range"
-          min={-20}
-          max={10}
-          value={outdoorTemp}
-          onChange={(e) => setOutdoorTemp(Number(e.target.value))}
-          className="w-full h-3 rounded-full appearance-none cursor-pointer"
-          style={{
-            background: `linear-gradient(to right, #1a0a4e, #1e3a8a, #0891b2, #22c55e, #eab308)`,
-          }}
-        />
+        {/* 평수 슬라이더 */}
+        <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
+          <div className="flex items-center justify-between mb-4">
+            <div className="flex items-center gap-2">
+              <Home className="w-5 h-5 text-white/80" />
+              <span className="text-white font-bold">집 평수</span>
+            </div>
+            <span className="text-2xl font-extrabold text-white">{area}<span className="text-base font-bold text-white/60 ml-1">평</span></span>
+          </div>
 
-        {/* 눈금 */}
-        <div className="flex justify-between text-xs text-white/50 mt-2">
-          <span>-20°C (한파)</span>
-          <span>-10°C</span>
-          <span>0°C</span>
-          <span>10°C (봄)</span>
+          <input
+            type="range"
+            min={10}
+            max={60}
+            value={area}
+            onChange={(e) => setArea(Number(e.target.value))}
+            className="w-full h-3 rounded-full appearance-none cursor-pointer accent-[#EF4444]"
+            style={{
+              background: `linear-gradient(to right, #374151, #6b7280, #9ca3af)`,
+            }}
+          />
+
+          <div className="flex justify-between text-xs text-white/50 mt-2">
+            <span>10평</span>
+            <span>25평</span>
+            <span>40평</span>
+            <span>60평</span>
+          </div>
         </div>
       </div>
 
@@ -347,6 +389,105 @@ export default function ThermalVisualizer() {
             <span className="text-sm font-bold text-white/60 ml-1">°C</span>
           </p>
         </motion.div>
+      </div>
+
+      {/* 비용 비교 섹션 */}
+      <div className="mt-4 bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
+        <div className="flex items-center gap-2 mb-5">
+          <Flame className="w-5 h-5 text-orange-400" />
+          <span className="text-white font-bold">월 난방비 비교</span>
+          <span className="text-xs text-white/40 ml-auto">겨울철 기준</span>
+        </div>
+
+        {/* 비용 비교 바 */}
+        <div className="space-y-4 mb-6">
+          {/* 일반 창호 */}
+          <div>
+            <div className="flex items-center justify-between mb-2">
+              <span className="text-sm text-white/60">일반 창호</span>
+              <span className="text-lg font-extrabold text-red-400">
+                월 {formatWon(calc.regularMonthlyCost)}
+              </span>
+            </div>
+            <div className="h-3 bg-white/5 rounded-full overflow-hidden">
+              <motion.div
+                className="h-full bg-gradient-to-r from-red-500 to-red-400 rounded-full"
+                animate={{ width: `${Math.min(100, (calc.regularMonthlyCost / (60 * 5000 * 1.6)) * 100)}%` }}
+                transition={{ duration: 0.4 }}
+              />
+            </div>
+          </div>
+
+          {/* 단열 창호 */}
+          <div>
+            <div className="flex items-center justify-between mb-2">
+              <span className="text-sm text-white/60">단열 창호</span>
+              <span className="text-lg font-extrabold text-green-400">
+                월 {formatWon(calc.insulatedMonthlyCost)}
+              </span>
+            </div>
+            <div className="h-3 bg-white/5 rounded-full overflow-hidden">
+              <motion.div
+                className="h-full bg-gradient-to-r from-green-500 to-green-400 rounded-full"
+                animate={{ width: `${Math.min(100, (calc.insulatedMonthlyCost / (60 * 5000 * 1.6)) * 100)}%` }}
+                transition={{ duration: 0.4 }}
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* 절약 금액 카드 */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+          <motion.div
+            className="bg-gradient-to-br from-orange-500/20 to-orange-600/10 rounded-xl p-4 text-center border border-orange-500/20"
+            animate={{ scale: [1, 1.02, 1] }}
+            transition={{ duration: 0.3 }}
+            key={`monthly-${calc.monthlySaving}`}
+          >
+            <div className="flex items-center justify-center gap-1.5 mb-1">
+              <PiggyBank className="w-4 h-4 text-orange-400" />
+              <p className="text-xs text-white/50">월 절약액</p>
+            </div>
+            <p className="text-xl font-extrabold text-orange-400">
+              {formatWon(calc.monthlySaving)}
+            </p>
+          </motion.div>
+
+          <motion.div
+            className="bg-gradient-to-br from-green-500/20 to-green-600/10 rounded-xl p-4 text-center border border-green-500/20"
+            animate={{ scale: [1, 1.02, 1] }}
+            transition={{ duration: 0.3 }}
+            key={`annual-${calc.annualSaving}`}
+          >
+            <div className="flex items-center justify-center gap-1.5 mb-1">
+              <TrendingUp className="w-4 h-4 text-green-400" />
+              <p className="text-xs text-white/50">연간 절약액</p>
+            </div>
+            <p className="text-xl font-extrabold text-green-400">
+              {formatWon(calc.annualSaving)}
+            </p>
+          </motion.div>
+
+          <motion.div
+            className="bg-gradient-to-br from-emerald-500/20 to-emerald-600/10 rounded-xl p-4 text-center border border-emerald-500/20"
+            animate={{ scale: [1, 1.02, 1] }}
+            transition={{ duration: 0.3 }}
+            key={`tenyear-${calc.tenYearSaving}`}
+          >
+            <div className="flex items-center justify-center gap-1.5 mb-1">
+              <TrendingUp className="w-4 h-4 text-emerald-400" />
+              <p className="text-xs text-white/50">10년 절약액</p>
+            </div>
+            <p className="text-xl font-extrabold text-emerald-400">
+              {formatWon(calc.tenYearSaving)}
+            </p>
+          </motion.div>
+        </div>
+
+        {/* 임팩트 문구 */}
+        <p className="text-center text-white/40 text-xs mt-4">
+          * {area}평 기준, 겨울 5개월 난방 시 예상 절약액 (평당 월 5,000원 기본 난방단가 기준)
+        </p>
       </div>
     </div>
   );
