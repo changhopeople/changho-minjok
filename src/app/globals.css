@@ -93,6 +93,34 @@
   --sidebar-ring: #EF4444;
 }
 
+/* 현경시스템 테마 */
+[data-site="hyunkyung"] {
+  --hk-navy: #0C1B3A;
+  --hk-navy-light: #1E3A5F;
+  --hk-blue: #1B4F8A;
+  --hk-gold: #C4922A;
+  --hk-gold-light: #F5E6C8;
+
+  --background: #FFFFFF;
+  --foreground: #1E1E1E;
+  --card: #FFFFFF;
+  --card-foreground: #1E1E1E;
+  --popover: #FFFFFF;
+  --popover-foreground: #1E1E1E;
+  --primary: #0C1B3A;
+  --primary-foreground: #FFFFFF;
+  --secondary: #F0F4F8;
+  --secondary-foreground: #0C1B3A;
+  --muted: #F0F4F8;
+  --muted-foreground: #64748B;
+  --accent: #F5E6C8;
+  --accent-foreground: #92610E;
+  --destructive: #DC2626;
+  --border: #E2E8F0;
+  --input: #F0F4F8;
+  --ring: #0C1B3A;
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -463,4 +491,50 @@
   float: left;
   height: 0;
   pointer-events: none;
+}
+
+/* ─── 현경시스템 컴포넌트 스타일 ─── */
+[data-site="hyunkyung"] .hk-section {
+  @apply py-16 md:py-24;
+}
+
+[data-site="hyunkyung"] .hk-section-header {
+  @apply text-center mb-12 md:mb-16;
+}
+
+[data-site="hyunkyung"] .hk-card {
+  @apply bg-white rounded-lg border border-[#E2E8F0] transition-all duration-300;
+}
+
+[data-site="hyunkyung"] .hk-card:hover {
+  @apply border-[#C4922A] shadow-lg;
+}
+
+[data-site="hyunkyung"] .hk-btn {
+  @apply bg-[#0C1B3A] hover:bg-[#1E3A5F] text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300;
+}
+
+[data-site="hyunkyung"] .hk-btn-gold {
+  @apply bg-[#C4922A] hover:bg-[#A87B22] text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300;
+}
+
+[data-site="hyunkyung"] .hk-btn-outline {
+  @apply bg-transparent border-2 border-[#0C1B3A] text-[#0C1B3A] hover:bg-[#0C1B3A] hover:text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300;
+}
+
+[data-site="hyunkyung"] h1,
+[data-site="hyunkyung"] h2,
+[data-site="hyunkyung"] h3,
+[data-site="hyunkyung"] h4 {
+  color: var(--hk-navy);
+  font-weight: 700;
+}
+
+[data-site="hyunkyung"] ::selection {
+  background: rgba(12, 27, 58, 0.15);
+  color: #0C1B3A;
+}
+
+[data-site="hyunkyung"] :focus-visible {
+  outline-color: #0C1B3A;
 }

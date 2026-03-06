@@ -21,6 +21,7 @@ import {
   ChevronLeft,
   ChevronRight,
   Zap,
+  Building2,
 } from 'lucide-react';
 import { useState } from 'react';
 
@@ -68,6 +69,14 @@ const navGroups: NavGroup[] = [
     title: '분석',
     items: [
       { href: '/admin/analytics', label: '통계/분석', icon: BarChart3 },
+    ],
+  },
+  {
+    title: '현경시스템',
+    items: [
+      { href: '/admin/hyunkyung', label: 'HK 대시보드', icon: Building2 },
+      { href: '/admin/hyunkyung/portfolio', label: 'HK 시공실적', icon: FolderOpen },
+      { href: '/admin/hyunkyung/inquiries', label: 'HK 문의관리', icon: MessageSquare },
     ],
   },
   {
