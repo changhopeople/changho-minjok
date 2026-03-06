@@ -1,13 +1,14 @@
 'use client';
 
 import Link from 'next/link';
-import { ArrowRight, Building2, DoorOpen, Sun } from 'lucide-react';
+import { ArrowRight, Building2, DoorOpen, Sun, Layers } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { HK_BUSINESS_AREAS } from '@/lib/constants/hyunkyung';
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   window: DoorOpen,
+  layers: Layers,
   building: Building2,
   solar: Sun,
 };
@@ -29,12 +30,12 @@ export default function HKBusinessAreas() {
             </h2>
           </div>
           <p className="text-[#64748B] max-w-md md:text-right">
-            창호 제조부터 건설 시공, 태양광 발전까지<br className="hidden md:block" />
-            통합 솔루션을 제공합니다
+            PVC 창호 조립부터 고기능 복층유리 가공, 건설 시공까지<br className="hidden md:block" />
+            수직 통합 솔루션을 제공합니다
           </p>
         </div>
 
-        <div ref={ref} className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div ref={ref} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {HK_BUSINESS_AREAS.map((area, i) => {
             const Icon = iconMap[area.icon] || Building2;
             return (

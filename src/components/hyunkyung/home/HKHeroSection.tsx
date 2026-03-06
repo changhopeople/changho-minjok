@@ -49,7 +49,7 @@ export default function HKHeroSection() {
               <div className="flex items-center gap-3 mb-8">
                 <div className="h-px w-12 bg-[var(--hk-gold)]" />
                 <span className="text-[var(--hk-gold)] text-sm font-semibold tracking-[0.2em] uppercase">
-                  Since 2020 &mdash; 건설의 새로운 기준
+                  Since 2020 &mdash; PVC 창호 &amp; 복층유리 스마트 제조
                 </span>
               </div>
 
@@ -75,9 +75,9 @@ export default function HKHeroSection() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-gray-400 text-lg md:text-xl leading-relaxed mb-10 max-w-lg"
             >
-              3,500평 스마트 팩토리 기반의 창호 제조·건설 전문기업.
+              대지 3,300평, 전 공정 자동화 스마트팩토리 기반 PVC 창호 조립 및 기능성 복층유리 가공 전문기업.
               <br />
-              <span className="text-gray-300">전년 대비 116% 성장</span>으로 대한민국 건설 산업을 선도합니다.
+              <span className="text-gray-300">4년간 매출 428% 성장</span>, 전국 5개 권역에 공급합니다.
             </motion.p>
 
             {/* CTA 버튼 */}
@@ -110,9 +110,9 @@ export default function HKHeroSection() {
               className="flex items-center gap-8 mt-14 pt-8 border-t border-white/10"
             >
               {[
-                { label: '매출액', value: '49.6억', sub: '2023' },
-                { label: '성장률', value: '116%', sub: 'YoY' },
-                { label: '누적 시공', value: '500건+', sub: '' },
+                { label: '매출액', value: '56.1억', sub: '2024' },
+                { label: '4년 성장', value: '428%', sub: '\'21→\'24' },
+                { label: '영업이익률', value: '6.8%', sub: '2024' },
               ].map((item) => (
                 <div key={item.label}>
                   <p className="text-white font-bold text-xl md:text-2xl">{item.value}</p>
@@ -140,18 +140,19 @@ export default function HKHeroSection() {
                     <span className="text-[var(--hk-gold)] font-bold text-2xl">HK</span>
                   </div>
                   <p className="text-white/60 text-sm">스마트 팩토리</p>
-                  <p className="text-white font-bold text-lg mt-1">3,500평</p>
+                  <p className="text-white font-bold text-lg mt-1">대지 3,300평</p>
                   <div className="w-16 h-px bg-[var(--hk-gold)]/30 my-4" />
                   <p className="text-white/40 text-xs leading-relaxed">
-                    최신 자동화 설비 기반<br />고품질 창호 생산
+                    TPS간봉 자동부착·CNC 절단<br />전 공정 자동화 생산
                   </p>
                 </div>
               </div>
 
               {/* 플로팅 카드 */}
               <div className="absolute -bottom-6 -left-6 bg-white/10 backdrop-blur-sm border border-white/10 rounded-xl p-4 min-w-[180px]">
-                <p className="text-[var(--hk-gold)] font-bold text-2xl">116%</p>
-                <p className="text-white/60 text-xs">전년 대비 매출 성장률</p>
+                <p className="text-[var(--hk-gold)] font-bold text-2xl">428%</p>
+                <p className="text-white/60 text-xs">4년간 매출 성장률</p>
+                <p className="text-white/40 text-[10px] mt-0.5">13.1억 → 56.1억</p>
               </div>
 
               {/* 우상단 인증 뱃지 */}

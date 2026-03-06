@@ -29,9 +29,9 @@ export default function HKCEOMessage() {
             </div>
             {/* 플로팅 카드 */}
             <div className="absolute -bottom-6 -right-6 bg-[var(--hk-navy)] text-white rounded-xl p-5 shadow-xl max-w-[200px]">
-              <p className="text-[var(--hk-gold)] font-bold text-2xl mb-1">116%</p>
-              <p className="text-xs text-gray-400">전년 대비 매출 성장</p>
-              <p className="text-xs text-gray-500 mt-1">2023년 기준</p>
+              <p className="text-[var(--hk-gold)] font-bold text-2xl mb-1">428%</p>
+              <p className="text-xs text-gray-400">4년간 매출 성장</p>
+              <p className="text-xs text-gray-500 mt-1">13.1억→56.1억</p>
             </div>
           </motion.div>
 
@@ -58,18 +58,24 @@ export default function HKCEOMessage() {
               </p>
               <p>
                 현경시스템은 2020년 법인 설립 이래, <strong className="text-[var(--hk-navy)]">&quot;신뢰와 기술로 짓는 내일&quot;</strong>이라는
-                경영 철학 아래 대한민국 건설 산업의 발전에 기여하고 있습니다.
+                경영 철학 아래, 리모델링 시장을 중심으로 꾸준히 성장해 왔습니다.
               </p>
               <p>
-                경상북도 청도에 위치한 3,500평 규모의 스마트 팩토리를 기반으로 PVC, 알루미늄, 시스템 창호를 제조하며,
-                철저한 품질 관리 체계와 체계적인 시공 프로세스를 통해 고객의 신뢰를 얻어왔습니다.
+                경상북도 청도에 위치한 <strong className="text-[var(--hk-navy)]">대지 11,000㎡(약 3,300평)</strong> 규모의 공장에서
+                PVC 창호 조립과 기능성 복층유리 가공을 수행하고 있으며, 최근에는 350평 규모의 스마트팩토리를
+                증축하여 TPS간봉 자동부착 어플리케이터를 포함한 복층유리 자동 생산라인을 구축했습니다.
               </p>
               <p>
-                2023년에는 전년 대비 <strong className="text-[var(--hk-navy)]">116% 매출 성장</strong>을 기록하며 빠르게 성장하고 있으며,
-                창호 사업에서 건설, 태양광 발전까지 사업 영역을 확장하며 지속 가능한 성장을 추구하고 있습니다.
+                판유리 원판의 입고부터 CNC 자동 절단, 복층유리 완제품 생산까지 <strong className="text-[var(--hk-navy)]">전 공정을 자동화</strong>하여
+                최소 인원으로도 안정적인 생산이 가능하며, ERP 시스템을 통해 공정 전반을 디지털화했습니다.
               </p>
               <p>
-                앞으로도 끊임없는 기술 혁신과 품질 개선을 통해 고객 여러분의 기대에 부응하는 기업이 되겠습니다.
+                그 결과, 2021년 13.1억에서 2024년 56.1억으로 <strong className="text-[var(--hk-navy)]">4년간 매출 428% 성장</strong>을 달성했으며,
+                수도권·충청·호남·영남·강원 등 전국 주요 지역에 제품을 공급하고 있습니다.
+              </p>
+              <p>
+                앞으로 알루미늄 창호 시장 진출과 관공서 조달시장 진출을 통해, 독자적인 경쟁력을 갖춘 리모델링 전문 기업으로
+                자리매김하겠습니다.
               </p>
             </div>
 
