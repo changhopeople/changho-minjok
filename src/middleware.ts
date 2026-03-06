@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 
 // 현경시스템 도메인 목록 (Vercel에서 추가한 도메인)
 const HK_DOMAINS = [
-  'hyunkyung.vercel.app',
+  'hyunkyung.changhopeople.com',
   'hyunkyungsystem.com',
   'hyunkyungsystem.co.kr',
   'www.hyunkyungsystem.com',
