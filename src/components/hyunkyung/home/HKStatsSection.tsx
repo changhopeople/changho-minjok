@@ -1,7 +1,7 @@
 'use client';
 
 import { useInView } from 'react-intersection-observer';
-import { motion, useMotionValue, useTransform, animate } from 'framer-motion';
+import { useMotionValue, useTransform, animate } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { HK_STATS } from '@/lib/constants/hyunkyung';
 
@@ -18,7 +18,7 @@ function CountUp({ target, inView }: { target: number; inView: boolean }) {
   useEffect(() => {
     if (inView) {
       const controls = animate(count, target, {
-        duration: 2,
+        duration: 2.5,
         ease: 'easeOut',
       });
       return controls.stop;
@@ -37,46 +37,46 @@ export default function HKStatsSection() {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.3 });
 
   return (
-    <section className="relative bg-white overflow-hidden">
-      {/* 탑 골드 라인 */}
-      <div className="h-1 bg-gradient-to-r from-transparent via-[var(--hk-gold)] to-transparent" />
+    <section className="relative bg-[#050D1A] overflow-hidden">
+      {/* 풀블리드 다크 배경 */}
+      <div ref={ref} className="py-20 md:py-28 lg:py-32">
+        <div className="max-w-[1400px] mx-auto px-6">
+          {/* 라벨 */}
+          <div className="text-center mb-16">
+            <p className="text-[var(--hk-gold)] text-xs font-semibold tracking-[0.2em] uppercase">
+              KEY FIGURES
+            </p>
+          </div>
 
-      <div ref={ref} className="max-w-7xl mx-auto px-4 py-20 md:py-28">
-        {/* 상단 라벨 */}
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-14"
-        >
-          <p className="text-[var(--hk-gold)] text-sm font-semibold tracking-[0.15em] uppercase mb-2">
-            KEY FIGURES
-          </p>
-          <p className="text-[#94A3B8] text-sm">현경시스템의 핵심 수치</p>
-        </motion.div>
-
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-0 md:divide-x divide-[#E2E8F0]">
-          {HK_STATS.map((stat, i) => (
-            <motion.div
-              key={stat.label}
-              initial={{ opacity: 0, y: 30 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: i * 0.15 }}
-              className="text-center px-4"
-            >
-              <div className="text-4xl sm:text-5xl md:text-6xl font-bold text-[var(--hk-navy)] tracking-tight leading-none">
-                {stat.prefix}
-                <CountUp target={stat.value} inView={inView} />
-                <span className="text-[var(--hk-gold)] text-2xl sm:text-3xl md:text-4xl font-semibold ml-0.5">
-                  {stat.suffix}
-                </span>
+          {/* 초대형 숫자 그리드 */}
+          <div className="grid grid-cols-2 lg:grid-cols-4">
+            {HK_STATS.map((stat, i) => (
+              <div
+                key={stat.label}
+                className={`text-center px-4 py-8 lg:py-0 ${
+                  i < HK_STATS.length - 1 ? 'lg:border-r lg:border-white/10' : ''
+                } ${i < 2 ? 'border-b lg:border-b-0 border-white/10' : ''}`}
+                style={{
+                  opacity: inView ? 1 : 0,
+                  transition: `opacity 0.6s ease ${i * 0.15}s`,
+                }}
+              >
+                <div className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black text-white tracking-tighter leading-none">
+                  {stat.prefix}
+                  <CountUp target={stat.value} inView={inView} />
+                  <span className="text-[var(--hk-gold)] text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black ml-1">
+                    {stat.suffix}
+                  </span>
+                </div>
+                <p className="text-white/40 text-sm mt-4 tracking-[0.1em]">{stat.label}</p>
               </div>
-              <div className="w-8 h-0.5 bg-[var(--hk-gold)]/30 mx-auto my-4" />
-              <p className="text-[#64748B] font-medium text-sm md:text-base tracking-tight">{stat.label}</p>
-            </motion.div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
+
+      {/* 하단 골드 라인 */}
+      <div className="h-px bg-[var(--hk-gold)]/30" />
     </section>
   );
 }

@@ -1,8 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { ArrowRight, MapPin, Calendar, ArrowUpRight } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { ArrowRight } from 'lucide-react';
 import { useInView } from 'react-intersection-observer';
 
 const PREVIEW_PROJECTS = [
@@ -14,7 +13,6 @@ const PREVIEW_PROJECTS = [
     year: '2024',
     type: '아파트',
     scale: '500세대',
-    thumbnail: null,
   },
   {
     slug: 'project-2',
@@ -24,7 +22,6 @@ const PREVIEW_PROJECTS = [
     year: '2024',
     type: '주상복합',
     scale: '지상 35층',
-    thumbnail: null,
   },
   {
     slug: 'project-3',
@@ -34,7 +31,6 @@ const PREVIEW_PROJECTS = [
     year: '2023',
     type: '오피스텔',
     scale: '지상 25층',
-    thumbnail: null,
   },
 ];
 
@@ -43,79 +39,122 @@ export default function HKPortfolioPreview() {
 
   return (
     <section className="py-20 md:py-32 bg-[#F8FAFC]">
-      <div className="max-w-7xl mx-auto px-4">
+      <div className="max-w-[1400px] mx-auto px-6">
         {/* 헤더 */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
           <div>
-            <p className="text-[var(--hk-gold)] text-sm font-semibold tracking-[0.15em] uppercase mb-3">
+            <p className="text-[var(--hk-gold)] text-xs font-semibold tracking-[0.2em] uppercase mb-3">
               PORTFOLIO
             </p>
-            <h2 className="text-3xl md:text-4xl font-bold text-[var(--hk-navy)]">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-[var(--hk-navy)]">
               대표 시공실적
             </h2>
           </div>
           <Link
             href="/hyunkyung/portfolio"
-            className="inline-flex items-center gap-2 text-[var(--hk-navy)] font-semibold hover:text-[var(--hk-gold)] transition-colors group"
+            className="text-[var(--hk-navy)] font-semibold text-sm hover:text-[var(--hk-gold)] transition-colors border-b border-[var(--hk-navy)] hover:border-[var(--hk-gold)] pb-0.5 inline-block"
           >
-            전체보기
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            모든 실적 보기
           </Link>
         </div>
 
-        <div ref={ref} className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {PREVIEW_PROJECTS.map((project, i) => (
-            <motion.div
-              key={project.slug}
-              initial={{ opacity: 0, y: 40 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: i * 0.12 }}
-            >
-              <Link href={`/hyunkyung/portfolio/${project.slug}`} className="block group">
-                <div className="bg-white border border-[#E2E8F0] rounded-xl overflow-hidden hover:shadow-xl hover:border-[var(--hk-gold)]/30 transition-all duration-500">
-                  {/* 썸네일 */}
-                  <div className="aspect-[16/10] bg-gradient-to-br from-[#0C1B3A]/5 to-[#1E3A5F]/10 relative overflow-hidden">
-                    <div className="w-full h-full flex flex-col items-center justify-center text-[#CBD5E1]">
-                      <svg className="w-12 h-12 mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={0.8}>
-                        <path d="M3 21h18M9 8h1M9 12h1M9 16h1M14 8h1M14 12h1M14 16h1M5 21V5a2 2 0 012-2h10a2 2 0 012 2v16" />
-                      </svg>
-                      <span className="text-xs">{project.scale}</span>
-                    </div>
+        <div ref={ref}>
+          {/* 1행: 대형 카드 1개 (풀폭) */}
+          <Link
+            href={`/hyunkyung/portfolio/${PREVIEW_PROJECTS[0].slug}`}
+            className="group block relative overflow-hidden mb-4"
+            style={{
+              opacity: inView ? 1 : 0,
+              transition: 'opacity 0.6s ease',
+            }}
+          >
+            <div className="aspect-[21/9] relative bg-gradient-to-br from-[#0C1B3A]/10 to-[#1E3A5F]/20 overflow-hidden">
+              {/* 플레이스홀더 배경 */}
+              <div className="absolute inset-0 bg-gradient-to-br from-[#0C1B3A] to-[#1E3A5F]" />
+              <div
+                className="absolute inset-0 opacity-[0.04]"
+                style={{
+                  backgroundImage: `repeating-linear-gradient(90deg, transparent, transparent 100px, rgba(255,255,255,0.1) 100px, rgba(255,255,255,0.1) 101px)`,
+                }}
+              />
 
-                    {/* 카테고리 뱃지 */}
-                    <div className="absolute top-3 left-3 flex gap-2">
-                      <span className="px-2.5 py-1 bg-[var(--hk-navy)] text-white text-xs font-medium rounded">
-                        {project.type}
-                      </span>
-                    </div>
+              {/* 호버 오버레이 */}
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-700" />
 
-                    {/* 호버 화살표 */}
-                    <div className="absolute top-3 right-3 w-8 h-8 bg-white/0 group-hover:bg-white rounded-lg flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
-                      <ArrowUpRight className="w-4 h-4 text-[var(--hk-navy)]" />
-                    </div>
+              {/* 스케일 표시 */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="text-center">
+                  <svg className="w-16 h-16 text-white/10 mx-auto mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={0.5}>
+                    <path d="M3 21h18M9 8h1M9 12h1M9 16h1M14 8h1M14 12h1M14 16h1M5 21V5a2 2 0 012-2h10a2 2 0 012 2v16" />
+                  </svg>
+                  <span className="text-white/15 text-sm">{PREVIEW_PROJECTS[0].scale}</span>
+                </div>
+              </div>
+
+              {/* 정보 오버레이 */}
+              <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12 bg-gradient-to-t from-black/80 via-black/40 to-transparent">
+                <div className="flex items-end justify-between">
+                  <div>
+                    <span className="text-[var(--hk-gold)] text-xs tracking-[0.2em] uppercase font-semibold">
+                      {PREVIEW_PROJECTS[0].type} · {PREVIEW_PROJECTS[0].year}
+                    </span>
+                    <h3 className="!text-white text-2xl md:text-3xl font-black mt-2 group-hover:text-[var(--hk-gold)] transition-colors">
+                      {PREVIEW_PROJECTS[0].title}
+                    </h3>
+                    <p className="text-white/50 text-sm mt-1">
+                      {PREVIEW_PROJECTS[0].location} · {PREVIEW_PROJECTS[0].client}
+                    </p>
+                  </div>
+                  <ArrowRight className="w-6 h-6 text-white/30 group-hover:text-[var(--hk-gold)] group-hover:translate-x-1 transition-all flex-shrink-0" />
+                </div>
+              </div>
+            </div>
+          </Link>
+
+          {/* 2행: 중형 카드 2개 (각 50%) */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {PREVIEW_PROJECTS.slice(1).map((project, i) => (
+              <Link
+                key={project.slug}
+                href={`/hyunkyung/portfolio/${project.slug}`}
+                className="group block relative overflow-hidden"
+                style={{
+                  opacity: inView ? 1 : 0,
+                  transition: `opacity 0.6s ease ${0.2 + i * 0.15}s`,
+                }}
+              >
+                <div className="aspect-[16/9] relative overflow-hidden">
+                  {/* 플레이스홀더 배경 */}
+                  <div className={`absolute inset-0 ${
+                    i === 0
+                      ? 'bg-gradient-to-br from-[#1E3A5F] to-[#0C1B3A]'
+                      : 'bg-gradient-to-br from-[#0A1628] to-[#0F2240]'
+                  }`} />
+
+                  {/* 호버 오버레이 */}
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-700" />
+
+                  {/* 스케일 표시 */}
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <span className="text-white/10 text-sm">{project.scale}</span>
                   </div>
 
-                  {/* 정보 */}
-                  <div className="p-6">
-                    <h3 className="font-bold text-[var(--hk-navy)] text-lg mb-2 group-hover:text-[var(--hk-gold)] transition-colors">
+                  {/* 정보 오버레이 */}
+                  <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 via-black/30 to-transparent">
+                    <span className="text-[var(--hk-gold)] text-xs tracking-[0.2em] uppercase font-semibold">
+                      {project.type} · {project.year}
+                    </span>
+                    <h3 className="!text-white text-lg md:text-xl font-black mt-1 group-hover:text-[var(--hk-gold)] transition-colors">
                       {project.title}
                     </h3>
-                    <p className="text-sm text-[#94A3B8] mb-4">{project.client}</p>
-                    <div className="flex items-center gap-4 text-xs text-[#94A3B8]">
-                      <span className="flex items-center gap-1">
-                        <MapPin className="w-3 h-3" />
-                        {project.location}
-                      </span>
-                      <span className="flex items-center gap-1">
-                        <Calendar className="w-3 h-3" />
-                        {project.year}
-                      </span>
-                    </div>
+                    <p className="text-white/50 text-xs mt-1">
+                      {project.location}
+                    </p>
                   </div>
                 </div>
               </Link>
-            </motion.div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>
