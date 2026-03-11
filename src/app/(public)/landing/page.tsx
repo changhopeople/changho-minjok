@@ -10,7 +10,7 @@ import LandingReviews from '@/components/landing/LandingReviews';
 import LandingObjections from '@/components/landing/LandingObjections';
 import LandingFactory from '@/components/landing/LandingFactory';
 import LandingTrust from '@/components/landing/LandingTrust';
-import LandingProducts from '@/components/landing/LandingProducts';
+
 import LandingFAQ from '@/components/landing/LandingFAQ';
 import LandingCTA from '@/components/landing/LandingCTA';
 import FloatingCTA from '@/components/landing/FloatingCTA';
@@ -69,8 +69,7 @@ export default function LandingPage() {
       <LandingGasketTech />
       {/* 11. Trust - 인증/파트너 */}
       <LandingTrust />
-      {/* 12. Products - 제품 라인업 */}
-      <LandingProducts />
+      {/* 12. Products - 제거됨 (대표님 요청) */}
       {/* 13. FAQ - 마지막 반론 처리 */}
       <LandingFAQ />
       {/* 14. CTA - 최종 전환 */}
