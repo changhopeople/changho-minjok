@@ -20,11 +20,13 @@ const brands = [
       { src: '/images/landing/cases/changho/before/1.jpg', alt: '창호의민족 시공 전 1' },
       { src: '/images/landing/cases/changho/before/2.jpg', alt: '창호의민족 시공 전 2' },
       { src: '/images/landing/cases/changho/before/3.jpg', alt: '창호의민족 시공 전 3' },
+      { src: '/images/landing/cases/changho/before/4.jpg', alt: '창호의민족 시공 전 4' },
     ],
     after: [
       { src: '/images/landing/cases/changho/after/1.jpg', alt: '창호의민족 시공 후 1' },
       { src: '/images/landing/cases/changho/after/2.jpg', alt: '창호의민족 시공 후 2' },
       { src: '/images/landing/cases/changho/after/3.jpg', alt: '창호의민족 시공 후 3' },
+      { src: '/images/landing/cases/changho/after/4.jpg', alt: '창호의민족 시공 후 4' },
     ],
   },
   {
