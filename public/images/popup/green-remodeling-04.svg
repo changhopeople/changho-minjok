@@ -1,0 +1,74 @@
+<svg width="400" height="560" viewBox="0 0 400 560" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg4" x1="0" y1="0" x2="0" y2="560" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#4A7C59"/>
+      <stop offset="100%" stop-color="#3A6347"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="560" rx="16" fill="url(#bg4)"/>
+
+  <!-- Header -->
+  <text x="200" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="600" fill="white" opacity="0.7">창호의민족 추천</text>
+  <text x="200" y="70" text-anchor="middle" font-family="Arial, sans-serif" font-size="26" font-weight="900" fill="white" letter-spacing="-1">그린리모델링</text>
+  <text x="200" y="102" text-anchor="middle" font-family="Arial, sans-serif" font-size="26" font-weight="900" fill="#FFD700" letter-spacing="-1">공사 항목 안내</text>
+
+  <text x="200" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white" opacity="0.7">아래 항목 중 한 가지 이상을 필수 적용</text>
+
+  <!-- Items grid -->
+  <g transform="translate(20, 150)">
+    <!-- Row 1 -->
+    <rect x="0" y="0" width="170" height="75" rx="12" fill="white" opacity="0.15"/>
+    <rect x="0" y="0" width="170" height="75" rx="12" fill="none" stroke="#FFD700" stroke-width="2"/>
+    <text x="22" y="32" font-family="Arial, sans-serif" font-size="22">🪟</text>
+    <text x="52" y="28" font-family="Arial, sans-serif" font-size="14" font-weight="800" fill="white">고성능 창 및 문</text>
+    <rect x="52" y="36" width="36" height="16" rx="8" fill="#FF6F0F"/>
+    <text x="70" y="48" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="700" fill="white">추천!</text>
+    <text x="22" y="62" font-family="Arial, sans-serif" font-size="10" fill="white" opacity="0.7">단열·방음·결로 한번에 해결</text>
+
+    <rect x="180" y="0" width="170" height="75" rx="12" fill="white" opacity="0.15"/>
+    <text x="202" y="32" font-family="Arial, sans-serif" font-size="22">🌀</text>
+    <text x="232" y="28" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="white">폐열회수형</text>
+    <text x="232" y="46" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="white">환기장치</text>
+    <text x="202" y="62" font-family="Arial, sans-serif" font-size="10" fill="white" opacity="0.7">실내 공기질 개선</text>
+
+    <!-- Row 2 -->
+    <rect x="0" y="85" width="170" height="75" rx="12" fill="white" opacity="0.15"/>
+    <text x="22" y="117" font-family="Arial, sans-serif" font-size="22">🏠</text>
+    <text x="52" y="113" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="white">내·외부</text>
+    <text x="52" y="131" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="white">단열보강</text>
+    <text x="22" y="147" font-family="Arial, sans-serif" font-size="10" fill="white" opacity="0.7">열손실 차단</text>
+
+    <rect x="180" y="85" width="170" height="75" rx="12" fill="white" opacity="0.15"/>
+    <text x="202" y="117" font-family="Arial, sans-serif" font-size="22">❄️</text>
+    <text x="232" y="113" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="white">고효율</text>
+    <text x="232" y="131" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="white">냉·난방장치</text>
+    <text x="202" y="147" font-family="Arial, sans-serif" font-size="10" fill="white" opacity="0.7">에너지 절감</text>
+
+    <!-- Row 3 -->
+    <rect x="0" y="170" width="170" height="75" rx="12" fill="white" opacity="0.15"/>
+    <text x="22" y="202" font-family="Arial, sans-serif" font-size="22">🔥</text>
+    <text x="52" y="202" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="white">고효율 보일러</text>
+    <text x="22" y="232" font-family="Arial, sans-serif" font-size="10" fill="white" opacity="0.7">난방비 절감</text>
+
+    <rect x="180" y="170" width="170" height="75" rx="12" fill="white" opacity="0.15"/>
+    <text x="202" y="202" font-family="Arial, sans-serif" font-size="22">💡</text>
+    <text x="232" y="202" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="white">고효율 조명(LED)</text>
+    <text x="202" y="232" font-family="Arial, sans-serif" font-size="10" fill="white" opacity="0.7">전기료 절감</text>
+
+    <!-- Row 4 -->
+    <rect x="0" y="255" width="170" height="75" rx="12" fill="white" opacity="0.15"/>
+    <text x="22" y="287" font-family="Arial, sans-serif" font-size="22">☀️</text>
+    <text x="52" y="287" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="white">신·재생에너지</text>
+    <text x="22" y="317" font-family="Arial, sans-serif" font-size="10" fill="white" opacity="0.7">태양광·태양열 등</text>
+
+    <rect x="180" y="255" width="170" height="75" rx="12" fill="white" opacity="0.15"/>
+    <text x="202" y="287" font-family="Arial, sans-serif" font-size="22">📊</text>
+    <text x="232" y="283" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="white">건물에너지</text>
+    <text x="232" y="301" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="white">관리(BEMS)</text>
+    <text x="202" y="317" font-family="Arial, sans-serif" font-size="10" fill="white" opacity="0.7">스마트 에너지 관리</text>
+  </g>
+
+  <!-- Bottom -->
+  <rect x="40" y="500" width="320" height="40" rx="20" fill="white"/>
+  <text x="200" y="526" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="800" fill="#4A7C59">내 집에 맞는 항목 상담받기 →</text>
+</svg>

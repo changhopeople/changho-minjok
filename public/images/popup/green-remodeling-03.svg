@@ -1,0 +1,57 @@
+<svg width="400" height="560" viewBox="0 0 400 560" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg3" x1="0" y1="0" x2="0" y2="560" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#F0F4F0"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="560" rx="16" fill="url(#bg3)"/>
+
+  <!-- Top green header -->
+  <rect x="0" y="0" width="400" height="130" rx="16" fill="#4A7C59"/>
+  <rect x="0" y="60" width="400" height="70" fill="#4A7C59"/>
+
+  <text x="200" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="white" opacity="0.8">2026 그린리모델링 이자지원사업</text>
+  <text x="200" y="75" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="900" fill="white" letter-spacing="-1">60개월 할부로</text>
+  <text x="200" y="110" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="900" fill="#FFD700" letter-spacing="-1">부담 없이 시공하세요</text>
+
+  <!-- Installment example -->
+  <rect x="30" y="150" width="340" height="130" rx="16" fill="white" stroke="#E0E0E0" stroke-width="1"/>
+  <text x="200" y="178" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="600" fill="#999">예시) 창호 교체 공사비 2,000만원 기준</text>
+
+  <rect x="50" y="192" width="300" height="1" fill="#F0F0F0"/>
+
+  <text x="80" y="220" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#999">일시불</text>
+  <text x="80" y="245" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="800" fill="#999" text-decoration="line-through">2,000만원</text>
+  <line x1="40" y1="240" x2="120" y2="240" stroke="#EF4444" stroke-width="2"/>
+
+  <text x="200" y="230" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" fill="#FF6F0F">→</text>
+
+  <text x="300" y="220" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#4A7C59" font-weight="600">60개월 할부 시</text>
+  <text x="300" y="248" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#4A7C59">월</text>
+  <text x="330" y="250" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="900" fill="#FF6F0F">33만원~</text>
+
+  <!-- Support info -->
+  <g transform="translate(30, 300)">
+    <rect x="0" y="0" width="340" height="48" rx="10" fill="#F8FAF8"/>
+    <text x="20" y="20" font-family="Arial, sans-serif" font-size="13" fill="#4A7C59" font-weight="700">✓</text>
+    <text x="40" y="20" font-family="Arial, sans-serif" font-size="13" fill="#333" font-weight="600">단독주택 최대 1억원 지원</text>
+    <text x="40" y="38" font-family="Arial, sans-serif" font-size="11" fill="#999">이자 지원으로 실질 부담 최소화</text>
+
+    <rect x="0" y="56" width="340" height="48" rx="10" fill="#F8FAF8"/>
+    <text x="20" y="76" font-family="Arial, sans-serif" font-size="13" fill="#4A7C59" font-weight="700">✓</text>
+    <text x="40" y="76" font-family="Arial, sans-serif" font-size="13" fill="#333" font-weight="600">공동주택 최대 3천만원 지원</text>
+    <text x="40" y="94" font-family="Arial, sans-serif" font-size="11" fill="#999">아파트·연립·다세대 모두 가능</text>
+
+    <rect x="0" y="112" width="340" height="48" rx="10" fill="#F8FAF8"/>
+    <text x="20" y="132" font-family="Arial, sans-serif" font-size="13" fill="#4A7C59" font-weight="700">✓</text>
+    <text x="40" y="132" font-family="Arial, sans-serif" font-size="13" fill="#333" font-weight="600">최대 5년(60개월) 분할 상환</text>
+    <text x="40" y="150" font-family="Arial, sans-serif" font-size="11" fill="#999">정부 이자 지원으로 낮은 금리</text>
+  </g>
+
+  <!-- CTA -->
+  <rect x="40" y="480" width="320" height="50" rx="25" fill="#FF6F0F"/>
+  <text x="200" y="511" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="800" fill="white">할부 상담 신청하기</text>
+
+  <text x="200" y="548" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#999">창호의민족 ☎ 1644-4370</text>
+</svg>

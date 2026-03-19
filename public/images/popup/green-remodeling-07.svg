@@ -1,0 +1,69 @@
+<svg width="400" height="560" viewBox="0 0 400 560" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg7" x1="0" y1="0" x2="0" y2="560" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#1E293B"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="560" rx="16" fill="url(#bg7)"/>
+
+  <!-- Glow -->
+  <circle cx="200" cy="120" r="100" fill="#4A7C59" opacity="0.08"/>
+
+  <!-- Top -->
+  <text x="200" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="600" fill="#64748B">2026 그린리모델링 이자지원사업</text>
+
+  <!-- Before / After -->
+  <text x="200" y="75" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="900" fill="white" letter-spacing="-1">창호 하나 바꿨을 뿐인데</text>
+  <text x="200" y="108" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="900" fill="#4ADE80" letter-spacing="-1">이렇게 달라져요</text>
+
+  <!-- Before card -->
+  <rect x="25" y="130" width="165" height="170" rx="14" fill="#1E293B" stroke="#334155" stroke-width="1"/>
+  <rect x="25" y="130" width="165" height="36" rx="14" fill="#334155"/>
+  <rect x="25" y="152" width="165" height="14" fill="#334155"/>
+  <text x="107" y="153" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#94A3B8">교체 전</text>
+  <text x="107" y="192" text-anchor="middle" font-family="Arial, sans-serif" font-size="28">😰</text>
+  <text x="107" y="220" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#94A3B8">외풍·결로·곰팡이</text>
+  <text x="107" y="240" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#94A3B8">소음 문제</text>
+  <text x="107" y="268" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="800" fill="#EF4444">난방비 폭탄 💸</text>
+  <text x="107" y="290" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#64748B">겨울마다 고민...</text>
+
+  <!-- After card -->
+  <rect x="210" y="130" width="165" height="170" rx="14" fill="#1E293B" stroke="#4ADE80" stroke-width="1.5"/>
+  <rect x="210" y="130" width="165" height="36" rx="14" fill="#166534" opacity="0.3"/>
+  <rect x="210" y="152" width="165" height="14" fill="#166534" opacity="0.3"/>
+  <text x="292" y="153" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#4ADE80">교체 후</text>
+  <text x="292" y="192" text-anchor="middle" font-family="Arial, sans-serif" font-size="28">😊</text>
+  <text x="292" y="220" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#94A3B8">완벽 단열·방음</text>
+  <text x="292" y="240" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#94A3B8">결로 제로</text>
+  <text x="292" y="268" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="800" fill="#4ADE80">난방비 40%↓ 🎉</text>
+  <text x="292" y="290" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#64748B">쾌적한 우리 집!</text>
+
+  <!-- Support info -->
+  <rect x="25" y="320" width="350" height="90" rx="14" fill="#1E293B" stroke="#334155" stroke-width="1"/>
+  <text x="200" y="348" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="white">정부 지원 혜택</text>
+
+  <text x="68" y="375" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#64748B">단독주택</text>
+  <text x="68" y="400" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="900" fill="#FF6F0F">최대 1억</text>
+
+  <rect x="140" y="368" width="1" height="30" fill="#334155"/>
+
+  <text x="200" y="375" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#64748B">공동주택</text>
+  <text x="200" y="400" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="900" fill="#FF6F0F">최대 3천만</text>
+
+  <rect x="267" y="368" width="1" height="30" fill="#334155"/>
+
+  <text x="332" y="375" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#64748B">상환기간</text>
+  <text x="332" y="400" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="900" fill="#4ADE80">60개월</text>
+
+  <!-- Trust -->
+  <rect x="25" y="425" width="350" height="40" rx="10" fill="#FF6F0F" opacity="0.1"/>
+  <text x="200" y="438" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#FF6F0F" font-weight="600">창호의민족 | 3,500평 공장 직영</text>
+  <text x="200" y="456" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#FF6F0F" font-weight="600">15,000+ 세대 시공 | 만족도 4.9 ★★★★★</text>
+
+  <!-- CTA -->
+  <rect x="50" y="480" width="300" height="48" rx="24" fill="#FF6F0F"/>
+  <text x="200" y="510" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="800" fill="white">그린리모델링 상담받기</text>
+
+  <text x="200" y="548" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#64748B">상담은 무료입니다 ☎ 1644-4370</text>
+</svg>

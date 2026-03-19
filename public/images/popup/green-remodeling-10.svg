@@ -1,0 +1,59 @@
+<svg width="400" height="560" viewBox="0 0 400 560" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg10" x1="0" y1="0" x2="0" y2="560" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FF6F0F"/>
+      <stop offset="38%" stop-color="#FF6F0F"/>
+      <stop offset="38%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#F9FAFB"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="560" rx="16" fill="url(#bg10)"/>
+
+  <!-- Top orange section -->
+  <text x="200" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="600" fill="white" opacity="0.85">2026 그린리모델링 이자지원사업</text>
+
+  <!-- Fire icon -->
+  <g transform="translate(160, 50)">
+    <circle cx="40" cy="35" r="30" fill="white" opacity="0.2"/>
+    <text x="40" y="44" text-anchor="middle" font-family="Arial, sans-serif" font-size="30">🔥</text>
+  </g>
+
+  <text x="200" y="132" text-anchor="middle" font-family="Arial, sans-serif" font-size="26" font-weight="900" fill="white" letter-spacing="-1">올해 예산 소진 시</text>
+  <text x="200" y="165" text-anchor="middle" font-family="Arial, sans-serif" font-size="26" font-weight="900" fill="white" letter-spacing="-1">조기 마감됩니다!</text>
+
+  <!-- Progress bar section -->
+  <rect x="30" y="225" width="340" height="75" rx="14" fill="#FFF7ED" stroke="#FFE0C4" stroke-width="1"/>
+  <text x="200" y="250" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="600" fill="#FF6F0F">잔여 예산 소진 중</text>
+  <rect x="50" y="262" width="300" height="10" rx="5" fill="#FFE0C4"/>
+  <rect x="50" y="262" width="234" height="10" rx="5" fill="#FF6F0F"/>
+  <text x="200" y="292" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="700" fill="#E5630D">예산 78% 소진 | 서두르세요!</text>
+
+  <!-- Key benefits -->
+  <g transform="translate(30, 320)">
+    <rect x="0" y="0" width="106" height="85" rx="12" fill="#F9FAFB" stroke="#E5E7EB" stroke-width="1"/>
+    <text x="53" y="28" text-anchor="middle" font-family="Arial, sans-serif" font-size="18">🏠</text>
+    <text x="53" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="800" fill="#FF6F0F">1억원</text>
+    <text x="53" y="68" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#999">단독 최대지원</text>
+
+    <rect x="114" y="0" width="106" height="85" rx="12" fill="#F9FAFB" stroke="#E5E7EB" stroke-width="1"/>
+    <text x="167" y="28" text-anchor="middle" font-family="Arial, sans-serif" font-size="18">🏢</text>
+    <text x="167" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="800" fill="#FF6F0F">3천만</text>
+    <text x="167" y="68" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#999">공동 최대지원</text>
+
+    <rect x="228" y="0" width="106" height="85" rx="12" fill="#F9FAFB" stroke="#E5E7EB" stroke-width="1"/>
+    <text x="281" y="28" text-anchor="middle" font-family="Arial, sans-serif" font-size="18">📅</text>
+    <text x="281" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="800" fill="#4A7C59">60개월</text>
+    <text x="281" y="68" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#999">최대 할부</text>
+  </g>
+
+  <!-- Why us -->
+  <rect x="30" y="420" width="340" height="44" rx="10" fill="#4A7C59" opacity="0.08"/>
+  <text x="200" y="436" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#4A7C59" font-weight="600">창호의민족 = 공장 직영 + 지원금 신청 대행</text>
+  <text x="200" y="454" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#4A7C59" font-weight="600">시공부터 서류까지 원스톱으로 해결!</text>
+
+  <!-- CTA -->
+  <rect x="40" y="480" width="320" height="48" rx="24" fill="#FF6F0F"/>
+  <text x="200" y="510" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="800" fill="white">마감 전 신청하기 →</text>
+
+  <text x="200" y="548" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#999">창호의민족 ☎ 1644-4370</text>
+</svg>

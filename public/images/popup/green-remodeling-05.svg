@@ -1,0 +1,64 @@
+<svg width="400" height="560" viewBox="0 0 400 560" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg5" x1="0" y1="0" x2="0" y2="560" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFFBF5"/>
+      <stop offset="100%" stop-color="#FFF3E8"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="560" rx="16" fill="url(#bg5)"/>
+  <rect width="400" height="4" fill="#4A7C59"/>
+
+  <!-- Title area -->
+  <rect x="130" y="22" width="140" height="28" rx="14" fill="#4A7C59"/>
+  <text x="200" y="41" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="white">이자지원 사업 절차</text>
+
+  <text x="200" y="80" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="900" fill="#1E1E1E" letter-spacing="-1">그린리모델링</text>
+  <text x="200" y="110" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="900" fill="#FF6F0F" letter-spacing="-1">신청부터 시공까지</text>
+  <text x="200" y="132" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#999">창호의민족이 전 과정을 도와드립니다</text>
+
+  <!-- Process steps -->
+  <g transform="translate(30, 155)">
+    <!-- Step 1 -->
+    <circle cx="24" cy="22" r="22" fill="#FF6F0F"/>
+    <text x="24" y="28" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="800" fill="white">1</text>
+    <text x="60" y="18" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#1E1E1E">사업자 선정 및 계약</text>
+    <text x="60" y="36" font-family="Arial, sans-serif" font-size="11" fill="#999">건축주 → 그린리모델링 사업자(창호의민족)</text>
+    <line x1="24" y1="46" x2="24" y2="60" stroke="#FF6F0F" stroke-width="2" stroke-dasharray="3,3"/>
+
+    <!-- Step 2 -->
+    <circle cx="24" cy="82" r="22" fill="#FF6F0F"/>
+    <text x="24" y="88" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="800" fill="white">2</text>
+    <text x="60" y="78" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#1E1E1E">사업지정서 제출</text>
+    <text x="60" y="96" font-family="Arial, sans-serif" font-size="11" fill="#999">그린리모델링 창조센터에 서류 제출</text>
+    <line x1="24" y1="106" x2="24" y2="120" stroke="#FF6F0F" stroke-width="2" stroke-dasharray="3,3"/>
+
+    <!-- Step 3 -->
+    <circle cx="24" cy="142" r="22" fill="#FF6F0F"/>
+    <text x="24" y="148" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="800" fill="white">3</text>
+    <text x="60" y="138" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#1E1E1E">사업승인 결과 통보</text>
+    <text x="60" y="156" font-family="Arial, sans-serif" font-size="11" fill="#999">승인 후 대출 및 시공 진행</text>
+    <line x1="24" y1="166" x2="24" y2="180" stroke="#FF6F0F" stroke-width="2" stroke-dasharray="3,3"/>
+
+    <!-- Step 4 -->
+    <circle cx="24" cy="202" r="22" fill="#FF6F0F"/>
+    <text x="24" y="208" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="800" fill="white">4</text>
+    <text x="60" y="198" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#1E1E1E">대출 실행 및 시공</text>
+    <text x="60" y="216" font-family="Arial, sans-serif" font-size="11" fill="#999">금융기관 대출 → 공장 직영 시공</text>
+    <line x1="24" y1="226" x2="24" y2="240" stroke="#FF6F0F" stroke-width="2" stroke-dasharray="3,3"/>
+
+    <!-- Step 5 -->
+    <circle cx="24" cy="262" r="22" fill="#4A7C59"/>
+    <text x="24" y="268" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="800" fill="white">5</text>
+    <text x="60" y="258" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#1E1E1E">대출금 상환 + 이자 지원</text>
+    <text x="60" y="276" font-family="Arial, sans-serif" font-size="11" fill="#999">최대 60개월 분할 상환, 국토부 이자 보조</text>
+  </g>
+
+  <!-- Info banner -->
+  <rect x="30" y="450" width="340" height="50" rx="12" fill="#4A7C59" opacity="0.08"/>
+  <text x="200" y="470" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="600" fill="#4A7C59">단독주택 최대 1억원 | 공동주택 최대 3천만원</text>
+  <text x="200" y="490" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="600" fill="#4A7C59">최대 5년(60개월) 할부 가능</text>
+
+  <!-- CTA -->
+  <rect x="60" y="514" width="280" height="30" rx="15" fill="#FF6F0F"/>
+  <text x="200" y="534" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="800" fill="white">신청 절차 안내받기 →</text>
+</svg>

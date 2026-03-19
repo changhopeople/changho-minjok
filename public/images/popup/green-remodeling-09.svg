@@ -1,0 +1,56 @@
+<svg width="400" height="560" viewBox="0 0 400 560" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg9" x1="0" y1="0" x2="400" y2="560" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#4A7C59"/>
+      <stop offset="50%" stop-color="#3A6347"/>
+      <stop offset="100%" stop-color="#2D5038"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="560" rx="16" fill="url(#bg9)"/>
+
+  <!-- Pattern -->
+  <circle cx="350" cy="50" r="60" fill="white" opacity="0.04"/>
+  <circle cx="50" cy="510" r="50" fill="white" opacity="0.04"/>
+
+  <!-- Top -->
+  <text x="200" y="38" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="white" opacity="0.7">창호의민족 × 그린리모델링</text>
+
+  <!-- Big stat -->
+  <text x="200" y="90" text-anchor="middle" font-family="Arial, sans-serif" font-size="30" font-weight="900" fill="white" letter-spacing="-1">난방비,</text>
+  <text x="200" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="30" font-weight="900" fill="white" letter-spacing="-1">얼마나 새고 계신가요?</text>
+
+  <!-- Stat card -->
+  <rect x="35" y="155" width="330" height="120" rx="18" fill="white"/>
+  <text x="200" y="185" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="600" fill="#999">노후 창호 → 고성능 창호 교체 시</text>
+  <text x="200" y="235" text-anchor="middle" font-family="Arial, sans-serif" font-size="50" font-weight="900" fill="#FF6F0F" letter-spacing="-3">40%↓</text>
+  <text x="200" y="262" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="#666">연간 난방비 절감 효과</text>
+
+  <!-- Support detail -->
+  <text x="200" y="310" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="white">게다가 정부가 비용까지 지원!</text>
+
+  <!-- 3 columns -->
+  <g transform="translate(20, 330)">
+    <rect x="0" y="0" width="115" height="90" rx="12" fill="white" opacity="0.15"/>
+    <text x="57" y="28" text-anchor="middle" font-family="Arial, sans-serif" font-size="13">🏠</text>
+    <text x="57" y="48" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white" opacity="0.7">단독주택</text>
+    <text x="57" y="72" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="900" fill="#FFD700">최대 1억</text>
+
+    <rect x="122" y="0" width="115" height="90" rx="12" fill="white" opacity="0.15"/>
+    <text x="179" y="28" text-anchor="middle" font-family="Arial, sans-serif" font-size="13">🏢</text>
+    <text x="179" y="48" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white" opacity="0.7">공동주택</text>
+    <text x="179" y="72" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="900" fill="#FFD700">최대 3천만</text>
+
+    <rect x="244" y="0" width="115" height="90" rx="12" fill="white" opacity="0.15"/>
+    <text x="301" y="28" text-anchor="middle" font-family="Arial, sans-serif" font-size="13">📅</text>
+    <text x="301" y="48" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white" opacity="0.7">할부 기간</text>
+    <text x="301" y="72" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="900" fill="#FFD700">최대 5년</text>
+  </g>
+
+  <!-- Bottom message -->
+  <text x="200" y="455" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="600" fill="white">정부 지원금으로 창호 교체하고</text>
+  <text x="200" y="478" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#FFD700">매달 난방비 아끼세요!</text>
+
+  <!-- CTA -->
+  <rect x="60" y="500" width="280" height="40" rx="20" fill="white"/>
+  <text x="200" y="526" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="800" fill="#4A7C59">무료 에너지 진단 받기 →</text>
+</svg>

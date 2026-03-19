@@ -1,0 +1,50 @@
+<svg width="400" height="560" viewBox="0 0 400 560" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="0" y2="560" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1E1E1E"/>
+      <stop offset="100%" stop-color="#111111"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="560" rx="16" fill="url(#bg2)"/>
+  <rect width="400" height="5" fill="#FF6F0F"/>
+
+  <!-- Top badge -->
+  <rect x="130" y="24" width="140" height="30" rx="15" fill="#4A7C59"/>
+  <text x="200" y="44" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="white">그린리모델링 사업</text>
+
+  <!-- Main headline -->
+  <text x="200" y="95" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="600" fill="#999">창호 교체 비용, 정부가 지원합니다</text>
+
+  <text x="200" y="145" text-anchor="middle" font-family="Arial, sans-serif" font-size="40" font-weight="900" fill="white" letter-spacing="-2">최대</text>
+  <text x="200" y="205" text-anchor="middle" font-family="Arial, sans-serif" font-size="64" font-weight="900" fill="#FFD700" letter-spacing="-3">1억원</text>
+  <text x="200" y="240" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="white">지원받으세요!</text>
+
+  <!-- Divider -->
+  <rect x="170" y="260" width="60" height="2" rx="1" fill="#444"/>
+
+  <!-- Detail cards -->
+  <rect x="30" y="280" width="160" height="85" rx="12" fill="#2A2A2A"/>
+  <text x="110" y="305" text-anchor="middle" font-family="Arial, sans-serif" font-size="20">🏠</text>
+  <text x="110" y="328" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#999">단독주택</text>
+  <text x="110" y="352" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="900" fill="#FF6F0F">최대 1억원</text>
+
+  <rect x="210" y="280" width="160" height="85" rx="12" fill="#2A2A2A"/>
+  <text x="290" y="305" text-anchor="middle" font-family="Arial, sans-serif" font-size="20">🏢</text>
+  <text x="290" y="328" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#999">공동주택</text>
+  <text x="290" y="352" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="900" fill="#FF6F0F">최대 3천만원</text>
+
+  <!-- 60 months -->
+  <rect x="30" y="380" width="340" height="65" rx="12" fill="#2A2A2A"/>
+  <text x="60" y="408" font-family="Arial, sans-serif" font-size="13" fill="#999">상환 기간</text>
+  <text x="60" y="432" font-family="Arial, sans-serif" font-size="22" font-weight="900" fill="#4ADE80">최대 60개월 (5년)</text>
+  <text x="330" y="420" text-anchor="middle" font-family="Arial, sans-serif" font-size="28">📅</text>
+
+  <!-- Bottom info -->
+  <rect x="30" y="460" width="340" height="40" rx="10" fill="#FF6F0F" opacity="0.12"/>
+  <text x="200" y="475" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#FF6F0F" font-weight="600">고성능 창호 교체 = 그린리모델링 필수 항목</text>
+  <text x="200" y="492" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#FF6F0F" font-weight="600">창호의민족에서 창호 교체 + 지원금 신청까지 한번에!</text>
+
+  <!-- CTA -->
+  <rect x="60" y="512" width="280" height="30" rx="15" fill="#FF6F0F"/>
+  <text x="200" y="532" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="800" fill="white">지원 대상 확인하기 →</text>
+</svg>
