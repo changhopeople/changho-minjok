@@ -74,7 +74,7 @@ export default function BeforeAfterSlider({
     >
       {/* After Image (background) */}
       <div className="absolute inset-0">
-        <Image src={afterSrc} alt={afterAlt} fill className="object-cover" />
+        <Image src={afterSrc} alt={afterAlt} fill quality={90} sizes="(max-width: 768px) 100vw, 700px" className="object-cover" />
       </div>
 
       {/* Before Image (clipped) */}
@@ -82,7 +82,7 @@ export default function BeforeAfterSlider({
         className="absolute inset-0"
         style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}
       >
-        <Image src={beforeSrc} alt={beforeAlt} fill className="object-cover" />
+        <Image src={beforeSrc} alt={beforeAlt} fill quality={90} sizes="(max-width: 768px) 100vw, 700px" className="object-cover" />
       </div>
 
       {/* Divider Line */}

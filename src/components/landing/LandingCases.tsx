@@ -120,61 +120,56 @@ export default function LandingCases() {
                     </div>
 
                     <div className="p-3 sm:p-4">
-                      {/* Before */}
-                      <div className="mb-2">
-                        <span className="inline-block px-2.5 py-0.5 bg-gray-800 text-white rounded-full text-xs font-bold mb-2">
-                          시공 전
-                        </span>
-                        <button
-                          onClick={() => openModal(brand.before, 0)}
-                          className="group relative w-full aspect-[4/3] rounded-lg overflow-hidden bg-gray-200"
-                        >
-                          <Image
-                            src={brand.before[0].src}
-                            alt={brand.before[0].alt}
-                            fill
-                            className="object-cover group-hover:scale-105 transition-transform duration-300"
-                          />
-                          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
-                            <ZoomIn className="w-6 h-6 text-white opacity-0 group-hover:opacity-100 transition-opacity" />
-                          </div>
-                        </button>
-                      </div>
-
-                      {/* Arrow */}
-                      <div className="flex justify-center my-2">
-                        <div
-                          className="w-8 h-8 rounded-full flex items-center justify-center"
-                          style={{ backgroundColor: brand.color }}
-                        >
-                          <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-                          </svg>
+                      {/* Before & After Side by Side */}
+                      <div className="grid grid-cols-2 gap-2 mb-3">
+                        {/* Before */}
+                        <div>
+                          <span className="inline-block px-2 py-0.5 bg-gray-800 text-white rounded-full text-[10px] sm:text-xs font-bold mb-1.5">
+                            시공 전
+                          </span>
+                          <button
+                            onClick={() => openModal(brand.before, 0)}
+                            className="group relative w-full aspect-[4/3] rounded-lg overflow-hidden bg-gray-200"
+                          >
+                            <Image
+                              src={brand.before[0].src}
+                              alt={brand.before[0].alt}
+                              fill
+                              quality={90}
+                              sizes="(max-width: 768px) 50vw, (max-width: 1024px) 25vw, 16vw"
+                              className="object-cover group-hover:scale-105 transition-transform duration-300"
+                            />
+                            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+                              <ZoomIn className="w-5 h-5 text-white opacity-0 group-hover:opacity-100 transition-opacity" />
+                            </div>
+                          </button>
                         </div>
-                      </div>
 
-                      {/* After */}
-                      <div className="mb-3">
-                        <span
-                          className="inline-block px-2.5 py-0.5 rounded-full text-xs font-bold text-white mb-2"
-                          style={{ backgroundColor: brand.color }}
-                        >
-                          시공 후
-                        </span>
-                        <button
-                          onClick={() => openModal(brand.after, 0)}
-                          className="group relative w-full aspect-[4/3] rounded-lg overflow-hidden bg-gray-200"
-                        >
-                          <Image
-                            src={brand.after[0].src}
-                            alt={brand.after[0].alt}
-                            fill
-                            className="object-cover group-hover:scale-105 transition-transform duration-300"
-                          />
-                          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
-                            <ZoomIn className="w-6 h-6 text-white opacity-0 group-hover:opacity-100 transition-opacity" />
-                          </div>
-                        </button>
+                        {/* After */}
+                        <div>
+                          <span
+                            className="inline-block px-2 py-0.5 rounded-full text-[10px] sm:text-xs font-bold text-white mb-1.5"
+                            style={{ backgroundColor: brand.color }}
+                          >
+                            시공 후
+                          </span>
+                          <button
+                            onClick={() => openModal(brand.after, 0)}
+                            className="group relative w-full aspect-[4/3] rounded-lg overflow-hidden bg-gray-200"
+                          >
+                            <Image
+                              src={brand.after[0].src}
+                              alt={brand.after[0].alt}
+                              fill
+                              quality={90}
+                              sizes="(max-width: 768px) 50vw, (max-width: 1024px) 25vw, 16vw"
+                              className="object-cover group-hover:scale-105 transition-transform duration-300"
+                            />
+                            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+                              <ZoomIn className="w-5 h-5 text-white opacity-0 group-hover:opacity-100 transition-opacity" />
+                            </div>
+                          </button>
+                        </div>
                       </div>
 
                       {/* View All Button */}
@@ -225,6 +220,7 @@ export default function LandingCases() {
                 src={modalImages[modalIndex].src}
                 alt={modalImages[modalIndex].alt}
                 fill
+                quality={90}
                 className="object-contain"
                 sizes="(max-width: 768px) 100vw, 700px"
               />

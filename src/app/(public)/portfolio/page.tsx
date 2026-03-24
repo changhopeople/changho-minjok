@@ -85,6 +85,8 @@ export default async function PortfolioPage() {
                             src={item.thumbnail_url}
                             alt={item.title}
                             fill
+                            quality={90}
+                            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                             className="object-cover group-hover:scale-105 transition-transform duration-500"
                           />
                         ) : (
