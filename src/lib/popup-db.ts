@@ -62,11 +62,17 @@ export async function getActivePopups(): Promise<PopupRecord[]> {
     return [];
   }
 
-  // 날짜 필터링을 JS에서 처리 (Supabase .or() 체이닝 버그 우회)
-  const now = new Date();
+  // 날짜 필터링 (날짜만 비교, 시간 무시)
+  const todayStr = new Date().toISOString().split('T')[0];
   const filtered = (data || []).filter((popup) => {
-    if (popup.start_date && new Date(popup.start_date) > now) return false;
-    if (popup.end_date && new Date(popup.end_date) < now) return false;
+    if (popup.start_date) {
+      const startStr = new Date(popup.start_date).toISOString().split('T')[0];
+      if (startStr > todayStr) return false;
+    }
+    if (popup.end_date) {
+      const endStr = new Date(popup.end_date).toISOString().split('T')[0];
+      if (endStr < todayStr) return false;
+    }
     return true;
   });
 
