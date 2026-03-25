@@ -62,9 +62,27 @@ const brands = [
 ];
 
 export default function LandingCases() {
+  const [activeBrand, setActiveBrand] = useState(0);
+  const [imageIndex, setImageIndex] = useState(0);
   const [modalOpen, setModalOpen] = useState(false);
   const [modalImages, setModalImages] = useState<{ src: string; alt: string }[]>([]);
   const [modalIndex, setModalIndex] = useState(0);
+
+  const brand = brands[activeBrand];
+  const maxIndex = Math.min(brand.before.length, brand.after.length) - 1;
+
+  const handleBrandChange = (idx: number) => {
+    setActiveBrand(idx);
+    setImageIndex(0);
+  };
+
+  const handlePrev = () => {
+    setImageIndex((prev) => (prev === 0 ? maxIndex : prev - 1));
+  };
+
+  const handleNext = () => {
+    setImageIndex((prev) => (prev === maxIndex ? 0 : prev + 1));
+  };
 
   const openModal = (images: { src: string; alt: string }[], index: number) => {
     setModalImages(images);
@@ -72,13 +90,15 @@ export default function LandingCases() {
     setModalOpen(true);
   };
 
-  const prevImage = () => {
+  const prevModal = () => {
     setModalIndex((prev) => (prev === 0 ? modalImages.length - 1 : prev - 1));
   };
 
-  const nextImage = () => {
+  const nextModal = () => {
     setModalIndex((prev) => (prev === modalImages.length - 1 ? 0 : prev + 1));
   };
+
+  const allImages = [...brand.before, ...brand.after];
 
   return (
     <>
@@ -97,93 +117,132 @@ export default function LandingCases() {
             </p>
           </AnimatedSection>
 
-          {/* Brand Cards Grid */}
+          {/* Brand Tabs */}
           <AnimatedSection delay={0.1}>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 max-w-6xl mx-auto">
-              {brands.map((brand) => {
-                const allImages = [...brand.before, ...brand.after];
-                const totalCount = allImages.length;
+            <div className="flex justify-center gap-3 mb-8">
+              {brands.map((b, idx) => (
+                <button
+                  key={b.id}
+                  onClick={() => handleBrandChange(idx)}
+                  className="px-5 sm:px-8 py-2.5 sm:py-3 rounded-full text-sm sm:text-base font-bold transition-all"
+                  style={{
+                    backgroundColor: activeBrand === idx ? b.color : '#F3F4F6',
+                    color: activeBrand === idx ? '#fff' : '#767676',
+                  }}
+                >
+                  {b.name}
+                </button>
+              ))}
+            </div>
+          </AnimatedSection>
 
-                return (
-                  <div
-                    key={brand.id}
-                    className="bg-gray-50 rounded-2xl overflow-hidden border border-gray-100"
+          {/* Before & After Comparison */}
+          <AnimatedSection delay={0.15}>
+            <div className="max-w-4xl mx-auto">
+              <div className="grid grid-cols-2 gap-3 sm:gap-6">
+                {/* Before */}
+                <div>
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="inline-block px-3 py-1 bg-gray-800 text-white rounded-full text-xs sm:text-sm font-bold">
+                      시공 전
+                    </span>
+                    <span className="text-xs sm:text-sm text-gray-400">
+                      {imageIndex + 1} / {maxIndex + 1}
+                    </span>
+                  </div>
+                  <button
+                    onClick={() => openModal(brand.before, imageIndex)}
+                    className="group relative w-full aspect-[4/3] rounded-xl sm:rounded-2xl overflow-hidden bg-gray-200"
                   >
-                    {/* Brand Header */}
-                    <div
-                      className="px-4 py-3 text-center"
+                    <Image
+                      src={brand.before[imageIndex].src}
+                      alt={brand.before[imageIndex].alt}
+                      fill
+                      quality={90}
+                      sizes="(max-width: 768px) 50vw, 400px"
+                      className="object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+                      <ZoomIn className="w-6 h-6 sm:w-8 sm:h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity" />
+                    </div>
+                  </button>
+                </div>
+
+                {/* After */}
+                <div>
+                  <div className="flex items-center gap-2 mb-3">
+                    <span
+                      className="inline-block px-3 py-1 rounded-full text-xs sm:text-sm font-bold text-white"
                       style={{ backgroundColor: brand.color }}
                     >
-                      <span className="text-white font-bold text-sm sm:text-base">
-                        {brand.name}
-                      </span>
-                    </div>
-
-                    <div className="p-3 sm:p-4">
-                      {/* Before & After Side by Side */}
-                      <div className="grid grid-cols-2 gap-2 mb-3">
-                        {/* Before */}
-                        <div>
-                          <span className="inline-block px-2 py-0.5 bg-gray-800 text-white rounded-full text-[10px] sm:text-xs font-bold mb-1.5">
-                            시공 전
-                          </span>
-                          <button
-                            onClick={() => openModal(brand.before, 0)}
-                            className="group relative w-full aspect-[4/3] rounded-lg overflow-hidden bg-gray-200"
-                          >
-                            <Image
-                              src={brand.before[0].src}
-                              alt={brand.before[0].alt}
-                              fill
-                              quality={90}
-                              sizes="(max-width: 768px) 50vw, (max-width: 1024px) 25vw, 16vw"
-                              className="object-cover group-hover:scale-105 transition-transform duration-300"
-                            />
-                            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
-                              <ZoomIn className="w-5 h-5 text-white opacity-0 group-hover:opacity-100 transition-opacity" />
-                            </div>
-                          </button>
-                        </div>
-
-                        {/* After */}
-                        <div>
-                          <span
-                            className="inline-block px-2 py-0.5 rounded-full text-[10px] sm:text-xs font-bold text-white mb-1.5"
-                            style={{ backgroundColor: brand.color }}
-                          >
-                            시공 후
-                          </span>
-                          <button
-                            onClick={() => openModal(brand.after, 0)}
-                            className="group relative w-full aspect-[4/3] rounded-lg overflow-hidden bg-gray-200"
-                          >
-                            <Image
-                              src={brand.after[0].src}
-                              alt={brand.after[0].alt}
-                              fill
-                              quality={90}
-                              sizes="(max-width: 768px) 50vw, (max-width: 1024px) 25vw, 16vw"
-                              className="object-cover group-hover:scale-105 transition-transform duration-300"
-                            />
-                            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
-                              <ZoomIn className="w-5 h-5 text-white opacity-0 group-hover:opacity-100 transition-opacity" />
-                            </div>
-                          </button>
-                        </div>
-                      </div>
-
-                      {/* View All Button */}
-                      <button
-                        onClick={() => openModal(allImages, 0)}
-                        className="w-full flex items-center justify-center gap-2 py-2.5 rounded-lg text-sm font-semibold transition-colors hover:bg-gray-200 text-[#767676]"
-                      >
-                        <Camera className="w-4 h-4" />
-                        전체 {totalCount}장 보기
-                      </button>
-                    </div>
+                      시공 후
+                    </span>
+                    <span className="text-xs sm:text-sm text-gray-400">
+                      {imageIndex + 1} / {maxIndex + 1}
+                    </span>
                   </div>
-                );
-              })}
+                  <button
+                    onClick={() => openModal(brand.after, imageIndex)}
+                    className="group relative w-full aspect-[4/3] rounded-xl sm:rounded-2xl overflow-hidden bg-gray-200"
+                  >
+                    <Image
+                      src={brand.after[imageIndex].src}
+                      alt={brand.after[imageIndex].alt}
+                      fill
+                      quality={90}
+                      sizes="(max-width: 768px) 50vw, 400px"
+                      className="object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+                      <ZoomIn className="w-6 h-6 sm:w-8 sm:h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity" />
+                    </div>
+                  </button>
+                </div>
+              </div>
+
+              {/* Navigation & View All */}
+              <div className="flex items-center justify-between mt-4 sm:mt-6">
+                <button
+                  onClick={() => openModal(allImages, 0)}
+                  className="flex items-center gap-2 text-sm font-semibold text-[#767676] hover:text-[#1E1E1E] transition-colors"
+                >
+                  <Camera className="w-4 h-4" />
+                  전체 {allImages.length}장 보기
+                </button>
+
+                {maxIndex > 0 && (
+                  <div className="flex items-center gap-2">
+                    <button
+                      onClick={handlePrev}
+                      className="w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center transition-colors"
+                    >
+                      <ChevronLeft className="w-5 h-5 text-gray-600" />
+                    </button>
+                    <button
+                      onClick={handleNext}
+                      className="w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center transition-colors"
+                    >
+                      <ChevronRight className="w-5 h-5 text-gray-600" />
+                    </button>
+                  </div>
+                )}
+              </div>
+
+              {/* Thumbnail dots */}
+              {maxIndex > 0 && (
+                <div className="flex justify-center gap-2 mt-4">
+                  {brand.before.slice(0, maxIndex + 1).map((_, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => setImageIndex(idx)}
+                      className="w-2.5 h-2.5 rounded-full transition-colors"
+                      style={{
+                        backgroundColor: idx === imageIndex ? brand.color : '#D1D5DB',
+                      }}
+                    />
+                  ))}
+                </div>
+              )}
             </div>
           </AnimatedSection>
 
@@ -230,13 +289,13 @@ export default function LandingCases() {
           {modalImages.length > 1 && (
             <>
               <button
-                onClick={prevImage}
+                onClick={prevModal}
                 className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/60 flex items-center justify-center text-white hover:bg-black/80 transition-colors"
               >
                 <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
               </button>
               <button
-                onClick={nextImage}
+                onClick={nextModal}
                 className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/60 flex items-center justify-center text-white hover:bg-black/80 transition-colors"
               >
                 <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
