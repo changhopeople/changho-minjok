@@ -1,7 +1,6 @@
 'use server';
 
 import { revalidatePath } from 'next/cache';
-import { redirect } from 'next/navigation';
 import { createNotice, updateNotice, deleteNotice } from '@/lib/notice-db';
 
 export async function createNoticeAction(formData: FormData) {
@@ -26,7 +25,7 @@ export async function createNoticeAction(formData: FormData) {
   }
 
   revalidatePath('/admin/notices');
-  redirect('/admin/notices');
+  return { success: true };
 }
 
 export async function updateNoticeAction(formData: FormData) {
@@ -52,7 +51,7 @@ export async function updateNoticeAction(formData: FormData) {
   }
 
   revalidatePath('/admin/notices');
-  redirect('/admin/notices');
+  return { success: true };
 }
 
 export async function deleteNoticeAction(formData: FormData): Promise<void> {

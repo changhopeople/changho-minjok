@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { toast } from 'sonner';
 import { updateCustomerAction } from '../actions';
 import {
   Save,
@@ -30,12 +31,10 @@ interface CustomerDetailFormProps {
 export default function CustomerDetailForm({ customer }: CustomerDetailFormProps) {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
-  const [message, setMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsLoading(true);
-    setMessage(null);
 
     const formData = new FormData(e.currentTarget);
     const result = await updateCustomerAction(formData);
@@ -43,28 +42,16 @@ export default function CustomerDetailForm({ customer }: CustomerDetailFormProps
     setIsLoading(false);
 
     if (result.success) {
-      setMessage({ type: 'success', text: '정보가 저장되었습니다.' });
+      toast.success('정보가 저장되었습니다.');
       router.refresh();
     } else {
-      setMessage({ type: 'error', text: result.error || '저장에 실패했습니다.' });
+      toast.error(result.error || '저장에 실패했습니다.');
     }
   };
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
       <input type="hidden" name="id" value={customer.id} />
-
-      {message && (
-        <div
-          className={`p-4 rounded-xl ${
-            message.type === 'success'
-              ? 'bg-[#E0F7F6] text-[#2AC1BC] border border-[#2AC1BC]/30'
-              : 'bg-[#FEF2F2] text-[#EF4444] border border-[#EF4444]/30'
-          }`}
-        >
-          {message.text}
-        </div>
-      )}
 
       {/* 상담 관리 */}
       <div className="bg-white rounded-2xl shadow-sm p-6">

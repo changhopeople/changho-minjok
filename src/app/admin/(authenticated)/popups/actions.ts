@@ -1,7 +1,6 @@
 'use server';
 
 import { revalidatePath } from 'next/cache';
-import { redirect } from 'next/navigation';
 import { createPopup, updatePopup, deletePopup } from '@/lib/popup-db';
 
 export async function createPopupAction(formData: FormData) {
@@ -36,7 +35,7 @@ export async function createPopupAction(formData: FormData) {
   }
 
   revalidatePath('/admin/popups');
-  redirect('/admin/popups');
+  return { success: true };
 }
 
 export async function updatePopupAction(formData: FormData) {
@@ -72,7 +71,7 @@ export async function updatePopupAction(formData: FormData) {
   }
 
   revalidatePath('/admin/popups');
-  redirect('/admin/popups');
+  return { success: true };
 }
 
 export async function deletePopupAction(formData: FormData): Promise<void> {

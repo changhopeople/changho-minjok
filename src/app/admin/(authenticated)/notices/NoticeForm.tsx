@@ -1,7 +1,9 @@
 'use client';
 
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import { toast } from 'sonner';
 import { NoticeRecord } from '@/lib/notice-db';
 import { createNoticeAction, updateNoticeAction } from './actions';
 import {
@@ -15,6 +17,7 @@ interface NoticeFormProps {
 }
 
 export default function NoticeForm({ notice }: NoticeFormProps) {
+  const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
   const isEditing = !!notice;
 
@@ -30,9 +33,13 @@ export default function NoticeForm({ notice }: NoticeFormProps) {
         : await createNoticeAction(formData);
 
       if (result && !result.success) {
-        alert(result.error || '저장에 실패했습니다.');
+        toast.error(result.error || '저장에 실패했습니다.');
         setIsLoading(false);
+        return;
       }
+
+      toast.success(isEditing ? '수정되었습니다.' : '등록되었습니다.');
+      router.push('/admin/notices');
     } catch {
       setIsLoading(false);
     }

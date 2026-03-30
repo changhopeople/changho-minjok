@@ -16,7 +16,7 @@ function generateSlug(title: string): string {
     || `column-${Date.now()}`;
 }
 
-export async function createColumnAction(formData: FormData): Promise<void> {
+export async function createColumnAction(formData: FormData) {
   const title = formData.get('title') as string;
   const category = formData.get('category') as string;
   const author = formData.get('author') as string;
@@ -41,15 +41,15 @@ export async function createColumnAction(formData: FormData): Promise<void> {
   });
 
   if (!result) {
-    redirect('/admin/columns?error=create-failed');
+    return { success: false, error: '칼럼 생성에 실패했습니다.' };
   }
 
   revalidatePath('/admin/columns');
   revalidatePath('/column');
-  redirect('/admin/columns');
+  return { success: true };
 }
 
-export async function updateColumnAction(formData: FormData): Promise<void> {
+export async function updateColumnAction(formData: FormData) {
   const id = formData.get('id') as string;
   const title = formData.get('title') as string;
   const category = formData.get('category') as string;
@@ -72,12 +72,12 @@ export async function updateColumnAction(formData: FormData): Promise<void> {
   });
 
   if (!result) {
-    redirect('/admin/columns?error=update-failed');
+    return { success: false, error: '칼럼 수정에 실패했습니다.' };
   }
 
   revalidatePath('/admin/columns');
   revalidatePath('/column');
-  redirect('/admin/columns');
+  return { success: true };
 }
 
 export async function deleteColumnAction(formData: FormData): Promise<void> {

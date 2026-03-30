@@ -1,7 +1,9 @@
 'use client';
 
 import { useState, useRef } from 'react';
+import { useRouter } from 'next/navigation';
 import Image from 'next/image';
+import { toast } from 'sonner';
 import { Upload, X } from 'lucide-react';
 import { ColumnRecord } from '@/lib/supabase';
 import { uploadColumnImage } from '@/lib/column-db';
@@ -11,11 +13,12 @@ const TipTapEditor = dynamic(() => import('./TipTapEditor'), { ssr: false });
 
 interface ColumnFormProps {
   column?: ColumnRecord;
-  action: (formData: FormData) => Promise<void>;
+  action: (formData: FormData) => Promise<{ success: boolean; error?: string }>;
   submitLabel: string;
 }
 
 export default function ColumnForm({ column, action, submitLabel }: ColumnFormProps) {
+  const router = useRouter();
   const [thumbnailPreview, setThumbnailPreview] = useState<string | null>(column?.thumbnail_url || null);
   const [thumbnailUrl, setThumbnailUrl] = useState<string>(column?.thumbnail_url || '');
   const [content, setContent] = useState<string>(column?.content || '');
@@ -48,7 +51,15 @@ export default function ColumnForm({ column, action, submitLabel }: ColumnFormPr
     formData.set('content', content);
     formData.set('thumbnailUrl', thumbnailUrl);
     try {
-      await action(formData);
+      const result = await action(formData);
+
+      if (!result.success) {
+        toast.error(result.error || '저장에 실패했습니다.');
+        return;
+      }
+
+      toast.success(column ? '수정되었습니다.' : '등록되었습니다.');
+      router.push('/admin/columns');
     } finally {
       setIsSubmitting(false);
     }

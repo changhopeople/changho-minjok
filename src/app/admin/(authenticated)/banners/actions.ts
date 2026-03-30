@@ -1,7 +1,6 @@
 'use server';
 
 import { revalidatePath } from 'next/cache';
-import { redirect } from 'next/navigation';
 import { createBanner, updateBanner, deleteBanner } from '@/lib/banner-db';
 
 export async function createBannerAction(formData: FormData) {
@@ -32,7 +31,7 @@ export async function createBannerAction(formData: FormData) {
   }
 
   revalidatePath('/admin/banners');
-  redirect('/admin/banners');
+  return { success: true };
 }
 
 export async function updateBannerAction(formData: FormData) {
@@ -64,7 +63,7 @@ export async function updateBannerAction(formData: FormData) {
   }
 
   revalidatePath('/admin/banners');
-  redirect('/admin/banners');
+  return { success: true };
 }
 
 export async function deleteBannerAction(formData: FormData): Promise<void> {

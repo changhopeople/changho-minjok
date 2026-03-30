@@ -1,7 +1,9 @@
 'use client';
 
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import { toast } from 'sonner';
 import { FunnelTemplateRecord, FunnelStepRecord } from '@/lib/supabase';
 import { createFunnelAction, updateFunnelAction } from './actions';
 import {
@@ -56,6 +58,7 @@ const messagePlaceholders = [
 ];
 
 export default function FunnelForm({ template, steps: existingSteps }: FunnelFormProps) {
+  const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
   const isEditing = !!template;
 
@@ -99,9 +102,13 @@ export default function FunnelForm({ template, steps: existingSteps }: FunnelFor
         : await createFunnelAction(formData);
 
       if (result && !result.success) {
-        alert(result.error || '저장에 실패했습니다.');
+        toast.error(result.error || '저장에 실패했습니다.');
         setIsLoading(false);
+        return;
       }
+
+      toast.success(isEditing ? '수정되었습니다.' : '등록되었습니다.');
+      router.push('/admin/funnels');
     } catch {
       setIsLoading(false);
     }

@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
+import { toast } from 'sonner';
 import { ReviewRecord } from '@/lib/review-db';
 import {
   createReviewAction,
@@ -55,11 +56,12 @@ export default function ReviewManager({ initialReviews }: ReviewManagerProps) {
     setIsLoading(false);
 
     if (result.success) {
+      toast.success(editingReview ? '수정되었습니다.' : '등록되었습니다.');
       setIsFormOpen(false);
       setEditingReview(null);
       router.refresh();
     } else {
-      alert(result.error);
+      toast.error(result.error || '저장에 실패했습니다.');
     }
   };
 

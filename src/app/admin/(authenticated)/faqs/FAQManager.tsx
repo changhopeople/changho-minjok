@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
+import { toast } from 'sonner';
 import { FAQRecord } from '@/lib/faq-db';
 import {
   createFAQAction,
@@ -64,11 +65,12 @@ export default function FAQManager({ initialFaqs }: FAQManagerProps) {
     setIsLoading(false);
 
     if (result.success) {
+      toast.success(editingFaq ? '수정되었습니다.' : '등록되었습니다.');
       setIsFormOpen(false);
       setEditingFaq(null);
       router.refresh();
     } else {
-      alert(result.error);
+      toast.error(result.error || '저장에 실패했습니다.');
     }
   };
 

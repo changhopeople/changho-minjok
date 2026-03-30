@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
+import { toast } from 'sonner';
 import { AdvisorRecord, getDisplayPhone } from '@/lib/advisor-db';
 import {
   createAdvisorAction,
@@ -55,11 +56,12 @@ export default function AdvisorManager({ initialAdvisors }: AdvisorManagerProps)
     setIsLoading(false);
 
     if (result.success) {
+      toast.success(editingAdvisor ? '수정되었습니다.' : '등록되었습니다.');
       setIsFormOpen(false);
       setEditingAdvisor(null);
       router.refresh();
     } else {
-      alert(result.error);
+      toast.error(result.error || '저장에 실패했습니다.');
     }
   };
 

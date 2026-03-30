@@ -1,7 +1,9 @@
 'use client';
 
 import { useState, useRef, useCallback } from 'react';
+import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import { toast } from 'sonner';
 import Image from 'next/image';
 import { PopupRecord } from '@/lib/popup-db';
 import { uploadImageClient } from '@/lib/upload-client';
@@ -30,6 +32,7 @@ const SIZE_PRESETS = [
 ];
 
 export default function PopupForm({ popup }: PopupFormProps) {
+  const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
   const [isUploading, setIsUploading] = useState(false);
   const [imageUrl, setImageUrl] = useState(popup?.image_url || '');
@@ -47,11 +50,11 @@ export default function PopupForm({ popup }: PopupFormProps) {
 
   const handleImageUpload = useCallback(async (file: File) => {
     if (!file.type.startsWith('image/')) {
-      alert('이미지 파일만 업로드할 수 있습니다.');
+      toast.error('이미지 파일만 업로드할 수 있습니다.');
       return;
     }
     if (file.size > 10 * 1024 * 1024) {
-      alert('파일 크기는 10MB 이하만 가능합니다.');
+      toast.error('파일 크기는 10MB 이하만 가능합니다.');
       return;
     }
 
@@ -60,7 +63,7 @@ export default function PopupForm({ popup }: PopupFormProps) {
       const url = await uploadImageClient(file, 'popups');
       setImageUrl(url);
     } catch (err) {
-      alert(err instanceof Error ? err.message : '이미지 업로드에 실패했습니다.');
+      toast.error(err instanceof Error ? err.message : '이미지 업로드에 실패했습니다.');
     } finally {
       setIsUploading(false);
     }
@@ -120,9 +123,13 @@ export default function PopupForm({ popup }: PopupFormProps) {
         : await createPopupAction(formData);
 
       if (result && !result.success) {
-        alert(result.error || '저장에 실패했습니다.');
+        toast.error(result.error || '저장에 실패했습니다.');
         setIsLoading(false);
+        return;
       }
+
+      toast.success(isEditing ? '수정되었습니다.' : '등록되었습니다.');
+      router.push('/admin/popups');
     } catch {
       setIsLoading(false);
     }

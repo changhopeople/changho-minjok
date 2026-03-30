@@ -49,7 +49,7 @@ export async function createFunnelAction(formData: FormData) {
   }
 
   revalidatePath('/admin/funnels');
-  redirect('/admin/funnels');
+  return { success: true };
 }
 
 export async function updateFunnelAction(formData: FormData) {
@@ -100,7 +100,7 @@ export async function updateFunnelAction(formData: FormData) {
   }
 
   revalidatePath('/admin/funnels');
-  redirect('/admin/funnels');
+  return { success: true };
 }
 
 export async function deleteFunnelAction(formData: FormData): Promise<void> {
