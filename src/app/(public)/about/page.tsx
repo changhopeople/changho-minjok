@@ -40,10 +40,11 @@ export default function AboutPage() {
       <section className="bg-gradient-to-br from-gray-900 to-gray-800 text-white py-12 sm:py-16 md:py-20">
         <div className="container mx-auto px-4">
           <AnimatedSection className="max-w-3xl mx-auto text-center">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 text-white">
               화려한 광고보다
               <br />
-              <span className="text-[#EF4444]">공장의 기계 소리</span>를 믿습니다
+              <span className="text-[#EF4444]">공장의 기계 소리</span>
+              <span className="text-white">를 믿습니다</span>
             </h1>
             <p className="text-sm sm:text-base md:text-lg text-gray-300 mb-6 sm:mb-8 px-2">
               <span className="text-[#EF4444] font-semibold">&apos;창호의민족&apos;</span>은 (주)현경시스템이 10년 이상의 제조 노하우를 집약해
