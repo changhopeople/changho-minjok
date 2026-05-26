@@ -10,13 +10,11 @@ const HK_DOMAINS = [
 ];
 
 export function middleware(request: NextRequest) {
-  const hostname = request.headers.get('host') || '';
+  const hostname = (request.headers.get('host') || '').split(':')[0].toLowerCase();
   const { pathname } = request.nextUrl;
 
   // 현경시스템 도메인으로 접속한 경우
-  const isHKDomain = HK_DOMAINS.some(
-    (domain) => hostname === domain || hostname.startsWith(domain.split('.')[0])
-  );
+  const isHKDomain = HK_DOMAINS.includes(hostname);
 
   if (isHKDomain) {
     // 이미 /hyunkyung 경로면 그대로 통과
