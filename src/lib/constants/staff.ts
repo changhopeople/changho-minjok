@@ -8,11 +8,18 @@ export interface StaffMember {
 
 export const STAFF_MEMBERS: StaffMember[] = [
   {
+    name: '손민영',
+    phone: '01092305136',
+    displayPhone: '010-9230-5136',
+    email: '',
+    position: '대리',
+  },
+  {
     name: '양라윤',
     phone: '01063739563',
     displayPhone: '010-6373-9563',
     email: 'didalsdk12@naver.com',
-    position: '사원',
+    position: '주임',
   },
   {
     name: '배형민',
