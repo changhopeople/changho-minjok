@@ -15,13 +15,6 @@ export const STAFF_MEMBERS: StaffMember[] = [
     position: '대리',
   },
   {
-    name: '양라윤',
-    phone: '01063739563',
-    displayPhone: '010-6373-9563',
-    email: 'didalsdk12@naver.com',
-    position: '주임',
-  },
-  {
     name: '배형민',
     phone: '01066639978',
     displayPhone: '010-6663-9978',

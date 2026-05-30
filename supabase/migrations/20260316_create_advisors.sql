@@ -30,7 +30,6 @@ CREATE POLICY "Service role has full access"
 -- Seed initial data (existing staff members)
 INSERT INTO advisors (name, phone, email, position, is_active, display_order)
 VALUES
-  ('양라윤', '01063739563', 'didalsdk12@naver.com', '주임', true, 1),
-  ('배형민', '01066639978', 'gudals9978@naver.com', '영업팀장', true, 2),
-  ('허자현', '01049972500', 'gjwkgus@naver.com', '대표', true, 3),
-  ('손민영', '01092305136', '', '대리', true, 4);
+  ('배형민', '01066639978', 'gudals9978@naver.com', '영업팀장', true, 1),
+  ('허자현', '01049972500', 'gjwkgus@naver.com', '대표', true, 2),
+  ('손민영', '01092305136', '', '대리', true, 3);

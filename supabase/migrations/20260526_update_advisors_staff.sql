@@ -1,11 +1,3 @@
--- Update advisor staff information.
-UPDATE advisors
-SET
-  phone = '01063739563',
-  position = '주임',
-  updated_at = now()
-WHERE name = '양라윤';
-
 UPDATE advisors
 SET
   phone = '01092305136',
