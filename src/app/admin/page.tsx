@@ -25,7 +25,7 @@ export default async function AdminLoginPage({ searchParams }: PageProps) {
               <Lock className="w-8 h-8 text-[#EF4444]" />
             </div>
             <h1 className="text-2xl font-bold text-gray-900">관리자 로그인</h1>
-            <p className="text-gray-500 mt-2">시공사례를 관리하려면 로그인하세요.</p>
+            <p className="text-gray-500 mt-2">관리자 페이지를 이용하려면 로그인해주세요.</p>
           </div>
 
           {error === 'invalid' && (
@@ -74,7 +74,7 @@ export default async function AdminLoginPage({ searchParams }: PageProps) {
         </div>
 
         <p className="text-center text-gray-400 text-sm mt-6">
-          창호의 민족 관리자 시스템
+          창호의민족 관리자 시스템
         </p>
       </div>
     </div>
