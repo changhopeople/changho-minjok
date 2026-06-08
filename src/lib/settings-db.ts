@@ -72,10 +72,10 @@ export async function updateSetting(key: string, value: string): Promise<boolean
   return true;
 }
 
-export async function updateSettings(settings: Record<string, string>): Promise<boolean> {
+export async function updateSettings(settings: Record<string, string>): Promise<{ success: boolean; error: string | null }> {
   if (!supabase) {
     console.warn('Supabase not configured');
-    return false;
+    return { success: false, error: 'Supabase가 설정되지 않았습니다.' };
   }
 
   const updates = Object.entries(settings).map(([key, value]) => ({
@@ -90,8 +90,8 @@ export async function updateSettings(settings: Record<string, string>): Promise<
 
   if (error) {
     console.error('Error updating settings:', error);
-    return false;
+    return { success: false, error: error.message };
   }
 
-  return true;
+  return { success: true, error: null };
 }

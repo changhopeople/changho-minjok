@@ -24,12 +24,13 @@ export async function saveSettingsAction(formData: FormData) {
     }
   });
 
-  const success = await updateSettings(settings);
+  const result = await updateSettings(settings);
 
-  if (success) {
+  if (result.success) {
     revalidatePath('/admin/settings');
     return { success: true };
   }
 
+  console.error('Error saving settings:', result.error);
   return { success: false, error: '설정 저장에 실패했습니다.' };
 }

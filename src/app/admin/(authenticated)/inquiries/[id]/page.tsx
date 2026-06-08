@@ -3,13 +3,13 @@ import Link from 'next/link';
 import { getInquiryById } from '@/lib/inquiry-db';
 import { getCustomerFunnelByInquiryId, getActiveTemplates, getMessageLogsByFunnelId, getStepsByTemplateId } from '@/lib/funnel-db';
 import {
-  updateInquiryStatusAction,
   deleteInquiryAction,
   startFunnelAction,
   pauseFunnelAction,
   resumeFunnelAction,
   stopFunnelAction,
 } from '../actions';
+import InquiryStatusForms from './InquiryStatusForms';
 import {
   ArrowLeft,
   Phone,
@@ -18,10 +18,7 @@ import {
   Calendar,
   Tag,
   MessageSquare,
-  Clock,
   CheckCircle2,
-  XCircle,
-  Eye,
   Zap,
   Pause,
   Play,
@@ -221,75 +218,7 @@ export default async function InquiryDetailPage({
           </div>
         </div>
 
-        {/* Admin Note */}
-        <div className="px-6 pb-6">
-          <form action={updateInquiryStatusAction}>
-            <input type="hidden" name="id" value={inquiry.id} />
-            <input type="hidden" name="status" value={inquiry.status} />
-            <label className="text-sm text-gray-500 mb-2 block">관리자 메모</label>
-            <textarea
-              name="admin_note"
-              rows={3}
-              defaultValue={inquiry.admin_note || ''}
-              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#EF4444] focus:border-[#EF4444] outline-none resize-none mb-2"
-              placeholder="관리자 메모를 입력하세요 (저장 시 상태변경 버튼을 누르세요)"
-            />
-            <button
-              type="submit"
-              className="inline-flex items-center gap-1 px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors text-sm"
-            >
-              메모 저장
-            </button>
-          </form>
-        </div>
-
-        {/* Actions */}
-        <div className="px-6 py-4 bg-gray-50 border-t">
-          <form action={updateInquiryStatusAction} className="flex flex-wrap gap-3">
-            <input type="hidden" name="id" value={inquiry.id} />
-
-            <button
-              type="submit"
-              name="status"
-              value="pending"
-              disabled={inquiry.status === 'pending'}
-              className="inline-flex items-center gap-1 px-4 py-2 bg-[#FFF3E8] text-[#FF6F0F] rounded-lg hover:bg-[#FF6F0F]/20 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
-            >
-              <Clock className="w-4 h-4" />
-              대기중
-            </button>
-            <button
-              type="submit"
-              name="status"
-              value="in_progress"
-              disabled={inquiry.status === 'in_progress'}
-              className="inline-flex items-center gap-1 px-4 py-2 bg-[#FEF2F2] text-[#EF4444] rounded-lg hover:bg-[#EF4444]/20 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
-            >
-              <Eye className="w-4 h-4" />
-              처리중
-            </button>
-            <button
-              type="submit"
-              name="status"
-              value="completed"
-              disabled={inquiry.status === 'completed'}
-              className="inline-flex items-center gap-1 px-4 py-2 bg-[#E0F7F6] text-[#2AC1BC] rounded-lg hover:bg-[#2AC1BC]/20 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
-            >
-              <CheckCircle2 className="w-4 h-4" />
-              완료
-            </button>
-            <button
-              type="submit"
-              name="status"
-              value="cancelled"
-              disabled={inquiry.status === 'cancelled'}
-              className="inline-flex items-center gap-1 px-4 py-2 bg-gray-100 text-gray-600 rounded-lg hover:bg-gray-200 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
-            >
-              <XCircle className="w-4 h-4" />
-              취소
-            </button>
-          </form>
-        </div>
+        <InquiryStatusForms inquiry={inquiry} />
       </div>
 
       {/* 자동 퍼널 섹션 */}

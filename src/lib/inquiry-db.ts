@@ -68,10 +68,10 @@ export async function updateInquiryStatus(
   id: string,
   status: InquiryRecord['status'],
   admin_note?: string
-): Promise<InquiryRecord | null> {
+): Promise<{ data: InquiryRecord | null; error: string | null }> {
   if (!supabase) {
     console.warn('Supabase not configured');
-    return null;
+    return { data: null, error: 'Supabase가 설정되지 않았습니다.' };
   }
 
   const updateData: { status: string; admin_note?: string; updated_at: string } = {
@@ -92,10 +92,10 @@ export async function updateInquiryStatus(
 
   if (error) {
     console.error('Error updating inquiry:', error);
-    return null;
+    return { data: null, error: error.message };
   }
 
-  return data;
+  return { data, error: null };
 }
 
 export async function deleteInquiry(id: string): Promise<boolean> {

@@ -76,27 +76,15 @@ export default function AboutPage() {
 
             <div className="space-y-12">
               <AnimatedSection>
-                <div className="flex flex-col md:flex-row gap-8 items-center">
-                  <div className="md:w-1/3 flex-shrink-0">
-                    <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-lg">
-                      <Image
-                        src="/images/about/ceo-photo.png"
-                        alt="창호의 민족 대표"
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
-                  </div>
-                  <div className="md:w-2/3 prose prose-sm sm:prose-lg max-w-none">
-                    <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">
-                      01. 우리의 철학
-                    </h3>
-                    <p className="text-gray-600 leading-relaxed">
-                      2015년, 작은 공장에서 시작한 현경시스템은 오직 품질 하나만을 생각했습니다.
-                      화려한 마케팅보다 묵묵히 좋은 제품을 만드는 것, 그것이 우리의 철학입니다.
-                      10년 이상이 지난 지금, 그 노하우를 집약한 프리미엄 브랜드 &apos;창호의민족&apos;을 런칭했습니다.
-                    </p>
-                  </div>
+                <div className="prose prose-sm sm:prose-lg max-w-none">
+                  <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">
+                    01. 우리의 철학
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    2015년, 작은 공장에서 시작한 현경시스템은 오직 품질 하나만을 생각했습니다.
+                    화려한 마케팅보다 묵묵히 좋은 제품을 만드는 것, 그것이 우리의 철학입니다.
+                    10년 이상이 지난 지금, 그 노하우를 집약한 프리미엄 브랜드 &apos;창호의민족&apos;을 런칭했습니다.
+                  </p>
                 </div>
               </AnimatedSection>
 

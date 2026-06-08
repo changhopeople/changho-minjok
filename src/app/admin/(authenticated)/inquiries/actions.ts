@@ -20,13 +20,18 @@ export async function updateInquiryStatusAction(formData: FormData) {
   const adminNote = formData.get('admin_note') as string | null;
 
   if (!id || !status) {
-    return;
+    return { success: false, error: '상태 변경에 필요한 값이 누락되었습니다.' };
   }
 
-  await updateInquiryStatus(id, status, adminNote || undefined);
+  const result = await updateInquiryStatus(id, status, adminNote ?? undefined);
+
+  if (result.error) {
+    return { success: false, error: '상담 상태 저장에 실패했습니다.' };
+  }
 
   revalidatePath('/admin/inquiries');
   revalidatePath(`/admin/inquiries/${id}`);
+  return { success: true };
 }
 
 export async function deleteInquiryAction(formData: FormData) {
