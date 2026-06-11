@@ -40,7 +40,10 @@ export default function NoticeForm({ notice }: NoticeFormProps) {
 
       toast.success(isEditing ? '수정되었습니다.' : '등록되었습니다.');
       router.push('/admin/notices');
-    } catch {
+    } catch (error) {
+      console.error('Error saving notice:', error);
+      toast.error('공지사항 저장 중 오류가 발생했습니다.');
+    } finally {
       setIsLoading(false);
     }
   };

@@ -54,23 +54,28 @@ export default function FAQManager({ initialFaqs }: FAQManagerProps) {
 
     const formData = new FormData(e.currentTarget);
 
-    let result;
-    if (editingFaq) {
-      formData.append('id', editingFaq.id);
-      result = await updateFAQAction(formData);
-    } else {
-      result = await createFAQAction(formData);
-    }
+    try {
+      let result;
+      if (editingFaq) {
+        formData.append('id', editingFaq.id);
+        result = await updateFAQAction(formData);
+      } else {
+        result = await createFAQAction(formData);
+      }
 
-    setIsLoading(false);
-
-    if (result.success) {
-      toast.success(editingFaq ? '수정되었습니다.' : '등록되었습니다.');
-      setIsFormOpen(false);
-      setEditingFaq(null);
-      router.refresh();
-    } else {
-      toast.error(result.error || '저장에 실패했습니다.');
+      if (result.success) {
+        toast.success(editingFaq ? '수정되었습니다.' : '등록되었습니다.');
+        setIsFormOpen(false);
+        setEditingFaq(null);
+        router.refresh();
+      } else {
+        toast.error(result.error || '저장에 실패했습니다.');
+      }
+    } catch (error) {
+      console.error('Error saving FAQ:', error);
+      toast.error('FAQ 저장 중 오류가 발생했습니다.');
+    } finally {
+      setIsLoading(false);
     }
   };
 

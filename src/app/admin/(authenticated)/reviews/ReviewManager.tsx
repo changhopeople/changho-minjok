@@ -45,23 +45,28 @@ export default function ReviewManager({ initialReviews }: ReviewManagerProps) {
 
     const formData = new FormData(e.currentTarget);
 
-    let result;
-    if (editingReview) {
-      formData.append('id', editingReview.id);
-      result = await updateReviewAction(formData);
-    } else {
-      result = await createReviewAction(formData);
-    }
+    try {
+      let result;
+      if (editingReview) {
+        formData.append('id', editingReview.id);
+        result = await updateReviewAction(formData);
+      } else {
+        result = await createReviewAction(formData);
+      }
 
-    setIsLoading(false);
-
-    if (result.success) {
-      toast.success(editingReview ? '수정되었습니다.' : '등록되었습니다.');
-      setIsFormOpen(false);
-      setEditingReview(null);
-      router.refresh();
-    } else {
-      toast.error(result.error || '저장에 실패했습니다.');
+      if (result.success) {
+        toast.success(editingReview ? '수정되었습니다.' : '등록되었습니다.');
+        setIsFormOpen(false);
+        setEditingReview(null);
+        router.refresh();
+      } else {
+        toast.error(result.error || '저장에 실패했습니다.');
+      }
+    } catch (error) {
+      console.error('Error saving review:', error);
+      toast.error('후기 저장 중 오류가 발생했습니다.');
+    } finally {
+      setIsLoading(false);
     }
   };
 

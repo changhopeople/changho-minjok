@@ -42,7 +42,10 @@ export default function BannerForm({ banner }: BannerFormProps) {
 
       toast.success(isEditing ? '수정되었습니다.' : '등록되었습니다.');
       router.push('/admin/banners');
-    } catch {
+    } catch (error) {
+      console.error('Error saving banner:', error);
+      toast.error('배너 저장 중 오류가 발생했습니다.');
+    } finally {
       setIsLoading(false);
     }
   };

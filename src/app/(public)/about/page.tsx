@@ -120,9 +120,10 @@ export default function AboutPage() {
                 <div className="mt-8">
                   <div className="relative aspect-[16/9] md:aspect-[21/9] rounded-2xl overflow-hidden shadow-xl">
                     <Image
-                      src="/images/about/team-photo.jpg"
+                      src="/images/about/promise-team-photo.jpg"
                       alt="창호의 민족 팀원들"
                       fill
+                      sizes="(min-width: 768px) 896px, calc(100vw - 32px)"
                       className="object-cover"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
